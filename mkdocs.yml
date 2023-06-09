@@ -67,7 +67,7 @@ plugins:
         module_name: macros
 
 extra:
-  spack_modulefiles_path: ../spack-ucdavis/modulefiles/hpccf/franklin/
+  spack_modulefiles_path: spack-ucdavis/modulefiles/hpccf/franklin/
   social:
     - icon: material/email-edit
       link: "mailto:hpc-help@ucdavis.edu"
