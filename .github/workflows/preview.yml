@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout Docs
         uses: actions/checkout@v3
-        with:
-          path: docs
       - name: Checkout spack-ucdavis
         uses: actions/checkout@v3
         with:
@@ -30,11 +28,11 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-macros-plugin
+      - run: pip install -r requirements.txt
       - name: mkdocs build
         working-directory: docs
         run: mkdocs build
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./docs/site/
+          source-dir: ./site/
