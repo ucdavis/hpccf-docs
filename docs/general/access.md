@@ -1,4 +1,3 @@
-# Accessing Franklin
 
 ## X11 Forwarding
 

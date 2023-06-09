@@ -9,12 +9,10 @@ nav:
     - general/index.md
     - Accessing the Clusters: general/access.md
     - User Environment: general/environment.md
-    - Available Resources: general/resources.md
     - Data Storage: general/storage.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
-      - Partitions: scheduler/partitions.md
       - Resources: scheduler/resources.md
       - Job Scripts: scheduler/jobscripts.md
     - Software:
@@ -24,12 +22,20 @@ nav:
       - R and RStudio: software/rlang.md
       #- Developing Software: software/developing.md
   - Clusters:
+    - Farm:
+      - farm/index.md
+      - Software:
+        - Modules: farm/software/modules.md
+      - Job Scheduling: farm/scheduling.md
+      - Resources: farm/resources.md
     - Franklin:
       - franklin/index.md
       - Software:
         - Modules: franklin/software/modules.md
         - cryo-EM: franklin/software/cryoem.md
       - Job Scheduling: franklin/scheduling.md
+      - Resources: franklin/resources.md
+
 
 markdown_extensions:
   - toc:
