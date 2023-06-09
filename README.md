@@ -28,3 +28,7 @@ You can serve the documentation locally by running:
     mkdocs serve
 
 Once the environment is created and dependencies installed, you only need to activate it in the future.
+
+## Resources
+
+- `mkdocs` docs: https://www.mkdocs.org/
