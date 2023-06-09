@@ -8,6 +8,7 @@ To get started with local development, clone repo docs and spack-ucdavis repos:
     git clone git@github.com:ucdavis/spack-ucdavis.git
 
     cd hpccf-docs
+    ln -s ../spack-ucdavis .
 
 Then create a virtual environment, either with `virtualenv`:
 
