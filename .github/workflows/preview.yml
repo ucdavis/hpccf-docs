@@ -1,22 +1,23 @@
-name: Build and Deploy mkdocs
+name: Build Pull Request Preview
 
 on:
-  push:
-    branches:
-      - master 
-      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
-permissions:
-  contents: write
+concurrency: preview-${{ github.ref }}
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Docs
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          path: docs
       - name: Checkout spack-ucdavis
         uses: actions/checkout@v3
         with:
@@ -31,12 +32,9 @@ jobs:
           path: .cache
       - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-macros-plugin
       - name: mkdocs build
-        #working-directory: docs
+        working-directory: docs
         run: mkdocs build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          folder: ./site/
-          clean-exclude: ./pr-preview/
-          force: false
-
+          source-dir: ./docs/site/
