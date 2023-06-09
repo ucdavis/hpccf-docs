@@ -9,7 +9,6 @@ nav:
     - general/index.md
     - Accessing the Clusters: general/access.md
     - User Environment: general/environment.md
-    - Data Storage: general/storage.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
@@ -28,6 +27,7 @@ nav:
         - Modules: farm/software/modules.md
       - Job Scheduling: farm/scheduling.md
       - Resources: farm/resources.md
+      - Storage: farm/storage.md
     - Franklin:
       - franklin/index.md
       - Software:
@@ -35,6 +35,7 @@ nav:
         - cryo-EM: franklin/software/cryoem.md
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
+      - Storage: farm/storage.md
 
 
 markdown_extensions:
