@@ -1,6 +1,6 @@
 # Jobs
 
-After [logging in to Franklin](../general/access.md), your session exists on the **head node**: a single,
+After [logging in to a cluster](../general/access.md), your session exists on the **head node**: a single,
 less powerful computer that serves as the gatekeeper to the rest of the cluster.
 To do actual work, you will need to write submission scripts that define your job and submit
 them to the cluster along with resource requests.

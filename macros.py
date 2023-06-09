@@ -58,7 +58,7 @@ def render_spack_modules(modules):
             contents = fp.read()
             about = re.search(r'help\(\[\[([^\]]*)\]\]\)', contents, flags=re.MULTILINE).group(1)
         
-        entries.append(( f'## {software}\n\n'
+        entries.append(( f'### {software}\n\n'
                          f'{about}\n\n'
                          f'**Versions**: {versions}\n\n'
                          f'{"**Variants**: " if variants else ""}{variants}\n\n'

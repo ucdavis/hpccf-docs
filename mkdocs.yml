@@ -5,31 +5,31 @@ copyright: Copyright &copy; 2023 The Regents of the University of California, Da
 
 nav:
   - About: index.md
-  - Users:
-    - General:
-      - general/index.md
-      - Accessing the Cluster: general/access.md
-      - User Environment: general/environment.md
-      - Available Resources: general/resources.md
-      - Data Storage: general/storage.md
-    - Scheduler:
+  - General:
+    - general/index.md
+    - Accessing the Clusters: general/access.md
+    - User Environment: general/environment.md
+    - Available Resources: general/resources.md
+    - Data Storage: general/storage.md
+    - Job Scheduler:
       - scheduler/index.md
-      - Slurm Commands: scheduler/jobs.md
-      - Queueing: scheduler/queues.md
+      - Slurm Commands: scheduler/commands.md
+      - Partitions: scheduler/partitions.md
       - Resources: scheduler/resources.md
       - Job Scripts: scheduler/jobscripts.md
     - Software:
       - software/index.md
-      - Software List: software/list.md
       - Module System: software/modules.md
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
-      - cryo-EM: software/cryoem.md
-      - Developing Software: software/developing.md
-  - Admins:
-    - Storage: admin_storage.md
-    - Networking: admin_networking.md
-    - Scheduler: admin_scheduler.md
+      #- Developing Software: software/developing.md
+  - Clusters:
+    - Franklin:
+      - franklin/index.md
+      - Software:
+        - Modules: franklin/software/modules.md
+        - cryo-EM: franklin/software/cryoem.md
+      - Job Scheduling: franklin/scheduling.md
 
 markdown_extensions:
   - toc:

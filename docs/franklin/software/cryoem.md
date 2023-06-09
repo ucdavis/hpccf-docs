@@ -37,7 +37,7 @@ There will be a bit of latency when using it, especially if you are off campus.
 You may be able to reduce latency by [enabling SSH compression](../general/access.md#x11-forwarding).
 
 <figure markdown>
-  ![The Relion start screen.](../img/relion_start_gui.png)
+  ![The Relion start screen.](../../img/relion_start_gui.png)
   <figcaption>The relion start screen.</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ Editing these paths, unless you really, *really* know what you are doing, is **n
 dependencies are compiled with architecture-specific flags that match their Relion variant.
 
 <figure markdown>
-  ![dependent program.](../img/relion_dep_gui.png)
+  ![dependent program.](../../img/relion_dep_gui.png)
   <figcaption>Pre-filled dependent program path.</figcaption>
 </figure>
 
@@ -64,19 +64,19 @@ These new fields are:
 - **Email**: The email to which Slurm will send job status updates. Fills the `--mail-user` `sbatch`/`srun` parameter.
 - **Memory per CPU**: Fills the Slurm `--memory-per-cpu` parameter. Total RAM use of a job will be *(Number of MPI procs)* \* *(Number of Threads)* \* *(Memory per CPU)*, when the **Number of Threads** field is available; otherwise it will be  *(Number of MPI procs)* \* *(Memory per CPU)*.
 - **Job Time**: Fills Slurm's `--time` parameter.
-- **GPU Resources**: Only available in the GPU modules. Number (and optionally type) of GPUs to request for this job. If only an integer is supplied, will request any GPU. If `TYPE:NUM` is supplied (example: `a4000:4`), specific models of GPU will be requested. See the [**Resources**](../scheduler/resources.md) section for more information on available GPU types.
+- **GPU Resources**: Only available in the GPU modules. Number (and optionally type) of GPUs to request for this job. If only an integer is supplied, will request any GPU. If `TYPE:NUM` is supplied (example: `a4000:4`), specific models of GPU will be requested. See the [**Resources**](../../scheduler/resources.md) section for more information on available GPU types.
 
 === "CPU Build"
 
     <figure markdown>
-    ![Relion GUI running screen, CPU version](../img/relion_running_cpu.png)
+    ![Relion GUI running screen, CPU version](../../img/relion_running_cpu.png)
     <figcaption>The `relion/cpu` modules lack the GPU resources field. Note the submission script as well.</figcaption>
     </figure>
 
 === "GPU Build"
 
     <figure markdown>
-    ![Relion GUI running screen, GPU version](../img/relion_running_gpu.png)
+    ![Relion GUI running screen, GPU version](../../img/relion_running_gpu.png)
     <figcaption>The `relion/gpu` module has an extra field for GPU resources. Also note the differing submission script.</figcaption>
     </figure>
 
@@ -84,7 +84,7 @@ The default GUI fields serve their original purposes:
 
 - **Number of MPI procs**: This will fill the Slurm `--ntasks` parameter. These tasks may be distributed across multiple nodes, depending on the number of **Threads** requested. For GPU runs, this should be the number of GPUs **+ 1**.
 - **Number of Threads**: The will fill the Slurm `--cpus-per-task` parameter, which means it is the *number of threads per MPI proc*. Some job types do not expose this field, as they can only be run with a single-thread per MPI proc.
-- **Queue name**: The Slurm partition to submit to, filling the `--partition` parameter. More information on partitions can be found in the [**Queueing**](../scheduler/queues.md) section.
+- **Queue name**: The Slurm partition to submit to, filling the `--partition` parameter. More information on partitions can be found in the [**Queueing**](../../scheduler/queues.md) section.
 - **Standard submission script**: The location of the Slurm job script template that will be used. This field will be filled with the appropriate template for the loaded Relion module by default, and should not be changed.*For advanced users only:* if you are familiar with Relion and want to further fine-tune your Slurm scripts, you can write your own based on the provided templates found in `/share/apps/spack/templates/hpccf/franklin` or [in our spack GitHub repo](https://github.com/ucdavis/spack-ucdavis/tree/main/templates/hpccf/franklin).
 - **Minimum dedicated cores per node**: Unused on our system.
 
@@ -94,7 +94,7 @@ Sometimes, you may wish to use different Relion modules for different tasks whil
 perhaps you'd prefer to use the CPU-optimized version for CTF estimation and the GPU-optimized version for 3D refinement.
 **This does not work out of the box**.
 Relion fills the filesystem paths of its dependencies and templates from environment variables, and those environment
-variables are set in the [modulefiles](modules.md#intro) of the differing Relion builds.
+variables are set in the [modulefiles](../../software/modules.md#intro) of the differing Relion builds.
 However, when a Relion job is run, those paths are cached in hidden `.star` files in the project directory, and
 the *next time* Relion is run, it fills those paths from the cache files instead of the environment variables.
 This means that, after switching modules, the cached location of the *previous* module will be used, instead of the
