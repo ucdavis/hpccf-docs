@@ -1,0 +1,33 @@
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Docs
+        uses: actions/checkout@v3
+        with:
+          path: docs
+      - name: Checkout spack-ucdavis
+        uses: actions/checkout@v3
+        with:
+          repository: ucdavis/spack-ucdavis
+          path: spack-ucdavis
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-macros-plugin
+      - name: mkdocs deploy
+        working-directory: docs
+        run: mkdocs gh-deploy --force
+

@@ -1,0 +1,213 @@
+# Requesting Resources
+
+## Resource Types
+
+### CPUs / cores
+
+CPUs are the central compute power behind your jobs.
+Most scientific software supports multiprocessing (multiple instances of an executable with discrete memory resources,
+possibly but not necessarily communicating with each other), multithreading (multiple paths, or threads, of execution
+within a process on a node, sharing the same memory resources, but able to execute on different cores), or both.
+This allows computation to scale with increased numbers of CPUs, allowing bigger datasets to be analyzed.
+
+Slurm's CPU management methods are complex and can quickly become confusing.
+For the purposes of this documentation, we will provide a simplified explanation; those with advanced needs
+should consult [the Slurm documentation](https://slurm.schedmd.com/cpu_management.html).
+
+Slurm follows a distinction between its physically resources -- cluster nodes and CPUs or cores on a node -- and virtual
+resources, or **tasks**, which specificy how requested physical resources will be grouped and distributed.
+By default, Slurm will minimize the number of nodes allocated to a job, and attempt to keep the job's CPU requests
+localized within a node.
+**Tasks** group together CPUs (or other resources): CPUs within a task will be kept together on the same node.
+Different tasks may end up on different nodes, but Slurm will exhaust the CPUs on a given node before splitting tasks between
+nodes unless specifically requested.
+
+!!! note "A Complication: SMT / Hyperthreading"
+
+    Slurm understands the distinction between physical and logical cores.
+    Most modern CPUs support [Simultaneous Multithreading (SMT)](https://en.wikipedia.org/wiki/Simultaneous_multithreading),
+    which allows multiple independent processes to run on a single
+    physical core.
+    Although each of these is not a *full fledged* core, they have independent hardware for certain operations, and can
+    greatly improve scalability for some tasks.
+    However, using an individual thread within a single core makes little sense, as it shares hardware with the other SMT threads
+    on its core; so, Slurm will always keep these threads together.
+    In practice, this means if you ask for an odd number of CPUs, your request will be rounded up so as not to split an SMT
+    thread between different job allocations.
+
+The primary parameters controlling these are:
+
+- `--cpus-per-task/-c`: How many CPUs to request per task. The number of CPUs requested here will always be on the same node. By default, 1.
+- `--ntasks/-n`: The number of tasks to request. By default, 1.
+- `--nodes/-N`: The *minimum* number of nodes to request, by default, 1.
+
+Let's explore some examples. The simple request would be to ask for 2 CPUs.
+We will use `srun` to request resources and then immediately run the `nproc` command within the allocation
+to report how many CPUs are available:
+
+```slurm
+$ srun -c 2 nproc 
+srun: job 682 queued and waiting for resources
+srun: job 682 has been allocated resources
+2
+```
+
+We asked for 2 CPUs per task, and Slurm gave us 2 CPUs and 1 task.
+What happens if we ask for 2 tasks instead of 2 CPUs?
+
+```slurm
+$ srun -n 2 nproc
+srun: job 683 queued and waiting for resources
+srun: job 683 has been allocated resources
+1
+1
+```
+
+This time, we were given 2 separate tasks, each of which got 1 CPU.
+Each task ran its own instance of the `nproc` command, and so each reported `1`.
+If we ask for more CPUs per task:
+
+```slurm
+$ srun -n 2 -c 2 nproc
+srun: job 684 queued and waiting for resources
+srun: job 684 has been allocated resources
+2
+2
+```
+
+We still asked for 2 tasks, but this time we requested 2 CPUs in each.
+So, we got 2 instances of `nproc`, each reported `2` CPUs in their task.
+
+!!! abstract "Summary"
+
+    If you want to run multithreaded jobs, use `--cpus-per-task N_THREADS` and `-ntasks 1`.
+    If you want a multiprocess job (or an MPI job), increase `-ntasks`.
+
+??? info "The SMT Edge Case"
+
+    If we use `-c 1` without specifying the number of tasks, we might be taken by surprise:
+
+    ```slurm
+    $ srun -c 1 nproc     
+    srun: job 685 queued and waiting for resources
+    srun: job 685 has been allocated resources
+    1
+    1
+    ```
+
+    We only asked for 1 CPU per task, but we got 2 tasks! This is due to SMT, described in the note above.
+    Because Slurm will not split SMT threads, and there are 2 SMT threads per physical core, the request
+    was rounded up to 2 CPUs total.
+    In order to keep with the 1 CPU-per-task constraint, it spawned 2 tasks. Similarly, if we specify
+    that we only want 1 task, CPUs per task will instead be bumped:
+
+    ```slurm
+    $ srun -c 1 -n 1 nproc
+    srun: job 686 queued and waiting for resources
+    srun: job 686 has been allocated resources
+    2
+    ```
+
+### Nodes
+
+Let's explore multiple nodes a bit further.
+We have seen previously that the `-n/ntasks` parameter will allocate discrete groups of cores.
+In our prior examples, however, we used small resource requests.
+What happens when we want to distribute jobs across nodes?
+
+Slurm uses the [block distribution](https://slurm.schedmd.com/sbatch.html#OPT_block) method by default to distribute
+tasks betwee nodes.
+It will exhaust all the CPUs on a node with task groups before moving to a new node.
+For these examples, we're going to create a script that reports both the hostname (ie, the node) and the number
+of CPUs:
+
+``` { .bash .copy title="host-nprocs.sh" }
+#!/bin/bash
+
+echo `hostname`: `nproc`
+```
+
+And make it executable with `#!bash chmod +x host-nprocs.sh`. 
+
+Now let's make a multiple-task request:
+
+```console
+$ srun -c 2 -n 2 ./host-nprocs.sh
+srun: job 691 queued and waiting for resources
+srun: job 691 has been allocated resources
+c-8-42: 2
+c-8-42: 2
+```
+
+As before, we asked for 2 tasks and 2 CPUs per task.
+Both tasks were assigned to `c-8-42`, because it had enough CPUs to fulfill the request.
+What if it did not?
+
+```console
+$ srun -c 120 -n 3 ./host-nprocs.sh
+srun: job 692 queued and waiting for resources
+srun: job 692 has been allocated resources
+c-8-42: 120
+c-8-42: 120
+c-8-50: 120
+```
+
+This time, we asked for 3 tasks each with 120 CPUs.
+The first two tasks were able to be fulfilled by the node `c-8-42`, but that node did not have enough
+CPUs to allocate another 120 on top of that.
+So, the third task was distributed to `c-8-50`.
+Thus, this task spanned multiple nodes.
+
+Sometimes, we want to make sure each task has its own node.
+We can achieve this with the `--nodes/-N` parameter.
+This specifies the *minimum number of nodes* the tasks should be allocated across.
+If we rerun the above example:
+
+```console
+$ srun -c 120 -n 3 -N 3 ./host-nprocs.sh
+srun: job 693 queued and waiting for resources
+srun: job 693 has been allocated resources
+c-8-42: 120
+c-8-50: 120
+c-8-58: 120
+```
+
+We still asked for 3 tasks and 3 CPUs per task, but this time we specified we wanted a minimum of 3 nodes.
+As a result, we were allocated portions of `c-8-42`, `c-8-50`, and `c-8-58`.
+
+### RAM / Memory
+
+Random Access Memory (RAM) is the fast, volatile storage that your programs use to store data during execution.
+This can be contrasted with disk storage, which is non-volatile and many orders of magnitude slower to access,
+and is used for long term data -- say, your sequencing runs or cryo-EM images.
+RAM is a limited resource on each node, so Slurm enforces memory limits for jobs using [cgroups](https://en.wikipedia.org/wiki/Cgroups).
+If a job step consumes more RAM than requested, the step will be killed.
+
+Some (mutually exclusive) parameters for requesting RAM are:
+
+- `--mem`: The memory required *per-node*. Usually, you want to use `--mem-per-cpu`.
+- `--mem-per-cpu`: The memory required *per CPU or core*. If you requested $N$ tasks, $C$ CPUs per task, and $M$ memory per CPU, your total memory usage will be $N * C * M$. Note that, if $N \gt 1$, you will have $N$ discrete $C * M$-sized chunks of RAM requested, possibly across different nodes.
+- `--mem-per-gpu`: Memory required *per GPU*, which will scale with GPUs in the same way as `--mem-per-cpu` will with CPUs.
+
+For all memory requests, units can be specified explicitly with the suffixes `[K|M|G|T]` for `[kilobytes|megabytes|gigabytes|terabytes]`,
+with the default units being `M`/`megabytes`.
+So, `--mem-per-cpu=500` will requested 500 megabytes of RAM per CPU, and `--mem-per-cpu=32G` will request 32 gigabytes
+of RAM per CPU.
+
+Here is an example of a task overrunning its memory allocation.
+We will use the `stress-ng` program to allocate 8 gigabytes of RAM in a job that only requested 200 megabytes.
+
+```console
+$ srun -n 1 --cpus-per-task 2 --mem-per-cpu 200M stress-ng -m 1 --vm-bytes 8G --oomable         1 ↵
+srun: job 706 queued and waiting for resources
+srun: job 706 has been allocated resources
+stress-ng: info:  [3037475] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor
+stress-ng: info:  [3037475] dispatching hogs: 1 vm
+stress-ng: info:  [3037475] successful run completed in 2.23s
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=706.0. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: c-8-42: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=706.0
+```
+
+
+### GPUs / GRES

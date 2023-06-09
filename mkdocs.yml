@@ -1,0 +1,107 @@
+site_name: Franklin Cluster Documentation
+site_url: http://docs.hpc.ucdavis.edu
+repo_url: https://github.com/ucdavis/hpccf-docs
+copyright: Copyright &copy; 2023 The Regents of the University of California, Davis
+
+nav:
+  - About: index.md
+  - Users:
+    - General:
+      - general/index.md
+      - Accessing the Cluster: general/access.md
+      - User Environment: general/environment.md
+      - Available Resources: general/resources.md
+      - Data Storage: general/storage.md
+    - Scheduler:
+      - scheduler/index.md
+      - Slurm Commands: scheduler/jobs.md
+      - Queueing: scheduler/queues.md
+      - Resources: scheduler/resources.md
+      - Job Scripts: scheduler/jobscripts.md
+    - Software:
+      - software/index.md
+      - Software List: software/list.md
+      - Module System: software/modules.md
+      - Python and Conda: software/conda.md
+      - R and RStudio: software/rlang.md
+      - cryo-EM: software/cryoem.md
+      - Developing Software: software/developing.md
+  - Admins:
+    - Storage: admin_storage.md
+    - Networking: admin_networking.md
+    - Scheduler: admin_scheduler.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - def_list
+  - attr_list
+  - admonition
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - macros:
+        module_name: macros
+
+extra:
+  spack_modulefiles_path: ../spack-ucdavis/modulefiles/hpccf/franklin/
+  social:
+    - icon: material/email-edit
+      link: "mailto:hpc-help@ucdavis.edu"
+      name: Email HPCCF Support
+    - icon: fontawesome/brands/slack
+      link: https://ucdavis.slack.com/archives/C053NKA88
+      name: "#hpc Channel on ucdavis.slack.com"
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+theme:
+  name: material
+  features:
+    - content.code.annotate
+    #- navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+  logo: assets/HPCCF-logo-dark.png
+  icon:
+    repo: fontawesome/brands/github
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: ucdavis
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
