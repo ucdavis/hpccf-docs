@@ -39,10 +39,12 @@ jobs:
         run: mkdocs build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
+        working-directory: docs
         with:
-          folder: site/
-          clean-exclude: pr-preview/
+          folder: ./site/
+          clean-exclude: ./pr-preview/
           force: false
+
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
@@ -68,5 +70,6 @@ jobs:
         run: mkdocs build
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
+        working-directory: docs
         with:
           source-dir: ./site/
