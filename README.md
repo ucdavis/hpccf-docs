@@ -23,7 +23,8 @@ Then install the dependencies:
 
     python -m pip install -r requirements.txt
 
-You can serve the documentation locally my running:
+You can serve the documentation locally by running:
 
     mkdocs serve
 
+Once the environment is created and dependencies installed, you only need to activate it in the future.
