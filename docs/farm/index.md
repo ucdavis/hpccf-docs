@@ -1,0 +1,3 @@
+
+
+Farm is a Linux-based supercomputing cluster for the College of Agricultural and Environmental Sciences at UC Davis. Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS) software, and more.
