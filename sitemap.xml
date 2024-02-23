@@ -2,127 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://docs.hpc.ucdavis.edu/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/farm/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/farm/resources/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/farm/scheduling/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/farm/storage/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/farm/software/modules/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/resources/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/scheduling/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/storage/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://docs.hpc.ucdavis.edu/franklin/software/alphafold/</loc>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/software/cryoem/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/franklin/software/modules/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/general/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/general/access/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/commands/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/jobscripts/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/partitions/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/resources/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/status/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/software/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/software/conda/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/software/developing/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/software/modules/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/software/rlang/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <lastmod>2024-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
