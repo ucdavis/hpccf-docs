@@ -1,7 +1,7 @@
 site_name: HPC Core Facility Cluster Documentation
 site_url: http://docs.hpc.ucdavis.edu
 repo_url: https://github.com/ucdavis/hpccf-docs
-copyright: Copyright &copy; 2023 The Regents of the University of California, Davis
+copyright: Copyright &copy; 2023-24 The Regents of the University of California, Davis
 
 nav:
   - About: index.md
@@ -33,6 +33,7 @@ nav:
       - Software:
         - Modules: franklin/software/modules.md
         - cryo-EM: franklin/software/cryoem.md
+        - alphafold: franklin/software/alphafold.md
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
       - Storage: farm/storage.md
@@ -45,6 +46,7 @@ markdown_extensions:
   - attr_list
   - admonition
   - md_in_html
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
