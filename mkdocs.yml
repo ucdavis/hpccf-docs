@@ -4,30 +4,27 @@ repo_url: https://github.com/ucdavis/hpccf-docs
 copyright: Copyright &copy; 2023 The Regents of the University of California, Davis
 
 nav:
-  - About: index.md
-  - General:
+  - About this Documentation: index.md
+  - About HPC:
     - general/index.md
     - Accessing the Clusters: general/access.md
-    - User Environment: general/environment.md
+    - Login Issues: general/login-issues.md
+    - Managing Data: general/manage-data.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
       - Resources: scheduler/resources.md
-      - Job Scripts: scheduler/jobscripts.md
     - Software:
       - software/index.md
       - Module System: software/modules.md
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
-      #- Developing Software: software/developing.md
+      - Developing Software: software/developing.md
   - Clusters:
     - Farm:
       - farm/index.md
-      - Software:
-        - Modules: farm/software/modules.md
-      - Job Scheduling: farm/scheduling.md
-      - Resources: farm/resources.md
-      - Storage: farm/storage.md
+      - Account Request: farm/account-request.md
+      - Available Software: farm/software.md
     - Franklin:
       - franklin/index.md
       - Software:
@@ -36,7 +33,9 @@ nav:
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
       - Storage: farm/storage.md
-
+    - HPC1/2:
+      - hpc12/index.md
+      - Resources: hpc12/resources.md
 
 markdown_extensions:
   - toc:
