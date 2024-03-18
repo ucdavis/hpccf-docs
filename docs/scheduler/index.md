@@ -1,4 +1,4 @@
-# Slurm
+#**Slurm**
 
 HPC clusters run [job schedulers](https://en.wikipedia.org/wiki/Job_scheduler) to distribute and manage
 computational resources.
