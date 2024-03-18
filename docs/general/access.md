@@ -1,3 +1,44 @@
+In order, to qualify for an account, you must have a UC Davis affiliation and must be sponsored by a lab owner/PI or an equipment owner.
+
+You can find out about your cluster association when you know:
+
+- Which lab you and your sponsored PI (Principle Investigator) are associated with.
+
+- Which resource you need access to or which resources your PI has sponsored in a particular cluster. 
+
+Account Request forms can be found on HPC website - <https://hpc.ucdavis.edu/account-request-forms>
+
+For Farm, Peloton and Franklin clusters' account request forms, use Hippo via this link:- <https://hippo.ucdavis.edu/clusters>
+
+##Authentication
+
+SSH keys are an authentication method used to gain access to an encrypted connection between systems and then ultimately use that connection to access and manage the remote system. An SSH key pair is always required to log 
+into HPC clusters.
+
+SSH keys are generated as a matched pair of a private key and a public key. Keep your private key safe and use a strong, memorable passphrase.
+We support one key per user. If you need to access the cluster from multiple computers, such as a desktop and a laptop, copy your private key. 
+
+Note that if you forget your passphrase or lose your private key, we cannot reset it, you'll need to generate a new key pair, following the same directions as when you first created it.
+
+Besides, to avoid typing the passphrase for every login, an SSH-agent or keychain can be used. The next section gives information about command line applications to use and generate SSH keypair.
+
+##Command Line Application
+
+We recommend using terminal on Macbook and Mobaxterm on Windows machines in order to create SSH keypair and connect to the HPC clusters:
+Using the link, download the Home edition- Installer edition of Mobaxterm:- <https://mobaxterm.mobatek.net/download-home-edition.html>
+
+After opening a terminal window or Mobaxterm tab, enter the following command to create a new SSH keypair:
+
+`$ ssh-keygen`
+
+The ssh-keygen command will generate two files: the private key (usually named id_rsa), and the public key (usually named id_rsa.pub) in the .ssh/ directory under your home directory. The file with the .pub extension is 
+your public key and should be sent for HPC access. The file without an extension is your private key and should be kept secret.
+
+To make sure your keys are inside .ssh folder and is readable via command line, enter the command:
+
+`$ ls -al .ssh`
+
+This command will list down the key pair. There should be two files; the privat key-  id_rsa and the public key - id_rsa.pub
 
 ## X11 Forwarding
 
