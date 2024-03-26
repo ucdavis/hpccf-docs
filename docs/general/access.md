@@ -38,13 +38,13 @@ To make sure your keys are inside .ssh folder and is readable via command line, 
 
 `$ ls -al .ssh`
 
-This command will list down the key pair. There should be two files; the privat key-  id_rsa and the public key - id_rsa.pub
+This command will list down the key pair. There should be two files; the private key-  id_rsa and the public key - id_rsa.pub
 
 ## X11 Forwarding
 
 Some software has a Graphical User Interface (GUI), and so requires X11 to be enabled.
-X11 forwarding allows an application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer).
-How this is enabled depends on the operating system the computer you are using to access Franklin is running.
+X11 forwarding allows an application on a remote server to render its GUI on a local system (your computer).
+How this is enabled depends on the operating system the computer you are using to access the HPC cluster is running.
 
 ### Linux
 
@@ -52,13 +52,13 @@ If you are SSHing from a Linux distribution, you likely already have an X11 serv
 If you are on campus, you can use the `-Y` flag to enable it, like:
 
 ```bash
-$ ssh -Y [USER]@franklin.hpc.ucdavis.edu
+$ ssh -Y [USER]@[cluster-name].hpc.ucdavis.edu
 ```
 
 If you are off campus on a slower internet connection, you may get better performance by enabling compression with:
 
 ```bash
-$ ssh -Y [USER]@franklin.hpc.ucdavis.edu
+$ ssh -Y [USER]@[clsuter-name].hpc.ucdavis.edu
 ```
 
 ### MacOS
@@ -69,5 +69,5 @@ You will first need to install the free, open-source [XQuartz](https://www.xquar
 ### Windows
 
 If you are using our recommend windows SSH client, [MobaXterm](https://mobaxterm.mobatek.net/), X11 forwarding should be enabled by default.
-You can confirm this by checking that the `X11-Forwarding` box is ticked under your Franklin session settings.
+You can confirm this by checking that the `X11-Forwarding` box is ticked under your cluster session settings.
 For off-campus access, you may want to tick the `Compression` box as well.
