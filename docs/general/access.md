@@ -79,7 +79,7 @@ $ ssh -Y [USER]@[cluster-name].hpc.ucdavis.edu
 ### MacOS
 
 MacOS does not come with an X11 implementation out of the box.
-You will first need to install the free, open-source [XQuartz](https://www.xquartz.org/) package, after which you can use the same `ssh` flags as described in the [Linux instruction
+You will first need to install the free, open-source [XQuartz](https://www.xquartz.org/) package, after which you can use the same `ssh` flags as described in the [Linux instructions](access.md#linux).
 
 ### Windows
 
