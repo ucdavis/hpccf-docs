@@ -1512,14 +1512,14 @@ servers are <code>proxmox1</code>, <code>proxmox2</code>, and <code>proxmox3</co
 <p>To log in, point your browser to <code>port 8006</code> on any of the proxmox servers, and choose
 <code>UCD-CAS</code> as the realm.</p>
 <h2 id="create-a-new-vm">Create a new VM<a class="headerlink" href="#create-a-new-vm" title="Permanent link">&para;</a></h2>
-<p>Use <a href="netbox">Netbox</a> to locate a free IP address, or allocate one in the appropriate
+<p>Use <a href="../netbox">Netbox</a> to locate a free IP address, or allocate one in the appropriate
 <a href="cobbler">cobbler</a> server.  Choose an empty VM ID number.  </p>
 <p>To add a new ISO, copy it to <code>/mnt/pve/DDN-ISOs/template/iso/</code> on one of the
 proxmox hosts.</p>
 <p>Click on "create VM".  Defaults are fine for most options.  Do make sure to select
 <code>VirtIO (paravirtualized)</code> for the network type.  See Netbox for a 
 <a href="https://netbox.hpc.ucdavis.edu/ipam/vlans/">list of vlans</a>.</p>
-<p>Do not forget to add to <a href="dns">DNS</a>.</p>
+<p>Do not forget to add to <a href="../dns">DNS</a>.</p>
 <h2 id="migrate-a-vm">Migrate a VM<a class="headerlink" href="#migrate-a-vm" title="Permanent link">&para;</a></h2>
 <p>Click on the VM you wish to migrate and choose "migrate" from the top bar.</p>
 
