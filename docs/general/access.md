@@ -1,3 +1,37 @@
+In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. 
+The private key is kept securely on your computer or device.
+The public key is uploaded to the servers or systems that you want to access securely via SSH.
+
+## How do I generate an SSH key pair?
+
+### Windows Operating System
+
+We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from https://mobaxterm.mobatek.net/ 
+The Mobaxterm Portable Edition is not recommended as it deletes the sessions. Once you install the stable version of MobaXterm, open its terminal and enter this command:
+
+
+`ssh-keygen`
+
+This command will create a private key and a public key. Do not share your private key; we recommend giving it a passphrase for security.
+To view the .ssh directory and to read the public key, enter these commands:
+
+```
+ls -al ~/.ssh
+more ~/.ssh/*.pub
+```
+
+### MACOS:
+
+Use a terminal to create an SSH key pair using the command:
+
+`ssh-keygen`
+
+To view the .ssh directory and to read the public key, enter these commands:
+
+```
+ls -al ~/.ssh
+more ~/.ssh/*.pub
+``` 
 
 ## X11 Forwarding
 
@@ -11,15 +45,19 @@ If you are SSHing from a Linux distribution, you likely already have an X11 serv
 If you are on campus, you can use the `-Y` flag to enable it, like:
 
 ```bash
-$ ssh -Y [USER]@franklin.hpc.ucdavis.edu
+$ ssh -Y [USER]@[CLUSTER].hpc.ucdavis.edu
 ```
 
 If you are off campus on a slower internet connection, you may get better performance by enabling compression with:
 
 ```bash
-$ ssh -Y [USER]@franklin.hpc.ucdavis.edu
+$ ssh -Y [USER]@[CLUSTER].hpc.ucdavis.edu
 ```
+If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion `-i` to specify path to the private key with SSH:-
 
+```bash
+$ ssh -i /path/to/private/key [USER]@[CLUSTER].hpc.ucdavis.edu
+```
 ### MacOS
 
 MacOS does not come with an X11 implementation out of the box.
