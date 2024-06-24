@@ -29,3 +29,9 @@ NetBox is an infrastructure resource modeling (IRM) application designed to empo
 5. After you have selected Add a Device you should see a page like this: ![6](../img/netbox6.jpeg)
 6. Fill out this page with specifics of the asset, some fields are not required but try to fill out this section as much as possible with the fields available, here is an example of a created asset and how it should look: ![7](../img/netbox7.jpeg)![8](../img/netbox8.jpeg)![9](../img/netbox9.jpeg)![10](../img/netbox10.jpeg)![11](../img/netbox11.jpeg)![12](../img/netbox12.jpeg)![13](../img/netbox13.jpeg)
 7. Ensure to click on Save to have the device added.
+
+### How to add components to an Asset
+1. On the asset page select the + Add Components dropdown and select the component you wish to add, for this I have chosen a Console Port: ![14](../img/netbox14.jpeg)
+2. Here again you will fill out the dropdowns as thoroughly as possible, the example here is of an interface that has already been added: ![15](../img/netbox15.jpeg)![16](../img/netbox16.jpeg)![17](../img/netbox17.jpeg)![18](../img/netbox18.jpeg)
+3. Again make sure to click Save to ensure the component has been added.
+4. This process can be used to add all of the following componentes to a device:![netbox19](../img/netbox19.jpeg)
