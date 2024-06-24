@@ -19,5 +19,14 @@ ssh -i $HOME/.ssh/newkey [USER]@[cluster].hpc.ucdavis.edu
 ```
 
 If you kept the default value, your permissions should be set so that only you can read and write the key `(-rw------- or 600)`. 
+To ensure this is the case, you can do the following:
 
-If you are trying to use a key to access LSSC0, this will not work. 
+```bash
+chown 600 $HOME/.ssh/id_rsa
+```
+
+On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this file.
+Doing so will cause you will lose access.
+
+If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work. It is possible
+to use `kinit` locally and `GSSAPI` to avoid entering a password on every login. 
