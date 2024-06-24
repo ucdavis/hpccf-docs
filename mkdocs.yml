@@ -8,7 +8,6 @@ nav:
   - General:
     - general/index.md
     - Accessing the Clusters: general/access.md
-    - User Environment: general/environment.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
@@ -20,6 +19,7 @@ nav:
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
       #- Developing Software: software/developing.md
+    - Data Transfer: data-transfer.md
   - Clusters:
     - Farm:
       - farm/index.md
