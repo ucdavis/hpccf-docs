@@ -20,6 +20,7 @@ nav:
       - R and RStudio: software/rlang.md
       #- Developing Software: software/developing.md
     - Data Transfer: data-transfer.md
+    - Troubleshooting: general/troubleshooting.md
   - Clusters:
     - Farm:
       - farm/index.md
