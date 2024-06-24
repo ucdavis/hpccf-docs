@@ -15,7 +15,7 @@ the default, this is probably going to be **$HOME/.ssh/id_rsa**.
 If you specified a different name when generating your key, you can specify it like this:
 
 ```bash
-ssh -i .ssh/newkey [USER]@[cluster].hpc.ucdavis.edu
+ssh -i $HOME/.ssh/newkey [USER]@[cluster].hpc.ucdavis.edu
 ```
 
 If you kept the default value, your permissions should be set so that only you can read and write the key (-rw------- or 600). 
