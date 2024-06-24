@@ -28,5 +28,23 @@ chown 600 $HOME/.ssh/id_rsa
 On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this file.
 Doing so will cause you will lose access.
 
-If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work. It is possible
-to use `kinit` locally and `GSSAPI` to avoid entering a password on every login. 
+If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work, but there is 
+another method. 
+
+To enable logins without a password, you will need to enable GSSAPI, which
+some systems enable by default.  If not enabled, add the following to your 
+`.ssh/config` file (create it if it doesn't exist):
+
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+
+The `-K` command line switch to ssh does the same thing on a one-time
+basis.
+
+Once you have `GSSAPI` enabled, you can get a Kerberos ticket using
+
+```bash
+kinit [USER]@GENOMECENTER.UCDAVIS.EDU
+```
+
+SSH will use that ticket while it's valid.
