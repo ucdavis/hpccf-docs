@@ -7,7 +7,8 @@ nav:
   - About: index.md
   - General:
     - general/index.md
-    - Accessing the Clusters: general/access.md
+    - Account Requests: general/account-requests.md
+    - Accessing Clusters: general/access.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
