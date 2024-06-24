@@ -1554,8 +1554,20 @@ To ensure this is the case, you can do the following:</p>
 </code></pre></div>
 <p>On HPC2, your public key is kept in <code>$HOME/.ssh/authorized_keys</code>. Please make sure to not remove your key from this file.
 Doing so will cause you will lose access.</p>
-<p>If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work. It is possible
-to use <code>kinit</code> locally and <code>GSSAPI</code> to avoid entering a password on every login. </p>
+<p>If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work, but there is 
+another method. </p>
+<p>To enable logins without a password, you will need to enable GSSAPI, which
+some systems enable by default.  If not enabled, add the following to your 
+<code>.ssh/config</code> file (create it if it doesn't exist):</p>
+<div class="highlight"><pre><span></span><code>GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+</code></pre></div>
+<p>The <code>-K</code> command line switch to ssh does the same thing on a one-time
+basis.</p>
+<p>Once you have <code>GSSAPI</code> enabled, you can get a Kerberos ticket using</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kinit<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@GENOMECENTER.UCDAVIS.EDU
+</code></pre></div>
+<p>SSH will use that ticket while it's valid.</p>
 
 
 
