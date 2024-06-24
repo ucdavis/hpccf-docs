@@ -10,7 +10,7 @@ Questions about the documentation or resources supported by the HPCCF can be dir
 
 ### Our Clusters
 
-##### _Condo Clusters_
+####_Condo Clusters_
 An HPC condo-style cluster is a shared computing infrastructure where different users or groups contribute resources (such as compute nodes, storage, or networking) to a common pool, similar to how individual condo owners share common amenities.
 
 **Farm**: Sponsored by the College of Agriculture and Environmental Sciences. Farm resources can be purchased by principal investigators regardless of affiliation.    
@@ -19,7 +19,7 @@ An HPC condo-style cluster is a shared computing infrastructure where different 
 
 **Peloton**: Peloton is open to principal investigators associated with the College of Letters and Science. Peloton has a shared tier open to users associated with CLAS.
 
-##### _Fair-Share Clusters_
+#### _Fair-Share Clusters_
 
 A fair-share HPC algorithm is a resource allocation strategy used to ensure equitable access to computing resources among multiple users or groups. The goal is to balance the workload and prevent any single user or group from monopolizing the resources.
 
