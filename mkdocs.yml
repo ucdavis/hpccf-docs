@@ -37,7 +37,17 @@ nav:
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
       - Storage: farm/storage.md
-
+  - Admin:
+    - Network Architecture: admin/network.md
+    - Virtual Machines: admin/vms.md
+    - Provisioning: admin/provisioning.md
+    - Configuration: admin/configuration.md # puppet, etc
+    - Software: admin/software.md
+    - Netbox: admin/netbox.md
+    - Monitoring: admin/monitoring.md
+#
+# Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
+#
 
 markdown_extensions:
   - toc:
@@ -51,8 +61,8 @@ markdown_extensions:
       generic: true
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
