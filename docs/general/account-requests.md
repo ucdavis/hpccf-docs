@@ -17,6 +17,9 @@ Users who do not have a PI and who are affiliated with the College of Letters an
 
 Users who are associated with PI's in the College of Engineering can request accounts on [HPC1](https://wiki.cse.ucdavis.edu/cgi-bin/engr.pl) and [HPC2](https://hpc.ucdavis.edu/form/account-request-form) by going to the appropriate web form.
 
+### LSSC0 (Barbera) 
+Users who want access to resources on LSSC0 can request an account within the Genome Center Computing [Portal](https://computing.genomecenter.ucdavis.edu/) and selecting 'Request an Account' with their PI.
+
 ### Atomate
 
 Atomate accounts can be requested [here](https://wiki.cse.ucdavis.edu/cgi-bin/atomate.pl).
