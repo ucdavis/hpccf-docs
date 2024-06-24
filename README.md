@@ -12,7 +12,7 @@ To get started with local development, clone repo docs and spack-ucdavis repos:
 
 Then create a virtual environment, either with `virtualenv`:
 
-    python -m virtualenv venv
+    python -m venv venv
     . venv/bin/activate
 
 Or with `conda`:
