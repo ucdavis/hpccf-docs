@@ -8,7 +8,7 @@ To log in, point your browser to `port 8006` on any of the proxmox servers, and 
 
 ## Create a new VM
 
-Use [Netbox](netbox) to locate a free IP address, or allocate one in the appropriate
+Use [Netbox](../netbox) to locate a free IP address, or allocate one in the appropriate
 [cobbler](cobbler) server.  Choose an empty VM ID number.  
 
 To add a new ISO, copy it to `/mnt/pve/DDN-ISOs/template/iso/` on one of the
@@ -18,7 +18,7 @@ Click on "create VM".  Defaults are fine for most options.  Do make sure to sele
 `VirtIO (paravirtualized)` for the network type.  See Netbox for a 
 [list of vlans](https://netbox.hpc.ucdavis.edu/ipam/vlans/).
 
-Do not forget to add to [DNS](dns).
+Do not forget to add to [DNS](../dns).
 
 ## Migrate a VM
 

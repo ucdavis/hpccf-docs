@@ -1,11 +1,9 @@
-#DNS
-
 # DNS
 
-# External
+## External
 
 HPCCF uses (InfoBlox)[https://infoblox.ucdavis.edu/) for public-facing DNS.
 
-# Internal
+## Internal
 
-Internal DNS is managed by (cobbler). 
+Internal DNS is managed by (../cobbler). 

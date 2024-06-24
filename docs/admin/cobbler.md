@@ -1,7 +1,7 @@
 # Cobbler
 
 HPCCF uses [cobbler](https://cobbler.github.io/) for provisioning and managing
-internal [DNS](dns).
+internal [DNS](../dns).
 
 There is a cobbler server per cluster as well as one for the public HPC VLAN.
 
