@@ -18,6 +18,6 @@ If you specified a different name when generating your key, you can specify it l
 ssh -i $HOME/.ssh/newkey [USER]@[cluster].hpc.ucdavis.edu
 ```
 
-If you kept the default value, your permissions should be set so that only you can read and write the key (-rw------- or 600). 
+If you kept the default value, your permissions should be set so that only you can read and write the key `(-rw------- or 600)`. 
 
 If you are trying to use a key to access LSSC0, this will not work. 
