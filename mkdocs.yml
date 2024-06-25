@@ -6,9 +6,8 @@ copyright: Copyright &copy; 2023-24 The Regents of the University of California,
 nav:
   - About: index.md
   - General:
-    - general/index.md
-    - Accessing the Clusters: general/access.md
-    - User Environment: general/environment.md
+    - Account Requests: general/account-requests.md
+    - Accessing Clusters: general/access.md
     - Job Scheduler:
       - scheduler/index.md
       - Slurm Commands: scheduler/commands.md
@@ -20,6 +19,7 @@ nav:
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
       #- Developing Software: software/developing.md
+    - Data Transfer: data-transfer.md
   - Clusters:
     - Farm:
       - farm/index.md
@@ -37,7 +37,17 @@ nav:
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
       - Storage: farm/storage.md
-
+  - Admin:
+    - Network Architecture: admin/network.md
+    - Virtual Machines: admin/vms.md
+    - Provisioning: admin/provisioning.md
+    - Configuration: admin/configuration.md # puppet, etc
+    - Software: admin/software.md
+    - Netbox: admin/netbox.md
+    - Monitoring: admin/monitoring.md
+#
+# Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
+#
 
 markdown_extensions:
   - toc:
@@ -51,8 +61,8 @@ markdown_extensions:
       generic: true
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite

@@ -12,7 +12,7 @@ To get started with local development, clone repo docs and spack-ucdavis repos:
 
 Then create a virtual environment, either with `virtualenv`:
 
-    python -m virtualenv venv
+    python -m venv venv
     . venv/bin/activate
 
 Or with `conda`:
@@ -32,4 +32,6 @@ Once the environment is created and dependencies installed, you only need to act
 
 ## Resources
 
+- Basic markdown syntax: https://www.markdownguide.org/basic-syntax/
 - `mkdocs` docs: https://www.mkdocs.org/
+- `mkdocs-material` docs, which provides our them and many extensions: https://squidfunk.github.io/mkdocs-material/reference/
