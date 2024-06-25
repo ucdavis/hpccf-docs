@@ -1,1 +1,4 @@
-# Network Architecture
+---
+template: admin.html
+title: Network
+---
