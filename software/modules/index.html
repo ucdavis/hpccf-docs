@@ -17,7 +17,7 @@
         <link rel="next" href="../conda/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/HPCCF-logo.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
@@ -653,27 +653,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#module-spider" class="md-nav__link">
-    <span class="md-ellipsis">
-      module spider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#module-list" class="md-nav__link">
     <span class="md-ellipsis">
       module list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      module overview
     </span>
   </a>
   
@@ -698,6 +680,57 @@
   <a href="#module-load" class="md-nav__link">
     <span class="md-ellipsis">
       module load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-unload" class="md-nav__link">
+    <span class="md-ellipsis">
+      module unload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching and Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching and Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-whatis" class="md-nav__link">
+    <span class="md-ellipsis">
+      module whatis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      module show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      module search
     </span>
   </a>
   
@@ -1590,27 +1623,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#module-spider" class="md-nav__link">
-    <span class="md-ellipsis">
-      module spider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#module-list" class="md-nav__link">
     <span class="md-ellipsis">
       module list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      module overview
     </span>
   </a>
   
@@ -1635,6 +1650,57 @@
   <a href="#module-load" class="md-nav__link">
     <span class="md-ellipsis">
       module load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-unload" class="md-nav__link">
+    <span class="md-ellipsis">
+      module unload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching and Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching and Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-whatis" class="md-nav__link">
+    <span class="md-ellipsis">
+      module whatis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      module show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      module search
     </span>
   </a>
   
@@ -1685,7 +1751,7 @@ load a set of configurations for the <a href="https://www.gnu.org/software/bash/
 <p>The two most commonly deployed module systems are <a href="https://modules.readthedocs.io/en/latest/">environment
 modules</a> (or <code>envmod</code>) and
 <a href="https://lmod.readthedocs.io/en/latest/index.html">lmod</a>.
-Franklin currently uses <code>lmod</code>, which is cross-compatible with <code>envmod</code>.</p>
+All HPCCF clusters currently use <code>envmod</code>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>The <code>module</code> command is the entry point for users to manage modules in their environment.
 All module operations will be of the form <code>module [SUBCOMMAND]</code>. Usage information is available
@@ -1694,115 +1760,41 @@ on the cluster by running <code>module --help</code>.</p>
 We will go over these commands, and some additional commands, in the following sections.</p>
 <h3 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h3>
 <h4 id="module-avail"><code>module avail</code><a class="headerlink" href="#module-avail" title="Permanent link">&para;</a></h4>
-<p>Lists the modules <strong>currently available</strong> to load on the system. Some example output would be:</p>
+<p>Lists the modules <strong>currently available</strong> to load on the system. The following is some example
+output from the Franklin cluster:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>module<span class="w"> </span>avail
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">----------------------- /share/apps/franklin/modulefiles ------------------------</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">   conda/base/4.X                conda/cryolo/1.8.4-cuda-11 (D)    testmod/1.0</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">   conda/cryolo/1.8.4-cuda-10    conda/rockstar/0.1</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">---------------------- /share/apps/spack/modulefiles/Core -----------------------</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">...</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">   gatk/3.8.1                         pmix/4.1.2             (L)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">   gatk/4.2.6.1              (D)      prokka/1.14.6</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">   gcc/4.9.4                 (L)      raxml-ng/1.0.2</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">   gcc/5.5.0                          ray/2.3.1</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="go">   gcc/7.5.0                 (D)      recon/1.05</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">   gctf/1.06                 (L)      relion-helper/0.1</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">   genrich/0.6                        relion-helper/0.2      (L,D)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">...</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">--------------------- /share/apps/22.04/modulefiles/spack/core ----------------------</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">aocc/4.1.0                 intel-oneapi-compilers/2023.2.1  pmix/4.2.6+amd    </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cuda/8.0.61                libevent/2.1.12                  pmix/4.2.6+intel  </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">cuda/11.2.2                libevent/2.1.12+amd              pmix/default      </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">cuda/11.7.1                libevent/2.1.12+intel            slurm/23-02-6-1   </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">cuda/default               libevent/default                 slurm/23-02-7-1   </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">environment-modules/5.2.0  openmpi/4.1.5                    ucx/1.14.1        </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">gcc/7.5.0                  openmpi/4.1.5+amd                ucx/1.14.1+amd    </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">gcc/11.4.0                 openmpi/4.1.5+intel              ucx/1.14.1+intel  </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">gcc/13.2.0                 openmpi/default                  ucx/default       </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">hwloc/2.9.1                pmix/4.2.6                       </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">------------------- /share/apps/22.04/modulefiles/spack/software --------------------</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">abyss/2.3.5           igv/2.12.3                        pplacer/1.1.alpha19         </span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">alphafold/2.3.2       infernal/1.1.4                    prodigal/2.6.3              </span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="go">amdfftw/4.1+amd       intel-oneapi-mkl/2023.2.0+intel   prokka/1.14.6               </span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="go">amdfftw/default       intel-oneapi-mkl/default          py-checkm-genome/1.2.1      </span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="go">angsd/0.935           intel-oneapi-tbb/2021.10.0+amd    py-cutadapt/4.4             </span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="go">aragorn/1.2.41        intel-oneapi-tbb/2021.10.0+intel  py-deeptools/3.5.2          </span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="go">aria2/1.36.0          intel-oneapi-tbb/default          py-htseq/2.0.3</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="go">...</span>
 </code></pre></div>
 <p>Each entry corresponds to software available for <a href="./#loading-and-unloading">load</a>.
-Different sections will appear depending on loaded prerequisites, which you can read about under <a href="./#module-spider"><code>module spider</code></a>.
-Where there are multiple versions or variants of a module, a <code>(D)</code> will be listed next to the name of the default version.
-An <code>(L)</code> indicates that module is currently loaded.</p>
-<p>Note that this does not necessarily list every possible module on the system.
-Some software is compiled with a specific compiler and compiler version, and the relevant compiler
-module must be loaded first.
-To see all <strong>possible</strong> modules, use the <a href="./#module-spider"><code>module spider</code></a> command.</p>
-<h4 id="module-spider"><code>module spider</code><a class="headerlink" href="#module-spider" title="Permanent link">&para;</a></h4>
-<p>Lists <strong>all possible</strong> modules that could be loaded. Some modules require a specific
-compiler version to be loaded, and these modules will not be listed in <code>module avail</code>
-unless that module is loaded. Module spider will list these modules anyway.
-If you run the command with a specific module, it will list the prerequisite modules
-required to make said module available. For example, if we try to run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>megahit
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">Lmod has detected the following error:  These module(s) or extension(s) exist but cannot be loaded as requested: &quot;megahit&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="go">   Try: &quot;module spider megahit&quot; to see how to load the module(s).</span>
-</code></pre></div>
-<p>...the load fails. If we then use <code>spider</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>module<span class="w"> </span>spider<span class="w"> </span>megahit
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">-----------------------------------------------------------------------------</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">  megahit: megahit/1.1.4</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">-----------------------------------------------------------------------------</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="hll"><span class="go">    You will need to load all module(s) on any one of the lines below before</span>
-</span><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="hll"><span class="go">    the &quot;megahit/1.1.4&quot; module is available to load.</span>
-</span><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="hll">
-</span><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">      gcc/4.9.4</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="go">    Help:</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="go">      MEGAHIT: An ultra-fast single-node solution for large and complex</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="go">      metagenomics assembly via succinct de Bruijn graph</span>
-</code></pre></div>
-<p>...we see that we have to first load <code>gcc/4.9.4</code>. Let's do that:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>gcc/4.9.4
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">gcc/4.9.4: loaded.</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="gp">$ </span>module<span class="w"> </span>avail
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">-------------------- /share/apps/spack/modulefiles/gcc/4.9.4 --------------------</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">   megahit/1.1.4</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="go">----------------------- /share/apps/franklin/modulefiles ------------------------</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="go">   conda/base/4.X                conda/cryolo/1.8.4-cuda-11 (D)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="go">   conda/cryolo/1.8.4-cuda-10    conda/rockstar/0.1</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="go">---------------------- /share/apps/spack/modulefiles/Core -----------------------</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="go">   StdEnv                    (L)    libevent/2.1.12        (L)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="go">   abyss/2.3.1                      mash/2.3</span>
-</code></pre></div>
-<p>We are now presented with a new section for those modules that require <code>gcc/4.9.4</code>,
-with the <code>megahit</code> module listed there. Now, we can load it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>megahit
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">megahit/1.1.4: loaded.</span>
-</code></pre></div>
-<p>Running <code>module spider</code> without any arguments will list all the modules that could be loaded,
-unlike <code>module avail</code>, which will list only the modules available for load given any currently-loaded
-prerequisites.</p>
+Modules that are currently loaded will be highlighted.</p>
 <h4 id="module-list"><code>module list</code><a class="headerlink" href="#module-list" title="Permanent link">&para;</a></h4>
 <p>Lists the modules <strong>currently loaded</strong> in the user environment. By default, the output should be
 similar to:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>module<span class="w"> </span>list
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">Currently Loaded Modules:</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="go">  1) cuda/11.8.0   3) libevent/2.1.12   5) slurm/22-05-6-1   7) openmpi/4.1.4</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">  2) hwloc/2.8.0   4) pmix/4.1.2        6) ucx/1.13.1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>module<span class="w"> </span>list
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">Currently Loaded Modulefiles:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go"> 1) slurm/23-02-7-1   2) ucx/1.14.1   3) openmpi/default  </span>
 </code></pre></div>
 <p>Additional modules will be added or removed as you load and unload them.</p>
-<h4 id="module-overview"><code>module overview</code><a class="headerlink" href="#module-overview" title="Permanent link">&para;</a></h4>
-<p>This will give a <strong>condensed overview</strong> of available modules.
-It is most useful when the list of modules is very large, and there are multiple versions of each
-module available.
-The output is a list of each module name followed by the number of versions of the module.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>module<span class="w"> </span>overview
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">----------------------- /share/apps/franklin/modulefiles ------------------------</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">conda/base (1)   conda/cryolo (2)   conda/rockstar (1)   testmod (1)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="go">---------------------- /share/apps/spack/modulefiles/Core -----------------------</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="go">StdEnv         (1)   hmmer            (1)   ncbi-toolkit  (1)</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">abyss          (1)   homer            (1)   ncbi-vdb      (1)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="go">amdfftw        (1)   hwloc            (1)   nextflow      (1)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">aragorn        (1)   igv              (1)   openmpi       (1)</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="go">bedtools2      (1)   infernal         (1)   orthofinder   (1)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="go">blast-plus     (1)   intel-oneapi-mkl (1)   orthomcl      (1)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="go">blast2go       (1)   interproscan     (1)   parallel      (1)</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="go">blat           (1)   iq-tree          (1)   patchelf      (1)</span>
-</code></pre></div>
 <h3 id="loading-and-unloading">Loading and Unloading<a class="headerlink" href="#loading-and-unloading" title="Permanent link">&para;</a></h3>
 <h4 id="module-load"><code>module load</code><a class="headerlink" href="#module-load" title="Permanent link">&para;</a></h4>
 <p>This <strong>loads</strong> the requested module into the active environment.
@@ -1812,28 +1804,55 @@ and generally, modify your user environment arbitrarily.
 The modifications it makes are tracked, so that when the module is eventually unloaded, any changes can be returned
 to their former state.</p>
 <p>Let's load a module.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>bwa/0.7.17
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">bwa/0.7.17: loaded.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>bwa/0.7.17
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">bwa/0.7.17: loaded.</span>
 </code></pre></div>
 <p>Now, you have access to the <code>bwa</code> executable. If you try to run <code>bwa mem</code>, you'll get its help output.
-This also sets the appopriate variables so that you can now run <code>man bwa</code> to view its manpage.</p>
+This also sets the appropriate variables so that you can now run <code>man bwa</code> to view its manpage.</p>
 <p>Note that some modules have multiple versions. Running <code>module load [MODULENAME]</code> without specifying a version
-will load the latest version, unless a default has been specified.
-When there are multiple versions, a <code>(D)</code> will be printed next to the default version when using <a href="./#module-avail"><code>module avail</code></a>.</p>
-<p>Some modules are nested under a deeper hierarchy. For example, <code>relion</code> has six variants, two under <code>relion/cpu</code> and four under <code>relion/gpu</code>.
-To load these, you must specify the second layer of hierarchy: <code>module load relion</code> will fail, but <code>module load relion/cpu</code> will load the default module under <code>relion/cpu</code>, which has the full name <code>relion/cpu/4.0.0+amd</code>.
+will load the latest version, unless a default has been specified.</p>
+<p>Some modules are nested under a deeper hierarchy. For example, <code>relion</code> on Franklin has many variants, under both <code>relion/cpu</code> and <code>relion/gpu</code>.
+To load these, you must specify the second layer of the hierarchy: <code>module load relion</code> will fail, but <code>module load relion/cpu</code> will load the default module under <code>relion/cpu</code>, which has the full name <code>relion/cpu/4.0.0+amd</code>.
 More information on this system can be found under <a href="./#organization">Organization</a>.</p>
-<p>The modules on Franklin are all configured to set a <code>$NAME_ROOT</code> variable that points to the installation prefix.
+<p>The modules are all configured to set a <code>$NAME_ROOT</code> variable that points to the installation prefix.
 This will correspond to the name of the module, minus the version. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$  </span>ls<span class="w"> </span>-R<span class="w"> </span><span class="nv">$BWA_ROOT</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/bwa-0.7.17-3ogkbh2ixha52dxps2letankhc2dbeax:</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">bin  doc  man</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$BWA_ROOT</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bwa-0.7.17-y22jt6d7qm63i2tohmu7gqeedxytadky</span>
 </code></pre></div>
 <p>Usually, this will be a very long pathname, as most software on the cluster is managed via the
 <a href="https://spack.readthedocs.io/en/latest/">spack</a> build system.
 This would be most useful if you're <a href="../developing/">developing software</a> on the cluster.</p>
+<h4 id="module-unload"><code>module unload</code><a class="headerlink" href="#module-unload" title="Permanent link">&para;</a></h4>
+<p>As one might expect, <code>module unload</code> removes a loaded module from your environment.
+Any changes made by the module are undone and your environment is restored to its
+state prior to loading the module.</p>
+<h3 id="searching-and-metadata">Searching and Metadata<a class="headerlink" href="#searching-and-metadata" title="Permanent link">&para;</a></h3>
+<h4 id="module-whatis"><code>module whatis</code><a class="headerlink" href="#module-whatis" title="Permanent link">&para;</a></h4>
+<p>This command prints a description of the module, if such a description is available.
+For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>module<span class="w"> </span>whatis<span class="w"> </span>gsl
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">-------------------------------------------- /share/apps/22.04/modulefiles/spack/software --------------------------------------------</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">           gsl/2.7.1: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite.</span>
+</code></pre></div>
+<h4 id="module-show"><code>module show</code><a class="headerlink" href="#module-show" title="Permanent link">&para;</a></h4>
+<p><code>module show</code> will list all the changes a module would make to the environment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>module<span class="w"> </span>show<span class="w"> </span>gcc/11.4.0
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">-------------------------------------------------------------------</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">/share/apps/22.04/modulefiles/spack/core/gcc/11.4.0:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">module-whatis   {The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="go">conflict    gcc</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="go">prepend-path    --delim : LD_LIBRARY_PATH /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/lib64</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="go">...</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="go">setenv      CC /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/bin/gcc</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="go">setenv      CXX /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/bin/g++</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="go">...</span>
+</code></pre></div>
+<p>This is particularly useful for developing with libraries where you might be interested in
+variables relevant to your build system.</p>
+<h4 id="module-search"><code>module search</code><a class="headerlink" href="#module-search" title="Permanent link">&para;</a></h4>
+<p>The <code>module search</code> command allows you to search the names and whatis information for every module.
+The result will be a list of matching modules and the highlighted matching search terms.</p>
 
 
 
@@ -1856,7 +1875,7 @@ This would be most useful if you're <a href="../developing/">developing software
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
   </span>
 
     
@@ -1901,7 +1920,7 @@ This would be most useful if you're <a href="../developing/">developing software
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1911,7 +1930,7 @@ This would be most useful if you're <a href="../developing/">developing software
                 Previous
               </span>
               <div class="md-ellipsis">
-                Index
+                Software
               </div>
             </div>
           </a>

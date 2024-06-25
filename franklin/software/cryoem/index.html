@@ -17,7 +17,7 @@
         <link rel="next" href="../alphafold/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/HPCCF-logo.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
@@ -1660,7 +1660,7 @@ In general, unless you have access to the three GPU nodes owned by the Al-Bassam
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Because Relion is GUI driven, you need to <code>ssh</code> to Franklin with X11 forwarding enabled.
-Instructions for enabling X11 forwarding can be found in the <a href="../general/access.md#x11-forwarding">Access</a> section.</p>
+Instructions for enabling X11 forwarding can be found in the <a href="../../../general/access/#x11-forwarding">Access</a> section.</p>
 </div>
 <h3 id="launching-relion">Launching Relion<a class="headerlink" href="#launching-relion" title="Permanent link">&para;</a></h3>
 <p>Make sure you have loaded one of the Relion modules:</p>
@@ -1672,7 +1672,7 @@ Instructions for enabling X11 forwarding can be found in the <a href="../general
 <p>Change your working directory your Relion project directory and type <code>relion</code>.
 The Relion GUI should then pop up locally.
 There will be a bit of latency when using it, especially if you are off campus.
-You may be able to reduce latency by <a href="../general/access.md#x11-forwarding">enabling SSH compression</a>.</p>
+You may be able to reduce latency by <a href="../../../general/access/#x11-forwarding">enabling SSH compression</a>.</p>
 <figure>
 <p><img alt="The Relion start screen." src="../../../img/relion_start_gui.png" />
   </p>
@@ -1721,7 +1721,7 @@ These new fields are:</p>
 <ul>
 <li><strong>Number of MPI procs</strong>: This will fill the Slurm <code>--ntasks</code> parameter. These tasks may be distributed across multiple nodes, depending on the number of <strong>Threads</strong> requested. For GPU runs, this should be the number of GPUs <strong>+ 1</strong>.</li>
 <li><strong>Number of Threads</strong>: The will fill the Slurm <code>--cpus-per-task</code> parameter, which means it is the <em>number of threads per MPI proc</em>. Some job types do not expose this field, as they can only be run with a single-thread per MPI proc.</li>
-<li><strong>Queue name</strong>: The Slurm partition to submit to, filling the <code>--partition</code> parameter. More information on partitions can be found in the <a href="../../scheduler/queues.md"><strong>Queueing</strong></a> section.</li>
+<li><strong>Queue name</strong>: The Slurm partition to submit to, filling the <code>--partition</code> parameter. More information on partitions can be found in the <a href="../../resources/"><strong>Queueing</strong></a> section.</li>
 <li><strong>Standard submission script</strong>: The location of the Slurm job script template that will be used. This field will be filled with the appropriate template for the loaded Relion module by default, and should not be changed.<em>For advanced users only:</em> if you are familiar with Relion and want to further fine-tune your Slurm scripts, you can write your own based on the provided templates found in <code>/share/apps/spack/templates/hpccf/franklin</code> or <a href="https://github.com/ucdavis/spack-ucdavis/tree/main/templates/hpccf/franklin">in our spack GitHub repo</a>.</li>
 <li><strong>Minimum dedicated cores per node</strong>: Unused on our system.</li>
 </ul>
@@ -1941,7 +1941,7 @@ Like CTFFIND4, this module is brought in by Relion and the proper environment va
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2024</span>
   </span>
 
     
