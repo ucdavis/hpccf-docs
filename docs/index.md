@@ -2,6 +2,8 @@
 title: Documentation Overview
 ---
 
+![HPC unit signature](assets/HPC-unit-signature.png){width="400" align="right"}
+
 Welcome to the High-Performance Computing Core Facility (HPCCF) Documentation Site. These pages are intended to be a how-to for commonly asked questions about resources supported by the UC Davis High-Performance Computing Core Facility.
 
 HPCCF is a [core faciilty](https://research.ucdavis.edu/research-support/research-core-facilities/) reporting through the Office of Research and supported by individual university colleges, the Office of the Provost, and the Vice Chancellor for Research.  

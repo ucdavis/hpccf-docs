@@ -8,9 +8,9 @@ nav:
     - Account Requests: general/account-requests.md
     - Accessing Clusters: general/access.md
     - Job Scheduling:
-      - Slurm: scheduler/index.md
+      - About: scheduler/index.md
       - Commands: scheduler/commands.md
-      - Resources: scheduler/resources.md
+      - Requesting Resources: scheduler/resources.md
       - Job Scripts: scheduler/jobscripts.md
     - Software:
       - About: software/index.md
