@@ -1,1 +1,4 @@
-# Netbox
+---
+template: admin.html
+title: Netbox
+---

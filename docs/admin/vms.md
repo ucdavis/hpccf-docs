@@ -1,1 +1,4 @@
-# Virtual Machines
+---
+template: admin.html
+title: Virtual Machines
+---
