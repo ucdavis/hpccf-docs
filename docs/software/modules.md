@@ -23,7 +23,7 @@ load a set of configurations for the [BASH](https://www.gnu.org/software/bash/) 
 The two most commonly deployed module systems are [environment
 modules](https://modules.readthedocs.io/en/latest/) (or `envmod`) and
 [lmod](https://lmod.readthedocs.io/en/latest/index.html).
-Franklin currently uses `lmod`, which is cross-compatible with `envmod`.
+All HPCCF clusters currently use `envmod`.
 
 ## Usage
 
@@ -38,103 +38,36 @@ We will go over these commands, and some additional commands, in the following s
 
 #### `module avail`
 
-Lists the modules **currently available** to load on the system. Some example output would be:
+Lists the modules **currently available** to load on the system. The following is some example
+output from the Franklin cluster:
 
 ``` console
 $ module avail
+--------------------- /share/apps/22.04/modulefiles/spack/core ----------------------
+aocc/4.1.0                 intel-oneapi-compilers/2023.2.1  pmix/4.2.6+amd    
+cuda/8.0.61                libevent/2.1.12                  pmix/4.2.6+intel  
+cuda/11.2.2                libevent/2.1.12+amd              pmix/default      
+cuda/11.7.1                libevent/2.1.12+intel            slurm/23-02-6-1   
+cuda/default               libevent/default                 slurm/23-02-7-1   
+environment-modules/5.2.0  openmpi/4.1.5                    ucx/1.14.1        
+gcc/7.5.0                  openmpi/4.1.5+amd                ucx/1.14.1+amd    
+gcc/11.4.0                 openmpi/4.1.5+intel              ucx/1.14.1+intel  
+gcc/13.2.0                 openmpi/default                  ucx/default       
+hwloc/2.9.1                pmix/4.2.6                       
 
------------------------ /share/apps/franklin/modulefiles ------------------------
-   conda/base/4.X                conda/cryolo/1.8.4-cuda-11 (D)    testmod/1.0
-   conda/cryolo/1.8.4-cuda-10    conda/rockstar/0.1
-
----------------------- /share/apps/spack/modulefiles/Core -----------------------
-...
-   gatk/3.8.1                         pmix/4.1.2             (L)
-   gatk/4.2.6.1              (D)      prokka/1.14.6
-   gcc/4.9.4                 (L)      raxml-ng/1.0.2
-   gcc/5.5.0                          ray/2.3.1
-   gcc/7.5.0                 (D)      recon/1.05
-   gctf/1.06                 (L)      relion-helper/0.1
-   genrich/0.6                        relion-helper/0.2      (L,D)
+------------------- /share/apps/22.04/modulefiles/spack/software --------------------
+abyss/2.3.5           igv/2.12.3                        pplacer/1.1.alpha19         
+alphafold/2.3.2       infernal/1.1.4                    prodigal/2.6.3              
+amdfftw/4.1+amd       intel-oneapi-mkl/2023.2.0+intel   prokka/1.14.6               
+amdfftw/default       intel-oneapi-mkl/default          py-checkm-genome/1.2.1      
+angsd/0.935           intel-oneapi-tbb/2021.10.0+amd    py-cutadapt/4.4             
+aragorn/1.2.41        intel-oneapi-tbb/2021.10.0+intel  py-deeptools/3.5.2          
+aria2/1.36.0          intel-oneapi-tbb/default          py-htseq/2.0.3
 ...
 ```
 
 Each entry corresponds to software available for [load](modules.md#loading-and-unloading).
-Different sections will appear depending on loaded prerequisites, which you can read about under [`module spider`](modules.md#module-spider).
-Where there are multiple versions or variants of a module, a `(D)` will be listed next to the name of the default version.
-An `(L)` indicates that module is currently loaded.
-
-Note that this does not necessarily list every possible module on the system.
-Some software is compiled with a specific compiler and compiler version, and the relevant compiler
-module must be loaded first.
-To see all **possible** modules, use the [`module spider`](modules.md#module-spider) command.
-
-#### `module spider`
-
-Lists **all possible** modules that could be loaded. Some modules require a specific
-compiler version to be loaded, and these modules will not be listed in `module avail`
-unless that module is loaded. Module spider will list these modules anyway.
-If you run the command with a specific module, it will list the prerequisite modules
-required to make said module available. For example, if we try to run:
-
-``` console
-$ module load megahit
-
-Lmod has detected the following error:  These module(s) or extension(s) exist but cannot be loaded as requested: "megahit"
-   Try: "module spider megahit" to see how to load the module(s).
-```
-
-...the load fails. If we then use `spider`:
-
-```console hl_lines="7 8 9"
-$ module spider megahit
-
------------------------------------------------------------------------------
-  megahit: megahit/1.1.4
------------------------------------------------------------------------------
-
-    You will need to load all module(s) on any one of the lines below before
-    the "megahit/1.1.4" module is available to load.
-
-      gcc/4.9.4
- 
-    Help:
-      MEGAHIT: An ultra-fast single-node solution for large and complex
-      metagenomics assembly via succinct de Bruijn graph
-```
-
-...we see that we have to first load `gcc/4.9.4`. Let's do that:
-
-``` console
-$ module load gcc/4.9.4
-gcc/4.9.4: loaded.
-
-$ module avail
-
--------------------- /share/apps/spack/modulefiles/gcc/4.9.4 --------------------
-   megahit/1.1.4
-
------------------------ /share/apps/franklin/modulefiles ------------------------
-   conda/base/4.X                conda/cryolo/1.8.4-cuda-11 (D)
-   conda/cryolo/1.8.4-cuda-10    conda/rockstar/0.1
-
----------------------- /share/apps/spack/modulefiles/Core -----------------------
-   StdEnv                    (L)    libevent/2.1.12        (L)
-   abyss/2.3.1                      mash/2.3
-```
-
-We are now presented with a new section for those modules that require `gcc/4.9.4`,
-with the `megahit` module listed there. Now, we can load it:
-
-```console
-$ module load megahit
-
-megahit/1.1.4: loaded.
-```
-
-Running `module spider` without any arguments will list all the modules that could be loaded,
-unlike `module avail`, which will list only the modules available for load given any currently-loaded
-prerequisites.
+Modules that are currently loaded will be highlighted.
 
 #### `module list`
 
@@ -143,37 +76,12 @@ similar to:
 
 ```console
 $ module list
+Currently Loaded Modulefiles:
+ 1) slurm/23-02-7-1   2) ucx/1.14.1   3) openmpi/default  
 
-Currently Loaded Modules:
-  1) cuda/11.8.0   3) libevent/2.1.12   5) slurm/22-05-6-1   7) openmpi/4.1.4
-  2) hwloc/2.8.0   4) pmix/4.1.2        6) ucx/1.13.1
 ```
 
 Additional modules will be added or removed as you load and unload them.
-
-#### `module overview`
-
-This will give a **condensed overview** of available modules.
-It is most useful when the list of modules is very large, and there are multiple versions of each
-module available.
-The output is a list of each module name followed by the number of versions of the module.
-
-```console
-$ module overview
-
------------------------ /share/apps/franklin/modulefiles ------------------------
-conda/base (1)   conda/cryolo (2)   conda/rockstar (1)   testmod (1)
-
----------------------- /share/apps/spack/modulefiles/Core -----------------------
-StdEnv         (1)   hmmer            (1)   ncbi-toolkit  (1)
-abyss          (1)   homer            (1)   ncbi-vdb      (1)
-amdfftw        (1)   hwloc            (1)   nextflow      (1)
-aragorn        (1)   igv              (1)   openmpi       (1)
-bedtools2      (1)   infernal         (1)   orthofinder   (1)
-blast-plus     (1)   intel-oneapi-mkl (1)   orthomcl      (1)
-blast2go       (1)   interproscan     (1)   parallel      (1)
-blat           (1)   iq-tree          (1)   patchelf      (1)
-```
 
 ### Loading and Unloading
 
@@ -194,27 +102,69 @@ bwa/0.7.17: loaded.
 ```
 
 Now, you have access to the `bwa` executable. If you try to run `bwa mem`, you'll get its help output.
-This also sets the appopriate variables so that you can now run `man bwa` to view its manpage.
+This also sets the appropriate variables so that you can now run `man bwa` to view its manpage.
 
 Note that some modules have multiple versions. Running `module load [MODULENAME]` without specifying a version
 will load the latest version, unless a default has been specified.
-When there are multiple versions, a `(D)` will be printed next to the default version when using [`module avail`](modules.md#module-avail).
 
-Some modules are nested under a deeper hierarchy. For example, `relion` has six variants, two under `relion/cpu` and four under `relion/gpu`.
-To load these, you must specify the second layer of hierarchy: `module load relion` will fail, but `module load relion/cpu` will load the default module under `relion/cpu`, which has the full name `relion/cpu/4.0.0+amd`.
+Some modules are nested under a deeper hierarchy. For example, `relion` on Franklin has many variants, under both `relion/cpu` and `relion/gpu`.
+To load these, you must specify the second layer of the hierarchy: `module load relion` will fail, but `module load relion/cpu` will load the default module under `relion/cpu`, which has the full name `relion/cpu/4.0.0+amd`.
 More information on this system can be found under [Organization](modules.md#organization).
 
-The modules on Franklin are all configured to set a `$NAME_ROOT` variable that points to the installation prefix.
+The modules are all configured to set a `$NAME_ROOT` variable that points to the installation prefix.
 This will correspond to the name of the module, minus the version. For example:
 
 ```console
-$  ls -R $BWA_ROOT
-/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/bwa-0.7.17-3ogkbh2ixha52dxps2letankhc2dbeax:
-bin  doc  man
-
-...
+$ echo $BWA_ROOT
+/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bwa-0.7.17-y22jt6d7qm63i2tohmu7gqeedxytadky
 ```
 
 Usually, this will be a very long pathname, as most software on the cluster is managed via the
 [spack](https://spack.readthedocs.io/en/latest/) build system.
 This would be most useful if you're [developing software](developing.md) on the cluster.
+
+#### `module unload`
+
+As one might expect, `module unload` removes a loaded module from your environment.
+Any changes made by the module are undone and your environment is restored to its
+state prior to loading the module.
+
+### Searching and Metadata
+
+#### `module whatis`
+
+This command prints a description of the module, if such a description is available.
+For example:
+
+``` console
+$ module whatis gsl
+-------------------------------------------- /share/apps/22.04/modulefiles/spack/software --------------------------------------------
+           gsl/2.7.1: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite.
+```
+
+#### `module show`
+
+`module show` will list all the changes a module would make to the environment.
+
+
+``` console
+$ module show gcc/11.4.0
+-------------------------------------------------------------------
+/share/apps/22.04/modulefiles/spack/core/gcc/11.4.0:
+
+module-whatis	{The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.}
+conflict	gcc
+prepend-path	--delim : LD_LIBRARY_PATH /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/lib64
+...
+setenv		CC /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/bin/gcc
+setenv		CXX /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/bin/g++
+...
+```
+
+This is particularly useful for developing with libraries where you might be interested in
+variables relevant to your build system.
+
+#### `module search`
+
+The `module search` command allows you to search the names and whatis information for every module.
+The result will be a list of matching modules and the highlighted matching search terms.

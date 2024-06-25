@@ -109,6 +109,7 @@ theme:
     - search.share
     - search.suggest
   logo: assets/HPCCF-logo-dark.png
+  favicon: assets/HPCCF-logo.png
   icon:
     repo: fontawesome/brands/github
   palette: 
