@@ -1,4 +1,7 @@
-# Virtual Machines
+---
+template: admin.html
+title: Virtual Machines
+---
 
 HPCCF uses [Proxmox](https://www.proxmox.com/en/) for virtualization.  Current
 servers are `proxmox1`, `proxmox2`, and `proxmox3`.  

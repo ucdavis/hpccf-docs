@@ -1,4 +1,7 @@
-# DDN
+---
+template: admin.html
+title: DDN
+---
 
 The DDN provides backend storage for proxmox.
 

@@ -1,4 +1,7 @@
-# Cobbler
+---
+template: admin.html
+title: Cobbler
+---
 
 HPCCF uses [cobbler](https://cobbler.github.io/) for provisioning and managing
 internal [DNS](../dns).
