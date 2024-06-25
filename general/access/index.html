@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#x11-forwarding" class="md-skip">
+        <a href="#how-do-i-generate-an-ssh-key-pair" class="md-skip">
           Skip to content
         </a>
       
@@ -397,6 +397,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I generate an SSH key pair?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I generate an SSH key pair?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Operating System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MACOS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#x11-forwarding" class="md-nav__link">
     <span class="md-ellipsis">
       X11 Forwarding
@@ -416,7 +449,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
+  <a href="#macos_1" class="md-nav__link">
     <span class="md-ellipsis">
       MacOS
     </span>
@@ -1489,6 +1522,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I generate an SSH key pair?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I generate an SSH key pair?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Operating System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MACOS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#x11-forwarding" class="md-nav__link">
     <span class="md-ellipsis">
       X11 Forwarding
@@ -1508,7 +1574,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
+  <a href="#macos_1" class="md-nav__link">
     <span class="md-ellipsis">
       MacOS
     </span>
@@ -1550,6 +1616,26 @@
 
   <h1>Accessing Clusters</h1>
 
+<p>In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. 
+The private key is kept securely on your computer or device.
+The public key is uploaded to the servers or systems that you want to access securely via SSH.</p>
+<h2 id="how-do-i-generate-an-ssh-key-pair">How do I generate an SSH key pair?<a class="headerlink" href="#how-do-i-generate-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
+<h3 id="windows-operating-system">Windows Operating System<a class="headerlink" href="#windows-operating-system" title="Permanent link">&para;</a></h3>
+<p>We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from https://mobaxterm.mobatek.net/ 
+The Mobaxterm Portable Edition is not recommended as it deletes the sessions. Once you install the stable version of MobaXterm, open its terminal and enter this command:</p>
+<p><code>ssh-keygen</code></p>
+<p>This command will create a private key and a public key. Do not share your private key; we recommend giving it a passphrase for security.
+To view the .ssh directory and to read the public key, enter these commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls -al ~/.ssh
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>more ~/.ssh/*.pub
+</code></pre></div>
+<h3 id="macos">MACOS:<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>Use a terminal to create an SSH key pair using the command:</p>
+<p><code>ssh-keygen</code></p>
+<p>To view the .ssh directory and to read the public key, enter these commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls -al ~/.ssh
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>more ~/.ssh/*.pub
+</code></pre></div>
 <h2 id="x11-forwarding">X11 Forwarding<a class="headerlink" href="#x11-forwarding" title="Permanent link">&para;</a></h2>
 <p>Some software has a Graphical User Interface (GUI), and so requires X11 to be enabled.
 X11 forwarding allows an application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer).
@@ -1557,12 +1643,15 @@ How this is enabled depends on the operating system the computer you are using t
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>If you are SSHing from a Linux distribution, you likely already have an X11 server running locally, and can support forwarding natively.
 If you are on campus, you can use the <code>-Y</code> flag to enable it, like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@franklin.hpc.ucdavis.edu
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
 </code></pre></div>
 <p>If you are off campus on a slower internet connection, you may get better performance by enabling compression with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@franklin.hpc.ucdavis.edu
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
 </code></pre></div>
-<h3 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion <code>-i</code> to specify path to the private key with SSH:-</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>/path/to/private/key<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+</code></pre></div>
+<h3 id="macos_1">MacOS<a class="headerlink" href="#macos_1" title="Permanent link">&para;</a></h3>
 <p>MacOS does not come with an X11 implementation out of the box.
 You will first need to install the free, open-source <a href="https://www.xquartz.org/">XQuartz</a> package, after which you can use the same <code>ssh</code> flags as described in the <a href="./#linux">Linux instructions</a>.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
@@ -1591,7 +1680,7 @@ For off-campus access, you may want to tick the <code>Compression</code> box as 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
   </span>
 
     
