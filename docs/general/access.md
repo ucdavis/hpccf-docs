@@ -1,6 +1,9 @@
-In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. 
-The private key is kept securely on your computer or device.
-The public key is uploaded to the servers or systems that you want to access securely via SSH.
+In order to access your HPC account, users will need to generate an SSH key pair for authorization.
+ 
+- Users can generate a pair of keys: a public key and a private key.
+   
+- The private key is kept securely on your computer or device.
+- The public key is uploaded to the servers or systems that you want to access securely via SSH.
 
 ## How do I generate an SSH key pair?
 
