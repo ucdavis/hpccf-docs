@@ -1660,7 +1660,7 @@ In general, unless you have access to the three GPU nodes owned by the Al-Bassam
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Because Relion is GUI driven, you need to <code>ssh</code> to Franklin with X11 forwarding enabled.
-Instructions for enabling X11 forwarding can be found in the <a href="../general/access.md#x11-forwarding">Access</a> section.</p>
+Instructions for enabling X11 forwarding can be found in the <a href="../../../general/access/#x11-forwarding">Access</a> section.</p>
 </div>
 <h3 id="launching-relion">Launching Relion<a class="headerlink" href="#launching-relion" title="Permanent link">&para;</a></h3>
 <p>Make sure you have loaded one of the Relion modules:</p>
@@ -1672,7 +1672,7 @@ Instructions for enabling X11 forwarding can be found in the <a href="../general
 <p>Change your working directory your Relion project directory and type <code>relion</code>.
 The Relion GUI should then pop up locally.
 There will be a bit of latency when using it, especially if you are off campus.
-You may be able to reduce latency by <a href="../general/access.md#x11-forwarding">enabling SSH compression</a>.</p>
+You may be able to reduce latency by <a href="../../../general/access/#x11-forwarding">enabling SSH compression</a>.</p>
 <figure>
 <p><img alt="The Relion start screen." src="../../../img/relion_start_gui.png" />
   </p>
@@ -1721,7 +1721,7 @@ These new fields are:</p>
 <ul>
 <li><strong>Number of MPI procs</strong>: This will fill the Slurm <code>--ntasks</code> parameter. These tasks may be distributed across multiple nodes, depending on the number of <strong>Threads</strong> requested. For GPU runs, this should be the number of GPUs <strong>+ 1</strong>.</li>
 <li><strong>Number of Threads</strong>: The will fill the Slurm <code>--cpus-per-task</code> parameter, which means it is the <em>number of threads per MPI proc</em>. Some job types do not expose this field, as they can only be run with a single-thread per MPI proc.</li>
-<li><strong>Queue name</strong>: The Slurm partition to submit to, filling the <code>--partition</code> parameter. More information on partitions can be found in the <a href="../../scheduler/queues.md"><strong>Queueing</strong></a> section.</li>
+<li><strong>Queue name</strong>: The Slurm partition to submit to, filling the <code>--partition</code> parameter. More information on partitions can be found in the <a href="../../resources/"><strong>Queueing</strong></a> section.</li>
 <li><strong>Standard submission script</strong>: The location of the Slurm job script template that will be used. This field will be filled with the appropriate template for the loaded Relion module by default, and should not be changed.<em>For advanced users only:</em> if you are familiar with Relion and want to further fine-tune your Slurm scripts, you can write your own based on the provided templates found in <code>/share/apps/spack/templates/hpccf/franklin</code> or <a href="https://github.com/ucdavis/spack-ucdavis/tree/main/templates/hpccf/franklin">in our spack GitHub repo</a>.</li>
 <li><strong>Minimum dedicated cores per node</strong>: Unused on our system.</li>
 </ul>
