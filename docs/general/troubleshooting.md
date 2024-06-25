@@ -33,7 +33,7 @@ another method.
 
 To enable logins without a password, you will need to enable GSSAPI, which
 some systems enable by default.  If not enabled, add the following to your 
-`.ssh/config` file (create it if it doesn't exist):
+`$HOME/.ssh/config` file (create it if it doesn't exist):
 
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
