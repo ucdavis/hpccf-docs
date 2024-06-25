@@ -1,4 +1,6 @@
-# Documentation Overview
+---
+title: Documentation Overview
+---
 
 Welcome to the High-Performance Computing Core Facility (HPCCF) Documentation Site. These pages are intended to be a how-to for commonly asked questions about resources supported by the UC Davis High-Performance Computing Core Facility.
 

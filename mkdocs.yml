@@ -4,39 +4,39 @@ repo_url: https://github.com/ucdavis/hpccf-docs
 copyright: Copyright &copy; 2023-24 The Regents of the University of California, Davis
 
 nav:
-  - About: index.md
   - General:
     - Account Requests: general/account-requests.md
     - Accessing Clusters: general/access.md
-    - Job Scheduler:
-      - scheduler/index.md
-      - Slurm Commands: scheduler/commands.md
+    - Job Scheduling:
+      - Slurm: scheduler/index.md
+      - Commands: scheduler/commands.md
       - Resources: scheduler/resources.md
       - Job Scripts: scheduler/jobscripts.md
     - Software:
-      - software/index.md
+      - About: software/index.md
       - Module System: software/modules.md
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
+      - Development: software/developing.md
       #- Developing Software: software/developing.md
     - Data Transfer: data-transfer.md
   - Clusters:
     - Farm:
-      - farm/index.md
+      - About: farm/index.md
       - Software:
         - Modules: farm/software/modules.md
       - Job Scheduling: farm/scheduling.md
       - Resources: farm/resources.md
       - Storage: farm/storage.md
     - Franklin:
-      - franklin/index.md
+      - About: franklin/index.md
       - Software:
         - Modules: franklin/software/modules.md
         - cryo-EM: franklin/software/cryoem.md
         - alphafold: franklin/software/alphafold.md
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
-      - Storage: farm/storage.md
+      - Storage: franklin/storage.md
   - Admin:
     - Network Architecture: admin/network.md
     - Virtual Machines: admin/vms.md
@@ -101,9 +101,10 @@ theme:
     #- navigation.tabs
     - navigation.sections
     - navigation.expand
-    - navigation.indexes
+    #- navigation.indexes
+    - navigation.instant
     - navigation.top
-    - navigation.footer
+    #- navigation.footer
     - navigation.tracking
     - search.highlight
     - search.share
