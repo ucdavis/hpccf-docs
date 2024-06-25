@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-do-i-generate-an-ssh-key-pair" class="md-skip">
+        <a href="#ssh-keypair" class="md-skip">
           Skip to content
         </a>
       
@@ -397,6 +397,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh-keypair" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Keypair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
     <span class="md-ellipsis">
       How do I generate an SSH key pair?
@@ -426,6 +435,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-connect-to-the-clusters-using-ssh-keypair" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I connect to the clusters using SSH keypair?
+    </span>
+  </a>
   
 </li>
       
@@ -1522,6 +1540,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh-keypair" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Keypair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
     <span class="md-ellipsis">
       How do I generate an SSH key pair?
@@ -1551,6 +1578,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-connect-to-the-clusters-using-ssh-keypair" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I connect to the clusters using SSH keypair?
+    </span>
+  </a>
   
 </li>
       
@@ -1616,6 +1652,7 @@
 
   <h1>Accessing Clusters</h1>
 
+<h2 id="ssh-keypair">SSH Keypair<a class="headerlink" href="#ssh-keypair" title="Permanent link">&para;</a></h2>
 <p>In order to access your HPC account, users will need to generate an SSH key pair for authorization.</p>
 <ul>
 <li>
@@ -1628,8 +1665,8 @@
 </ul>
 <h2 id="how-do-i-generate-an-ssh-key-pair">How do I generate an SSH key pair?<a class="headerlink" href="#how-do-i-generate-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
 <h3 id="windows-operating-system">Windows Operating System<a class="headerlink" href="#windows-operating-system" title="Permanent link">&para;</a></h3>
-<p>We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from https://mobaxterm.mobatek.net/ 
-The Mobaxterm Portable Edition is not recommended as it deletes the sessions. Once you install the stable version of MobaXterm, open its terminal and enter this command:</p>
+<p>We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from <a href="https://mobaxterm.mobatek.net/">https://mobaxterm.mobatek.net/</a> </p>
+<p>Once you install the stable version of MobaXterm, open its terminal and enter this command:</p>
 <p><code>ssh-keygen</code></p>
 <p>This command will create a private key and a public key. Do not share your private key; we recommend giving it a passphrase for security.
 To view the .ssh directory and to read the public key, enter these commands:</p>
@@ -1643,6 +1680,16 @@ To view the .ssh directory and to read the public key, enter these commands:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls -al ~/.ssh
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>more ~/.ssh/*.pub
 </code></pre></div>
+<h2 id="how-do-i-connect-to-the-clusters-using-ssh-keypair">How do I connect to the clusters using SSH keypair?<a class="headerlink" href="#how-do-i-connect-to-the-clusters-using-ssh-keypair" title="Permanent link">&para;</a></h2>
+<p>Users need a terminal emulator software to work as a command prompt in order to do SSH and log into HPC clusters. </p>
+<p>Mobaxterm terminal is the recommended software for Windows users, and terminal on Macbook is recommended to SSH into the clusters.</p>
+<p>Users need their user id and cluster id to run the following SSH command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ssh<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+</code></pre></div>
+<p>If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion <code>-i</code> to specify path to the private key with SSH:-</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>/path/to/private/key<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+</code></pre></div>
+If you have multiple machines and want to connect to the HPC clusters using multiple devices, you will need to add the same SSH key pair in all of them.</p>
 <h2 id="x11-forwarding">X11 Forwarding<a class="headerlink" href="#x11-forwarding" title="Permanent link">&para;</a></h2>
 <p>Some software has a Graphical User Interface (GUI), and so requires X11 to be enabled.
 X11 forwarding allows an application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer).
@@ -1650,13 +1697,10 @@ How this is enabled depends on the operating system the computer you are using t
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>If you are SSHing from a Linux distribution, you likely already have an X11 server running locally, and can support forwarding natively.
 If you are on campus, you can use the <code>-Y</code> flag to enable it, like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
 </code></pre></div>
 <p>If you are off campus on a slower internet connection, you may get better performance by enabling compression with:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
-</code></pre></div>
-If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion <code>-i</code> to specify path to the private key with SSH:-</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>/path/to/private/key<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
 </code></pre></div>
 <h3 id="macos_1">MacOS<a class="headerlink" href="#macos_1" title="Permanent link">&para;</a></h3>
 <p>MacOS does not come with an X11 implementation out of the box.
