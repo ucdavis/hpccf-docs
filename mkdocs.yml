@@ -45,6 +45,7 @@ nav:
     - Software: admin/software.md
     - Netbox: admin/netbox.md
     - Monitoring: admin/monitoring.md
+    - Open OnDemand: admin/ondemand.md
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
 #
