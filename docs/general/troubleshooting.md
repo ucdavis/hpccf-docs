@@ -2,7 +2,6 @@
 
 Here are some of the most common issues users face when using SSH. 
 
-
 ### Keys
 
 The following clusters use SSH keys: Atomate, Farm, Franklin, HPC1, HPC2, Impact, Peloton. 
@@ -48,3 +47,19 @@ kinit [USER]@GENOMECENTER.UCDAVIS.EDU
 ```
 
 SSH will use that ticket while it's valid.
+
+## Common Slurm Scheduler Issues
+
+These are the most common issues with job scheduling using Slurm.
+
+### Using a non-default account
+
+If you have access to more than one Slurm account and wish to use an account other than your default,
+use the `-A` or `--account` flag. 
+
+e.g. If your default account is in `foogrp` and you wish to use `bargrp`:
+```bash
+srun -A bargrp -t 1:00:00 --mem=20GB scriptname.sh
+```
+
+This also works if you don't have a default account. 
