@@ -2,3 +2,4 @@ __pycache__
 site
 spack-ucdavis
 venv
+*.DS_Store

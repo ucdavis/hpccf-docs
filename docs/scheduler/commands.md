@@ -1,4 +1,6 @@
-# Jobs
+---
+title: Slurm Commands
+---
 
 After [logging in to a cluster](../general/access.md), your session exists on the **head node**: a single,
 less powerful computer that serves as the gatekeeper to the rest of the cluster.
