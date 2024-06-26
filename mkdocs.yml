@@ -10,7 +10,7 @@ nav:
     - Job Scheduling:
       - About: scheduler/index.md
       - Commands: scheduler/commands.md
-      - Requesting Resources: scheduler/resources.md
+      - Resources: scheduler/resources.md
       - Job Scripts: scheduler/jobscripts.md
     - Software:
       - About: software/index.md
@@ -18,7 +18,6 @@ nav:
       - Python and Conda: software/conda.md
       - R and RStudio: software/rlang.md
       - Development: software/developing.md
-      #- Developing Software: software/developing.md
     - Data Transfer: data-transfer.md
   - Clusters:
     - Farm:
