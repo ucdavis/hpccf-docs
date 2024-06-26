@@ -73,3 +73,4 @@ sbatch: error: Batch job submission failed: Invalid account or account/partition
 You will need to specify the account explicitly as explained [above](#no-default-account).
 You can find out how to view your Slurm account information in the [resources
 section](../scheduler/resources.md).
+
