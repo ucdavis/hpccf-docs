@@ -471,6 +471,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resource-types" class="md-nav__link">
     <span class="md-ellipsis">
       Resource Types
@@ -723,6 +741,27 @@
   
   <span class="md-ellipsis">
     Data Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
   </span>
   
 
@@ -1472,6 +1511,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resource-types" class="md-nav__link">
     <span class="md-ellipsis">
       Resource Types
@@ -1541,6 +1598,57 @@
 
 
 <h1 id="requesting-resources">Requesting Resources<a class="headerlink" href="#requesting-resources" title="Permanent link">&para;</a></h1>
+<h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
+<p>Each <strong>node</strong> -- physically distinct machines within the cluster -- will be a member of one or more
+<strong>partitions</strong>. A partition consists of a collection of nodes, a policy for job scheduling on that
+partition, a policy for conflicts when nodes are a member of more than one partition (ie.
+preemption), and a policy for managing and restricting resources per user or per group referred to
+as Quality of Service.
+The Slurm documentation has detailed information on how <a href="https://slurm.schedmd.com/preempt.html">preemption</a> and <a href="https://slurm.schedmd.com/qos.html">QOS
+definitions</a> are handled; our per-cluster <em>Resources</em> sections
+describe how partitions are organized and preemption handled on our clusters.</p>
+<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">&para;</a></h2>
+<p>Users are granted access to resources via Slurm <strong>associations</strong>. An association links together a
+<strong>user</strong> with an <strong>account</strong> and a QOS definition. <strong>Accounts</strong> most commonly correspond to your
+lab, but sometimes exist for graduate groups, departments, or institutes.</p>
+<p>To see your associations, and thus which accounts and partitions you have access to, you can use the
+<code>sacctmgr</code> command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span><span class="nv">$USER</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">   Cluster    Account       User  Partition     Share ...   MaxTRESMins                  QOS   Def QOS GrpTRESRunMin </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">---------- ---------- ---------- ---------- --------- ... ------------- -------------------- --------- ------------- </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">  franklin   hpccfgrp       camw mmgdept-g+         1 ...               hpccfgrp-mmgdept-gp+                         </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">  franklin   hpccfgrp       camw mmaldogrp+         1 ...               hpccfgrp-mmaldogrp-+                         </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">  franklin   hpccfgrp       camw cashjngrp+         1 ...               hpccfgrp-cashjngrp-+                         </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">  franklin   hpccfgrp       camw jalettsgr+         1 ...               hpccfgrp-jalettsgrp+                         </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">  franklin   hpccfgrp       camw jawdatgrp+         1 ...               hpccfgrp-jawdatgrp-+                         </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">  franklin   hpccfgrp       camw        low         1 ...                   hpccfgrp-low-qos                         </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">  franklin   hpccfgrp       camw       high         1 ...                  hpccfgrp-high-qos                         </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">  franklin  jawdatgrp       camw        low         1 ...                    mcbdept-low-qos                         </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">  franklin  jawdatgrp       camw jawdatgrp+         1 ...               jawdatgrp-jawdatgrp+                         </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="go">  franklin jalettsgrp       camw jalettsgr+         1 ...               jalettsgrp-jalettsg+                         </span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">  franklin jalettsgrp       camw        low         1 ...                    mcbdept-low-qos                         </span>
+</code></pre></div>
+<p>The output is very wide, so you may want to pipe it through <code>less</code> to make it more readable:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">sacctmgr show assoc user=$USER | less -S</span>
+</code></pre></div>
+<p>Or, perhaps preferably, output it in a more compact format:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span>camw<span class="w"> </span><span class="nv">format</span><span class="o">=</span><span class="s2">&quot;account%20,partition%20,qos%40&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">             Account            Partition                                      QOS </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">-------------------- -------------------- ---------------------------------------- </span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">            hpccfgrp          mmgdept-gpu                 hpccfgrp-mmgdept-gpu-qos </span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">            hpccfgrp        mmaldogrp-gpu               hpccfgrp-mmaldogrp-gpu-qos </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">            hpccfgrp        cashjngrp-gpu               hpccfgrp-cashjngrp-gpu-qos </span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="go">            hpccfgrp       jalettsgrp-gpu              hpccfgrp-jalettsgrp-gpu-qos </span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="go">            hpccfgrp        jawdatgrp-gpu               hpccfgrp-jawdatgrp-gpu-qos </span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="go">            hpccfgrp                  low                         hpccfgrp-low-qos </span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">            hpccfgrp                 high                        hpccfgrp-high-qos </span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="go">           jawdatgrp                  low                          mcbdept-low-qos </span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="go">           jawdatgrp        jawdatgrp-gpu              jawdatgrp-jawdatgrp-gpu-qos </span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="go">          jalettsgrp       jalettsgrp-gpu            jalettsgrp-jalettsgrp-gpu-qos </span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="go">          jalettsgrp                  low                          mcbdept-low-qos </span>
+</code></pre></div>
+<p>In the above example, we can see that user <code>camw</code> has access to the <code>high</code> partition via an
+association with <code>hpccfgrp</code> and the <code>jalettsgrp-gpu</code> partition via the <code>jalettsgrp</code> account.</p>
 <h2 id="resource-types">Resource Types<a class="headerlink" href="#resource-types" title="Permanent link">&para;</a></h2>
 <h3 id="cpus-cores">CPUs / cores<a class="headerlink" href="#cpus-cores" title="Permanent link">&para;</a></h3>
 <p>CPUs are the central compute power behind your jobs.
@@ -1551,8 +1659,8 @@ This allows computation to scale with increased numbers of CPUs, allowing bigger
 <p>Slurm's CPU management methods are complex and can quickly become confusing.
 For the purposes of this documentation, we will provide a simplified explanation; those with advanced needs
 should consult <a href="https://slurm.schedmd.com/cpu_management.html">the Slurm documentation</a>.</p>
-<p>Slurm follows a distinction between its physically resources -- cluster nodes and CPUs or cores on a node -- and virtual
-resources, or <strong>tasks</strong>, which specificy how requested physical resources will be grouped and distributed.
+<p>Slurm follows a distinction between its physical resources -- cluster nodes and CPUs or cores on a node -- and virtual
+resources, or <strong>tasks</strong>, which specify how requested physical resources will be grouped and distributed.
 By default, Slurm will minimize the number of nodes allocated to a job, and attempt to keep the job's CPU requests
 localized within a node.
 <strong>Tasks</strong> group together CPUs (or other resources): CPUs within a task will be kept together on the same node.
@@ -1580,27 +1688,27 @@ thread between different job allocations.</p>
 <p>Let's explore some examples. The simple request would be to ask for 2 CPUs.
 We will use <code>srun</code> to request resources and then immediately run the <code>nproc</code> command within the allocation
 to report how many CPUs are available:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc<span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="m">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc<span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="m">2</span>
 </code></pre></div>
 <p>We asked for 2 CPUs per task, and Slurm gave us 2 CPUs and 1 task.
 What happens if we ask for 2 tasks instead of 2 CPUs?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="m">1</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">1</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">1</span>
 </code></pre></div>
 <p>This time, we were given 2 separate tasks, each of which got 1 CPU.
 Each task ran its own instance of the <code>nproc</code> command, and so each reported <code>1</code>.
 If we ask for more CPUs per task:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="m">2</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="m">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="m">2</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="m">2</span>
 </code></pre></div>
 <p>We still asked for 2 tasks, but this time we requested 2 CPUs in each.
 So, we got 2 instances of <code>nproc</code>, each reported <code>2</code> CPUs in their task.</p>
@@ -1612,21 +1720,21 @@ If you want a multiprocess job (or an MPI job), increase <code>-ntasks</code>.</
 <details class="info">
 <summary>The SMT Edge Case</summary>
 <p>If we use <code>-c 1</code> without specifying the number of tasks, we might be taken by surprise:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc<span class="w">     </span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="m">1</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc<span class="w">     </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="m">1</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="m">1</span>
 </code></pre></div>
 <p>We only asked for 1 CPU per task, but we got 2 tasks! This is due to SMT, described in the note above.
 Because Slurm will not split SMT threads, and there are 2 SMT threads per physical core, the request
 was rounded up to 2 CPUs total.
 In order to keep with the 1 CPU-per-task constraint, it spawned 2 tasks. Similarly, if we specify
 that we only want 1 task, CPUs per task will instead be bumped:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="m">2</span>
 </code></pre></div>
 </details>
 <h3 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h3>
@@ -1635,31 +1743,31 @@ We have seen previously that the <code>-n/ntasks</code> parameter will allocate 
 In our prior examples, however, we used small resource requests.
 What happens when we want to distribute jobs across nodes?</p>
 <p>Slurm uses the <a href="https://slurm.schedmd.com/sbatch.html#OPT_block">block distribution</a> method by default to distribute
-tasks betwee nodes.
+tasks between nodes.
 It will exhaust all the CPUs on a node with task groups before moving to a new node.
 For these examples, we're going to create a script that reports both the hostname (ie, the node) and the number
 of CPUs:</p>
-<div class="copy highlight"><span class="filename">host-nprocs.sh</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">echo</span><span class="w"> </span><span class="sb">`</span>hostname<span class="sb">`</span>:<span class="w"> </span><span class="sb">`</span>nproc<span class="sb">`</span>
+<div class="copy highlight"><span class="filename">host-nprocs.sh</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">echo</span><span class="w"> </span><span class="sb">`</span>hostname<span class="sb">`</span>:<span class="w"> </span><span class="sb">`</span>nproc<span class="sb">`</span>
 </code></pre></div>
 <p>And make it executable with <code class="highlight">chmod<span class="w"> </span>+x<span class="w"> </span>host-nprocs.sh</code>. </p>
 <p>Now let's make a multiple-task request:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">srun: job 691 queued and waiting for resources</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">srun: job 691 has been allocated resources</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">c-8-42: 2</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">c-8-42: 2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>./host-nprocs.sh
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">srun: job 691 queued and waiting for resources</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">srun: job 691 has been allocated resources</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">c-8-42: 2</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">c-8-42: 2</span>
 </code></pre></div>
 <p>As before, we asked for 2 tasks and 2 CPUs per task.
 Both tasks were assigned to <code>c-8-42</code>, because it had enough CPUs to fulfill the request.
 What if it did not?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">srun: job 692 queued and waiting for resources</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">srun: job 692 has been allocated resources</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="go">c-8-50: 120</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">srun: job 692 queued and waiting for resources</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">srun: job 692 has been allocated resources</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">c-8-42: 120</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">c-8-42: 120</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">c-8-50: 120</span>
 </code></pre></div>
 <p>This time, we asked for 3 tasks each with 120 CPUs.
 The first two tasks were able to be fulfilled by the node <code>c-8-42</code>, but that node did not have enough
@@ -1670,12 +1778,12 @@ Thus, this task spanned multiple nodes.</p>
 We can achieve this with the <code>--nodes/-N</code> parameter.
 This specifies the <em>minimum number of nodes</em> the tasks should be allocated across.
 If we rerun the above example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>-N<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">srun: job 693 queued and waiting for resources</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">srun: job 693 has been allocated resources</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">c-8-50: 120</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">c-8-58: 120</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>-N<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">srun: job 693 queued and waiting for resources</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">srun: job 693 has been allocated resources</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">c-8-42: 120</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">c-8-50: 120</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">c-8-58: 120</span>
 </code></pre></div>
 <p>We still asked for 3 tasks and 3 CPUs per task, but this time we specified we wanted a minimum of 3 nodes.
 As a result, we were allocated portions of <code>c-8-42</code>, <code>c-8-50</code>, and <code>c-8-58</code>.</p>
@@ -1697,15 +1805,15 @@ So, <code>--mem-per-cpu=500</code> will requested 500 megabytes of RAM per CPU, 
 of RAM per CPU.</p>
 <p>Here is an example of a task overrunning its memory allocation.
 We will use the <code>stress-ng</code> program to allocate 8 gigabytes of RAM in a job that only requested 200 megabytes.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem-per-cpu<span class="w"> </span>200M<span class="w"> </span>stress-ng<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>--vm-bytes<span class="w"> </span>8G<span class="w"> </span>--oomable<span class="w">         </span><span class="m">1</span><span class="w"> </span>↵
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">srun: job 706 queued and waiting for resources</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">srun: job 706 has been allocated resources</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">stress-ng: info:  [3037475] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">stress-ng: info:  [3037475] dispatching hogs: 1 vm</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="go">stress-ng: info:  [3037475] successful run completed in 2.23s</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="go">slurmstepd: error: Detected 1 oom-kill event(s) in StepId=706.0. Some of your processes may have been killed by the cgroup out-of-memory handler.</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="go">srun: error: c-8-42: task 0: Out Of Memory</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="go">srun: launch/slurm: _step_signal: Terminating StepId=706.0</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem-per-cpu<span class="w"> </span>200M<span class="w"> </span>stress-ng<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>--vm-bytes<span class="w"> </span>8G<span class="w"> </span>--oomable<span class="w">         </span><span class="m">1</span><span class="w"> </span>↵
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">srun: job 706 queued and waiting for resources</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">srun: job 706 has been allocated resources</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">stress-ng: info:  [3037475] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">stress-ng: info:  [3037475] dispatching hogs: 1 vm</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">stress-ng: info:  [3037475] successful run completed in 2.23s</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">slurmstepd: error: Detected 1 oom-kill event(s) in StepId=706.0. Some of your processes may have been killed by the cgroup out-of-memory handler.</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="go">srun: error: c-8-42: task 0: Out Of Memory</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="go">srun: launch/slurm: _step_signal: Terminating StepId=706.0</span>
 </code></pre></div>
 <h3 id="gpus-gres">GPUs / GRES<a class="headerlink" href="#gpus-gres" title="Permanent link">&para;</a></h3>
 
@@ -1730,7 +1838,7 @@ We will use the <code>stress-ng</code> program to allocate 8 gigabytes of RAM in
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2024</span>
   </span>
 
     

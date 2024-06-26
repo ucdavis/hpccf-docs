@@ -121,6 +121,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://docs.hpc.ucdavis.edu/general/troubleshooting/</loc>
+         <lastmod>2024-06-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://docs.hpc.ucdavis.edu/scheduler/</loc>
          <lastmod>2024-06-26</lastmod>
          <changefreq>daily</changefreq>
