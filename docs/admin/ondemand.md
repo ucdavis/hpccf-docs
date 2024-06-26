@@ -1,4 +1,9 @@
+---
+template: admin.html
+---
+
 # Open OnDemand
+
 This is meant to be a general configuration guide to Open OnDemand (OOD) for admins. But, I'd also like this to serve as an admin troubleshooting tutorial for OOD. So, the bulk of relevant OOD configs are located in `/etc/ood/config/` but the contents within are controlled by puppet. Usually, OOD is served by, or behind, apache and those configs are located in `/etc/apache2/` and the default served dir is located at `/var/www/ood` but these are also heavily controlled by puppet. For the rest of this config documentation I'll be categorizing by the file names, but I'll also try to refer to the puppet-openondemand class for that file as well.
 
 ## OOD Interactive Apps
