@@ -1,13 +1,19 @@
-In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. 
-The private key is kept securely on your computer or device.
-The public key is uploaded to the servers or systems that you want to access securely via SSH.
+## SSH Keypair
+
+In order to access your HPC account, users will need to generate an SSH key pair for authorization.
+ 
+- Users can generate a pair of keys: a public key and a private key.
+   
+- The private key is kept securely on your computer or device.
+- The public key is uploaded to the servers or systems that you want to access securely via SSH.
 
 ## How do I generate an SSH key pair?
 
 ### Windows Operating System
 
-We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from https://mobaxterm.mobatek.net/ 
-The Mobaxterm Portable Edition is not recommended as it deletes the sessions. Once you install the stable version of MobaXterm, open its terminal and enter this command:
+We recommend MobaXterm as the most straightforward SSH client. You can download its free home edition (Installer Edition) from <https://mobaxterm.mobatek.net/> 
+
+Once you install the stable version of MobaXterm, open its terminal and enter this command:
 
 
 `ssh-keygen`
@@ -32,6 +38,24 @@ To view the .ssh directory and to read the public key, enter these commands:
 ls -al ~/.ssh
 more ~/.ssh/*.pub
 ``` 
+## How do I connect to the clusters using SSH keypair?
+
+ Users need a terminal emulator software to work as a command prompt in order to do SSH and log into HPC clusters. 
+
+Mobaxterm terminal is the recommended software for Windows users, and terminal on Macbook is recommended to SSH into the clusters.
+
+Users need their user id and cluster id to run the following SSH command:
+
+```bash
+$ ssh [USER]@[CLUSTER].hpc.ucdavis.edu
+```
+
+If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion `-i` to specify path to the private key with SSH:-
+
+```bash
+$ ssh -i /path/to/private/key [USER]@[CLUSTER].hpc.ucdavis.edu
+```
+If you have multiple machines and want to connect to the HPC clusters using multiple devices, you will need to add the same SSH key pair in all of them.
 
 ## X11 Forwarding
 
@@ -53,11 +77,7 @@ If you are off campus on a slower internet connection, you may get better perfor
 ```bash
 $ ssh -Y [USER]@[CLUSTER].hpc.ucdavis.edu
 ```
-If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the otpion `-i` to specify path to the private key with SSH:-
 
-```bash
-$ ssh -i /path/to/private/key [USER]@[CLUSTER].hpc.ucdavis.edu
-```
 ### MacOS
 
 MacOS does not come with an X11 implementation out of the box.
