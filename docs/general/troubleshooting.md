@@ -62,4 +62,14 @@ e.g. If your default account is in `foogrp` and you wish to use `bargrp`:
 srun -A bargrp -t 1:00:00 --mem=20GB scriptname.sh
 ```
 
-This also works if you don't have a default account. 
+### No default account
+
+Newer slurm accounts have no default specified, and in this case you might get error message like:
+
+```
+sbatch: error: Batch job submission failed: Invalid account or account/partition combination specified
+```
+
+You will need to specify the account explicitly as explained [above](#no-default-account).
+You can find out how to view your Slurm account information in the [resources
+section](../scheduler/resources.md).
