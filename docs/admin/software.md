@@ -1,4 +1,7 @@
-# Software
+---
+template: admin.html
+title: Software Deployment
+---
 
 ## Spack
 

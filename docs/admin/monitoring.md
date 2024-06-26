@@ -1,1 +1,4 @@
-# Monitoring
+---
+template: admin.html
+title: Monitoring
+---

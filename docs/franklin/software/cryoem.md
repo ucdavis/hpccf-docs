@@ -18,7 +18,7 @@ If you are completely unfamiliar with Relion, you should start with the [tutoria
 
 !!! Note
     Because Relion is GUI driven, you need to `ssh` to Franklin with X11 forwarding enabled.
-    Instructions for enabling X11 forwarding can be found in the [Access](../general/access.md#x11-forwarding) section.
+    Instructions for enabling X11 forwarding can be found in the [Access](../../general/access.md#x11-forwarding) section.
 
 ### Launching Relion
 
@@ -34,7 +34,7 @@ Currently Loaded Modules Matching: relion
 Change your working directory your Relion project directory and type `relion`.
 The Relion GUI should then pop up locally.
 There will be a bit of latency when using it, especially if you are off campus.
-You may be able to reduce latency by [enabling SSH compression](../general/access.md#x11-forwarding).
+You may be able to reduce latency by [enabling SSH compression](../../general/access.md#x11-forwarding).
 
 <figure markdown>
   ![The Relion start screen.](../../img/relion_start_gui.png)
@@ -84,7 +84,7 @@ The default GUI fields serve their original purposes:
 
 - **Number of MPI procs**: This will fill the Slurm `--ntasks` parameter. These tasks may be distributed across multiple nodes, depending on the number of **Threads** requested. For GPU runs, this should be the number of GPUs **+ 1**.
 - **Number of Threads**: The will fill the Slurm `--cpus-per-task` parameter, which means it is the *number of threads per MPI proc*. Some job types do not expose this field, as they can only be run with a single-thread per MPI proc.
-- **Queue name**: The Slurm partition to submit to, filling the `--partition` parameter. More information on partitions can be found in the [**Queueing**](../../scheduler/queues.md) section.
+- **Queue name**: The Slurm partition to submit to, filling the `--partition` parameter. More information on partitions can be found in the [**Queueing**](../resources.md) section.
 - **Standard submission script**: The location of the Slurm job script template that will be used. This field will be filled with the appropriate template for the loaded Relion module by default, and should not be changed.*For advanced users only:* if you are familiar with Relion and want to further fine-tune your Slurm scripts, you can write your own based on the provided templates found in `/share/apps/spack/templates/hpccf/franklin` or [in our spack GitHub repo](https://github.com/ucdavis/spack-ucdavis/tree/main/templates/hpccf/franklin).
 - **Minimum dedicated cores per node**: Unused on our system.
 

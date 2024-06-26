@@ -1,5 +1,71 @@
 # Requesting Resources
 
+
+## Partitions
+
+Each **node** -- physically distinct machines within the cluster -- will be a member of one or more
+**partitions**. A partition consists of a collection of nodes, a policy for job scheduling on that
+partition, a policy for conflicts when nodes are a member of more than one partition (ie.
+preemption), and a policy for managing and restricting resources per user or per group referred to
+as Quality of Service.
+The Slurm documentation has detailed information on how [preemption](https://slurm.schedmd.com/preempt.html) and [QOS
+definitions](https://slurm.schedmd.com/qos.html) are handled; our per-cluster _Resources_ sections
+describe how partitions are organized and preemption handled on our clusters.
+
+## Accounts
+
+Users are granted access to resources via Slurm **associations**. An association links together a
+**user** with an **account** and a QOS definition. **Accounts** most commonly correspond to your
+lab, but sometimes exist for graduate groups, departments, or institutes.
+
+To see your associations, and thus which accounts and partitions you have access to, you can use the
+`sacctmgr` command:
+
+``` console
+$ sacctmgr show assoc user=$USER
+   Cluster    Account       User  Partition     Share ...   MaxTRESMins                  QOS   Def QOS GrpTRESRunMin 
+---------- ---------- ---------- ---------- --------- ... ------------- -------------------- --------- ------------- 
+  franklin   hpccfgrp       camw mmgdept-g+         1 ...               hpccfgrp-mmgdept-gp+                         
+  franklin   hpccfgrp       camw mmaldogrp+         1 ...               hpccfgrp-mmaldogrp-+                         
+  franklin   hpccfgrp       camw cashjngrp+         1 ...               hpccfgrp-cashjngrp-+                         
+  franklin   hpccfgrp       camw jalettsgr+         1 ...               hpccfgrp-jalettsgrp+                         
+  franklin   hpccfgrp       camw jawdatgrp+         1 ...               hpccfgrp-jawdatgrp-+                         
+  franklin   hpccfgrp       camw        low         1 ...                   hpccfgrp-low-qos                         
+  franklin   hpccfgrp       camw       high         1 ...                  hpccfgrp-high-qos                         
+  franklin  jawdatgrp       camw        low         1 ...                    mcbdept-low-qos                         
+  franklin  jawdatgrp       camw jawdatgrp+         1 ...               jawdatgrp-jawdatgrp+                         
+  franklin jalettsgrp       camw jalettsgr+         1 ...               jalettsgrp-jalettsg+                         
+  franklin jalettsgrp       camw        low         1 ...                    mcbdept-low-qos                         
+```
+
+The output is very wide, so you may want to pipe it through `less` to make it more readable:
+
+``` console
+sacctmgr show assoc user=$USER | less -S
+```
+
+Or, perhaps preferably, output it in a more compact format:
+
+``` console
+$ sacctmgr show assoc user=camw format="account%20,partition%20,qos%40"
+             Account            Partition                                      QOS 
+-------------------- -------------------- ---------------------------------------- 
+            hpccfgrp          mmgdept-gpu                 hpccfgrp-mmgdept-gpu-qos 
+            hpccfgrp        mmaldogrp-gpu               hpccfgrp-mmaldogrp-gpu-qos 
+            hpccfgrp        cashjngrp-gpu               hpccfgrp-cashjngrp-gpu-qos 
+            hpccfgrp       jalettsgrp-gpu              hpccfgrp-jalettsgrp-gpu-qos 
+            hpccfgrp        jawdatgrp-gpu               hpccfgrp-jawdatgrp-gpu-qos 
+            hpccfgrp                  low                         hpccfgrp-low-qos 
+            hpccfgrp                 high                        hpccfgrp-high-qos 
+           jawdatgrp                  low                          mcbdept-low-qos 
+           jawdatgrp        jawdatgrp-gpu              jawdatgrp-jawdatgrp-gpu-qos 
+          jalettsgrp       jalettsgrp-gpu            jalettsgrp-jalettsgrp-gpu-qos 
+          jalettsgrp                  low                          mcbdept-low-qos 
+```
+
+In the above example, we can see that user `camw` has access to the `high` partition via an
+association with `hpccfgrp` and the `jalettsgrp-gpu` partition via the `jalettsgrp` account.
+
 ## Resource Types
 
 ### CPUs / cores
@@ -14,8 +80,8 @@ Slurm's CPU management methods are complex and can quickly become confusing.
 For the purposes of this documentation, we will provide a simplified explanation; those with advanced needs
 should consult [the Slurm documentation](https://slurm.schedmd.com/cpu_management.html).
 
-Slurm follows a distinction between its physically resources -- cluster nodes and CPUs or cores on a node -- and virtual
-resources, or **tasks**, which specificy how requested physical resources will be grouped and distributed.
+Slurm follows a distinction between its physical resources -- cluster nodes and CPUs or cores on a node -- and virtual
+resources, or **tasks**, which specify how requested physical resources will be grouped and distributed.
 By default, Slurm will minimize the number of nodes allocated to a job, and attempt to keep the job's CPU requests
 localized within a node.
 **Tasks** group together CPUs (or other resources): CPUs within a task will be kept together on the same node.
@@ -116,7 +182,7 @@ In our prior examples, however, we used small resource requests.
 What happens when we want to distribute jobs across nodes?
 
 Slurm uses the [block distribution](https://slurm.schedmd.com/sbatch.html#OPT_block) method by default to distribute
-tasks betwee nodes.
+tasks between nodes.
 It will exhaust all the CPUs on a node with task groups before moving to a new node.
 For these examples, we're going to create a script that reports both the hostname (ie, the node) and the number
 of CPUs:
