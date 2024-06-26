@@ -1,6 +1,8 @@
-# About the Farm Cluster
 
-*Updated on 10/20/2023*
+# Farm
+
+![CBS unit signature](../assets/UCDavis_CAES_logo_RGB_vector.svg){ width="400" align="right" }
+
 
 
 Farm is a Linux-based supercomputing cluster for the [College of Agricultural and Environmental Sciences](https://caes.ucdavis.edu/) at UC Davis. 
