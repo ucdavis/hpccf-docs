@@ -1,4 +1,7 @@
-# Netbox
+---
+template: admin.html
+title: Netbox
+---
 
 [HPCCF's Netbox Site](https://netbox.hpc.ucdavis.edu/dcim/sites/) is our source of truth for our
 rack layouts, network addressing, and other infrastructure. NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. NetBox was developed specifically to address the needs of network and infrastructure engineers.
@@ -54,3 +57,4 @@ This section will give an overview of how HPCCF admins utilize and administer Ne
 3. Once selected you will come to a screen that looks like this: ![netbox22](../img/netbox22.jpeg)![netbox23](../img/netbox23.jpeg)![netbox24](../img/netbox24.jpeg)
 
 4. Once all filled out with the required information to complete the connection (and any additional information that can be provided) at the bottom make sure to create the connection, your screen should look something like this: ![netbox25](../img/netbox25.jpeg)![netbox26](../img/netbox26.jpeg)![netbox27](../img/netbox27.jpeg)
+

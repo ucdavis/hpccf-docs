@@ -37,6 +37,7 @@ nav:
       - Resources: franklin/resources.md
       - Storage: franklin/storage.md
   - Admin:
+    - admin/index.md
     - Network Architecture: admin/network.md
     - Virtual Machines: admin/vms.md
     - Provisioning: admin/provisioning.md
@@ -95,6 +96,7 @@ extra_javascript:
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - content.code.annotate
     #- navigation.tabs
