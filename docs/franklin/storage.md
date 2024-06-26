@@ -1,3 +1,7 @@
+---
+title: Storage
+---
+
 ## Home Directories
 
 All users are allocated 20GB of storage for their home directory.
