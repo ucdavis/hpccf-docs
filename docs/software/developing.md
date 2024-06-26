@@ -1,6 +1,5 @@
 ---
-title: Developing Software on Franklin
+title: Software Development
 summary: Accessing developer tools and setting up development environments.
 ---
 
-# Developing Software on Franklin
