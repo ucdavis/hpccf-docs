@@ -27,6 +27,8 @@ chown 600 $HOME/.ssh/id_rsa
 On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this file.
 Doing so will cause you will lose access.
 
+### Kerberos and GSSAPI
+
 If you are trying to use a key to access LSSC0 or any of the Genome Center login nodes, SSH keys will not work, but there is 
 another method. 
 
