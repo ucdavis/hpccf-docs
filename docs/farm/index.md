@@ -1,17 +1,17 @@
 
 # Farm
 
-![CBS unit signature](../assets/UCDavis_CAES_logo_RGB_vector.svg){ width="400" align="right" }
+![CAES unit signature](../assets/UCDavis_CAES_logo_RGB_vector.svg){ width="400" align="right" }
 
 
 
-Farm is a Linux-based supercomputing cluster for the [College of Agricultural and Environmental Sciences](https://caes.ucdavis.edu/) at UC Davis. 
+Farm is a Linux-based supercomputing cluster for the [College of Agricultural and Environmental Sciences](https://caes.ucdavis.edu/) (CA&ES) at UC Davis. 
 Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based 
 computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and 
 related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic 
 information system (GIS) software, and more. 
 
-For buying in resources in Farm cluster, contact CEAS IT director Adam 
+For buying in resources in Farm cluster, contact CA&ES IT director Adam 
 Getchell - <acgetchell@ucdavis.edu>
 
 ## Farm Hardware
