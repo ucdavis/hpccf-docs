@@ -92,11 +92,27 @@ MOTD_FORMAT="txt" # markdown, txt, rss, markdown_erb, txt_erb
 In `/etc/ood/config/apps/dashboard/env`
 
 ## ondemand.d 
-`/etc/ood/config/ondemand.d/` is home to nearly all other OOD configs not mentioned here (i.e. ticket submission, nav customizations, branding, etc.). The contents are controlled by puppet, under `openondemand::confs:`, and the formatting to properly place yamls here is as follows:
+`/etc/ood/config/ondemand.d/` is home to nearly all other OOD configs not mentioned here (i.e. ticket submission, nav customizations, branding, etc.). The contents are controlled by puppet, under `openondemand::confs:`, and the puppet formatting to properly place yamls here is as follows:
 
+```
+openondemand::conf:
+<name of yaml (i.e. tickets; If you want to create a tickets.yml)>
+  data: (denotes the content to put in yaml)
+    <yaml key>: <yaml value>
 ```
 
 ```
+support_ticket:
+    data:
+      support_ticket:
+        email:
+          from: "noreply@%{trusted.domain}"
+          to: hpc-help@ucdavis.edu
+```
+
+More about `ondemand.d`, `openondemand::confs`, and their function and format can be found
+here: <https://osc.github.io/ood-documentation/latest/reference/files/ondemand-d-ymls.html>
+and here: <https://forge.puppet.com/modules/osc/openondemand/>
 
 ## OOD FQDNs
 ### Farm
