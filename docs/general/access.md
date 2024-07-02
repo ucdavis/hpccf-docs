@@ -1,4 +1,4 @@
-In order to access your HPC account, you may need to generate a SSH key pair for authorization. You generate a pair of keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is submitted to HPCCF to grant you access to a cluster.
+In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is submitted to HPCCF to grant you access to a cluster.
 
 ## How do I generate an SSH key pair?
 
@@ -18,7 +18,7 @@ cat ~/.ssh/*.pub
 
 ### macOS and Linux:
 
-Use a terminal to create a SSH key pair using the command:
+Use a terminal to create an SSH key pair using the command:
 
 `ssh-keygen`
 
