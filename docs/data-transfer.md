@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data Transfer
 HPC users can transfer data between their local machine and the clusters.
 They can use software or commands to do the data transfer.
@@ -83,3 +84,8 @@ ssh-add path/to/your/private-key
 ssh-add -l
 ```
 Once you have enabled ssh-agent and added your private key to it, you can use the feature to transfer over data using `scp` or `rsync` commands.
+=======
+---
+title: Data Transfer
+---
+>>>>>>> main
