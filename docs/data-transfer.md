@@ -7,13 +7,17 @@ They can use software or commands to do the data transfer.
 ## Available Software
 There are multiple transfer software available to copy data between the HPC clusters and the user's computer.
 
-- [Filezilla](https://filezilla-project.org/) is a multi-platform client commonly used to transfer data to and from the cluster.
+- [Filezilla](https://filezilla-project.org/){:target="_blank"} is a multi-platform client commonly used to transfer data to and from the cluster.
 
-- [Cyberduck](https://cyberduck.io/) is another popular file transfer client for Mac or Windows computers.
+- [Cyberduck](https://cyberduck.io/){:target="_blank"} is another popular file transfer client for Mac or Windows computers.
 
-- [WinSCP](https://winscp.net/eng/index.php) is Windows-only file transfer software.
+- [WinSCP](https://winscp.net/eng/index.php){:target="_blank"} is Windows-only file transfer software.
 
-- [Globus](https://www.globus.org/) is another common solution, especially for larger transfers.
+- [Globus](https://www.globus.org/){:target="_blank"} is another common solution, especially for larger transfers.
+  
+      - UCD affiliates/users can log into [https://www.globus.org/](https://www.globus.org/){:target="_blank"} , choose UC Davis as your existing organizational login.
+      - After you log in, look up the collection path on the Search field to retrieve the data for transfer.
+  
 ## Data Transfer using Commmand Line
 
 The commands `rsync` and `scp` are command-line tools to transfer data to and from the cluster, and they should be run on your computer, not on the cluster:
