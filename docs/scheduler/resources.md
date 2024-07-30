@@ -47,7 +47,7 @@ sacctmgr show assoc user=$USER | less -S
 Or, perhaps preferably, output it in a more compact format:
 
 ``` console
-$ sacctmgr show assoc user=camw format="account%20,partition%20,qos%40"
+$ sacctmgr show assoc user=$USER format="account%20,partition%20,qos%40"
              Account            Partition                                      QOS 
 -------------------- -------------------- ---------------------------------------- 
             hpccfgrp          mmgdept-gpu                 hpccfgrp-mmgdept-gpu-qos 
