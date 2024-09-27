@@ -2182,6 +2182,10 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
 <p>OOD Apps
   When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from <code>/var/www/ood/apps/sys/&lt;app_name&gt;/template/*</code> to <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;</code>. Any errors encountered at this step will be in <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;/*.log</code>.</p>
 </li>
+<li>
+<p>Misc
+  Maybe the ondemand server is just in some invalid state and needs to be reset. I'd recommend you check the puppet conf at <code>/etc/puppetlabs/puppet/puppet.conf</code>, run <code>puppet agent -t</code> , and maybe restart the machine. Running puppet will force restart the apache server and regenerate OOD from the ood config yamls. Then you can restart the server by either ssh-ing to the server and running <code>reboot</code>, or by ssh-ing to proxmox and running <code>qm reset &lt;vmid&gt;</code> as root. TIP: you can find the vmid by finding the server in <code>qm list</code>. </p>
+</li>
 </ol>
 <h2 id="ood-fqdns">OOD FQDNs<a class="headerlink" href="#ood-fqdns" title="Permanent link">&para;</a></h2>
 <h3 id="farm">Farm<a class="headerlink" href="#farm" title="Permanent link">&para;</a></h3>
