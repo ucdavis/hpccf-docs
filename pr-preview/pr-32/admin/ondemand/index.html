@@ -2157,36 +2157,34 @@ and here: <a href="https://forge.puppet.com/modules/osc/openondemand/">https://f
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  oodapp-&gt;&gt;user: render
 </code></pre></div>
 <ol>
-<li>
-<p>Apache
-  To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at <code>/var/log/apache2/error.log</code></p>
-</li>
-<li>
-<p>CAS
-  Apache then redirects the users to CAS for authentication. You can <code>grep -r $user /var/cache/apache2/mod_auth_cas/</code> to check if users have been authed to CAS and a cookie has been set.</p>
-</li>
-<li>
-<p>Apache part deux
-  CAS brings us back to apache and here apache runs all sorts of OOD Lua hooks. Any errors encountered at this step will be in the l
-og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
-</li>
-<li>
-<p>The PUN (Per User Nginx) session
-  Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at <code>/var/log/ondemand-nginx/$user/error.log</code>. You can also see what might be happening here by running commands like <code>ps aux | grep $USER</code> to see the users PUN, or <code>ps aux | grep -i nginx</code> to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.</p>
-</li>
-<li>
-<p>/pun/sys/dashboard
-  The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: <code>df | grep $HOME</code>, <code>du -sh $HOME</code>, <code>journalctl -u  autofs</code>, and umount stuff. Check that <code>$HOME/ondemand</code> exists perhaps.</p>
-</li>
-<li>
-<p>OOD Apps
-  When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from <code>/var/www/ood/apps/sys/&lt;app_name&gt;/template/*</code> to <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;</code>. Any errors encountered at this step will be in <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;/*.log</code>.</p>
-</li>
-<li>
-<p>Misc
-  Maybe the ondemand server is just in some invalid state and needs to be reset. I'd recommend you check the puppet conf at <code>/etc/puppetlabs/puppet/puppet.conf</code>, run <code>puppet agent -t</code> , and maybe restart the machine. Running puppet will force restart the apache server and regenerate OOD from the ood config yamls. Then you can restart the server by either ssh-ing to the server and running <code>reboot</code>, or by ssh-ing to proxmox and running <code>qm reset &lt;vmid&gt;</code> as root. TIP: you can find the vmid by finding the server in <code>qm list</code>. </p>
-</li>
+<li>Apache</li>
 </ol>
+<p>To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at <code>/var/log/apache2/error.log</code></p>
+<ol>
+<li>CAS</li>
+</ol>
+<p>Apache then redirects the users to CAS for authentication. You can <code>grep -r $user /var/cache/apache2/mod_auth_cas/</code> to check if users have been authed to CAS and a cookie has been set.</p>
+<ol>
+<li>Apache part deux</li>
+</ol>
+<p>CAS brings us back to apache and here apache runs all sorts of OOD Lua hooks. Any errors encountered at this step will be in the l
+og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
+<ol>
+<li>The PUN (Per User Nginx) session</li>
+</ol>
+<p>Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at <code>/var/log/ondemand-nginx/$user/error.log</code>. You can also see what might be happening here by running commands like <code>ps aux | grep $USER</code> to see the users PUN, or <code>ps aux | grep -i nginx</code> to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.</p>
+<ol>
+<li>/pun/sys/dashboard</li>
+</ol>
+<p>The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: <code>df | grep $HOME</code>, <code>du -sh $HOME</code>, <code>journalctl -u  autofs</code>, and umount stuff. Check that <code>$HOME/ondemand</code> exists perhaps.</p>
+<ol>
+<li>OOD Apps</li>
+</ol>
+<p>When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from <code>/var/www/ood/apps/sys/&lt;app_name&gt;/template/*</code> to <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;</code>. Any errors encountered at this step will be in <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;/*.log</code>.</p>
+<ol>
+<li>Misc</li>
+</ol>
+<p>Maybe the ondemand server is just in some invalid state and needs to be reset. I'd recommend you check the puppet conf at <code>/etc/puppetlabs/puppet/puppet.conf</code>, run <code>puppet agent -t</code> , and maybe restart the machine. Running puppet will force restart the apache server and regenerate OOD from the ood config yamls. Then you can restart the server by either ssh-ing to the server and running <code>reboot</code>, or by ssh-ing to proxmox and running <code>qm reset &lt;vmid&gt;</code> as root. TIP: you can find the vmid by finding the server in <code>qm list</code>. </p>
 <h2 id="ood-fqdns">OOD FQDNs<a class="headerlink" href="#ood-fqdns" title="Permanent link">&para;</a></h2>
 <h3 id="farm">Farm<a class="headerlink" href="#farm" title="Permanent link">&para;</a></h3>
 <h4 id="production-ondemandfarmhpcucdavisedu">Production: <code>ondemand.farm.hpc.ucdavis.edu</code><a class="headerlink" href="#production-ondemandfarmhpcucdavisedu" title="Permanent link">&para;</a></h4>
