@@ -130,25 +130,32 @@ sequenceDiagram
 ```
 
 1. Apache
+  
   To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at `/var/log/apache2/error.log`
 
 2. CAS
+  
   Apache then redirects the users to CAS for authentication. You can `grep -r $user /var/cache/apache2/mod_auth_cas/` to check if users have been authed to CAS and a cookie has been set.
 
 3. Apache part deux
+  
   CAS brings us back to apache and here apache runs all sorts of OOD Lua hooks. Any errors encountered at this step will be in the l
 og(s) at `/var/log/apache2/$fqdn_error.log`
 
 4. The PUN (Per User Nginx) session
+  
   Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at `/var/log/ondemand-nginx/$user/error.log`. You can also see what might be happening here by running commands like `ps aux | grep $USER` to see the users PUN, or `ps aux | grep -i nginx` to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.
 
 5. /pun/sys/dashboard
+  
   The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: `df | grep $HOME`, `du -sh $HOME`, `journalctl -u  autofs`, and umount stuff. Check that `$HOME/ondemand` exists perhaps.
 
 6. OOD Apps
+  
   When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from `/var/www/ood/apps/sys/<app_name>/template/*` to `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>`. Any errors encountered at this step will be in `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>/*.log`.
 
 7. Misc
+  
   Maybe the ondemand server is just in some invalid state and needs to be reset. I'd recommend you check the puppet conf at `/etc/puppetlabs/puppet/puppet.conf`, run `puppet agent -t` , and maybe restart the machine. Running puppet will force restart the apache server and regenerate OOD from the ood config yamls. Then you can restart the server by either ssh-ing to the server and running `reboot`, or by ssh-ing to proxmox and running `qm reset <vmid>` as root. TIP: you can find the vmid by finding the server in `qm list`. 
 
 
