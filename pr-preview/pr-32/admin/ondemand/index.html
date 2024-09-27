@@ -2174,7 +2174,7 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
 </ol>
 <p>Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at <code>/var/log/ondemand-nginx/$user/error.log</code>. You can also see what might be happening here by running commands like <code>ps aux | grep $USER</code> to see the users PUN, or <code>ps aux | grep -i nginx</code> to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.</p>
 <ol>
-<li>/pun/sys/dashboard</li>
+<li>Dashboard (https://localhost/pun/sys/dashboard)</li>
 </ol>
 <p>The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: <code>df | grep $HOME</code>, <code>du -sh $HOME</code>, <code>journalctl -u  autofs</code>, and umount stuff. Check that <code>$HOME/ondemand</code> exists perhaps.</p>
 <ol>
