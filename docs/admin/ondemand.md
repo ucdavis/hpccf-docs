@@ -131,11 +131,11 @@ sequenceDiagram
 
 1. Apache
   
-  To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at `/var/log/apache2/error.log`
+  To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at `/var/log/apache2/error.log`. This also the part where apache redirects any users who arrive at http://ondemand...:80 to https://ondemand...:443; You can narrow down if this is indeed the problem by just checking if the https url works. If the http site works but the https site doesn't, then it's an ssl proxy error check the apache configs.
 
 2. CAS
   
-  Apache then redirects the users to CAS for authentication. You can `grep -r $user /var/cache/apache2/mod_auth_cas/` to check if users have been authed to CAS and a cookie has been set.
+  Apache then redirects the users to CAS for authentication. You can `grep -r $USER /var/cache/apache2/mod_auth_cas/` to check if users have been authed to CAS and a cookie has been set.
 
 3. Apache part deux
   
@@ -146,13 +146,13 @@ og(s) at `/var/log/apache2/$fqdn_error.log`
   
   Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at `/var/log/ondemand-nginx/$user/error.log`. You can also see what might be happening here by running commands like `ps aux | grep $USER` to see the users PUN, or `ps aux | grep -i nginx` to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.
 
-5. Dashboard (https://localhost/pun/sys/dashboard)
+5. Dashboard (/pun/sys/dashboard)
   
-  The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: `df | grep $HOME`, `du -sh $HOME`, `journalctl -u  autofs`, and umount stuff. Check that `$HOME/ondemand` exists perhaps.
+  The dashboard is mostly covered in section 4 as part of the PUN, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: `df | grep $HOME`, `du -sh $HOME`, `journalctl -u  autofs`, `mount | grep $HOME`, `automount -m`, and all the nfs homedir stuff. You should also check zfs, connection speed, and logs on the NAS where users' homedir is located with some things like `zpool status` as root.
 
 6. OOD Apps
   
-  When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from `/var/www/ood/apps/sys/<app_name>/template/*` to `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>`. Any errors encountered at this step will be in `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>/*.log`.
+  When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from `/var/www/ood/apps/sys/<app_name>/template/*` to `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>`. Any errors encountered at this step will be in `$HOME/ondemand/data/sys/dashboard/batch_connect/sys/<app_name>/(output)/<session_id>/*.log`. i.e. output.log or vnc.log
 
 7. Misc
   
