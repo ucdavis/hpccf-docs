@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -2159,11 +2159,11 @@ and here: <a href="https://forge.puppet.com/modules/osc/openondemand/">https://f
 <ol>
 <li>Apache</li>
 </ol>
-<p>To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at <code>/var/log/apache2/error.log</code></p>
+<p>To start, all users who navigate to the ondemand website first encounter the apache server. Any errors encountered at this step will be in the log(s) at <code>/var/log/apache2/error.log</code>. This also the part where apache redirects any users who arrive at http://ondemand...:80 to https://ondemand...:443; You can narrow down if this is indeed the problem by just checking if the https url works. If the http site works but the https site doesn't, then it's an ssl proxy error check the apache configs.</p>
 <ol>
 <li>CAS</li>
 </ol>
-<p>Apache then redirects the users to CAS for authentication. You can <code>grep -r $user /var/cache/apache2/mod_auth_cas/</code> to check if users have been authed to CAS and a cookie has been set.</p>
+<p>Apache then redirects the users to CAS for authentication. You can <code>grep -r $USER /var/cache/apache2/mod_auth_cas/</code> to check if users have been authed to CAS and a cookie has been set.</p>
 <ol>
 <li>Apache part deux</li>
 </ol>
@@ -2174,13 +2174,13 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
 </ol>
 <p>Apache then starts an NginX server as the user and most things like the main dashboard, submitting jobs, running apps, etc happen here in the PUN. Any errors encountered at this step will be in the logs at <code>/var/log/ondemand-nginx/$user/error.log</code>. You can also see what might be happening here by running commands like <code>ps aux | grep $USER</code> to see the users PUN, or <code>ps aux | grep -i nginx</code> to see all the PUNs. From the ondemand web UI theres an option to "Restart Web Server" which essentially kills and restarts the users PUN.</p>
 <ol>
-<li>Dashboard (https://localhost/pun/sys/dashboard)</li>
+<li>Dashboard (/pun/sys/dashboard)</li>
 </ol>
-<p>The dashboard is mostly covered in section 4, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: <code>df | grep $HOME</code>, <code>du -sh $HOME</code>, <code>journalctl -u  autofs</code>, and umount stuff. Check that <code>$HOME/ondemand</code> exists perhaps.</p>
+<p>The dashboard is mostly covered in section 4 as part of the PUN, but just wanted to denote that apache then redirects us here after the PUN has been started where users can do everything else. At this step OOD will warn you about things like "Home Directory Not Found" and such. If you get this far I'd recommend you troubleshoot issues with users' home dir, NASii, and free space: <code>df | grep $HOME</code>, <code>du -sh $HOME</code>, <code>journalctl -u  autofs</code>, <code>mount | grep $HOME</code>, <code>automount -m</code>, and all the nfs homedir stuff. You should also check zfs, connection speed, and logs on the NAS where users' homedir is located with some things like <code>zpool status</code> as root.</p>
 <ol>
 <li>OOD Apps</li>
 </ol>
-<p>When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from <code>/var/www/ood/apps/sys/&lt;app_name&gt;/template/*</code> to <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;</code>. Any errors encountered at this step will be in <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;/*.log</code>.</p>
+<p>When users start an app like JuyterLab or a VNC desktop the job is submitted by the users' PUN and here OOD copies and renders (with ERB) the global app template from <code>/var/www/ood/apps/sys/&lt;app_name&gt;/template/*</code> to <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;</code>. Any errors encountered at this step will be in <code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/&lt;app_name&gt;/(output)/&lt;session_id&gt;/*.log</code>. i.e. output.log or vnc.log</p>
 <ol>
 <li>Misc</li>
 </ol>
@@ -2217,7 +2217,7 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2024</span>
   </span>
 
     
@@ -2227,7 +2227,7 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2024</span>
   </span>
 
     
@@ -2310,7 +2310,7 @@ og(s) at <code>/var/log/apache2/$fqdn_error.log</code></p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
