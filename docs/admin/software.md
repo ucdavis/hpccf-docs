@@ -135,7 +135,7 @@ Ensure that the modulefiles are generated. This generally happens on its own, bu
 spack module tcl refresh name-of-software
 ```
 
-### Check the Software
+#### Check the Software
 
 You should do a cursory check that the software actually works. Usually the best way to do this is to just run `name-of-software -h`. For example, for the software `fastani`:
 
