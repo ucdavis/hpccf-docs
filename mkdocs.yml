@@ -15,7 +15,7 @@ nav:
     - Software:
       - About: software/index.md
       - Module System: software/modules.md
-      - Python and Conda: software/conda.md
+      - Conda and Python: software/conda.md
       - R and RStudio: software/rlang.md
       - Development: software/developing.md
     - Data Transfer: data-transfer.md
