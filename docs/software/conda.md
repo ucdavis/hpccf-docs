@@ -139,6 +139,7 @@ In order to migrate, you will need to remove the initialization code that the co
 configuration. This code will most likely be in either `~/.bashrc` or `~/.bash_profile`, and will look something like:
 
 ```bash
+# >>> conda initialize >>>
 __conda_setup="$('/home/camille/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -150,6 +151,7 @@ else
     fi
 fi
 unset __conda_setup
+# <<< conda initialize <<<
 ```
 
 Delete this block, and log out and back in to the cluster, after which you should be able to `module load conda`.
