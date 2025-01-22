@@ -704,6 +704,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other error
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1694,6 +1703,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other error
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1719,10 +1737,10 @@
 
 <p><img align="left" alt="Open OnDemand" src="../../img/ondemand_logo.png" style="height:50px;width:50px" /></p>
 <h1 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h1>
-<p>Some HPCCF clusters have a <a href="https://openondemand.org/">Open OnDemand</a> (OOD). OOD allows browser access to specific
-resources running within a cluster. All OOD apps are launched through individual Slurm jobs, so you have access to the
-same resources you can access through the CLI over SSH. One extremely nice feature about OOD is that you can disconnect
-from the session and, as long as the Slurm job is still running, reattach later.</p>
+<p>Some HPCCF clusters have <a href="https://openondemand.org/">Open OnDemand</a> (OOD). OOD allows browser access to cluster
+resources using a web browser. All OOD apps are launched through individual Slurm jobs, so you have access to the same
+resources you can access through the CLI over SSH. One nice feature about OOD is that you can disconnect from the
+session and, as long as the Slurm job is still running, reattach later.</p>
 <h2 id="clusters-with-open-ondemand">Clusters with Open OnDemand:<a class="headerlink" href="#clusters-with-open-ondemand" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://ondemand.farm.hpc.ucdavis.edu">Farm</a></li>
@@ -1739,8 +1757,8 @@ from the session and, as long as the Slurm job is still running, reattach later.
 <h2 id="desktop-notes">Desktop notes<a class="headerlink" href="#desktop-notes" title="Permanent link">&para;</a></h2>
 <p>HPCCF provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
 used to download data. This desktop is <strong>not</strong> intended for long term use. To prevent issues, your entire Firefox and
-Chrome data saved on the cluster is wiped every time you launch a new desktop session. This also prevents left-behind
-lock files from blocking browser launch when the Slurm job terminates before you quit the desktop session.</p>
+Chrome data saved on the cluster is wiped every time you launch a new desktop session. This prevents left-behind lock
+files from blocking browser launch when the Slurm job terminates before you exit the desktop session.</p>
 <h2 id="user-ondemand-debugging">User OnDemand debugging<a class="headerlink" href="#user-ondemand-debugging" title="Permanent link">&para;</a></h2>
 <p>If your OOD jobs launches, but fails very quickly, please click the long, random <code>Session ID:</code>. From there, open the
 <code>output.log</code> file and carefully look over the output.</p>
@@ -1772,9 +1790,11 @@ this, then you need to remove that to use RStudio Server:</p>
 <h3 id="failed-to-submit-session-with-the-following-error">Failed to submit session with the following error:<a class="headerlink" href="#failed-to-submit-session-with-the-following-error" title="Permanent link">&para;</a></h3>
 <p>If your job is rejected at submission time for reasons like below (basically anything that starts with
 <code>sbatch: error:</code>), please work with your PI to figure out an appropriate partition and resource request.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbatch: error: CPU count per node can not be satisfied
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
 </code></pre></div>
+<h3 id="other-error">Other error<a class="headerlink" href="#other-error" title="Permanent link">&para;</a></h3>
+<p>If your issue is not listed here, please email <code>hpc-help</code>at <code>ucdavis.edu</code> and send the cluster name, the OnDemand app
+you tried to run, the <code>Session ID</code> of the failed job, any errors you noticed, and any troubleshooting you performed.</p>
 
 
 
