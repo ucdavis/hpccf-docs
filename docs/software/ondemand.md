@@ -2,10 +2,10 @@
 
 # Open OnDemand
 
-Some HPCCF clusters have a [Open OnDemand](https://openondemand.org/) (OOD). OOD allows browser access to specific
-resources running within a cluster. All OOD apps are launched through individual Slurm jobs, so you have access to the
-same resources you can access through the CLI over SSH. One extremely nice feature about OOD is that you can disconnect
-from the session and, as long as the Slurm job is still running, reattach later.
+Some HPCCF clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows browser access to cluster
+resources using a web browser. All OOD apps are launched through individual Slurm jobs, so you have access to the same
+resources you can access through the CLI over SSH. One nice feature about OOD is that you can disconnect from the
+session and, as long as the Slurm job is still running, reattach later.
 
 ## Clusters with Open OnDemand:
 
@@ -24,8 +24,8 @@ from the session and, as long as the Slurm job is still running, reattach later.
 
 HPCCF provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
 used to download data. This desktop is **not** intended for long term use. To prevent issues, your entire Firefox and
-Chrome data saved on the cluster is wiped every time you launch a new desktop session. This also prevents left-behind
-lock files from blocking browser launch when the Slurm job terminates before you quit the desktop session.
+Chrome data saved on the cluster is wiped every time you launch a new desktop session. This prevents left-behind lock
+files from blocking browser launch when the Slurm job terminates before you exit the desktop session.
 
 ## User OnDemand debugging
 
@@ -81,6 +81,10 @@ If your job is rejected at submission time for reasons like below (basically any
 `sbatch: error:`), please work with your PI to figure out an appropriate partition and resource request.
 
 ```
-sbatch: error: CPU count per node can not be satisfied
 sbatch: error: Batch job submission failed: Requested node configuration is not available
 ```
+
+### Other error
+
+If your issue is not listed here, please email `hpc-help`at `ucdavis.edu` and send the cluster name, the OnDemand app
+you tried to run, the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you performed.
