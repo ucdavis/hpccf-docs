@@ -1895,6 +1895,10 @@
 
 <!-- Page content -->
 <h2 id="spack-on-cvmfs">Spack on cvmfs<a class="headerlink" href="#spack-on-cvmfs" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of December 9th, this document it out-of-date and <strong>must not</strong> be followed.</p>
+</div>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Access to <code>software.hpc.ucdavis.edu</code> as <code>software-user</code>.</li>
@@ -1917,19 +1921,23 @@
 <p>Load the Spack module to set up the environment:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>spack
 </code></pre></div>
-<p>This command moves you to the <code>/cvmfs/hpc.ucdavis.edu/sw/spack</code> directory, loads the Spack software, and activates the <code>main</code> environment.</p>
+<p>This command moves you to the <code>/cvmfs/hpc.ucdavis.edu/sw/spack</code> directory, loads the Spack software, and activates the
+<code>main</code> environment.</p>
 <h4 id="modify-the-spack-environment">Modify the Spack Environment<a class="headerlink" href="#modify-the-spack-environment" title="Permanent link">&para;</a></h4>
 <p>The YAML files for the <code>main</code> environment live under <code>environments/main</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>ls<span class="w"> </span>environments/main<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>ls<span class="w"> </span>environments/main
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">cryoem.yaml  general.yaml  libs.yaml  spack.lock  spack.yaml  view</span>
 </code></pre></div>
-<p>Do <strong>not</strong> edit <code>spack.yaml</code> directly. Instead:
-  - Add new libraries to <code>libs.yaml</code>.
-  - Add new software to <code>general.yaml</code>.</p>
+<p>Do <strong>not</strong> edit <code>spack.yaml</code> directly. Instead:</p>
+<ul>
+<li>Add new libraries to <code>libs.yaml</code>.</li>
+<li>Add new software to <code>general.yaml</code>.</li>
+</ul>
 <p>The format is <code>software @version +variant</code>. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gromacs @2019.6 +cuda</span>
 </code></pre></div>
-<p>Please include the version of the software. Available versions can be found at <a href="https://packages.spack.io">packages.spack.io</a>. You can also use <code>spack info</code>:</p>
+<p>Please include the version of the software. Available versions can be found at
+<a href="https://packages.spack.io">packages.spack.io</a>. You can also use <code>spack info</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>spack<span class="w"> </span>info<span class="w"> </span>gromacs
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">CMakePackage:   gromacs</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -1946,10 +1954,10 @@
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="go">Homepage: https://www.gromacs.org</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="go">Preferred version:  </span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="go">Preferred version:</span>
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="go">    2024.1    https://ftp.gromacs.org/gromacs/gromacs-2024.1.tar.gz</span>
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="go">Safe versions:  </span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="go">Safe versions:</span>
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="go">    main      [git] https://gitlab.com/gromacs/gromacs.git on branch main</span>
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="go">    2024.1    https://ftp.gromacs.org/gromacs/gromacs-2024.1.tar.gz</span>
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="go">    2024      https://ftp.gromacs.org/gromacs/gromacs-2024.tar.gz</span>
@@ -1969,26 +1977,32 @@
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="go">    cycle_subcounters [false]                false, true</span>
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="go">...</span>
 </code></pre></div>
-<p>This lists the available versions <em>and</em> variants for the package. It's important to take a look at these variants, as there may be non-default variants that are needed depending on the user request.</p>
+<p>This lists the available versions <em>and</em> variants for the package. It's important to take a look at these variants, as
+there may be non-default variants that are needed depending on the user request.</p>
 <h4 id="reconcretize-the-environment">Reconcretize the Environment<a class="headerlink" href="#reconcretize-the-environment" title="Permanent link">&para;</a></h4>
 <p>After making changes, reconcretize the environment:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>spack<span class="w"> </span>concretize<span class="w"> </span>-j<span class="w"> </span><span class="m">60</span>
 </code></pre></div>
-<p>This command will concretize only the new specifications you've added. If the concretization fails, you should probably escalate. </p>
+<p>This command will concretize only the new specifications you've added. If the concretization fails, you should probably
+escalate.</p>
 <h4 id="install-the-software">Install the Software<a class="headerlink" href="#install-the-software" title="Permanent link">&para;</a></h4>
 <p>If concretization is successful, proceed with the installation:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>spack<span class="w"> </span>install<span class="w"> </span>-j<span class="w"> </span><span class="m">60</span><span class="w"> </span>name-of-software
 </code></pre></div>
-<p>Specify the new software or pieces of software you have concretized in order to avoid needing to wait for other failed builds to install. You do not need to specify their versions, as Spack will install the newly concretized versions automatically.
-If the build fails, you may need to fork the package and make fixes, which is out of scope for this guide. If it succeeds, proceed.</p>
+<p>Specify the new software or pieces of software you have concretized in order to avoid needing to wait for other failed
+builds to install. You do not need to specify their versions, as Spack will install the newly concretized versions
+automatically. If the build fails, you may need to fork the package and make fixes, which is out of scope for this
+guide. If it succeeds, proceed.</p>
 <h4 id="generate-modulefiles">Generate Modulefiles<a class="headerlink" href="#generate-modulefiles" title="Permanent link">&para;</a></h4>
-<p>Ensure that the modulefiles are generated. This generally happens on its own, but on occasion needs to be kicked off manually:</p>
+<p>Ensure that the modulefiles are generated. This generally happens on its own, but on occasion needs to be kicked off
+manually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>spack<span class="w"> </span>module<span class="w"> </span>tcl<span class="w"> </span>refresh<span class="w"> </span>name-of-software
 </code></pre></div>
 <h4 id="check-the-software">Check the Software<a class="headerlink" href="#check-the-software" title="Permanent link">&para;</a></h4>
-<p>You should do a cursory check that the software actually works. Usually the best way to do this is to just run <code>name-of-software -h</code>. For example, for the software <code>fastani</code>:</p>
+<p>You should do a cursory check that the software actually works. Usually the best way to do this is to just run
+<code>name-of-software -h</code>. For example, for the software <code>fastani</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>fastani/1.33
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="gp">$ </span>fastANI<span class="w"> </span>-h<span class="w">   </span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="gp">$ </span>fastANI<span class="w"> </span>-h
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">-----------------</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">fastANI is a fast alignment-free implementation for computing whole-genome Average Nucleotide Identity (ANI) between genomes</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">-----------------</span>
@@ -2046,7 +2060,7 @@ If the build fails, you may need to fork the package and make fixes, which is ou
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2025</span>
   </span>
 
     
@@ -2056,7 +2070,7 @@ If the build fails, you may need to fork the package and make fixes, which is ou
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2025</span>
   </span>
 
     

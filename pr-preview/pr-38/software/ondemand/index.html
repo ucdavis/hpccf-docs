@@ -1737,10 +1737,10 @@
 
 <p><img align="left" alt="Open OnDemand" src="../../img/ondemand_logo.png" style="height:50px;width:50px" /></p>
 <h1 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h1>
-<p>Some HPCCF clusters have <a href="https://openondemand.org/">Open OnDemand</a> (OOD). OOD allows browser access to cluster
-resources using a web browser. All OOD apps are launched through individual Slurm jobs, so you have access to the same
-resources you can access through the CLI over SSH. One nice feature about OOD is that you can disconnect from the
-session and, as long as the Slurm job is still running, reattach later.</p>
+<p>Some HPCCF clusters have <a href="https://openondemand.org/">Open OnDemand</a> (OOD). OOD allows access to cluster resources using
+a web browser. All OOD apps are automatically launched through Slurm jobs, so you have access all your normal cluster
+resources. Just like sbatch jobs, OOD apps (jobs) run even when your browser is not attached, so you can reattach to a
+running OOD app just by going back to the OOD website.</p>
 <h2 id="clusters-with-open-ondemand">Clusters with Open OnDemand:<a class="headerlink" href="#clusters-with-open-ondemand" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://ondemand.farm.hpc.ucdavis.edu">Farm</a></li>
@@ -1756,9 +1756,9 @@ session and, as long as the Slurm job is still running, reattach later.</p>
 </ul>
 <h2 id="desktop-notes">Desktop notes<a class="headerlink" href="#desktop-notes" title="Permanent link">&para;</a></h2>
 <p>HPCCF provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
-used to download data. This desktop is <strong>not</strong> intended for long term use. To prevent issues, your entire Firefox and
-Chrome data saved on the cluster is wiped every time you launch a new desktop session. This prevents left-behind lock
-files from blocking browser launch when the Slurm job terminates before you exit the desktop session.</p>
+used to download data. This desktop is <strong>not</strong> intended for long term use. To prevent issues, your Firefox and Chrome
+data saved on the cluster is deleted every time you launch a new desktop session. This prevents left-behind lock files
+from blocking browser launch when the Slurm job terminates before you exit the desktop session.</p>
 <h2 id="user-ondemand-debugging">User OnDemand debugging<a class="headerlink" href="#user-ondemand-debugging" title="Permanent link">&para;</a></h2>
 <p>If your OOD jobs launches, but fails very quickly, please click the long, random <code>Session ID:</code>. From there, open the
 <code>output.log</code> file and carefully look over the output.</p>
@@ -1769,12 +1769,16 @@ files from blocking browser launch when the Slurm job terminates before you exit
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>You can list all discoverable environments with `conda info --envs`.
 </code></pre></div>
 <h3 id="out-of-memory-oom-events">Out of Memory (OOM) events<a class="headerlink" href="#out-of-memory-oom-events" title="Permanent link">&para;</a></h3>
-<p>If your Jupyter or RStudio jobs keep failing with errors <code>abnormally terminated due to an unexpected crash</code>, and, when
-your job finishes, you see a line like this in <code>output.log</code>, then you have not requested enough RAM:</p>
+<p>If your Jupyter or RStudio jobs keep failing with errors like <code>abnormally terminated due to an unexpected crash</code>, and,
+when your job finishes, you see a line like this in <code>output.log</code>, then you have not requested enough RAM:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>slurmstepd: error: Detected 3 oom_kill events in StepId=20294700.batch. Some of the step tasks have been OOM Killed.
 </code></pre></div>
-<p>Other indications of an OOM event are an RStudio or Jupyter window like these:
-<img alt="RStudio" src="../../img/rstudio-server-crash.png" /> <img alt="Jupyter" src="../../img/jupyter-kernel-crash.png" style="border :83px" /></p>
+<p>Other indications of an OOM event are an RStudio or Jupyter window like these:</p>
+<details class="note" open="open">
+<summary>Screenshots</summary>
+<p><img alt="RStudio" src="../../img/rstudio-server-crash.png" /></p>
+<p><img alt="Jupyter" src="../../img/jupyter-kernel-crash.png" /></p>
+</details>
 <h3 id="self-installed-conda-or-miniconda-break-rstudio-server">Self installed conda or miniconda break RStudio Server<a class="headerlink" href="#self-installed-conda-or-miniconda-break-rstudio-server" title="Permanent link">&para;</a></h3>
 <p>If you self-install conda, or miniconda, it will conflict with our centrally installed conda. If you see lines like
 this, then you need to remove that to use RStudio Server:</p>
@@ -1782,7 +1786,7 @@ this, then you need to remove that to use RStudio Server:</p>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This module will almost certainly interfere with your conda installation.
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Remove existing conda installation and its shell hooks from your PATH before proceeding.
 </code></pre></div>
-<p>See <a href="../ondemand/#applications-offered-with-open-ondemand">Migrating from User-installed Conda</a></p>
+<p>See <a href="/software/conda/#migrating-from-user-installed-conda">Migrating from User-installed Conda</a></p>
 <h3 id="time-limit">Time limit<a class="headerlink" href="#time-limit" title="Permanent link">&para;</a></h3>
 <p>If you see output like this, it means you did not request enough hours during the app configuration in OOD:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>slurmstepd: error: *** JOB 20296118 ON cpu-6-96 CANCELLED AT 2025-01-21T17:34:19 DUE TO TIME LIMIT ***
@@ -1817,7 +1821,7 @@ you tried to run, the <code>Session ID</code> of the failed job, any errors you 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2025</span>
   </span>
 
     
@@ -1827,7 +1831,7 @@ you tried to run, the <code>Session ID</code> of the failed job, any errors you 
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2025</span>
   </span>
 
     
