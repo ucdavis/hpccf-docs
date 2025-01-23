@@ -2,10 +2,10 @@
 
 # Open OnDemand
 
-Some HPCCF clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows browser access to cluster
-resources using a web browser. All OOD apps are launched through individual Slurm jobs, so you have access to the same
-resources you can access through the CLI over SSH. One nice feature about OOD is that you can disconnect from the
-session and, as long as the Slurm job is still running, reattach later.
+Some HPCCF clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows access to cluster resources using
+a web browser. All OOD apps are automatically launched through Slurm jobs, so you have access all your normal cluster
+resources. Just like sbatch jobs, OOD apps (jobs) run even when your browser is not attached, so you can reattach to a
+running OOD app just by going back to the OOD website.
 
 ## Clusters with Open OnDemand:
 
@@ -23,9 +23,9 @@ session and, as long as the Slurm job is still running, reattach later.
 ## Desktop notes
 
 HPCCF provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
-used to download data. This desktop is **not** intended for long term use. To prevent issues, your entire Firefox and
-Chrome data saved on the cluster is wiped every time you launch a new desktop session. This prevents left-behind lock
-files from blocking browser launch when the Slurm job terminates before you exit the desktop session.
+used to download data. This desktop is **not** intended for long term use. To prevent issues, your Firefox and Chrome
+data saved on the cluster is deleted every time you launch a new desktop session. This prevents left-behind lock files
+from blocking browser launch when the Slurm job terminates before you exit the desktop session.
 
 ## User OnDemand debugging
 
@@ -44,15 +44,20 @@ You can list all discoverable environments with `conda info --envs`.
 
 ### Out of Memory (OOM) events
 
-If your Jupyter or RStudio jobs keep failing with errors `abnormally terminated due to an unexpected crash`, and, when
-your job finishes, you see a line like this in `output.log`, then you have not requested enough RAM:
+If your Jupyter or RStudio jobs keep failing with errors like `abnormally terminated due to an unexpected crash`, and,
+when your job finishes, you see a line like this in `output.log`, then you have not requested enough RAM:
 
 ```
 slurmstepd: error: Detected 3 oom_kill events in StepId=20294700.batch. Some of the step tasks have been OOM Killed.
 ```
 
 Other indications of an OOM event are an RStudio or Jupyter window like these:
-![RStudio](../img/rstudio-server-crash.png) ![Jupyter](../img/jupyter-kernel-crash.png){: style="border :83px"}
+
+???+ note "Screenshots"
+
+    ![RStudio](../img/rstudio-server-crash.png)
+
+    ![Jupyter](../img/jupyter-kernel-crash.png)
 
 ### Self installed conda or miniconda break RStudio Server
 
@@ -65,7 +70,7 @@ This module will almost certainly interfere with your conda installation.
 Remove existing conda installation and its shell hooks from your PATH before proceeding.
 ```
 
-See [Migrating from User-installed Conda](../ondemand/#applications-offered-with-open-ondemand)
+See [Migrating from User-installed Conda](/software/conda/#migrating-from-user-installed-conda)
 
 ### Time limit
 
