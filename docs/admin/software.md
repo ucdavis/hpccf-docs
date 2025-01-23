@@ -5,9 +5,9 @@ title: Software Deployment
 
 ## Spack on cvmfs
 
-!!! warning
+!!! danger
 
-    As of December 9th, this document it out-of-date and **must not** be followed.
+    As of December 9th 2024, this document is out-of-date and **must not** be followed.
 
 ### Prerequisites
 
