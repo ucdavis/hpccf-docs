@@ -5,6 +5,10 @@ title: Software Deployment
 
 ## Spack on cvmfs
 
+!!! warning
+
+    As of December 9th, this document it out-of-date and **must not** be followed.
+
 ### Prerequisites
 
 - Access to `software.hpc.ucdavis.edu` as `software-user`.
@@ -40,20 +44,22 @@ Load the Spack module to set up the environment:
 module load spack
 ```
 
-This command moves you to the `/cvmfs/hpc.ucdavis.edu/sw/spack` directory, loads the Spack software, and activates the `main` environment.
+This command moves you to the `/cvmfs/hpc.ucdavis.edu/sw/spack` directory, loads the Spack software, and activates the
+`main` environment.
 
 #### Modify the Spack Environment
 
 The YAML files for the `main` environment live under `environments/main`:
 
 ```console
-$ ls environments/main 
+$ ls environments/main
 cryoem.yaml  general.yaml  libs.yaml  spack.lock  spack.yaml  view
 ```
 
 Do **not** edit `spack.yaml` directly. Instead:
-  - Add new libraries to `libs.yaml`.
-  - Add new software to `general.yaml`.
+
+- Add new libraries to `libs.yaml`.
+- Add new software to `general.yaml`.
 
 The format is `software @version +variant`. For example:
 
@@ -61,7 +67,8 @@ The format is `software @version +variant`. For example:
 - gromacs @2019.6 +cuda
 ```
 
-Please include the version of the software. Available versions can be found at [packages.spack.io](https://packages.spack.io). You can also use `spack info`:
+Please include the version of the software. Available versions can be found at
+[packages.spack.io](https://packages.spack.io). You can also use `spack info`:
 
 ```console
 $ spack info gromacs
@@ -80,10 +87,10 @@ Description:
 
 Homepage: https://www.gromacs.org
 
-Preferred version:  
+Preferred version:
     2024.1    https://ftp.gromacs.org/gromacs/gromacs-2024.1.tar.gz
 
-Safe versions:  
+Safe versions:
     main      [git] https://gitlab.com/gromacs/gromacs.git on branch main
     2024.1    https://ftp.gromacs.org/gromacs/gromacs-2024.1.tar.gz
     2024      https://ftp.gromacs.org/gromacs/gromacs-2024.tar.gz
@@ -104,7 +111,8 @@ Variants:
 ...
 ```
 
-This lists the available versions *and* variants for the package. It's important to take a look at these variants, as there may be non-default variants that are needed depending on the user request.
+This lists the available versions _and_ variants for the package. It's important to take a look at these variants, as
+there may be non-default variants that are needed depending on the user request.
 
 #### Reconcretize the Environment
 
@@ -114,7 +122,8 @@ After making changes, reconcretize the environment:
 spack concretize -j 60
 ```
 
-This command will concretize only the new specifications you've added. If the concretization fails, you should probably escalate. 
+This command will concretize only the new specifications you've added. If the concretization fails, you should probably
+escalate.
 
 #### Install the Software
 
@@ -124,12 +133,15 @@ If concretization is successful, proceed with the installation:
 spack install -j 60 name-of-software
 ```
 
-Specify the new software or pieces of software you have concretized in order to avoid needing to wait for other failed builds to install. You do not need to specify their versions, as Spack will install the newly concretized versions automatically.
-If the build fails, you may need to fork the package and make fixes, which is out of scope for this guide. If it succeeds, proceed.
+Specify the new software or pieces of software you have concretized in order to avoid needing to wait for other failed
+builds to install. You do not need to specify their versions, as Spack will install the newly concretized versions
+automatically. If the build fails, you may need to fork the package and make fixes, which is out of scope for this
+guide. If it succeeds, proceed.
 
 #### Generate Modulefiles
 
-Ensure that the modulefiles are generated. This generally happens on its own, but on occasion needs to be kicked off manually:
+Ensure that the modulefiles are generated. This generally happens on its own, but on occasion needs to be kicked off
+manually:
 
 ```bash
 spack module tcl refresh name-of-software
@@ -137,11 +149,12 @@ spack module tcl refresh name-of-software
 
 #### Check the Software
 
-You should do a cursory check that the software actually works. Usually the best way to do this is to just run `name-of-software -h`. For example, for the software `fastani`:
+You should do a cursory check that the software actually works. Usually the best way to do this is to just run
+`name-of-software -h`. For example, for the software `fastani`:
 
 ```console
 $ module load fastani/1.33
-$ fastANI -h   
+$ fastANI -h
 -----------------
 fastANI is a fast alignment-free implementation for computing whole-genome Average Nucleotide Identity (ANI) between genomes
 -----------------
@@ -150,7 +163,7 @@ fastANI is a fast alignment-free implementation for computing whole-genome Avera
 
 If it runs without errors, proceed to the next step. If not, it's probably time to escalate.
 
-#### Commit Changes 
+#### Commit Changes
 
 Commit your changes to the spack-ucdavis repo. Move into it:
 
@@ -188,6 +201,7 @@ find environments/ -name .cvmfscatalog -delete
 ```
 
 Move out of the cvmfs directory and close out any open files you have there.
+
 #### Publish the Changes
 
 Publish your changes to cvmfs:
