@@ -3,11 +3,11 @@ template: admin.html
 title: Software Deployment
 ---
 
+!!! danger
+
+    As of December 9th 2024, this document is out-of-date and **must not** be followed.
+
 ## Spack on cvmfs
-
-!!! warning
-
-    As of December 9th, this document it out-of-date and **must not** be followed.
 
 ### Prerequisites
 
