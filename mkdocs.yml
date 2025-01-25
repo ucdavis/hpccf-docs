@@ -37,6 +37,9 @@ nav:
       - Job Scheduling: franklin/scheduling.md
       - Resources: franklin/resources.md
       - Storage: franklin/storage.md
+    - Hive:
+      - Migrating from LSSC0: hive/migration.md
+
   - Admin:
     - admin/index.md
     - Network Architecture: admin/network.md
