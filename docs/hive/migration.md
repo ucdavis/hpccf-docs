@@ -32,7 +32,7 @@ If you're copying files from /home/cheeto on LSSC0 to /home/cheeto on Hive, run 
 
 `rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/`
 
-Note that this will copy your home directory as-is. Consider putting your LSSC0 files into a oldhome/ directory on Hive to ensure that you're not copying over stale dot files.
+Note that this will copy your home directory as-is. Consider putting your LSSC0 files into a oldhome/ directory on Hive to ensure that you're not copying over incompatible dot files.
 
 `rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/`
 
@@ -41,11 +41,10 @@ Note that this will copy your home directory as-is. Consider putting your LSSC0 
 	•	--delete: Deletes files on the destination that are not present on the source.
 	•	-e ssh: Explicitly specifies SSH as the transfer protocol (default when connecting to remote servers).
 
-Please note that you will be asked for your user password when transferring data to Hive. Your username and passphrase is your campus computing account and campus Kerberos passphrase. Alternatively, you can use SSH to transfer data by copying your private key that is associated with your Hive login to LSSC0 and including that with your rsync command as follows:
+Please note that you will be asked for your user password when transferring data to Hive. Your username and passphrase is your campus computing account and campus Kerberos passphrase. Alternatively, you can forward your SSH agent when using SSH to connect to LSSC0/Barbera:
 
-`rsync -avz -e "ssh -i /path/to/private_key" /source user@remote-server:/destination/`
-
-For example:
-
-`rsync -avz -e "ssh -i $HOME/.ssh/private_key" /home/cheeto/ cheeto@hive.hpc.ucdavis.edu:/home/cheeto/`
-
+```
+ssh-add
+ssh -A user@barbera.genomecenter.ucdavis.edu
+user@barbera:~$ rsync -avz /home/cheeto/ cheeto@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/
+```
