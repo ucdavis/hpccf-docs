@@ -1778,7 +1778,7 @@ has purchased resources before you move data. Group directories are named after 
 <h5 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h5>
 <p>If you're copying files from /home/cheeto on LSSC0 to /home/cheeto on Hive, run rsync on LSSC0:</p>
 <p><code>rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/</code></p>
-<p>Note that this will copy your home directory as-is. Consider putting your LSSC0 files into a oldhome/ directory on Hive to ensure that you're not copying over incompatible dot files.</p>
+<p>Note that this will copy your home directory as-is. Consider putting your LSSC0 files into an <code>oldhome/</code> directory on Hive to ensure that you're not copying over incompatible dot files.</p>
 <p><code>rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/</code></p>
 <h5 id="additional-options">Additional options:<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>•   --progress: Shows progress during the file transfer.
