@@ -32,7 +32,7 @@ If you're copying files from /home/cheeto on LSSC0 to /home/cheeto on Hive, run 
 
 `rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/`
 
-Note that this will copy your home directory as-is. Consider putting your LSSC0 files into a oldhome/ directory on Hive to ensure that you're not copying over incompatible dot files.
+Note that this will copy your home directory as-is. Consider putting your LSSC0 files into an `oldhome/` directory on Hive to ensure that you're not copying over incompatible dot files.
 
 `rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/`
 
