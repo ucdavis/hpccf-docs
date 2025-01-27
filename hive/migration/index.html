@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/software/developing/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/hive/migration/">
       
       
-        <link rel="prev" href="../rlang/">
+        <link rel="prev" href="../../franklin/storage/">
       
       
-        <link rel="next" href="../../data-transfer/">
+        <link rel="next" href="../../admin/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Software Development - HPC Core Facility Cluster Documentation</title>
+        <title>Migrating from LSSC0 - HPC Core Facility Cluster Documentation</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#data-migration" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software Development
+              Migrating from LSSC0
             
           </span>
         </div>
@@ -252,8 +257,6 @@
       
   
   
-    
-  
   
   
     
@@ -265,11 +268,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -283,7 +288,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             General
@@ -467,8 +472,6 @@
                 
   
   
-    
-  
   
   
     
@@ -477,11 +480,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
         
           
           <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
@@ -495,7 +500,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_4">
             <span class="md-nav__icon md-icon"></span>
             Software
@@ -509,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/" class="md-nav__link">
+      <a href="../../software/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conda/" class="md-nav__link">
+      <a href="../../software/conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ondemand/" class="md-nav__link">
+      <a href="../../software/ondemand/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -593,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rlang/" class="md-nav__link">
+      <a href="../../software/rlang/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,17 +616,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../software/developing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +628,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -697,8 +694,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -708,13 +707,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -728,7 +725,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Clusters
@@ -1179,6 +1176,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1187,13 +1186,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1207,7 +1204,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Hive
@@ -1218,10 +1215,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../hive/migration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Migrating from LSSC0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1230,6 +1245,99 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data migration:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data migration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home directories:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-data-to-hive-using-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving data to Hive using rsync:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Moving data to Hive using rsync:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of options:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional options:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1548,6 +1656,89 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data migration:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data migration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home directories:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-data-to-hive-using-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving data to Hive using rsync:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Moving data to Hive using rsync:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of options:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional options:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1564,9 +1755,41 @@
   
 
 
-  <h1>Development</h1>
+  <h1>Migrating from LSSC0</h1>
 
-
+<h2 id="data-migration">Data migration:<a class="headerlink" href="#data-migration" title="Permanent link">&para;</a></h2>
+<h4 id="home-directories">Home directories:<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h4>
+<p>Home directories on Hive are mounted on /home/<username>. For example, if your username is Cheeto, your home directory would be <code>/home/cheeto</code>. Home directories on Hive are expanded to 20G per person.</p>
+<h4 id="group-directories">Group directories:<a class="headerlink" href="#group-directories" title="Permanent link">&para;</a></h4>
+<p>Group directories on Hive are mounted on /quobyte. Please ensure that your group or lab
+has purchased resources before you move data. Group directories are named after the PI or lab owner. </p>
+<h3 id="moving-data-to-hive-using-rsync">Moving data to Hive using rsync:<a class="headerlink" href="#moving-data-to-hive-using-rsync" title="Permanent link">&para;</a></h3>
+<p>Please ensure you have an account on Hive by creating one at <a href="https://hippo.ucdavis.edu">HiPPO</a>.</p>
+<p>To use rsync to copy files from one server to another while preserving permissions, ownership, and file times, you can use the following command:</p>
+<p><code>rsync -avz source/ user@destination:/path/to/target/</code></p>
+<h5 id="explanation-of-options">Explanation of options:<a class="headerlink" href="#explanation-of-options" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>•   -a (archive mode): Preserves symbolic links, permissions, ownership, file timestamps, and recursively copies directories.
+•   -v (verbose): Displays the progress and details of the transfer.
+•   -z (compress): Compresses file data during transfer to save bandwidth.
+•   source/: The directory or file you want to copy. The trailing slash / ensures only the contents of the directory are copied, not the directory itself.
+•   user@destination: The username and IP/hostname of the destination server.
+•   /path/to/target/: The target directory on the destination server.
+</code></pre></div>
+<h5 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h5>
+<p>If you're copying files from /home/cheeto on LSSC0 to /home/cheeto on Hive, run rsync on LSSC0:</p>
+<p><code>rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/</code></p>
+<p>Note that this will copy your home directory as-is. Consider putting your LSSC0 files into an <code>oldhome/</code> directory on Hive to ensure that you're not copying over incompatible dot files.</p>
+<p><code>rsync -avz /home/cheeto/ user@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/</code></p>
+<h5 id="additional-options">Additional options:<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>•   --progress: Shows progress during the file transfer.
+•   --delete: Deletes files on the destination that are not present on the source.
+•   -e ssh: Explicitly specifies SSH as the transfer protocol (default when connecting to remote servers).
+</code></pre></div>
+<p>Please note that you will be asked for your user password when transferring data to Hive. Your username and passphrase is your campus computing account and campus Kerberos passphrase. Alternatively, you can forward your SSH agent when using SSH to connect to LSSC0/Barbera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-add
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ssh -A user@barbera.genomecenter.ucdavis.edu
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>user@barbera:~$ rsync -avz /home/cheeto/ cheeto@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/
+</code></pre></div>
 
 
 
@@ -1599,7 +1822,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2025</span>
   </span>
 
     
