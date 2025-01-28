@@ -32,7 +32,7 @@ This is a VM on which we concretize and build our Spack environments, as well as
 The Spack instances here live at the same location as on the CVMFS servers, `/cvmfs/hpc.ucdavis.edu`, but this machie is *not* a CVMFS server *or* client: rather, here `/cvmfs` is just a regular RW mount point.
 This allows us to separate concerns -- *building* the software versus *deploying* it -- while also offering performance benefits, as IO on the `/cvmfs` volume on the server itself is constrained by the CVMFS [FUSE module](https://www.kernel.org/doc/html/next/filesystems/fuse.html).
 
-### Stratum 0 CVMFS Server
+### Root (Stratum 0) CVMFS Server
 
 The Stratum 0 CVMFS server lives at `software.hpc.ucdavis.edu`, and we just call it `software.hpc`.
 This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use `rsync` to pull the build artifacts from `build.hpc` to the CVMFS volume here.
@@ -54,3 +54,67 @@ The view of the clients is only that of the last transaction published.
 
 ## Spack Design
 
+Now that we've briefly gone over the high level overview, we'll move into a detailed breakdown of our Spack deployment.
+We note once again that this is non-trivial, and it is expected that you have read the documentation.
+
+At a high level, our Spack deployment actually consists of two distinct Spack instances.
+The first, which we name `core`, defines compilers, interpreters, and SDKs, as well the primary Slurm and messaging stack.
+These packages are meant to remain stable outside of major maintenace windows.
+The root specs built here are projected into an [environment view](https://spack.readthedocs.io/en/latest/environments.html#environment-views), but this environment does *NOT* build any user-loadable modules.
+The second instance, which we call `main`, contains all the user-loadable software, _as well as_ the roots of the `core` environment, and generates the modulefiles for both environments.
+All the roots built by `core` are defined as non-buildable [externals](https://spack.readthedocs.io/en/latest/packages_yaml.html#external-packages) in `main`, with their install prefixes set to the aforementioned environment view.
+
+This two-layer system ensures that the `core` packages like compilers and Slurm will only exist _once_ in `main`, and further ensures that reconcretizing `main` will never cause those root specs from `core` to be reconcretized.
+The only other way to enforce these constraints would be to use extremely specific `require` clauses with a **unified** concretization, which would often lead to environments that cannot be concretized at all.
+Instead, we concretize our environments with the `unify` flag set `false`, which allows multiple architectures and variants of the same package to coexist within the same environment.
+
+### Directory Organization
+
+The Spack deployment root is at `/cvmfs/hpc.ucdavis.edu/sw/spack`.
+A (slightly abridged) overview of this root directory is:
+
+```console
+$ tree -d -L 2 .
+.
+├── config -> spack-ucdavis/config/hpccf/software.hpc/
+├── core
+│   ├── bin
+│   ├── linux-ubuntu22.04-x86_64_v3
+│   ├── linux-ubuntu22.04-zen2
+│   └── linux-ubuntu22.04-zen3
+├── environments -> spack-ucdavis/environments/hpccf/software.hpc
+├── main
+│   ├── bin
+│   ├── linux-ubuntu22.04-x86_64_v3
+│   ├── linux-ubuntu22.04-zen2
+│   └── linux-ubuntu22.04-zen3
+├── manual-mirror
+│   ├── cplex
+│   ├── gaussian
+│   ├── gctf
+│   ├── genemark-et
+│   ├── maker
+│   ├── motioncor2
+│   └── usearch
+├── modulefiles
+│   ├── main -> /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/modulefiles/hpccf/software.hpc/main
+│   └── system -> /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/modulefiles/hpccf/software.hpc/system
+├── repos
+│   ├── builtin -> ../src/main/var/spack/repos/builtin/packages
+│   ├── forked -> ../spack-ucdavis/repos/forked/packages
+│   └── hpccf -> ../spack-ucdavis/repos/hpccf/packages/
+├── spack-ucdavis
+│   ├── bin
+│   ├── config
+│   ├── environments
+│   ├── extensions
+│   ├── modulefiles
+│   ├── repos
+│   └── templates
+└── src
+    ├── core
+    └── main
+```
+
+The core configuration directory is `spack-ucdavis`, a git repository which can be found on our [GitHub](https://github.com/ucdavis/spack-ucdavis/tree/software.hpc).
+The top-level `config`, `environments`, `modulefiles`, and `repos` point to subdirectories of this repo.
