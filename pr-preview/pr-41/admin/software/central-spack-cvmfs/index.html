@@ -1543,9 +1543,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stratum-0-cvmfs-server" class="md-nav__link">
+  <a href="#root-stratum-0-cvmfs-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Stratum 0 CVMFS Server
+      Root (Stratum 0) CVMFS Server
     </span>
   </a>
   
@@ -1580,6 +1580,21 @@
       Spack Design
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Spack Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Organization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1735,9 +1750,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stratum-0-cvmfs-server" class="md-nav__link">
+  <a href="#root-stratum-0-cvmfs-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Stratum 0 CVMFS Server
+      Root (Stratum 0) CVMFS Server
     </span>
   </a>
   
@@ -1772,6 +1787,21 @@
       Spack Design
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Spack Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Organization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1860,7 +1890,7 @@ If you have not, proceed at your own peril, padawan.</p>
 This is a VM on which we concretize and build our Spack environments, as well as solve and install Conda environments (the latter of which is outside the scope of this document).
 The Spack instances here live at the same location as on the CVMFS servers, <code>/cvmfs/hpc.ucdavis.edu</code>, but this machie is <em>not</em> a CVMFS server <em>or</em> client: rather, here <code>/cvmfs</code> is just a regular RW mount point.
 This allows us to separate concerns -- <em>building</em> the software versus <em>deploying</em> it -- while also offering performance benefits, as IO on the <code>/cvmfs</code> volume on the server itself is constrained by the CVMFS <a href="https://www.kernel.org/doc/html/next/filesystems/fuse.html">FUSE module</a>.</p>
-<h3 id="stratum-0-cvmfs-server">Stratum 0 CVMFS Server<a class="headerlink" href="#stratum-0-cvmfs-server" title="Permanent link">&para;</a></h3>
+<h3 id="root-stratum-0-cvmfs-server">Root (Stratum 0) CVMFS Server<a class="headerlink" href="#root-stratum-0-cvmfs-server" title="Permanent link">&para;</a></h3>
 <p>The Stratum 0 CVMFS server lives at <code>software.hpc.ucdavis.edu</code>, and we just call it <code>software.hpc</code>.
 This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use <code>rsync</code> to pull the build artifacts from <code>build.hpc</code> to the CVMFS volume here.
 Some of our clusters point at this directly, while others point at its replicas.
@@ -1875,6 +1905,63 @@ As of January 2025, there are replica servers for Hive and Farm, while Peloton a
 The CVMFS deployment on the clients (and servers) is read-only and mounted at <code>/cvmfs/hpc.ucdavis.edu</code>.
 The view of the clients is only that of the last transaction published.</p>
 <h2 id="spack-design">Spack Design<a class="headerlink" href="#spack-design" title="Permanent link">&para;</a></h2>
+<p>Now that we've briefly gone over the high level overview, we'll move into a detailed breakdown of our Spack deployment.
+We note once again that this is non-trivial, and it is expected that you have read the documentation.</p>
+<p>At a high level, our Spack deployment actually consists of two distinct Spack instances.
+The first, which we name <code>core</code>, defines compilers, interpreters, and SDKs, as well the primary Slurm and messaging stack.
+These packages are meant to remain stable outside of major maintenace windows.
+The root specs built here are projected into an <a href="https://spack.readthedocs.io/en/latest/environments.html#environment-views">environment view</a>, but this environment does <em>NOT</em> build any user-loadable modules.
+The second instance, which we call <code>main</code>, contains all the user-loadable software, <em>as well as</em> the roots of the <code>core</code> environment, and generates the modulefiles for both environments.
+All the roots built by <code>core</code> are defined as non-buildable <a href="https://spack.readthedocs.io/en/latest/packages_yaml.html#external-packages">externals</a> in <code>main</code>, with their install prefixes set to the aforementioned environment view.</p>
+<p>This two-layer system ensures that the <code>core</code> packages like compilers and Slurm will only exist <em>once</em> in <code>main</code>, and further ensures that reconcretizing <code>main</code> will never cause those root specs from <code>core</code> to be reconcretized.
+The only other way to enforce these constraints would be to use extremely specific <code>require</code> clauses with a <strong>unified</strong> concretization, which would often lead to environments that cannot be concretized at all.
+Instead, we concretize our environments with the <code>unify</code> flag set <code>false</code>, which allows multiple architectures and variants of the same package to coexist within the same environment.</p>
+<h3 id="directory-organization">Directory Organization<a class="headerlink" href="#directory-organization" title="Permanent link">&para;</a></h3>
+<p>The Spack deployment root is at <code>/cvmfs/hpc.ucdavis.edu/sw/spack</code>.
+A (slightly abridged) overview of this root directory is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>tree<span class="w"> </span>-d<span class="w"> </span>-L<span class="w"> </span><span class="m">2</span><span class="w"> </span>.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">├── config -&gt; spack-ucdavis/config/hpccf/software.hpc/</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">├── core</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">│   ├── bin</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">│   ├── linux-ubuntu22.04-x86_64_v3</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">│   ├── linux-ubuntu22.04-zen2</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">│   └── linux-ubuntu22.04-zen3</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">├── environments -&gt; spack-ucdavis/environments/hpccf/software.hpc</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">├── main</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">│   ├── bin</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">│   ├── linux-ubuntu22.04-x86_64_v3</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="go">│   ├── linux-ubuntu22.04-zen2</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">│   └── linux-ubuntu22.04-zen3</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">├── manual-mirror</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">│   ├── cplex</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="go">│   ├── gaussian</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="go">│   ├── gctf</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="go">│   ├── genemark-et</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="go">│   ├── maker</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="go">│   ├── motioncor2</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="go">│   └── usearch</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="go">├── modulefiles</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="go">│   ├── main -&gt; /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/modulefiles/hpccf/software.hpc/main</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="go">│   └── system -&gt; /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/modulefiles/hpccf/software.hpc/system</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="go">├── repos</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="go">│   ├── builtin -&gt; ../src/main/var/spack/repos/builtin/packages</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="go">│   ├── forked -&gt; ../spack-ucdavis/repos/forked/packages</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="go">│   └── hpccf -&gt; ../spack-ucdavis/repos/hpccf/packages/</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="go">├── spack-ucdavis</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="go">│   ├── bin</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="go">│   ├── config</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="go">│   ├── environments</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="go">│   ├── extensions</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="go">│   ├── modulefiles</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="go">│   ├── repos</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="go">│   └── templates</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="go">└── src</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="go">    ├── core</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="go">    └── main</span>
+</code></pre></div>
+<p>The core configuration directory is <code>spack-ucdavis</code>, a git repository which can be found on our <a href="https://github.com/ucdavis/spack-ucdavis/tree/software.hpc">GitHub</a>.
+The top-level <code>config</code>, <code>environments</code>, <code>modulefiles</code>, and <code>repos</code> point to subdirectories of this repo.</p>
 
 <!-- Source file information -->
 
