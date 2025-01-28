@@ -23,10 +23,34 @@ If you have not, proceed at your own peril, padawan.
 
 ## High Level Achitecture
 
-At the highest level, our system consists of:
+At the highest level, our system consists of a build machine, a root CVMFS server, replica CVMFS servers, and CVMFS clients.
 
-- A build machine, at `build.hpc.ucdavis.edu`, on which we concretize and build our Spack environments, as well as solve and install Conda environments (the latter of which is outside the scope of this document).
-- A Statum 0 CVMFS server, at `software.hpc.ucdavis.edu`. This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use `rsync` to pull the build artifacts from `build.hpc` to the CVMFS volume here. Some of our clusters point at this directly, while others point at its replicas.
-- Replica (Stratum 1) CVMFS servers, which are hosted on per-cluster infrastructure. These servers replicate the Stratum 0 server, and help distribute load.
-- CVMFS clients, which are basically every node we maintained. The CVMFS deployment on the clients (and servers) is read-only and mounted at `/cvmfs/hpc.ucdavis.edu`.
+### Build Machine
+
+The build machine lives at `build.hpc.ucdavis.edu`, and we just refer to it as `build.hpc` or `build`.
+This is a VM on which we concretize and build our Spack environments, as well as solve and install Conda environments (the latter of which is outside the scope of this document).
+The Spack instances here live at the same location as on the CVMFS servers, `/cvmfs/hpc.ucdavis.edu`, but this machie is *not* a CVMFS server *or* client: rather, here `/cvmfs` is just a regular RW mount point.
+This allows us to separate concerns -- *building* the software versus *deploying* it -- while also offering performance benefits, as IO on the `/cvmfs` volume on the server itself is constrained by the CVMFS [FUSE module](https://www.kernel.org/doc/html/next/filesystems/fuse.html).
+
+### Stratum 0 CVMFS Server
+
+The Stratum 0 CVMFS server lives at `software.hpc.ucdavis.edu`, and we just call it `software.hpc`.
+This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use `rsync` to pull the build artifacts from `build.hpc` to the CVMFS volume here.
+Some of our clusters point at this directly, while others point at its replicas.
+We _do not_ build or install any software here!
+The `/cvmfs` volume on this machine is the live FUSE filesystem which is only writeable when a CVMFS transaction has been started.
+
+### Replica (Stratum 1) CVMFS Servers
+
+These are hosted on per-cluster infrastructure.
+These servers replicate the Stratum 0 server, and help distribute the load induced by the many clients.
+As of January 2025, there are replica servers for Hive and Farm, while Peloton and Franklin are served directly from the Stratum 0.
+
+### CVMFS Clients
+
+Basically every node we maintain other than `build.hpc`.
+The CVMFS deployment on the clients (and servers) is read-only and mounted at `/cvmfs/hpc.ucdavis.edu`.
+The view of the clients is only that of the last transaction published.
+
+## Spack Design
 
