@@ -49,7 +49,9 @@ nav:
     - DNS: admin/dns.md
     - Cobbler: admin/cobbler.md
     - Configuration: admin/configuration.md # puppet, etc
-    - Software: admin/software.md
+    - Software:
+      - Central Spack and CVMFS: admin/software/central-spack-cvmfs.md
+      - CVMFS Deployment (Legacy): admin/software/cvmfs-legacy.md
     - Netbox: admin/netbox.md
     - Monitoring: admin/monitoring.md
     - Open OnDemand: admin/ondemand.md
