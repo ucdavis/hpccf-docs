@@ -1530,6 +1530,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="High Level Achitecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratum-0-cvmfs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratum 0 CVMFS Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replica-stratum-1-cvmfs-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica (Stratum 1) CVMFS Servers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvmfs-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVMFS Clients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spack Design
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1671,6 +1722,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="High Level Achitecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratum-0-cvmfs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratum 0 CVMFS Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replica-stratum-1-cvmfs-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica (Stratum 1) CVMFS Servers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvmfs-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVMFS Clients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spack Design
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1752,13 +1854,27 @@ Attempting to deploy software on this system without understanding these foundat
 It will assume you have read over the documentation and have a basic understanding of Spack and its terminology.
 If you have not, proceed at your own peril, padawan.</p>
 <h2 id="high-level-achitecture">High Level Achitecture<a class="headerlink" href="#high-level-achitecture" title="Permanent link">&para;</a></h2>
-<p>At the highest level, our system consists of:</p>
-<ul>
-<li>A build machine, at <code>build.hpc.ucdavis.edu</code>, on which we concretize and build our Spack environments, as well as solve and install Conda environments (the latter of which is outside the scope of this document).</li>
-<li>A Statum 0 CVMFS server, at <code>software.hpc.ucdavis.edu</code>. This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use <code>rsync</code> to pull the build artifacts from <code>build.hpc</code> to the CVMFS volume here. Some of our clusters point at this directly, while others point at its replicas.</li>
-<li>Replica (Stratum 1) CVMFS servers, which are hosted on per-cluster infrastructure. These servers replicate the Stratum 0 server, and help distribute load.</li>
-<li>CVMFS clients, which are basically every node we maintained. The CVMFS deployment on the clients (and servers) is read-only and mounted at <code>/cvmfs/hpc.ucdavis.edu</code>.</li>
-</ul>
+<p>At the highest level, our system consists of a build machine, a root CVMFS server, replica CVMFS servers, and CVMFS clients.</p>
+<h3 id="build-machine">Build Machine<a class="headerlink" href="#build-machine" title="Permanent link">&para;</a></h3>
+<p>The build machine lives at <code>build.hpc.ucdavis.edu</code>, and we just refer to it as <code>build.hpc</code> or <code>build</code>.
+This is a VM on which we concretize and build our Spack environments, as well as solve and install Conda environments (the latter of which is outside the scope of this document).
+The Spack instances here live at the same location as on the CVMFS servers, <code>/cvmfs/hpc.ucdavis.edu</code>, but this machie is <em>not</em> a CVMFS server <em>or</em> client: rather, here <code>/cvmfs</code> is just a regular RW mount point.
+This allows us to separate concerns -- <em>building</em> the software versus <em>deploying</em> it -- while also offering performance benefits, as IO on the <code>/cvmfs</code> volume on the server itself is constrained by the CVMFS <a href="https://www.kernel.org/doc/html/next/filesystems/fuse.html">FUSE module</a>.</p>
+<h3 id="stratum-0-cvmfs-server">Stratum 0 CVMFS Server<a class="headerlink" href="#stratum-0-cvmfs-server" title="Permanent link">&para;</a></h3>
+<p>The Stratum 0 CVMFS server lives at <code>software.hpc.ucdavis.edu</code>, and we just call it <code>software.hpc</code>.
+This is the machine that processes CVMFS transactions and serves the root of our CVMFS deployment; we use <code>rsync</code> to pull the build artifacts from <code>build.hpc</code> to the CVMFS volume here.
+Some of our clusters point at this directly, while others point at its replicas.
+We <em>do not</em> build or install any software here!
+The <code>/cvmfs</code> volume on this machine is the live FUSE filesystem which is only writeable when a CVMFS transaction has been started.</p>
+<h3 id="replica-stratum-1-cvmfs-servers">Replica (Stratum 1) CVMFS Servers<a class="headerlink" href="#replica-stratum-1-cvmfs-servers" title="Permanent link">&para;</a></h3>
+<p>These are hosted on per-cluster infrastructure.
+These servers replicate the Stratum 0 server, and help distribute the load induced by the many clients.
+As of January 2025, there are replica servers for Hive and Farm, while Peloton and Franklin are served directly from the Stratum 0.</p>
+<h3 id="cvmfs-clients">CVMFS Clients<a class="headerlink" href="#cvmfs-clients" title="Permanent link">&para;</a></h3>
+<p>Basically every node we maintain other than <code>build.hpc</code>.
+The CVMFS deployment on the clients (and servers) is read-only and mounted at <code>/cvmfs/hpc.ucdavis.edu</code>.
+The view of the clients is only that of the last transaction published.</p>
+<h2 id="spack-design">Spack Design<a class="headerlink" href="#spack-design" title="Permanent link">&para;</a></h2>
 
 <!-- Source file information -->
 
