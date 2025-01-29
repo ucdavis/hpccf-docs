@@ -41,10 +41,4 @@ Note that this will copy your home directory as-is. Consider putting your LSSC0 
 	•	--delete: Deletes files on the destination that are not present on the source.
 	•	-e ssh: Explicitly specifies SSH as the transfer protocol (default when connecting to remote servers).
 
-Please note that you will be asked for your user password when transferring data to Hive. Your username and passphrase is your campus computing account and campus Kerberos passphrase. Alternatively, you can forward your SSH agent when using SSH to connect to LSSC0/Barbera:
-
-```
-ssh-add
-ssh -A user@barbera.genomecenter.ucdavis.edu
-user@barbera:~$ rsync -avz /home/cheeto/ cheeto@hive.hpc.ucdavis.edu:/home/cheeto/oldhome/
-```
+Please note that you will be asked for your user password when transferring data to Hive. Your username and passphrase is your campus computing account and campus Kerberos passphrase. 
