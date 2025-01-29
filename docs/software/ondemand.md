@@ -91,5 +91,5 @@ sbatch: error: Batch job submission failed: Requested node configuration is not 
 
 ### Other error
 
-If your issue is not listed here, please email `hpc-help`at `ucdavis.edu` and send the cluster name, the OnDemand app
+If your issue is not listed here, please [submit a ticket](mailto:hpc-help@ucdavis.edu) and send the cluster name, the OnDemand app
 you tried to run, the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you performed.
