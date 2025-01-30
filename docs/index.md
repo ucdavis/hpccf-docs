@@ -50,6 +50,6 @@ This site is written in markdown using [MkDocs](https://daringfireball.net/proje
 
 ## Additional Information
 
-- [HPCCF home page](https://hpc.ucdavis.edu)
+- [HPC@UCD home page](https://hpc.ucdavis.edu)
 - [Research Computing at UC Davis](https://researchcomputing.ucdavis.edu)
 - [UC Davis DataLab](https://datalab.ucdavis.edu)
