@@ -4,13 +4,13 @@ title: Documentation Overview
 
 ![HPC unit signature](assets/HPC-unit-signature.png){width="400" align="right"}
 
-Welcome to the High-Performance Computing Core Facility (HPCCF) Documentation Site. These pages are intended to be a how-to for commonly asked questions about resources supported by the UC Davis High-Performance Computing Core Facility.
+Welcome to the High-Performance Computing (HPC@UCD) Documentation Site. These pages are intended to be a how-to for commonly asked questions about resources supported by High-Performance Computing at UC Davis.
 
-HPCCF is a [core faciilty](https://research.ucdavis.edu/research-support/research-core-facilities/) reporting through the Office of Research and supported by individual university colleges, the Office of the Provost, and the Vice Chancellor for Research.  
+HPC@UCD is a [core faciilty](https://research.ucdavis.edu/research-support/research-core-facilities/) reporting through the Office of Research and supported by individual university colleges, the Office of the Provost, and the Vice Chancellor for Research.  
 
-Before contacting HPCCF support, first try searching this documentation. This site provides information on accessing and interacting with HPCCF supported clusters, an overview of available software ecosystems, and tutorials for commonly used software and access patterns. It is split into a Users section for end-users and an Admin section with information relevant to system administrators and advanced users.
+Before contacting HPC support, first try searching this documentation. This site provides information on accessing and interacting with HPC supported clusters, an overview of available software ecosystems, and tutorials for commonly used software and access patterns. It is split into a Users section for end-users and an Admin section with information relevant to system administrators and advanced users.
 
-Questions about the documentation or resources supported by the HPCCF can be directed to hpc-help@ucdavis.edu.
+Questions about the documentation or resources supported by the HPC can be directed to hpc-help@ucdavis.edu.
 
 ## Getting Started with HPC
 
@@ -50,6 +50,6 @@ This site is written in markdown using [MkDocs](https://daringfireball.net/proje
 
 ## Additional Information
 
-- [HPCCF home page](https://hpc.ucdavis.edu)
+- [HPC@UCD home page](https://hpc.ucdavis.edu)
 - [Research Computing at UC Davis](https://researchcomputing.ucdavis.edu)
 - [UC Davis DataLab](https://datalab.ucdavis.edu)
