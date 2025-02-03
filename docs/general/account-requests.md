@@ -1,8 +1,8 @@
 # Requesting an Account
 
-HPC accounts are provisioned on a per-cluster basis and granted with the permission of their principal investigator.
-Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own separate
-home directory.
+HPC accounts are provisioned on a per-cluster basis and granted with the permission of their principal investigator
+(PI). Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own
+separate home directory.
 
 Access to all HPC clusters except Hive are granted via the use of SSH keys. An SSH public key is required to generate an
 account. For information on creating SSH keys, please visit the [access](https://docs.hpc.ucdavis.edu/general/access/)
@@ -56,7 +56,7 @@ Cluster specific information:
 ??? note "Click to expand"
 
     1. Login to [HiPPO](https://hippo.ucdavis.edu)
-    1. Select the cluster you would like an account on.
+    1. Select the cluster.
     1. Click the `Request Access to Another Group` button.
     1. In the first box (`Select a group`):
         - If you are a PI, enter `New Sponsor Onboarding`.
