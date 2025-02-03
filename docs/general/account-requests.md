@@ -67,7 +67,7 @@ Cluster specific information:
         - If you need access to the free-tier, enter `free-tier`.
     1. Click `Confirm.
 
-#### How does a PI with an existing account become a sponsor so their students can request access to their resources?
+#### If you are a PI and have bought or are planning to purchase resources:
 
 ??? note "Click to expand"
 
