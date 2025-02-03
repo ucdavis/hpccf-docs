@@ -4,9 +4,9 @@ HPC accounts are provisioned on a per-cluster basis and granted with the permiss
 (PI). Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own
 separate home directory.
 
-Access to all HPC clusters except Hive are granted via the use of SSH keys. An SSH public key is required to generate an
-account. For information on creating SSH keys, please visit the [access](https://docs.hpc.ucdavis.edu/general/access/)
-documentation page.
+Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
+using your campus passphrase. For information on creating SSH keys, please visit the
+[access](https://docs.hpc.ucdavis.edu/general/access/) documentation page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
 
@@ -18,8 +18,7 @@ and selecting their PI in the `Select a group` box.
 
 Cluster specific information:
 
-- Farm: Users who do not have a PI and who are affiliated with the College of Agricultural and Environmental Sciences
-  (CA&ES) can select the `CA&ES Free Tier sponsored by Adam Getchell` group.
+- Farm: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` group.
 
 - Franklin: No public/free-tier available.
 
@@ -31,7 +30,7 @@ Cluster specific information:
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
-#### How to request a new account on a cluster
+#### How to request a new account on a cluster:
 
 ??? note "Click to expand"
 
@@ -51,7 +50,7 @@ Cluster specific information:
         - Note: Hive allows SSH with campus passphrases or a SSH key, all other clusters **require** a SSH key.
         - For help generating a SSH key, see [How do I generate an SSH key pair?](/general/access/#how-do-i-generate-an-ssh-key-pair)
 
-#### How to request access to another group on a cluster
+#### How to request access to another group on a cluster:
 
 ??? note "Click to expand"
 
