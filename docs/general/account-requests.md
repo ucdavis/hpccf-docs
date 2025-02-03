@@ -29,7 +29,7 @@ Cluster specific information:
 - Peloton: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can select
   the Jeremy Phillips (IT director for L&S) `jeremygrp` group.
 
-### How to request a new account or access to a group
+### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
 #### How to request a new account on a cluster
 
@@ -68,7 +68,7 @@ Cluster specific information:
         - If you need access to the free-tier, enter `free-tier`.
     1. Click `Confirm.
 
-#### How do I, as a PI, become a sponsor?
+#### How do I, as a PI with an existing account, become a sponsor so my students can request access to my resources?
 
 ??? note "Click to expand"
 
