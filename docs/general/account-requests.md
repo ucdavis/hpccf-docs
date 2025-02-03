@@ -46,7 +46,7 @@ Cluster specific information:
         - If you need access to the free-tier, enter `free-tier`.
     1. Under `Access Type`, select one or more:
         - If you only need access to [Open OnDemand](/software/ondemand/), select `OpenOnDemand`.
-        - If you need to SSH to the cluster, select `SshKey`.
+        - If you need command-line access to the cluster via SSH, select `SshKey`.
         - Note: Hive allows SSH with campus passphrases or a SSH key, all other clusters **require** a SSH key.
         - For help generating a SSH key, see [How do I generate an SSH key pair?](/general/access/#how-do-i-generate-an-ssh-key-pair)
 
@@ -67,7 +67,7 @@ Cluster specific information:
         - If you need access to the free-tier, enter `free-tier`.
     1. Click `Confirm.
 
-#### If you are a PI and have bought or are planning to purchase resources:
+#### If you are a PI and have bought, or are planning to purchase, resources:
 
 ??? note "Click to expand"
 
@@ -80,10 +80,10 @@ Cluster specific information:
         - Enter `self`.
     1. Click `Confirm.
 
-### How long does it take my account to be created
+### How long does it take my account to be created?
 
-After accounts, or account changes, are requested, the group owner will need to approve it. Once that approval happens,
-accounts and changes should be live on the cluster within one hour.
+After accounts, or account changes, are requested, the PI (or delegated sponsor) will need to approve it. Once that
+approval happens, accounts and changes should be live on the cluster within one hour.
 
 ### I cannot see the changes (PI sponsor or group membership) on HiPPO
 
