@@ -85,9 +85,9 @@ Cluster specific information:
 After accounts, or account changes, are requested, the group owner will need to approve it. Once that approval happens,
 accounts and changes should be live on the cluster within one hour.
 
-### I cannot see the changes (PI sponsor or group membership)
+### I cannot see the changes (PI sponsor or group membership) on HiPPO
 
-You will not be able to see any group, or sponsor, changes, until Hippo synchronizes the changes. which only happens on
+You will not be able to see any group, or sponsor, changes, until HiPPO synchronizes the changes. which only happens on
 the hour from 8am to 5pm, Monday through Friday.
 
 ## HPC1 and HPC2
