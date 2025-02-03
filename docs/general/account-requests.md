@@ -68,7 +68,7 @@ Cluster specific information:
         - If you need access to the free-tier, enter `free-tier`.
     1. Click `Confirm.
 
-#### How do I, as a PI with an existing account, become a sponsor so my students can request access to my resources?
+#### How does a PI with an existing account become a sponsor so their students can request access to their resources?
 
 ??? note "Click to expand"
 
@@ -84,7 +84,12 @@ Cluster specific information:
 ### How long does it take my account to be created
 
 After accounts, or account changes, are requested, the group owner will need to approve it. Once that approval happens,
-accounts should be live on the cluster within one hour.
+accounts and changes should be live on the cluster within one hour.
+
+### I cannot see the changes (PI sponsor or group membership)
+
+You will not be able to see any group, or sponsor, changes, until Hippo synchronizes the changes. which only happens on
+the hour from 8am to 5pm, Monday through Friday.
 
 ## HPC1 and HPC2
 
