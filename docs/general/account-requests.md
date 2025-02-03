@@ -87,8 +87,8 @@ approval happens, accounts and changes should be live on the cluster within one 
 
 ### I cannot see the changes (PI sponsor or group membership) on HiPPO
 
-You will not be able to see any group, or sponsor, changes, until HiPPO synchronizes the changes. which only happens on
-the hour from 8am to 5pm, Monday through Friday.
+You will not be able to see any group or sponsor changes until Hippo synchronizes the data. Each synchronization takes
+place at the top of the hour from 8:00am to 5:00pm, Monday through Friday.
 
 ## HPC1 and HPC2
 
