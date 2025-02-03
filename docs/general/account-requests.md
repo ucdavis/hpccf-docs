@@ -98,8 +98,8 @@ going to the appropriate web form.
 
 ## LSSC0 (Barbera)
 
-Users who want access to resources on LSSC0 can request an account within the Genome Center Computing
-[Portal](https://computing.genomecenter.ucdavis.edu/) and selecting 'Request an Account' with their PI.
+The LSSC0 cluster is being retired. Users who are interested in computing resources should create an account on the Hive
+HPC cluster.
 
 ## Atomate
 
