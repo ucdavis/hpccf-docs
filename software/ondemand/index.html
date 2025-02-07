@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
     
     
       
@@ -704,6 +704,15 @@
   <a href="#time-limit" class="md-nav__link">
     <span class="md-ellipsis">
       Time limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failed to submit session with the following error (QOSMaxMemoryPerJob):
     </span>
   </a>
   
@@ -1812,6 +1821,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failed to submit session with the following error (QOSMaxMemoryPerJob):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#failed-to-submit-session-with-the-following-error" class="md-nav__link">
     <span class="md-ellipsis">
       Failed to submit session with the following error:
@@ -1909,15 +1927,22 @@ this, then you need to remove that to use RStudio Server:</p>
 <p>If you see output like this, it means you did not request enough hours during the app configuration in OOD:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>slurmstepd: error: *** JOB 20296118 ON cpu-6-96 CANCELLED AT 2025-01-21T17:34:19 DUE TO TIME LIMIT ***
 </code></pre></div>
-<h3 id="failed-to-submit-session-with-the-following-error">Failed to submit session with the following error:<a class="headerlink" href="#failed-to-submit-session-with-the-following-error" title="Permanent link">&para;</a></h3>
-<p>If your job is rejected at submission time for reasons like below (basically anything that starts with
-<code>sbatch: error:</code>), please work with your PI to figure out an appropriate partition and resource request.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
+<h3 id="failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob">Failed to submit session with the following error (QOSMaxMemoryPerJob):<a class="headerlink" href="#failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbatch: error: QOSMaxMemoryPerJob
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user&#39;s size and/or time limits)
 </code></pre></div>
+<p>If your job is rejected at submission time with this error, it means you requested resources that are not available in
+the <code>Account</code>/<code>Partition</code> you specified. Normally you should work with your PI to find out what resources are available.
+On Hive, in <code>publicgrp</code>/<code>high</code> (the free-tier), the limits are a maximum of 8 CPUs, 1 GPU, and 128 GB of RAM per job.</p>
+<h3 id="failed-to-submit-session-with-the-following-error">Failed to submit session with the following error:<a class="headerlink" href="#failed-to-submit-session-with-the-following-error" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
+</code></pre></div>
+<p>If your job is rejected at submission time for reasons like this (basically anything that starts with <code>sbatch: error:</code>),
+please work with your PI to figure out an appropriate partition and resource request.</p>
 <h3 id="other-error">Other error<a class="headerlink" href="#other-error" title="Permanent link">&para;</a></h3>
 <p>If your issue is not listed here, please <a href="mailto:hpc-help@ucdavis.edu">submit a ticket</a> and send the cluster name, the
-OnDemand app you ran, the <code>Session ID</code> of the failed job, any errors you noticed, and any troubleshooting you performed.
-You <strong>must</strong> supply all of this information for HPCCF to be able to debug issues.</p>
+OnDemand app you ran, a list , the <code>Session ID</code> of the failed job, any errors you noticed, and any troubleshooting you
+performed. You <strong>must</strong> supply all of this information for HPCCF to be able to debug issues.</p>
 
 
 
@@ -2029,7 +2054,7 @@ You <strong>must</strong> supply all of this information for HPCCF to be able to
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
