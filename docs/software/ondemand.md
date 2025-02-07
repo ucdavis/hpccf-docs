@@ -80,17 +80,28 @@ If you see output like this, it means you did not request enough hours during th
 slurmstepd: error: *** JOB 20296118 ON cpu-6-96 CANCELLED AT 2025-01-21T17:34:19 DUE TO TIME LIMIT ***
 ```
 
-### Failed to submit session with the following error:
+### Failed to submit session with the following error (QOSMaxMemoryPerJob):
 
-If your job is rejected at submission time for reasons like below (basically anything that starts with
-`sbatch: error:`), please work with your PI to figure out an appropriate partition and resource request.
+```
+sbatch: error: QOSMaxMemoryPerJob
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+```
+
+If your job is rejected at submission time with this error, it means you requested resources that are not available in
+the `Account`/`Partition` you specified. Normally you should work with your PI to find out what resources are available.
+On Hive, in `publicgrp`/`high` (the free-tier), the limits are a maximum of 8 CPUs, 1 GPU, and 128 GB of RAM per job.
+
+### Failed to submit session with the following error:
 
 ```
 sbatch: error: Batch job submission failed: Requested node configuration is not available
 ```
 
+If your job is rejected at submission time for reasons like this (basically anything that starts with `sbatch: error:`),
+please work with your PI to figure out an appropriate partition and resource request.
+
 ### Other error
 
 If your issue is not listed here, please [submit a ticket](mailto:hpc-help@ucdavis.edu) and send the cluster name, the
-OnDemand app you ran, the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you performed.
-You **must** supply all of this information for HPCCF to be able to debug issues.
+OnDemand app you ran, a list , the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you
+performed. You **must** supply all of this information for HPCCF to be able to debug issues.
