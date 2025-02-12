@@ -128,7 +128,7 @@ of the create:
 
 ```shell
 $ module load conda
-$ mamba activate /group/hpccfgrp/conda/omen/envs/datasci
+$ mamba activate /path/to/lab/share/$USER/envs/datasci
 ```
 
 You can add this new path to Conda's environment search path. See the
