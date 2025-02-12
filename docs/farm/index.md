@@ -1,32 +1,21 @@
 
 # Farm
 
-![CBS unit signature](../assets/UCDavis_CAES_logo_RGB_vector.svg){ width="400" align="right" }
+![CAES unit signature](../assets/UCDavis_CAES_logo_RGB_vector.svg){ width="400" align="right" }
 
 
 
-Farm is a Linux-based supercomputing cluster for the [College of Agricultural and Environmental Sciences](https://caes.ucdavis.edu/) at UC Davis. 
-Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based 
-computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and 
-related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic 
-information system (GIS) software, and more. 
-
-For buying in resources in Farm cluster, contact CEAS IT director Adam 
-Getchell - <acgetchell@ucdavis.edu>
+Farm is a Linux-based supercomputing cluster for the [College of Agricultural and Environmental Sciences](https://caes.ucdavis.edu/) (CA&ES) at UC Davis. Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS) software, and more. 
 
 ## Farm Hardware
 
-Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three 
-phases, with Farm III as the most recent evolution. 
+Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three phases, with Farm III as the most recent evolution. 
 
-Farm III consists of 32 parallel nodes with up to 64 CPUs and 
-256GB RAM each in low2/med2/high2, plus 17 “bigmem” nodes with up to 96 CPUs and 1TB RAM each in the bml/bmm/bmh 
-queue. All Farm III bigmem and newer parallel nodes and storage are on EDR/100Gbit interconnects. Older parallel nodes 
-and storage are on FDR/55Gbit. 
+Farm III consists of 60 parallel nodes with up to 64 CPUs and 
+256GB RAM each in low2/med2/high2, plus 26 “bigmem” nodes with up to 128 CPUs and 2TB RAM each in the bml/bmm/bmh queue. All Farm III bigmem and newer parallel nodes and storage are on EDR/100Gbit interconnects. Older parallel nodes and storage are on FDR/55Gbit. 
 
-Farm II consists of 95 parallel nodes with 24 CPUs and 64GB RAM each in low/med/high, 
-plus 9 “bigmem” nodes with 64 CPUs and 512GB RAM each in the bigmeml/bigmemm/bigmemh queues, and 1 additional node 
-with 96 CPUs and 1TB RAM. Farm II nodes are on QDR/32Gbit interconnects. 
+Farm II consists of 27 parallel nodes with 24 CPUs and 64GB RAM each in low/med/high, 
+plus 1 “old-bigmem” node with 64 CPUs and 512GB RAM each in the bigmeml/bigmemm/bigmemh queues, and 1 additional node with 96 CPUs and 1TB RAM. Farm II nodes are on QDR/32Gbit interconnects. 
 
 Hardware from both Farm II and Farm III are 
 still in service; Farm I has been decommissioned as of 2014. 
@@ -67,15 +56,12 @@ As of October 2023, the rates for Farm III:
 Node and Storage Rates (each buy-in guarantees access for 5 years): -
 
 - **Parallel (CPU) node:** $13,500 (512 GB RAM, 128 cores/256 threads, 2 TB /scratch) 
-- **Bigmem node:** 128 cores/256 threads, 
-2TB RAM (bml, bmm, bmh partitions) - $25,000 
-- **GPU:** $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 
-32 threads, 256GB system RAM) 
+- **Bigmem node:** 128 cores/256 threads, 2TB RAM (bml, bmm, bmh partitions) - $25,000 
+- **GPU:** $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 32 threads, 256GB system RAM)
 - **Storage:** $100/TB with compression for 5 years (does not include backups)
 
-### Bring your own equipment:
+New purchases for Farm can be placed through [Hippo](https://hippo.ucdavis.edu/Farm/product/index).
 
-Equipment may be purchased directly by researchers based on actual cost. Equipment quote available upon request. 
+### Bring your own equipment (BYOE):
 
-- Equipment purchases not using above rates - $375/year per rack unit for five years For more information about buying 
-into Farm, contact [Adam Getchell](acgetchell@ucdavis.edu) or the [Helpdesk](hpc-help@ucdavis.edu).
+Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment not available through Hippo, you can start a discussion with [Adam Getchell](acgetchell@ucdavis.edu) or [HPCCF](hpc-help@ucdavis.edu).
