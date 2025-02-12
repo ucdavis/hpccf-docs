@@ -11,10 +11,10 @@
         <link rel="canonical" href="http://docs.hpc.ucdavis.edu/franklin/software/modules/">
       
       
-        <link rel="prev" href="../../resources/">
+        <link rel="prev" href="../cryoem/">
       
       
-        <link rel="next" href="../cryoem/">
+        <link rel="next" href="../../storage/">
       
       
       <link rel="icon" href="../../../assets/HPCCF-logo.png">
@@ -303,11 +303,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../general/account-requests/" class="md-nav__link">
+      <a href="../../../general/access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Account Requests
+    Accessing Clusters
     
   </span>
   
@@ -325,11 +325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../general/access/" class="md-nav__link">
+      <a href="../../../general/account-requests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Accessing Clusters
+    Account Requests
     
   </span>
   
@@ -1101,6 +1101,50 @@
             Software
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alphafold
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryoem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cryo-EM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2239,50 +2283,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cryoem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    cryo-EM
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../alphafold/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    alphafold
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3995,7 +3995,7 @@ harnessing the power of the graphics processing unit (GPU). Note: This
 package does not currently install the drivers necessary to run CUDA.
 These will need to be installed manually. See:
 https://docs.nvidia.com/cuda/ for details.</p>
-<p><strong>Versions</strong>: 11.8.0, 11.7.1</p>
+<p><strong>Versions</strong>: 11.7.1, 11.8.0</p>
 <p><strong>Arches</strong>: generic</p>
 <p><strong>Modules</strong>: <code>cuda/11.8.0</code>, <code>cuda/11.7.1</code></p>
 <h3 id="cufflinks">cufflinks<a class="headerlink" href="#cufflinks" title="Permanent link">&para;</a></h3>
@@ -4052,13 +4052,13 @@ applications.</p>
 <h3 id="gatk">gatk<a class="headerlink" href="#gatk" title="Permanent link">&para;</a></h3>
 <p>Genome Analysis Toolkit Variant Discovery in High-Throughput Sequencing
 Data</p>
-<p><strong>Versions</strong>: 4.2.6.1, 3.8.1</p>
+<p><strong>Versions</strong>: 3.8.1, 4.2.6.1</p>
 <p><strong>Arches</strong>: generic</p>
 <p><strong>Modules</strong>: <code>gatk/3.8.1</code>, <code>gatk/4.2.6.1</code></p>
 <h3 id="gcc">gcc<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
 <p>The GNU Compiler Collection includes front ends for C, C++, Objective-C,
 Fortran, Ada, and Go, as well as libraries for these languages.</p>
-<p><strong>Versions</strong>: 7.5.0, 5.5.0, 4.9.4</p>
+<p><strong>Versions</strong>: 4.9.4, 7.5.0, 5.5.0</p>
 <p><strong>Arches</strong>: generic</p>
 <p><strong>Modules</strong>: <code>gcc/5.5.0</code>, <code>gcc/7.5.0</code>, <code>gcc/4.9.4</code></p>
 <h3 id="gctf">gctf<a class="headerlink" href="#gctf" title="Permanent link">&para;</a></h3>
@@ -4515,9 +4515,9 @@ from genomic sequences.</p>
 stand-alone computer program that employs an empirical Bayesian approach
 to refinement of (multiple) 3D reconstructions or 2D class averages in
 electron cryo-microscopy (cryo-EM).</p>
-<p><strong>Versions</strong>: 3.1.3, 4.0.0, 4.0.1</p>
-<p><strong>Variants</strong>: cpu, gpu</p>
-<p><strong>Arches</strong>: intel, intel+gpu_delay, amd</p>
+<p><strong>Versions</strong>: 4.0.1, 3.1.3, 4.0.0</p>
+<p><strong>Variants</strong>: gpu, cpu</p>
+<p><strong>Arches</strong>: intel+gpu_delay, intel, amd</p>
 <p><strong>Modules</strong>: <code>relion/cpu/3.1.3+amd</code>, <code>relion/gpu/3.1.3+amd</code>, <code>relion/gpu/3.1.3+intel</code>, <code>relion/cpu/4.0.0+amd</code>, <code>relion/gpu/4.0.0+amd</code>, <code>relion/gpu/4.0.0+intel</code>, <code>relion/3.1.3</code>, <code>relion/4.0.0</code>, <code>relion/cpu/4.0.1+amd</code>, <code>relion/gpu/4.0.1+amd</code>, <code>relion/4.0.1</code>, <code>relion/gpu/4.0.1+intel+gpu_delay</code>, <code>relion/gpu/4.0.1+intel</code></p>
 <h3 id="relion-bbr">relion-bbr<a class="headerlink" href="#relion-bbr" title="Permanent link">&para;</a></h3>
 <p>A modified version of Relion supporting block-based-reconstruction as
