@@ -1880,7 +1880,7 @@ environments or install packages:</p>
 <p>Creating a conda environment in your PI's share is similar to creating it in your home directory, but you need to
 specify the full path for the new environment. Let's say the path to your PI's storage is <code>/path/to/lab/share/</code>, and
 within that storage you have your own directory named for your username (<code>$USER</code>). You could create a conda environment
-datasci in that directory like this:</p>
+<code>datasci</code> in that directory like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>conda
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Loading<span class="w"> </span>conda/base/latest
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/path/to/lab/share/<span class="nv">$USER</span>/envs/datasci<span class="w"> </span>pandas<span class="w"> </span>seaborn<span class="w"> </span>ipython
