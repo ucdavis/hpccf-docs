@@ -5,54 +5,55 @@ copyright: Copyright &copy; 2023-24 The Regents of the University of California,
 
 nav:
   - General:
-    - Account Requests: general/account-requests.md
-    - Accessing Clusters: general/access.md
-    - Job Scheduling:
-      - About: scheduler/index.md
-      - Commands: scheduler/commands.md
-      - Resources: scheduler/resources.md
-      - Job Scripts: scheduler/jobscripts.md
-    - Software:
-      - About: software/index.md
-      - Module System: software/modules.md
-      - Conda and Python: software/conda.md
-      - Open OnDemand: software/ondemand.md
-      - R and RStudio: software/rlang.md
-      - Development: software/developing.md
-    - Data Transfer: data-transfer.md
-    - Troubleshooting: general/troubleshooting.md
+      - Account Requests: general/account-requests.md
+      - Accessing Clusters: general/access.md
+      - Data Transfer: data-transfer.md
+      - Job Scheduling:
+          - About: scheduler/index.md
+          - Commands: scheduler/commands.md
+          - Job Scripts: scheduler/jobscripts.md
+          - Resources: scheduler/resources.md
+      - Software:
+          - About: software/index.md
+          - Conda and Python: software/conda.md
+          - Development: software/developing.md
+          - Module System: software/modules.md
+          - Open OnDemand: software/ondemand.md
+          - R and RStudio: software/rlang.md
+      - Troubleshooting: general/troubleshooting.md
   - Clusters:
-    - Farm:
-      - About: farm/index.md
-      - Software:
-        - Modules: farm/software/modules.md
-      - Job Scheduling: farm/scheduling.md
-      - Resources: farm/resources.md
-      - Storage: farm/storage.md
-    - Franklin:
-      - About: franklin/index.md
-      - Software:
-        - Modules: franklin/software/modules.md
-        - cryo-EM: franklin/software/cryoem.md
-        - alphafold: franklin/software/alphafold.md
-      - Job Scheduling: franklin/scheduling.md
-      - Resources: franklin/resources.md
-      - Storage: franklin/storage.md
-    - Hive:
-      - Migrating from LSSC0: hive/migration.md
+      - Farm:
+          - About: farm/index.md
+          - Job Scheduling: farm/scheduling.md
+          - Resources: farm/resources.md
+          - Software:
+              - Modules: farm/software/modules.md
+          - Storage: farm/storage.md
+      - Franklin:
+          - About: franklin/index.md
+          - Job Scheduling: franklin/scheduling.md
+          - Resources: franklin/resources.md
+          - Software:
+              - Modules: franklin/software/modules.md
+              - cryo-EM: franklin/software/cryoem.md
+              - alphafold: franklin/software/alphafold.md
+          - Storage: franklin/storage.md
+      - Hive:
+          - Migrating from LSSC0: hive/migration.md
 
   - Admin:
-    - admin/index.md
-    - Network Architecture: admin/network.md
-    - Virtual Machines: admin/vms.md
-    - Provisioning: admin/provisioning.md
-    - DNS: admin/dns.md
-    - Cobbler: admin/cobbler.md
-    - Configuration: admin/configuration.md # puppet, etc
-    - Software: admin/software.md
-    - Netbox: admin/netbox.md
-    - Monitoring: admin/monitoring.md
-    - Open OnDemand: admin/ondemand.md
+      - admin/index.md
+      - Cobbler: admin/cobbler.md
+      - Configuration: admin/configuration.md # puppet, etc
+      - DNS: admin/dns.md
+      - Monitoring: admin/monitoring.md
+      - Netbox: admin/netbox.md
+      - Network Architecture: admin/network.md
+      - Open OnDemand: admin/ondemand.md
+      - Provisioning: admin/provisioning.md
+      - PXE boot: admin/PXE.md
+      - Software: admin/software.md
+      - Virtual Machines: admin/vms.md
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
 #
@@ -84,7 +85,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - macros:
-        module_name: macros
+      module_name: macros
 
 extra:
   spack_modulefiles_path: spack-ucdavis/modulefiles/hpccf/franklin/
@@ -122,12 +123,11 @@ theme:
   favicon: assets/HPCCF-logo.png
   icon:
     repo: fontawesome/brands/github
-  palette: 
-
+  palette:
     # Palette toggle for light mode
     - scheme: ucdavis
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
 
     # Palette toggle for dark mode
