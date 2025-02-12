@@ -93,21 +93,17 @@ previous conda installation in your home directory -- you do not need to recreat
 ### Creating a conda environment in your PI's share
 
 Creating a conda environment in your PI's share is similar to creating it in your home directory, but you need to
-specify the full path to the new environment location by adding
-
-```bash
---prefix=/[group|quobyte]/YourPI'sGroupShare/conda/${USER}/envs/ENVIRONMENT-NAME-HERE
-```
-
-To mirror the above demo, but install in your PI's share:
+specify the full path for the new environment. Let's say the path to your PI's storage is `/path/to/lab/share/`, and
+within that storage you have your own directory named for your username (`$USER`). You could create a conda environment
+datasci in that directory like this:
 
 ```bash
 $ module load conda
 Loading conda/base/latest
-$ mamba create --prefix=/[group|quobyte]/YourPI'sGroupShare/conda/${USER}/envs/datasci pandas seaborn ipython
+$ mamba create --prefix=/path/to/lab/share/$USER/envs/datasci pandas seaborn ipython
 Transaction
 
-  Prefix: /group/hpccfgrp/conda/omen/envs/datasci
+  Prefix: /path/to/lab/share/$USER/envs/datasci
 
   Updating specs:
 
@@ -123,7 +119,7 @@ Transaction finished
 
 To activate this environment, use:
 
-    mamba activate /group/hpccfgrp/conda/omen/envs/datasci
+    mamba activate /path/to/lab/share/$USER/envs/datasci
 
 ```
 
