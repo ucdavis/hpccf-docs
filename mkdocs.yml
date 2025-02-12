@@ -5,8 +5,8 @@ copyright: Copyright &copy; 2023-24 The Regents of the University of California,
 
 nav:
   - General:
-      - Account Requests: general/account-requests.md
       - Accessing Clusters: general/access.md
+      - Account Requests: general/account-requests.md
       - Data Transfer: data-transfer.md
       - Job Scheduling:
           - About: scheduler/index.md
@@ -34,9 +34,9 @@ nav:
           - Job Scheduling: franklin/scheduling.md
           - Resources: franklin/resources.md
           - Software:
-              - Modules: franklin/software/modules.md
-              - cryo-EM: franklin/software/cryoem.md
               - alphafold: franklin/software/alphafold.md
+              - cryo-EM: franklin/software/cryoem.md
+              - Modules: franklin/software/modules.md
           - Storage: franklin/storage.md
       - Hive:
           - Migrating from LSSC0: hive/migration.md
