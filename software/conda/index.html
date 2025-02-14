@@ -1878,84 +1878,83 @@ environments or install packages:</p>
 </details>
 <h3 id="creating-a-conda-environment-in-your-pis-share">Creating a conda environment in your PI's share<a class="headerlink" href="#creating-a-conda-environment-in-your-pis-share" title="Permanent link">&para;</a></h3>
 <p>Creating a conda environment in your PI's share is similar to creating it in your home directory, but you need to
-specify the full path to the new environment location by adding</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>--prefix<span class="o">=</span>/<span class="o">[</span>group<span class="p">|</span>quobyte<span class="o">]</span>/YourPI<span class="err">&#39;</span>sGroupShare/conda/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/envs/ENVIRONMENT-NAME-HERE
-</code></pre></div>
-<p>To mirror the above demo, but install in your PI's share:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>conda
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Loading<span class="w"> </span>conda/base/latest
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/<span class="o">[</span>group<span class="p">|</span>quobyte<span class="o">]</span>/YourPI<span class="err">&#39;</span>sGroupShare/conda/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/envs/datasci<span class="w"> </span>pandas<span class="w"> </span>seaborn<span class="w"> </span>ipython
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Transaction
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span>Prefix:<span class="w"> </span>/group/hpccfgrp/conda/omen/envs/datasci
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span>Updating<span class="w"> </span>specs:
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">   </span>-<span class="w"> </span>pandas
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">   </span>-<span class="w"> </span>seaborn
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">   </span>-<span class="w"> </span>ipython
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span>Package<span class="w">                  </span>Version<span class="w">  </span>Build<span class="w">                 </span>Channel<span class="w">           </span>Size
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>...
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Confirm<span class="w"> </span>changes:<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>&lt;---<span class="w"> </span>USER<span class="w"> </span>INPUT<span class="w"> </span>REQUIRED
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>...
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Transaction<span class="w"> </span>finished
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>To<span class="w"> </span>activate<span class="w"> </span>this<span class="w"> </span>environment,<span class="w"> </span>use:
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span>mamba<span class="w"> </span>activate<span class="w"> </span>/group/hpccfgrp/conda/omen/envs/datasci
+specify the full path for the new environment. Let's say the path to your PI's storage is <code>/path/to/lab/share/</code>, and
+within that storage you have your own directory named for your username (<code>$USER</code>). You could create a conda environment
+<code>datasci</code> in that directory like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>conda
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Loading<span class="w"> </span>conda/base/latest
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/path/to/lab/share/<span class="nv">$USER</span>/envs/datasci<span class="w"> </span>pandas<span class="w"> </span>seaborn<span class="w"> </span>ipython
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Transaction
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span>Prefix:<span class="w"> </span>/path/to/lab/share/<span class="nv">$USER</span>/envs/datasci
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span>Updating<span class="w"> </span>specs:
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">   </span>-<span class="w"> </span>pandas
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">   </span>-<span class="w"> </span>seaborn
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">   </span>-<span class="w"> </span>ipython
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span>Package<span class="w">                  </span>Version<span class="w">  </span>Build<span class="w">                 </span>Channel<span class="w">           </span>Size
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>...
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>Confirm<span class="w"> </span>changes:<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>&lt;---<span class="w"> </span>USER<span class="w"> </span>INPUT<span class="w"> </span>REQUIRED
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>...
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Transaction<span class="w"> </span>finished
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>To<span class="w"> </span>activate<span class="w"> </span>this<span class="w"> </span>environment,<span class="w"> </span>use:
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span>mamba<span class="w"> </span>activate<span class="w"> </span>/path/to/lab/share/<span class="nv">$USER</span>/envs/datasci
 </code></pre></div>
 <p>Conda environments created in PI shares can be activated by using the full path to the environment, as shown at the end
 of the create:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>conda
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>/group/hpccfgrp/conda/omen/envs/datasci
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>conda
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>/path/to/lab/share/<span class="nv">$USER</span>/envs/datasci
 </code></pre></div>
 <p>You can add this new path to Conda's environment search path. See the
 <a href="https://docs.conda.io/projects/conda/en/25.1.x/user-guide/configuration/settings.html#envs-dirs-specify-environment-directories">Conda docs</a>
 for more information.</p>
 <h3 id="controlling-condas-cache">Controlling Conda's cache<a class="headerlink" href="#controlling-condas-cache" title="Permanent link">&para;</a></h3>
 <p>Conda's cache can get rather large, so we recommend cleaning it after a large conda environment update:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>conda<span class="w"> </span>clean<span class="w"> </span>--all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>conda<span class="w"> </span>clean<span class="w"> </span>--all
 </code></pre></div>
 <p>Any removed cache data will be automatically re-downloaded if needed.</p>
 <h2 id="central-conda-environments">Central Conda Environments<a class="headerlink" href="#central-conda-environments" title="Permanent link">&para;</a></h2>
 <p>We provide a number of centrally managed conda environments, which can be loaded via modules prefixed with <code>conda/</code>: for
 example, on farm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>module<span class="w"> </span>avail<span class="w"> </span>conda
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">------------------------------------------------------ /share/apps/22.04/modulefiles/manual ------------------------------------------------------</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">conda/angsd/0.940        conda/CRISPR-Local/4564b0c  conda/latest                   conda/pixy/1.2.7.beta1    conda/spyder/5.4.3</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">conda/anvio/8            conda/ddocent/2.9.4         conda/megahit/1.2.9            conda/plink/1.90b6.21     conda/stereopy/0.12.1</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">conda/apptainer/1.2.2    conda/dev/latest            conda/metabat/2.15             conda/prokka/1.14.6       conda/tensorqtl/1.0.8</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">conda/augustus/3.5.0     conda/diploshic/1.0.4       conda/msprime/1.2.0            conda/pyani/0.2.7         conda/testing/latest</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="go">conda/avocado/0.4.0      conda/fastenloc/2.0         conda/nanoporetech-pod5/0.2.4  conda/qiime2/2023.2       conda/vcflib/1.0.3</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">conda/base/              conda/fgbio/2.1.0           conda/pacbio/1                 conda/qiime2/2023.5       conda/virsorter/2.2.4</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="go">conda/base/latest        conda/foldseek/6.29e2557    conda/pandas/2.1.4             conda/r-stitch/1.6.8      conda/websockify/0.11.0</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="go">conda/cactus/2019.03.01  conda/gtdbtk/2.4.0          conda/pcangsd/1.11             conda/repeatmasker/4.1.5  conda/whatshap/1.7</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="go">conda/cas-offinder/2.4   conda/hifiasm/0.19.5        conda/phydrus/0.2.0            conda/rnabloom/2.0.1</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">conda/cesm/2.1.3         conda/hpccf-utils/default   conda/phyluce/1.7.1            conda/shapeit/5.1.1</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="go">conda/collections/bio    conda/idba/1.1.3.kMax600    conda/phyluce/1.7.3            conda/shapeit4/4.2.2</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="go">conda/coverm/0.6.1       conda/jupyterlab/4          conda/picrust2/2.5.2           conda/singlem/0.18.0</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>module<span class="w"> </span>avail<span class="w"> </span>conda
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">------------------------------------------------------ /share/apps/22.04/modulefiles/manual ------------------------------------------------------</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">conda/angsd/0.940        conda/CRISPR-Local/4564b0c  conda/latest                   conda/pixy/1.2.7.beta1    conda/spyder/5.4.3</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">conda/anvio/8            conda/ddocent/2.9.4         conda/megahit/1.2.9            conda/plink/1.90b6.21     conda/stereopy/0.12.1</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">conda/apptainer/1.2.2    conda/dev/latest            conda/metabat/2.15             conda/prokka/1.14.6       conda/tensorqtl/1.0.8</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="go">conda/augustus/3.5.0     conda/diploshic/1.0.4       conda/msprime/1.2.0            conda/pyani/0.2.7         conda/testing/latest</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="go">conda/avocado/0.4.0      conda/fastenloc/2.0         conda/nanoporetech-pod5/0.2.4  conda/qiime2/2023.2       conda/vcflib/1.0.3</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="go">conda/base/              conda/fgbio/2.1.0           conda/pacbio/1                 conda/qiime2/2023.5       conda/virsorter/2.2.4</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="go">conda/base/latest        conda/foldseek/6.29e2557    conda/pandas/2.1.4             conda/r-stitch/1.6.8      conda/websockify/0.11.0</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="go">conda/cactus/2019.03.01  conda/gtdbtk/2.4.0          conda/pcangsd/1.11             conda/repeatmasker/4.1.5  conda/whatshap/1.7</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="go">conda/cas-offinder/2.4   conda/hifiasm/0.19.5        conda/phydrus/0.2.0            conda/rnabloom/2.0.1</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="go">conda/cesm/2.1.3         conda/hpccf-utils/default   conda/phyluce/1.7.1            conda/shapeit/5.1.1</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="go">conda/collections/bio    conda/idba/1.1.3.kMax600    conda/phyluce/1.7.3            conda/shapeit4/4.2.2</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="go">conda/coverm/0.6.1       conda/jupyterlab/4          conda/picrust2/2.5.2           conda/singlem/0.18.0</span>
 </code></pre></div>
 <p>Running <code>module load conda/qiime2/2023.5</code> is the same as running <code>module load conda</code> followed by
 <code>conda activate qiime2-2023.5</code>. The central conda environments also show up with a <code>conda list</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>conda<span class="w"> </span>env<span class="w"> </span>list
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="gp"># </span>conda<span class="w"> </span>environments:
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="gp">#</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">...</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">base                     /share/apps/conda/conda-root</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="go">CRISPR-Local-4564b0c     /share/apps/conda/environments/CRISPR-Local-4564b0c</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="go">alphafold-2.3.2          /share/apps/conda/environments/alphafold-2.3.2</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="go">angsd-0.940              /share/apps/conda/environments/angsd-0.940</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="go">anvio-8                  /share/apps/conda/environments/anvio-8</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="go">apptainer-1.2.2          /share/apps/conda/environments/apptainer-1.2.2</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="go">augustus-3.5.0           /share/apps/conda/environments/augustus-3.5.0</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="go">avocado-0.4.0            /share/apps/conda/environments/avocado-0.4.0</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="go">cactus-2019-3-1          /share/apps/conda/environments/cactus-2019-3-1</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="go">cas-offinder-2.4         /share/apps/conda/environments/cas-offinder-2.4</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="go">cesm-2.1.3               /share/apps/conda/environments/cesm-2.1.3</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="go">cheeto                   /share/apps/conda/environments/cheeto</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="go">coverm-0.6.1             /share/apps/conda/environments/coverm-0.6.1</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="go">...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>conda<span class="w"> </span>env<span class="w"> </span>list
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="gp"># </span>conda<span class="w"> </span>environments:
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gp">#</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">...</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">base                     /share/apps/conda/conda-root</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">CRISPR-Local-4564b0c     /share/apps/conda/environments/CRISPR-Local-4564b0c</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="go">alphafold-2.3.2          /share/apps/conda/environments/alphafold-2.3.2</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">angsd-0.940              /share/apps/conda/environments/angsd-0.940</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="go">anvio-8                  /share/apps/conda/environments/anvio-8</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="go">apptainer-1.2.2          /share/apps/conda/environments/apptainer-1.2.2</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="go">augustus-3.5.0           /share/apps/conda/environments/augustus-3.5.0</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">avocado-0.4.0            /share/apps/conda/environments/avocado-0.4.0</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="go">cactus-2019-3-1          /share/apps/conda/environments/cactus-2019-3-1</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="go">cas-offinder-2.4         /share/apps/conda/environments/cas-offinder-2.4</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="go">cesm-2.1.3               /share/apps/conda/environments/cesm-2.1.3</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="go">cheeto                   /share/apps/conda/environments/cheeto</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="go">coverm-0.6.1             /share/apps/conda/environments/coverm-0.6.1</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="go">...</span>
 </code></pre></div>
 <p>Unloading the <code>conda</code> module also deactivates all conda environments.</p>
 <h2 id="migrating-from-user-installed-conda">Migrating from User-installed Conda<a class="headerlink" href="#migrating-from-user-installed-conda" title="Permanent link">&para;</a></h2>
@@ -1963,19 +1962,19 @@ example, on farm:</p>
 This is necessary because user-installed condas set environment variables that clash with the central install. In order
 to migrate, you will need to remove the initialization code that the conda installer adds to your shell configuration.
 This code will most likely be in either <code>~/.bashrc</code> or <code>~/.bash_profile</code>, and will look something like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/home/camille/miniconda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">else</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="k">else</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/camille/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">fi</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="k">fi</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nb">unset</span><span class="w"> </span>__conda_setup
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/home/camille/miniconda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">else</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/camille/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">fi</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">fi</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">unset</span><span class="w"> </span>__conda_setup
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
 </code></pre></div>
 <p>Delete this block, and log out and back in to the cluster, after which you should be able to <code>module load conda</code>. If you
 run into problems with migrating, file a support ticket at
