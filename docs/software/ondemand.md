@@ -89,7 +89,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 
 If your job is rejected at submission time with this error, it means you requested resources that are not available in
 the `Account`/`Partition` you specified. Normally you should work with your PI to find out what resources are available.
-On Hive, in `publicgrp`/`high` (the free-tier), the limits are a maximum of 8 CPUs, 1 GPU, and 128 GB of RAM per job.
+On Hive, in `publicgrp`/`high` (the free-tier), the limits [are documented here](/scheduler/free-tier).
 
 ### Failed to submit session with the following error:
 

@@ -18,14 +18,14 @@ and selecting their PI in the `Select a group` box.
 
 Cluster specific information:
 
-- Farm: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` group.
+- `Farm`: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` (`adamgrp`) group.
 
-- Franklin: No public/free-tier available.
+- `Franklin`: No public/free-tier available.
 
-- Hive: Staff, faculty, and graduate students who do not have a PI can select the `UCD HPC Sponsored Public Access`
-  group.
+- `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
+  `UCD HPC Sponsored Public Access` (`publicgrp`) group.
 
-- Peloton: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can select
+- `Peloton`: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can select
   the Jeremy Phillips (IT director for L&S) `jeremygrp` group.
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
