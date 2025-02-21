@@ -49,14 +49,9 @@ Wait for installation to finish
 
 ???+ "Find production Ethernet MAC"
 
-    ```
-    ssh root@$HOSTNAME**(-install)?**
-    rm /etc/netplan/*.yaml
-    wget -O /etc/netplan/00-ALL-dhcp.yaml http://cobbler.$(hostname --domain)/cobbler-html/support/00-ALL-dhcp.yaml
-    netplan apply
-    ```
+    `ssh root@$HOSTNAME**(-install)?**`
 
-    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the 10G Ethernet connection.
+    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the >1G Ethernet connection that will be used in production.
 
 ???+ "Puppet work"
 
