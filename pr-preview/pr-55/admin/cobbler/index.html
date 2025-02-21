@@ -1810,6 +1810,7 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd /var/www/cobbler-html
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HOSTNAME=**cluster-location-row-rack-U*2**
 </code></pre></div>
+<p><strong>Pay attention to the output from the scripts.</strong> Some of it is large amounts of spew from cobbler, but the rest could have critical information.</p>
 <p>Configure the BMC first:</p>
 <p><code>./cobbler-add-from-netbox.sh "$HOSTNAME" bmc</code></p>
 <p>Then main Ethernet iface:</p>
