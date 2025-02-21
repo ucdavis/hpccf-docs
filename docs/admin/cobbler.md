@@ -64,8 +64,9 @@ Wait for installation to finish
     ```
     git add data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml
     git commit
-    git push
     ```
+
+    Contact Omen or Camille for review and push. Note, this change will go live on Hive without a push.
 
 ???+ "Final host work"
 
