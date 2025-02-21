@@ -1810,6 +1810,10 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd /var/www/cobbler-html
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HOSTNAME=**cluster-location-row-rack-U*2**
 </code></pre></div>
+<p><strong>Pay attention to the output from the scripts.</strong> Some of it is large amounts of spew from cobbler, but the rest could have critical information.</p>
+<p>Configure the BMC first.</p>
+<p><code>./cobbler-add-from-netbox.sh "$HOSTNAME" bmc</code></p>
+<p>Then the main Ethernet iface.</p>
 <p>If this is a host with a 25G Mellanox Ethernet card that we have not
 been able to PXE boot from, you need to add: <strong>-I InstallationEthDeviceFromNetbox</strong></p>
 <p><code>./cobbler-add-from-netbox.sh -I eth**N** "$HOSTNAME" eth**N**</code></p>
