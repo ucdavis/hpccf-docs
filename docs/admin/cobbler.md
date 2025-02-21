@@ -51,7 +51,7 @@ Wait for installation to finish
 
     `ssh root@$HOSTNAME**(-install)?**`
 
-    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the 10G Ethernet connection.
+    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the >1G Ethernet connection that will be used in production.
 
 ???+ "Puppet work"
 
