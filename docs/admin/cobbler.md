@@ -29,6 +29,12 @@ There is a cobbler server per cluster as well as one for the public HPC VLAN.
     HOSTNAME=**cluster-location-row-rack-U*2**
     ```
 
+    Configure the BMC first:
+
+    `./cobbler-add-from-netbox.sh "$HOSTNAME" bmc`
+
+    Then main Ethernet iface:
+
     If this is a host with a 25G Mellanox Ethernet card that we have not
     been able to PXE boot from, you need to add: **-I InstallationEthDeviceFromNetbox**
 
