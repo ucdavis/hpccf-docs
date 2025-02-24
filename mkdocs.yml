@@ -1,7 +1,7 @@
 site_name: HPC@UCD Documentation
 site_url: http://docs.hpc.ucdavis.edu
 repo_url: https://github.com/ucdavis/hpccf-docs
-copyright: Copyright &copy; 2023-24 The Regents of the University of California, Davis
+copyright: Copyright &copy; 2023-25 The Regents of the University of California, Davis
 
 nav:
   - General:
@@ -43,6 +43,7 @@ nav:
 
   - Admin:
       - admin/index.md
+      - Backups: admin/backups.md
       - Cobbler: admin/cobbler.md
       - Configuration: admin/configuration.md # puppet, etc
       - DNS: admin/dns.md
