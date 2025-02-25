@@ -53,7 +53,7 @@ Please ensure you have an account on Hive by creating one at [HiPPO](https://hip
 `transfer.hive.hpc.udavis.edu` using your Campus Login ID and passphrase (or SSH key pair if you submitted one via
 HiPPO).
 
-??? Note "Hive tranfer node"
+??? Note "Hive transfer node"
 
     HPCCF staff have set up a transfer node within Hive that has direct links to LSSCO networking to facilitate
     data transfer. However, because LSSC0 home directories reside on AFS, performance may be lower than you would expect.
