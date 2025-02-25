@@ -16,8 +16,10 @@ process looks like this:
 
 1. The PI logs into Hive to verify access.
 
-1. All users that need access to the PI's resources on Hive
-   [requests access through Hippo](/general/account-requests/#how-to-request-a-new-account-on-a-cluster).
+1. All users that need access to the PI's resources on Hive requests access (either
+   [`new account`](/general/account-requests/#how-to-request-a-new-account-on-a-cluster), or
+   [`access to another group`](/general/account-requests/#how-to-request-access-to-another-group-on-a-cluster)) through
+   Hippo.
 
     1. The PI approves each of those requests, allowing the accounts to be created on Hive.
 
