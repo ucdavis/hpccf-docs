@@ -11,6 +11,7 @@ nav:
       - Job Scheduling:
           - About: scheduler/index.md
           - Commands: scheduler/commands.md
+          - Free Access: scheduler/free-access.md
           - Job Scripts: scheduler/jobscripts.md
           - Resources: scheduler/resources.md
       - Software:
@@ -39,7 +40,7 @@ nav:
               - Modules: franklin/software/modules.md
           - Storage: franklin/storage.md
       - Hive:
-          - Migrating from LSSC0: hive/migration.md
+          - Migrating from LSSC0: hive/lssc0-data-migration.md
 
   - Admin:
       - admin/index.md

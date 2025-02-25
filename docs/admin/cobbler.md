@@ -29,6 +29,14 @@ There is a cobbler server per cluster as well as one for the public HPC VLAN.
     HOSTNAME=**cluster-location-row-rack-U*2**
     ```
 
+    **Pay attention to the output from the scripts.** Some of it is large amounts of spew from cobbler, but the rest could have critical information.
+
+    Configure the BMC first.
+
+    `./cobbler-add-from-netbox.sh "$HOSTNAME" bmc`
+
+    Then the main Ethernet iface.
+
     If this is a host with a 25G Mellanox Ethernet card that we have not
     been able to PXE boot from, you need to add: **-I InstallationEthDeviceFromNetbox**
 
@@ -49,14 +57,9 @@ Wait for installation to finish
 
 ???+ "Find production Ethernet MAC"
 
-    ```
-    ssh root@$HOSTNAME**(-install)?**
-    rm /etc/netplan/*.yaml
-    wget -O /etc/netplan/00-ALL-dhcp.yaml http://cobbler.$(hostname --domain)/cobbler-html/support/00-ALL-dhcp.yaml
-    netplan apply
-    ```
+    `ssh root@$HOSTNAME**(-install)?**`
 
-    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the 10G Ethernet connection.
+    Look at `ethtool '*'` and `ifconfig eth*N*` to figure out which one is the >1G Ethernet connection that will be used in production.
 
 ???+ "Puppet work"
 
@@ -69,8 +72,9 @@ Wait for installation to finish
     ```
     git add data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml
     git commit
-    git push
     ```
+
+    Contact Omen or Camille for review and push. Note, this change will go live on Hive without a push.
 
 ???+ "Final host work"
 
