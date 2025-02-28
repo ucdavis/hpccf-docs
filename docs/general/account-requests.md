@@ -18,15 +18,15 @@ and selecting their PI in the `Select a group` box.
 
 Cluster specific information:
 
-- `Farm`: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` (`adamgrp`) group.
+-   `Farm`: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` (`adamgrp`) group.
 
-- `Franklin`: No public/free-tier available.
+-   `Franklin`: No public/free-tier available.
 
-- `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
-  `UCD HPC Sponsored Public Access` (`publicgrp`) group.
+-   `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
+    `UCD HPC Sponsored Public Access` (`publicgrp`) group.
 
-- `Peloton`: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can select
-  the Jeremy Phillips (IT director for L&S) `jeremygrp` group.
+-   `Peloton`: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can
+    select the Jeremy Phillips (IT director for L&S) `jeremygrp` group.
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
@@ -65,7 +65,8 @@ Cluster specific information:
         - If you are the PI, enter `self`.
         - If you have a PI, enter the PI's name.
         - If you need access to the free-tier, enter `free-tier`.
-    1. Click `Confirm.
+    1. Click `Confirm`.
+    1. After you are granted access to this group's resources, you will need to specifically request it by adding `--account=NewlyGrantedPIgrp` to each srun or sbatch job.
 
 #### If you are a PI and have bought, or are planning to purchase, resources:
 
