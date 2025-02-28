@@ -1673,12 +1673,16 @@
 <ul>
 <li>Partition <code>high</code>: the entire group has access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).<ul>
 <li>Each job is limited to a maximum of 8 CPUs, 128 GB of RAM, and 1 GPU.</li>
+<li>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your srun or sbatch
+    command.</li>
 </ul>
 </li>
 <li>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that
     when a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your
     job can do automatic check-pointing and restarting, all progress is lost when the job is killed.<ul>
 <li>Each job is limited to a maximum a maximum runtime of 3 days (<code>3-00</code>).</li>
+<li>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your srun or sbatch
+    command.</li>
 </ul>
 </li>
 </ul>
