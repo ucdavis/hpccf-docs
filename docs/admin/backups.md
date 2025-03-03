@@ -24,7 +24,7 @@ $ cd ~
 $ /quobyte/pbs/bin/restore.sh
 ```
 
-If everything is working correctly, you should see a list of snapshots. Pick the one you want to restore the file from
+If everything is working correctly, you will see a list of snapshots. Pick the one you want to restore the file from
 (up/down arrows), then press enter. The snapshot you selected will be automatically mounted to a random directory, which
 is printed (for example `/home/omen/restore-fCnNXIUr`).
 
