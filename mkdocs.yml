@@ -54,6 +54,7 @@ nav:
       - Provisioning: admin/provisioning.md
       - PXE boot: admin/PXE.md
       - Software: admin/software.md
+      - Scripts: admin/scripts.md
       - Virtual Machines: admin/vms.md
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
