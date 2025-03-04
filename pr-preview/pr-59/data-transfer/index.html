@@ -1861,6 +1861,10 @@ reasons, you will only be able to write files to <code>/globus-write/Your-Login-
 <p>Home directories, and PI group directories can be access through the <a href="https://app.globus.org/">Globus File Manager</a>. For
 home directories, search for a collection named <code>UC Davis CLUSTERNAME home</code>. For PI group directories, search for
 <code>UC Davis CLUSTERNAME PI-name</code>.</p>
+<details class="warning" open="open">
+<summary>Globus Free File Transfer limitations</summary>
+<p>HPCCF does not have a paid subscription for Globus, and uses the <code>Free File Transfer…for users at non-profit research institutions</code> tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.</p>
+</details>
 <h2 id="command-line-tools">Command-line tools<a class="headerlink" href="#command-line-tools" title="Permanent link">&para;</a></h2>
 <h3 id="scp-openssh-secure-file-copy">scp — OpenSSH secure file copy<a class="headerlink" href="#scp-openssh-secure-file-copy" title="Permanent link">&para;</a></h3>
 <p>If you only need to move a single file, or a small directory, scp will work well. From your desktop/laptop you can push,
