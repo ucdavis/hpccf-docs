@@ -2,11 +2,12 @@
 template: admin.html
 title: Network
 ---
+#Network Overview
 Our core network is split between Ethernet and Infiniband. The Ethernet backbone goes through 
 Juniper EX and QFX switches and the Infiniband switches are from Nvidia (formerly Mellanox).
-# Ethernet
-## Configuring VLANs
-### EX
+## Ethernet
+### Configuring VLANs
+#### EX
 Log in to EX (Distribution) stack (details in [NetBox](https://netbox.hpc.ucdavis.edu)). The prompt will end with `%`. 
 Enter the CLI. 
 The prompt ending will change to `>` and a note about the current master will appear. 
@@ -26,7 +27,7 @@ When finished with your changes, commit them.
 
 > `# commit`
 
-### QFX 
+#### QFX 
 
 There are some diffrences when setting an interface on a QFX switch. We need to remove the `inet` family first. 
 Log in to QFX (Core) stack (details in [NetBox](https://netbox.hpc.ucdavis.edu)). The prompt will end with `%`. 
@@ -50,7 +51,7 @@ When finished with your changes, commit them.
 
 > `# commit`
 
-#Infiniband
-## Cable Orientation
+##Infiniband
+### Cable Orientation
 Cables will lock in place when properly inserted. Based on the position of the card, the cable may be oriented 
 differently. When using a dual port card, make sure that the primary connection is next to the indicator lights. 
