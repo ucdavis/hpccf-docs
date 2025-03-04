@@ -84,7 +84,7 @@ Wait for installation to finish
     reboot
     ```
 
-???+ Verify host
+???+ "Verify host rebooted correctly"
 
     `ssh $USER@$HOSTNAME`
 
@@ -96,6 +96,12 @@ Wait for installation to finish
 
     `https://monitoring.hpc.ucdavis.edu/icingaweb2/monitoring/host/services?host=**fqdn**`
 
-Add to Slurm.
+???+ "Validate node"
+
+    Add to Slurm's `burnin` partition.
+
+    Checklist TBD, but including test in Slurm.
+
+Move to Slurm's production partition(s).
 
 Rejoice.
