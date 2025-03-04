@@ -17,6 +17,10 @@ Home directories, and PI group directories can be access through the [Globus Fil
 home directories, search for a collection named `UC Davis CLUSTERNAME home`. For PI group directories, search for
 `UC Davis CLUSTERNAME PI-name`.
 
+???+ Warning "Globus Free File Transfer limitations"
+
+    HPCCF does not have a paid subscription for Globus, and uses the `Free File Transfer…for users at non-profit research institutions` tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.
+
 ## Command-line tools
 
 ### scp — OpenSSH secure file copy
