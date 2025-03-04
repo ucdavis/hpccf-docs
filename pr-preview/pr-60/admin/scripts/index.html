@@ -1809,12 +1809,6 @@ the standout scripts are documented here.</p>
 <p><code>cleanup.sh</code> <code>directory</code>: cleanup the emacs and jed editor detritus.</p>
 </li>
 <li>
-<p><code>cvmfs-transaction</code> <code>open | close | status</code>: a wrapper for starting/stopping a CVMFS transaction.</p>
-</li>
-<li>
-<p><code>ipmi.sh</code> <code>NodeName</code> <code>ipmi command to run</code>: wrap ipmitool to automatically use our IPMI username and password.</p>
-</li>
-<li>
 <p><code>sacctmgr-show-qos.sh</code>: show the Slurm QoS settings.</p>
 </li>
 <li>
@@ -1828,28 +1822,6 @@ the standout scripts are documented here.</p>
 <p><code>ucd</code> <code>Name | email</code>: check our LDAP tree to try to figure out who a user is.</p>
 </li>
 <li>
-<p><code>upgrade-reboot-ALL-down-nodes.sh</code>: without arguments, looks for down nodes, and run the <code>upgrade-reboot-node.sh</code>
-    script on them, one node per screen window.</p>
-<ul>
-<li>Optional arguments, one of:<ul>
-<li><code>node1 node2 node3 ...</code></li>
-<li><code>partition-name</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><code>upgrade-reboot-node.sh</code> <code>NodeName</code>: run the sequence of steps that bring most nodes back into compliance and tries
-    to re-add the node to Slurm.</p>
-</li>
-<li>
-<p><code>victoria-download.sh</code> <code>logs | metrics</code> <code>version</code>: download the specified version of the Victoria product and stow
-    it.</p>
-</li>
-<li>
-<p><code>whoami-ssh</code>: process the authlog for SSH ssh keys to figure out who the actual logged-in user is.</p>
-</li>
-<li>
 <p><code>zfs-list.sh</code>: show zfs file-systems with compression and quota.</p>
 <ul>
 <li>Optional arguments passed directly to <code>zfs list</code>.</li>
@@ -1861,6 +1833,9 @@ the standout scripts are documented here.</p>
 <ul>
 <li>
 <p><code>cobbler-add-*.sh</code>: obsolete scripts to add new nodes. The replacement <a href="/admin/cobbler/">pulls from NetBox</a>.</p>
+</li>
+<li>
+<p><code>cvmfs-transaction</code> <code>open | close | status</code>: a wrapper for starting/stopping a CVMFS transaction.</p>
 </li>
 <li>
 <p><code>hpccf-mkswap.sh</code>: generate the swap file in the <code>/scratch/</code> directory. Called by a systemd unit file on boot.</p>
@@ -1877,6 +1852,9 @@ the standout scripts are documented here.</p>
     <a href="https://magjac.com/graphviz-visual-editor/">Graphviz Visual Editor</a>.</p>
 </li>
 </ul>
+</li>
+<li>
+<p><code>ipmi.sh</code> <code>NodeName</code> <code>ipmi command to run</code>: wrap ipmitool to automatically use our IPMI username and password.</p>
 </li>
 <li>
 <p><code>iptables-disable.sh</code>: purge the host's iptables firewall. Use for testing only. Puppet will re-create the rules on
@@ -1903,6 +1881,28 @@ the standout scripts are documented here.</p>
 <li>
 <p><code>slurmd-launch</code> | <code>slurmctld-launch</code> | <code>slurmdbd-launch</code>: a wrapper around Slurm services that exit non-zero if the
     Slurm storage is not yet available.</p>
+</li>
+<li>
+<p><code>upgrade-reboot-ALL-down-nodes.sh</code>: without arguments, looks for down nodes, and run the <code>upgrade-reboot-node.sh</code>
+    script on them, one node per screen window.</p>
+<ul>
+<li>Optional arguments, one of:<ul>
+<li><code>node1 node2 node3 ...</code></li>
+<li><code>partition-name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>upgrade-reboot-node.sh</code> <code>NodeName</code>: run the sequence of steps that bring most nodes back into compliance and tries
+    to re-add the node to Slurm.</p>
+</li>
+<li>
+<p><code>victoria-download.sh</code> <code>logs | metrics</code> <code>version</code>: download the specified version of the Victoria product and stow
+    it.</p>
+</li>
+<li>
+<p><code>whoami-ssh</code>: process the authlog for SSH ssh keys to figure out who the actual logged-in user is.</p>
 </li>
 </ul>
 
