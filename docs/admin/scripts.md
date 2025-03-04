@@ -10,10 +10,6 @@ the standout scripts are documented here.
 
 -   `cleanup.sh` `directory`: cleanup the emacs and jed editor detritus.
 
--   `cvmfs-transaction` `open | close | status`: a wrapper for starting/stopping a CVMFS transaction.
-
--   `ipmi.sh` `NodeName` `ipmi command to run`: wrap ipmitool to automatically use our IPMI username and password.
-
 -   `sacctmgr-show-qos.sh`: show the Slurm QoS settings.
 
 -   `showuser.sh` `LoginID`: Show information about a user from LDAP and Slurm.
@@ -22,21 +18,6 @@ the standout scripts are documented here.
     for `sacct`.
 
 -   `ucd` `Name | email`: check our LDAP tree to try to figure out who a user is.
-
--   `upgrade-reboot-ALL-down-nodes.sh`: without arguments, looks for down nodes, and run the `upgrade-reboot-node.sh`
-    script on them, one node per screen window.
-
-    -   Optional arguments, one of:
-        -   `node1 node2 node3 ...`
-        -   `partition-name`
-
--   `upgrade-reboot-node.sh` `NodeName`: run the sequence of steps that bring most nodes back into compliance and tries
-    to re-add the node to Slurm.
-
--   `victoria-download.sh` `logs | metrics` `version`: download the specified version of the Victoria product and stow
-    it.
-
--   `whoami-ssh`: process the authlog for SSH ssh keys to figure out who the actual logged-in user is.
 
 -   `zfs-list.sh`: show zfs file-systems with compression and quota.
     -   Optional arguments passed directly to `zfs list`.
@@ -47,6 +28,8 @@ These commands normally require sudo.
 
 -   `cobbler-add-*.sh`: obsolete scripts to add new nodes. The replacement [pulls from NetBox](/admin/cobbler/).
 
+-   `cvmfs-transaction` `open | close | status`: a wrapper for starting/stopping a CVMFS transaction.
+
 -   `hpccf-mkswap.sh`: generate the swap file in the `/scratch/` directory. Called by a systemd unit file on boot.
 
 -   `ib-topology-generate.py`: a wrapper around `ibnetdiscover` to pretty-print the InfiniBand links. - Optional
@@ -56,6 +39,8 @@ These commands normally require sudo.
 
     -   `-g | --graphviz`: generate GraphViz output in `ib-topology.dot`. Visualize with `xdot` or
         [Graphviz Visual Editor](https://magjac.com/graphviz-visual-editor/).
+
+-   `ipmi.sh` `NodeName` `ipmi command to run`: wrap ipmitool to automatically use our IPMI username and password.
 
 -   `iptables-disable.sh`: purge the host's iptables firewall. Use for testing only. Puppet will re-create the rules on
     next run.
@@ -74,3 +59,18 @@ These commands normally require sudo.
 
 -   `slurmd-launch` | `slurmctld-launch` | `slurmdbd-launch`: a wrapper around Slurm services that exit non-zero if the
     Slurm storage is not yet available.
+
+-   `upgrade-reboot-ALL-down-nodes.sh`: without arguments, looks for down nodes, and run the `upgrade-reboot-node.sh`
+    script on them, one node per screen window.
+
+    -   Optional arguments, one of:
+        -   `node1 node2 node3 ...`
+        -   `partition-name`
+
+-   `upgrade-reboot-node.sh` `NodeName`: run the sequence of steps that bring most nodes back into compliance and tries
+    to re-add the node to Slurm.
+
+-   `victoria-download.sh` `logs | metrics` `version`: download the specified version of the Victoria product and stow
+    it.
+
+-   `whoami-ssh`: process the authlog for SSH ssh keys to figure out who the actual logged-in user is.
