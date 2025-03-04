@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ethernet" class="md-skip">
+        <a href="#network-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -1535,6 +1535,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethernet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethernet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuring-vlans" class="md-nav__link">
     <span class="md-ellipsis">
       Configuring VLANs
@@ -1557,6 +1567,35 @@
   <a href="#qfx" class="md-nav__link">
     <span class="md-ellipsis">
       QFX
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infiniband
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable Orientation
     </span>
   </a>
   
@@ -1720,6 +1759,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethernet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethernet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuring-vlans" class="md-nav__link">
     <span class="md-ellipsis">
       Configuring VLANs
@@ -1742,6 +1791,35 @@
   <a href="#qfx" class="md-nav__link">
     <span class="md-ellipsis">
       QFX
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infiniband
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable Orientation
     </span>
   </a>
   
@@ -1813,11 +1891,12 @@
 </div>
 
 <!-- Page content -->
+<h1 id="network-overview">Network Overview<a class="headerlink" href="#network-overview" title="Permanent link">&para;</a></h1>
 <p>Our core network is split between Ethernet and Infiniband. The Ethernet backbone goes through 
 Juniper EX and QFX switches and the Infiniband switches are from Nvidia (formerly Mellanox).</p>
-<h1 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h1>
-<h2 id="configuring-vlans">Configuring VLANs<a class="headerlink" href="#configuring-vlans" title="Permanent link">&para;</a></h2>
-<h3 id="ex">EX<a class="headerlink" href="#ex" title="Permanent link">&para;</a></h3>
+<h2 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h2>
+<h3 id="configuring-vlans">Configuring VLANs<a class="headerlink" href="#configuring-vlans" title="Permanent link">&para;</a></h3>
+<h4 id="ex">EX<a class="headerlink" href="#ex" title="Permanent link">&para;</a></h4>
 <p>Log in to EX (Distribution) stack (details in <a href="https://netbox.hpc.ucdavis.edu">NetBox</a>). The prompt will end with <code>%</code>. 
 Enter the CLI. 
 The prompt ending will change to <code>&gt;</code> and a note about the current master will appear. </p>
@@ -1837,7 +1916,7 @@ appear beside the previous note. </p>
 <blockquote>
 <p><code># commit</code></p>
 </blockquote>
-<h3 id="qfx">QFX<a class="headerlink" href="#qfx" title="Permanent link">&para;</a></h3>
+<h4 id="qfx">QFX<a class="headerlink" href="#qfx" title="Permanent link">&para;</a></h4>
 <p>There are some diffrences when setting an interface on a QFX switch. We need to remove the <code>inet</code> family first. 
 Log in to QFX (Core) stack (details in <a href="https://netbox.hpc.ucdavis.edu">NetBox</a>). The prompt will end with <code>%</code>. 
 Enter the CLI. 
@@ -1859,8 +1938,8 @@ appear beside the previous note. </p>
 <blockquote>
 <p><code># commit</code></p>
 </blockquote>
-<h1 id="infiniband">Infiniband<a class="headerlink" href="#infiniband" title="Permanent link">&para;</a></h1>
-<h2 id="cable-orientation">Cable Orientation<a class="headerlink" href="#cable-orientation" title="Permanent link">&para;</a></h2>
+<h2 id="infiniband">Infiniband<a class="headerlink" href="#infiniband" title="Permanent link">&para;</a></h2>
+<h3 id="cable-orientation">Cable Orientation<a class="headerlink" href="#cable-orientation" title="Permanent link">&para;</a></h3>
 <p>Cables will lock in place when properly inserted. Based on the position of the card, the cable may be oriented 
 differently. When using a dual port card, make sure that the primary connection is next to the indicator lights. </p>
 
@@ -1887,7 +1966,7 @@ differently. When using a dual port card, make sure that the primary connection 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 23:54:47">March 4, 2025</span>
   </span>
 
     
@@ -1897,7 +1976,7 @@ differently. When using a dual port card, make sure that the primary connection 
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 23:54:47">March 4, 2025</span>
   </span>
 
     
