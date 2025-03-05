@@ -1370,6 +1370,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#grouppi-sub-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group/PI sub-directories:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group/PI sub-directories:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interrupted-transfer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupted transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1789,6 +1813,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#grouppi-sub-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group/PI sub-directories:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group/PI sub-directories:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interrupted-transfer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupted transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1879,7 +1927,7 @@ HiPPO).</p>
 data transfer. However, because LSSC0 home directories reside on AFS, performance may be lower than you would expect.
 This transfer node is only for moving data into Hive, it is not for general use.</p>
 </details>
-<p>Once logged into Hive, you can run:</p>
+<p>Once logged into the Hive transfer node, you can run:</p>
 <p><code>rsync --archive --one-file-system --info=progress2 LSSC0-LOGIN-ID@barbera.hpc.genomecenter.ucdavis.edu:~/ from-lssc0/</code></p>
 <p>This will prompt you for your LSSC0 password. Note, your LSSC0 Login ID might not match your Campus Login ID used on
 Hive.</p>
@@ -1897,6 +1945,24 @@ Hive.</p>
 <h4 id="interrupted-transfer">Interrupted transfer<a class="headerlink" href="#interrupted-transfer" title="Permanent link">&para;</a></h4>
 <p>If, for any reason, the transfer is interrupted, you can simply re-run the command and rsync will only copy files that
 have changed on lssc0, or that have not yet been copied to Hive.</p>
+<h3 id="grouppi-sub-directories">Group/PI sub-directories:<a class="headerlink" href="#grouppi-sub-directories" title="Permanent link">&para;</a></h3>
+<p>Group/PI sub-directories can be also be transferred from LSSC0 with rsync. SSH to <code>transfer.hive.hpc.udavis.edu</code> using
+your Campus Login ID and passphrase (or SSH key pair if you submitted one via HiPPO).</p>
+<p>Once logged into the Hive transfer node, you can run:</p>
+<p><code>rsync --archive --one-file-system --info=progress2 LSSC0-LOGIN-ID@barbera.hpc.genomecenter.ucdavis.edu:/share/LSSCO-PI-lab/Sub-Directory-To-Copy/ /quobyte/Hive-PI-grp/Sub-Directory-To-Copy-from-lssc0/</code></p>
+<p>Note: the trailing <code>/</code> is critical on both the source and the destination, otherwise the files will not end up in the
+location you are expecting.</p>
+<p>If you want to make the destination directory <strong>exactly</strong> the same as the source directory, i.e., delete files in the
+destination directory that do not exist on the source, you can add the <code>--delete-after</code> argument to rsync.</p>
+<ul>
+<li><code>--delete-during</code>: Deletes files on the destination that are not present on the source.</li>
+</ul>
+<details class="danger" open="open">
+<summary>PERMANENT DATA LOSS</summary>
+<p>If you add the <code>--delete-after</code> argument to rsync, but use the wrong source or destination directory in the rsync command, <strong>YOU MAY CAUSE PERMANENT DATA LOSS</strong> on the destination side. Please be extra cautious when having rsync delete files.</p>
+</details>
+<h4 id="interrupted-transfer_1">Interrupted transfer<a class="headerlink" href="#interrupted-transfer_1" title="Permanent link">&para;</a></h4>
+<p>See <a href="#interrupted-transfer">Interrupted transfer</a> above.</p>
 
 
 
@@ -1919,7 +1985,7 @@ have changed on lssc0, or that have not yet been copied to Hive.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 25, 2025 19:03:36">February 25, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21">March 4, 2025</span>
   </span>
 
     

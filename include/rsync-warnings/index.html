@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/data-transfer/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/include/rsync-warnings/">
       
       
-        <link rel="prev" href="../general/account-requests/">
       
       
-        <link rel="next" href="../scheduler/">
-      
-      
-      <link rel="icon" href="../assets/HPCCF-logo.png">
+      <link rel="icon" href="../../assets/HPCCF-logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
-        <title>Data Transfer - HPC@UCD Documentation</title>
+        <title>Rsync warnings - HPC@UCD Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#globus" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -92,9 +83,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="HPC@UCD Documentation" class="md-header__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
+    <a href="../.." title="HPC@UCD Documentation" class="md-header__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
       
-  <img src="../assets/HPCCF-logo-dark.png" alt="logo">
+  <img src="../../assets/HPCCF-logo-dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Transfer
+              Rsync warnings
             
           </span>
         </div>
@@ -231,9 +222,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="HPC@UCD Documentation" class="md-nav__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
+    <a href="../.." title="HPC@UCD Documentation" class="md-nav__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
       
-  <img src="../assets/HPCCF-logo-dark.png" alt="logo">
+  <img src="../../assets/HPCCF-logo-dark.png" alt="logo">
 
     </a>
     HPC@UCD Documentation
@@ -257,8 +248,6 @@
       
   
   
-    
-  
   
   
     
@@ -270,11 +259,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -289,7 +280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             General
@@ -303,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../general/access/" class="md-nav__link">
+      <a href="../../general/access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../general/account-requests/" class="md-nav__link">
+      <a href="../../general/account-requests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -344,29 +335,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Data Transfer
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../data-transfer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -376,99 +348,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#globus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Globus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command-line tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Command-line tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scp-openssh-secure-file-copy" class="md-nav__link">
-    <span class="md-ellipsis">
-      scp — OpenSSH secure file copy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rsync-a-fast-versatile-remote-and-local-file-copying-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      rsync - a fast, versatile, remote (and local) file-copying tool
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="rsync - a fast, versatile, remote (and local) file-copying tool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation-of-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation of options:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-ondemand" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open OnDemand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gui-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      GUI tools
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -521,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduler/" class="md-nav__link">
+      <a href="../../scheduler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduler/commands/" class="md-nav__link">
+      <a href="../../scheduler/commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -565,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduler/free-access/" class="md-nav__link">
+      <a href="../../scheduler/free-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduler/jobscripts/" class="md-nav__link">
+      <a href="../../scheduler/jobscripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduler/resources/" class="md-nav__link">
+      <a href="../../scheduler/resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -701,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/conda/" class="md-nav__link">
+      <a href="../../software/conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/developing/" class="md-nav__link">
+      <a href="../../software/developing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -745,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/modules/" class="md-nav__link">
+      <a href="../../software/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -767,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/ondemand/" class="md-nav__link">
+      <a href="../../software/ondemand/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -789,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/rlang/" class="md-nav__link">
+      <a href="../../software/rlang/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../general/troubleshooting/" class="md-nav__link">
+      <a href="../../general/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -931,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../farm/" class="md-nav__link">
+      <a href="../../farm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -953,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../farm/scheduling/" class="md-nav__link">
+      <a href="../../farm/scheduling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -975,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../farm/resources/" class="md-nav__link">
+      <a href="../../farm/resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../farm/software/modules/" class="md-nav__link">
+      <a href="../../farm/software/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1067,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../farm/storage/" class="md-nav__link">
+      <a href="../../farm/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1137,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/" class="md-nav__link">
+      <a href="../../franklin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1159,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/scheduling/" class="md-nav__link">
+      <a href="../../franklin/scheduling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1181,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/resources/" class="md-nav__link">
+      <a href="../../franklin/resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1243,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/software/alphafold/" class="md-nav__link">
+      <a href="../../franklin/software/alphafold/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/software/cryoem/" class="md-nav__link">
+      <a href="../../franklin/software/cryoem/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1287,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/software/modules/" class="md-nav__link">
+      <a href="../../franklin/software/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1317,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../franklin/storage/" class="md-nav__link">
+      <a href="../../franklin/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1387,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hive/lssc0-data-migration/" class="md-nav__link">
+      <a href="../../hive/lssc0-data-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1467,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/" class="md-nav__link">
+      <a href="../../admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1489,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/cobbler/" class="md-nav__link">
+      <a href="../../admin/cobbler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1511,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/configuration/" class="md-nav__link">
+      <a href="../../admin/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1533,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/dns/" class="md-nav__link">
+      <a href="../../admin/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1555,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/monitoring/" class="md-nav__link">
+      <a href="../../admin/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1577,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/netbox/" class="md-nav__link">
+      <a href="../../admin/netbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1599,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/network/" class="md-nav__link">
+      <a href="../../admin/network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1621,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/ondemand/" class="md-nav__link">
+      <a href="../../admin/ondemand/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1643,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/provisioning/" class="md-nav__link">
+      <a href="../../admin/provisioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1665,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/PXE/" class="md-nav__link">
+      <a href="../../admin/PXE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1687,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/software/" class="md-nav__link">
+      <a href="../../admin/software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1709,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/vms/" class="md-nav__link">
+      <a href="../../admin/vms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1749,89 +1628,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#globus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Globus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command-line tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Command-line tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scp-openssh-secure-file-copy" class="md-nav__link">
-    <span class="md-ellipsis">
-      scp — OpenSSH secure file copy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rsync-a-fast-versatile-remote-and-local-file-copying-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      rsync - a fast, versatile, remote (and local) file-copying tool
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="rsync - a fast, versatile, remote (and local) file-copying tool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation-of-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation of options:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-ondemand" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open OnDemand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gui-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      GUI tools
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1849,73 +1645,9 @@
   
 
 
-  <h1>Data Transfer</h1>
+  <h1>Rsync warnings</h1>
 
-<p>There are four general methods for getting data to/from a cluster.</p>
-<h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
-<p>Farm, Franklin, and Hive have Globus installed. Home directories for all three clusters are already exported. Because of
-the way Globus v5 works, each PI directory must be exported manually by HPCCF staff. If you need a PI directory
-exported, please contact HPC support and CC your PI for approval.</p>
-<p>Once the PI group directory is exported, you will be able to read any file you normally have access to, but for security
-reasons, you will only be able to write files to <code>/globus-write/Your-Login-ID/</code> within the Globus File Manager.</p>
-<p>Home directories, and PI group directories can be access through the <a href="https://app.globus.org/">Globus File Manager</a>. For
-home directories, search for a collection named <code>UC Davis CLUSTERNAME home</code>. For PI group directories, search for
-<code>UC Davis CLUSTERNAME PI-name</code>.</p>
-<details class="warning" open="open">
-<summary>Globus Free File Transfer limitations</summary>
-<p>HPCCF does not have a paid subscription for Globus, and uses the <code>Free File Transfer…for users at non-profit research institutions</code> tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.</p>
-</details>
-<h2 id="command-line-tools">Command-line tools<a class="headerlink" href="#command-line-tools" title="Permanent link">&para;</a></h2>
-<h3 id="scp-openssh-secure-file-copy">scp — OpenSSH secure file copy<a class="headerlink" href="#scp-openssh-secure-file-copy" title="Permanent link">&para;</a></h3>
-<p>If you only need to move a single file, or a small directory, scp will work well. From your desktop/laptop you can push,
-or pull, file(s) and/or directories.</p>
-<dl>
-<dt>To push a file, you specify the source from your local system, and the destination on a cluster:</dt>
-<dd>
-<p><code>scp -rp local-file local-directory/ UCD-Login-ID@CLUSTERNAME.hpc.ucdavis.edu:</code></p>
-</dd>
-<dt>To pull a file from a cluster to your local machine:</dt>
-<dd>
-<p><code>scp -rp UCD-Login-ID@CLUSTERNAME.hpc.ucdavis.edu:location/on/cluster .</code></p>
-</dd>
-</dl>
-<p>The final <code>.</code> will put the files/directories into the current directory.</p>
-<p><code>scp</code> arguments:</p>
-<ul>
-<li>
-<p><code>-r</code> Recursively copy entire directories. Note that scp follows symbolic links encountered in the tree traversal.</p>
-</li>
-<li>
-<p><code>-p</code> Preserves modification times, access times, and file mode bits from the source file.</p>
-</li>
-</ul>
-<p>See <code>man scp</code> for the full manual.</p>
-<h3 id="rsync-a-fast-versatile-remote-and-local-file-copying-tool">rsync - a fast, versatile, remote (and local) file-copying tool<a class="headerlink" href="#rsync-a-fast-versatile-remote-and-local-file-copying-tool" title="Permanent link">&para;</a></h3>
-<dl>
-<dt>From the <code>rsync</code> manual:</dt>
-<dd>
-<p>Rsync is a fast and extraordinarily versatile file copying tool. It can copy locally, to/from another host over any
-remote shell, or to/from a remote rsync daemon. It offers a large number of options that control every aspect of its
-behavior and permit very flexible specification of the set of files to be copied. It is famous for its delta-transfer
-algorithm, which reduces the amount of data sent over the network by sending only the differences between the source
-files and the existing files in the destination. Rsync is widely used for backups and mirroring and as an improved copy
-command for everyday use.</p>
-</dd>
-</dl>
-<p>Like scp, rsync can operate in a push, or a pull, mode, depending on which arguments you put first. To use rsync to copy
-files from your local system, to a cluster, preserving permissions, ownership, and file times, you can use the following
-command.</p>
-<p><code>rsync --archive --one-file-system --info=progress2 local-directory/ UCD-LOGIN-ID@CLUSTERNAME.hpc.ucdavis.edu:~/destination/</code></p>
-<p>To pull a directory from a cluster to your local machine:</p>
-<p><code>rsync --archive --one-file-system --info=progress2 UCD-LOGIN-ID@CLUSTERNAME.hpc.ucdavis.edu:~/remote-directory/ local-directory/</code></p>
-<h4 id="explanation-of-options">Explanation of options:<a class="headerlink" href="#explanation-of-options" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>--archive</code> preserves symbolic links, permissions, ownership, file timestamps, and recursively copies directories.</li>
-<li><code>--one-file-system</code> don't cross filesystem boundaries.</li>
-<li><code>--info=progress2</code> show reasonable progress as rsync processes files.</li>
-</ul>
-<p>Note: the trailing <code>/</code> is critical on both the source and the destination, otherwise the files will not end up in the
-location you are expecting.</p>
+<p>location you are expecting.</p>
 <p>If you want to make the destination directory <strong>exactly</strong> the same as the source directory, i.e., delete files in the
 destination directory that do not exist on the source, you can add the <code>--delete-after</code> argument to rsync.</p>
 <ul>
@@ -1925,25 +1657,6 @@ destination directory that do not exist on the source, you can add the <code>--d
 <summary>PERMANENT DATA LOSS</summary>
 <p>If you add the <code>--delete-after</code> argument to rsync, but use the wrong source or destination directory in the rsync command, <strong>YOU MAY CAUSE PERMANENT DATA LOSS</strong> on the destination side. Please be extra cautious when having rsync delete files.</p>
 </details>
-<p>As always, see <code>man rsync</code> for the manual.</p>
-<h2 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h2>
-<p>For clusters that have <a href="/software/ondemand/">Open OnDemand</a>, you can copy files to/from your home directory. Log in to
-the OnDemand dashboard for the cluster, and select <code>Files</code> -&gt; <code>Home Directory</code>. Files larger than a couple hundred
-megabytes will fail to transfer through OnDemand, so you will need to use a different method.</p>
-<h2 id="gui-tools">GUI tools<a class="headerlink" href="#gui-tools" title="Permanent link">&para;</a></h2>
-<p>GUI tools do exist to help with file transfer. However, HPCCF cannot provide support for them, so you will need to
-contact your local IT support, or make an appointment with <a href="/#additional-information">DataLab</a> for help.</p>
-<ul>
-<li>
-<p>Filezilla is a multi-platform client commonly used to transfer data to and from the cluster.</p>
-</li>
-<li>
-<p>Cyberduck is another popular file transfer client for Mac or Windows computers.</p>
-</li>
-<li>
-<p>WinSCP is Windows-only file transfer software.</p>
-</li>
-</ul>
 
 
 
@@ -1966,7 +1679,7 @@ contact your local IT support, or make an appointment with <a href="/#additional
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 18:53:41">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21">March 4, 2025</span>
   </span>
 
     
@@ -1976,7 +1689,7 @@ contact your local IT support, or make an appointment with <a href="/#additional
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2024 17:59:03">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21">March 4, 2025</span>
   </span>
 
     
@@ -2052,12 +1765,12 @@ contact your local IT support, or make an appointment with <a href="/#additional
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
       
