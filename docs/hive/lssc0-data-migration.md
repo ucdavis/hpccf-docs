@@ -59,7 +59,7 @@ HiPPO).
     data transfer. However, because LSSC0 home directories reside on AFS, performance may be lower than you would expect.
     This transfer node is only for moving data into Hive, it is not for general use.
 
-Once logged into Hive, you can run:
+Once logged into the Hive transfer node, you can run:
 
 `rsync --archive --one-file-system --info=progress2 LSSC0-LOGIN-ID@barbera.hpc.genomecenter.ucdavis.edu:~/ from-lssc0/`
 
@@ -82,3 +82,18 @@ Hive.
 
 If, for any reason, the transfer is interrupted, you can simply re-run the command and rsync will only copy files that
 have changed on lssc0, or that have not yet been copied to Hive.
+
+### Group/PI sub-directories:
+
+Group/PI sub-directories can be also be transferred from LSSC0 with rsync. SSH to `transfer.hive.hpc.udavis.edu` using
+your Campus Login ID and passphrase (or SSH key pair if you submitted one via HiPPO).
+
+Once logged into the Hive transfer node, you can run:
+
+`rsync --archive --one-file-system --info=progress2 LSSC0-LOGIN-ID@barbera.hpc.genomecenter.ucdavis.edu:/share/LSSCO-PI-lab/Sub-Directory-To-Copy/ /quobyte/Hive-PI-grp/Sub-Directory-To-Copy-from-lssc0/`
+
+-8<- "docs/include/rsync-warnings.md"
+
+#### Interrupted transfer
+
+See [Interrupted transfer](#interrupted-transfer) above.
