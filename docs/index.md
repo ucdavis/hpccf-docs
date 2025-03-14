@@ -66,11 +66,11 @@ algorithm.
 
 ## How to request help
 
-Emails sent to the HPCCF are documented in Service Now via hpc-help@ucdavis.edu. HPCCF staff are available to respond to
+Emails sent to HPCCF are documented in Service Now via hpc-help@ucdavis.edu. HPCCF staff are available to respond to
 requests on scheduled university work days from 8:00 am until 5:00 pm, and will respond to your inquiry as soon as
 possible.
 
-To ensure the best possible help, make sure you include all of the following information:
+To ensure the best possible help, please send us all of the following information:
 
 1. Your username, the cluster name you are running on, and your sponsor name.
 
