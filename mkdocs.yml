@@ -44,6 +44,7 @@ nav:
 
   - Admin:
       - admin/index.md
+      - Backups UF: admin/backups-users.md
       - Backups: admin/backups.md
       - Cobbler: admin/cobbler.md
       - Configuration: admin/configuration.md # puppet, etc
@@ -63,11 +64,14 @@ nav:
 markdown_extensions:
   - toc:
       permalink: true
-  - def_list
-  - attr_list
+
   - admonition
-  - md_in_html
+  - attr_list
+  - def_list
   - footnotes
+  - md_in_html
+  - tables
+
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
