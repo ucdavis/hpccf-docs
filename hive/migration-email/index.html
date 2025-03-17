@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/include/rsync-warnings/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/hive/migration-email/">
       
       
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Rsync warnings - HPC@UCD Documentation</title>
+        <title>Migration from LSSC0 to Hive Email - HPC@UCD Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rsync warnings
+              Migration from LSSC0 to Hive Email
             
           </span>
         </div>
@@ -1266,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hive/lssc0-data-migration/" class="md-nav__link">
+      <a href="../lssc0-data-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,50 +1351,6 @@
   
   <span class="md-ellipsis">
     About
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../admin/backups-users/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Backups UF
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../admin/backups/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Backups
     
   </span>
   
@@ -1689,18 +1645,53 @@
   
 
 
-  <h1>Rsync warnings</h1>
+  <h1>Migration from LSSC0 to Hive Email</h1>
 
-<p>location you are expecting.</p>
-<p>If you want to make the destination directory <strong>exactly</strong> the same as the source directory, i.e., delete files in the
-destination directory that do not exist on the source, you can add the <code>--delete-after</code> argument to rsync.</p>
-<ul>
-<li><code>--delete-during</code>: Deletes files on the destination that are not present on the source.</li>
-</ul>
-<details class="danger" open="open">
-<summary>PERMANENT DATA LOSS</summary>
-<p>If you add the <code>--delete-after</code> argument to rsync, but use the wrong source or destination directory in the rsync command, <strong>YOU MAY CAUSE PERMANENT DATA LOSS</strong> on the destination side. Please be extra cautious when having rsync delete files.</p>
-</details>
+<div class="admonition note">
+<p class="admonition-title">The following email will be sent to each PI as we work through the migration process</p>
+<p>All</p>
+<p>We are starting the process of migrating users, hardware, and data from LSSC0 to Hive. Labs with login or GPU nodes
+under seven years of age will be migrated to Hive according to our hardware policy at
+https://hpc.ucdavis.edu/model-hpc-hardware-support.</p>
+<p>Please ensure that the software currently used by your team on LSSC0 is available on Hive. If you need specific
+software, please let us know by requesting it using the Software Request Form at
+https://hpc.ucdavis.edu/software-installation-policy . Existing software can be searched with:
+<code>module avail -l | grep -i softwarename</code></p>
+<p>PIs are first required to make an account on Hive by going to the High-Performance Personnel Onboarding Portal at
+https://hippo.ucdavis.edu, selecting Hive as their cluster, and enter the <code>New PI Onboarding (sponsors)</code> group. HPCCF
+staff will approve the request, and the new PI group will be available for users to select. Documentation here:
+https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
+<p>Once the PI group has been created, users are required to make an account on Hive by going to the High-Performance
+Personnel Onboarding Portal at https://hippo.ucdavis.edu, selecting Hive as their cluster, and selecting their PI/lab’s
+group. The PI will receive an email with a link to approve the request. Once it is approved, the user will be added to
+the PI's group and will be able to log in to Hive. Documentation here:
+https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
+<p>Users are responsible for migrating their home directory to Hive. We have helpful instructions for those users who need
+assistance with rsync at https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/</p>
+<p>The lab share data migration takes place over several steps:</p>
+<ol>
+<li>
+<p>HPC staff will copy group data from LSSC0 to Hive during an initial pass.</p>
+</li>
+<li>
+<p>PIs will be notified via Service Now email to stop jobs in preparation for a second pass of data and to arrange for
+the final transition to Hive. Service Now tracking allows HPC staff to keep PIs notified and the status tracked.</p>
+<p>Note: HPC staff will add a <code>.CSV</code> file to the ticket with user and group information from the Genome Center
+Computing Portal. It is the PI’s responsibility to validate that the group information is correct so that HPC staff
+can map user data from LSSC0 to Hive during the migration process.</p>
+<p>Users who have not made accounts on Hive will have their group data owned by the PI.</p>
+</li>
+<li>
+<p>Login nodes under seven years of age will be migrated to Hive, and groups will be provisioned with like resources.
+Login nodes over seven years of age will be decommissioned.</p>
+</li>
+<li>
+<p>Final pass of data and permissions adjustment. Data on LSSC0 will be marked read-only.</p>
+</li>
+</ol>
+<p>HPCCF is maintaining a list of Frequently Asked Questions:
+https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lssc0-backed-up-data</p>
+</div>
 
 
 
@@ -1723,7 +1714,7 @@ destination directory that do not exist on the source, you can add the <code>--d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 14, 2025 23:24:15">March 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 20:53:22">March 17, 2025</span>
   </span>
 
     
@@ -1733,7 +1724,7 @@ destination directory that do not exist on the source, you can add the <code>--d
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 14, 2025 23:24:15">March 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 20:45:47">March 17, 2025</span>
   </span>
 
     
@@ -1768,7 +1759,7 @@ destination directory that do not exist on the source, you can add the <code>--d
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023-25 The Regents of the University of California, Davis
+      Copyright &copy; 2023-24 The Regents of the University of California, Davis
     </div>
   
   

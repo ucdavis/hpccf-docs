@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1399,6 +1399,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-find-my-pi-share-on-hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where can I find my PI share on Hive?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-with-my-lssc0-backed-up-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens with my LSSC0 backed-up data?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1842,6 +1875,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-find-my-pi-share-on-hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where can I find my PI share on Hive?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-with-my-lssc0-backed-up-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens with my LSSC0 backed-up data?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1963,6 +2029,18 @@ destination directory that do not exist on the source, you can add the <code>--d
 </details>
 <h4 id="interrupted-transfer_1">Interrupted transfer<a class="headerlink" href="#interrupted-transfer_1" title="Permanent link">&para;</a></h4>
 <p>See <a href="#interrupted-transfer">Interrupted transfer</a> above.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="where-can-i-find-my-pi-share-on-hive">Where can I find my PI share on Hive?<a class="headerlink" href="#where-can-i-find-my-pi-share-on-hive" title="Permanent link">&para;</a></h3>
+<p>Hive uses the <a href="https://www.quobyte.com/">Quobyte Parallel File-System</a> for group storage. Hive's group storage is under
+<code>/quobyte/</code>. Hive almost always uses the PI's UC Davis Login ID as the base for the directory name, then appends <code>grp</code>.
+The exceptions are for larger groups that transcend a single PI.</p>
+<h3 id="what-happens-with-my-lssc0-backed-up-data">What happens with my LSSC0 backed-up data?<a class="headerlink" href="#what-happens-with-my-lssc0-backed-up-data" title="Permanent link">&para;</a></h3>
+<p>All data from your separate LSSC0 backup share has been copied to Hive.</p>
+<p>Backups on Hive happen slightly differently than on LSSC0. Instead of purchasing a separate backed-up storage area, we
+have created a folder named <code>BACKED-UP/</code> within your Hive PI share (<code>/quobyte/PIgrp/BACKED-UP/</code>). Any data on Hive that
+you want backed up <strong>must</strong> reside within that directory. All backed-up data from LSSC0 has been copied to that
+directory on Hive.</p>
+<p>More detailed documentation for Hive backups will be forthcoming.</p>
 
 
 
@@ -1985,7 +2063,7 @@ destination directory that do not exist on the source, you can add the <code>--d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 20:36:18">March 17, 2025</span>
   </span>
 
     
