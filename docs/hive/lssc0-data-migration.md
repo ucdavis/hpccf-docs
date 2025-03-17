@@ -100,11 +100,11 @@ See [Interrupted transfer](#interrupted-transfer) above.
 
 ## FAQ
 
-### Where can I find my PI data share on Hive?
+### Where can I find my PI share on Hive?
 
-Hive uses the [Quobyte Parallel File-System](https://www.quobyte.com/) for group storage. All PI group storage will be
-under `/quobyte/` with the name `PILoginIDgrp`. Note, Hive almost always uses the PI UC Davis Login ID as the base for
-the directory name, then appends `grp`. The exceptions are for larger groups that transcend multiple PIs.
+Hive uses the [Quobyte Parallel File-System](https://www.quobyte.com/) for group storage. Hive's group storage is under
+`/quobyte/`. Hive almost always uses the PI's UC Davis Login ID as the base for the directory name, then appends `grp`.
+The exceptions are for larger groups that transcend a single PI.
 
 ### What happens with my LSSC0 backed-up data?
 
