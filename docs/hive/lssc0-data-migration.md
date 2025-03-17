@@ -97,3 +97,16 @@ Once logged into the Hive transfer node, you can run:
 #### Interrupted transfer
 
 See [Interrupted transfer](#interrupted-transfer) above.
+
+## FAQ
+
+### What happens with my LSSC0 backed-up data?
+
+All data from your separate LSSC0 backup share has been copied to Hive.
+
+Backups on Hive happen slightly differently than on LSSC0. Instead of purchasing a separate backed-up storage area, we
+have created a folder named `BACKED-UP/` within your Hive PI share (`/quobyte/PIgrp/BACKED-UP/`). Any data on Hive that
+you want backed up **must** reside within that directory. All backed-up data from LSSC0 has been copied to that
+directory on Hive.
+
+More detailed documentation for Hive backups will be forthcoming.
