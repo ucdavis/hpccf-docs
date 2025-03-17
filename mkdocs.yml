@@ -41,7 +41,6 @@ nav:
           - Storage: franklin/storage.md
       - Hive:
           - Migrating from LSSC0: hive/lssc0-data-migration.md
-          - Migration Email: hive/migration-email.md
 
   - Admin:
       - admin/index.md
