@@ -46,15 +46,16 @@ Group directory backups are available by request on Hive. The current rates are 
 
 ### How do I purchase backups for my group directory?
 
-Please email hpc-help@ucdavis.edu with the following information:
-
-1. The cluster.
-
-1. The [amount of backup storage](#how-much-backup-space-do-i-need) you would like to purchase.
+All Hive purchases are through [Hippo](https://hippo.ucdavis.edu/). Select the cluster you are purchasing for, click
+`Orders` -> `Products`. Then order `Backup Storage`. To expedite the process, in the `Notes` section, please include the
+following information:
 
 1. The list of contacts (email addresses) that are responsible for monitoring the backup status.
 
-1. The [number and type of snapshots](#what-are-the-types-of-snapshots-available) you would like to purchase.
+1. The [number and type of snapshots](#what-types-of-snapshots-are-available) you would like.
+
+Please see the [How much backup space do I need?](#how-much-backup-space-do-i-need) section if you have questions about
+how much backup space to purchase.
 
 ### What is backed up?
 
@@ -69,8 +70,8 @@ monitor the individual backups. It is up to you to monitor those and open a tick
 
 ### How much backup space do I need?
 
-This is an extremely complex question and depends on how much data you are backing up, how much that data changes
-(churn), and the number and type of snapshots you keep. The short version is you need approximately
+This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
+(churn), and the total number of snapshots you keep. The short version is you need approximately
 `(quantity + churn) * snapshots`.
 
 | Quantity of Data | Data Churn      | Snapshots                    | Total Required Space |
@@ -83,18 +84,18 @@ This is an extremely complex question and depends on how much data you are backi
 
 ### What happens when my backups exceed my purchased space?
 
-An error will be sent to list of email address(es) you designated to monitor your backups.
+An error will be sent the email address(es) you designated to monitor your backups.
 
-???+ Warning "Purchased quota exceeded"
+???+ Warning "Purchased quota exceeded example message"
 
     ```console
     !!!!!!!!!! ERROR !!!!!!!!!!
 
-    Backup quota exceeded, stored data is greater than purchased quota.
+    Backup quota exceeded, backed up data is greater than purchased quota.
 
-    Please see /quobyte/PIgrp/.pbs/README.txt for information about purchasing
-    more space, or contact HPCCF to adjust your retention policy, which is
-    currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**
+    Please see https://docs.hpc.ucdavis.edu/backups for information about
+    purchasing more space, or contact HPCCF to adjust your retention policy,
+    which is currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**
 
     BACKUP CANCELLED!
     ```
@@ -117,13 +118,14 @@ The backup system starts at midnight every night and works its way through a ran
 to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and your
 order in the shuffle.
 
-### What are the types of snapshots available?
+### What types of snapshots are available?
 
 PBS offers the following types of snapshots:
 
 -   `last`: Keep the last N snapshots.
 -   `daily`: Keep the last N daily snapshots.
 -   `weekly`: Keep the last N weekly snapshots.
+-   `monthly`: Keep the last N monthly snapshots.
 -   `yearly`: Keep the last N annual snapshots.
 
 There is a [simulator](https://pbs.proxmox.com/docs/prune-simulator/) to test various settings.
@@ -139,7 +141,7 @@ need to be able to retrieve old versions, or deleted, files.
 ### Are my backups encrypted?
 
 Yes, all backups are encrypted with a key that is unique to every PI group. This key is protected with normal Linux
-file-system permissions, so only users in the PI group will be able to even read it to restore data.
+file-system permissions, and only users in the PI group will be able to even read it to restore data.
 
 ### Who can restore files?
 
