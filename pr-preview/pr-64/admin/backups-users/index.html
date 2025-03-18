@@ -1536,9 +1536,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-are-the-types-of-snapshots-available" class="md-nav__link">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
     <span class="md-ellipsis">
-      What are the types of snapshots available?
+      What types of snapshots are available?
     </span>
   </a>
   
@@ -2014,9 +2014,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-are-the-types-of-snapshots-available" class="md-nav__link">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
     <span class="md-ellipsis">
-      What are the types of snapshots available?
+      What types of snapshots are available?
     </span>
   </a>
   
@@ -2163,21 +2163,19 @@ directory to umount earlier by pressing Control-c in window where you ran the re
 <a href="https://hpc.ucdavis.edu/rates">https://hpc.ucdavis.edu/rates</a> under <code>Rates for Hive</code> -&gt;
 <code>Cost of Backup/Archival (snapshot copy) Storage</code>.</p>
 <h3 id="how-do-i-purchase-backups-for-my-group-directory">How do I purchase backups for my group directory?<a class="headerlink" href="#how-do-i-purchase-backups-for-my-group-directory" title="Permanent link">&para;</a></h3>
-<p>Please email hpc-help@ucdavis.edu with the following information:</p>
+<p>All Hive purchases are through <a href="https://hippo.ucdavis.edu/">Hippo</a>. Select the cluster you are purchasing for, click
+<code>Orders</code> -&gt; <code>Products</code>. Then order <code>Backup Storage</code>. To expedite the process, in the <code>Notes</code> section, please include the
+following information:</p>
 <ol>
-<li>
-<p>The cluster.</p>
-</li>
-<li>
-<p>The <a href="#how-much-backup-space-do-i-need">amount of backup storage</a> you would like to purchase.</p>
-</li>
 <li>
 <p>The list of contacts (email addresses) that are responsible for monitoring the backup status.</p>
 </li>
 <li>
-<p>The <a href="#what-are-the-types-of-snapshots-available">number and type of snapshots</a> you would like to purchase.</p>
+<p>The <a href="#what-types-of-snapshots-are-available">number and type of snapshots</a> you would like.</p>
 </li>
 </ol>
+<p>Please see the <a href="#how-much-backup-space-do-i-need">How much backup space do I need?</a> section if you have questions about
+how much backup space to purchase.</p>
 <h3 id="what-is-backed-up">What is backed up?<a class="headerlink" href="#what-is-backed-up" title="Permanent link">&para;</a></h3>
 <p>The <strong>only</strong> data that is backed up is the data that resides within the <code>BACKED-UP/</code> directory at the top level of the
 PI share. <strong>NO OTHER DATA IS BACKED UP</strong>. If you have questions about what is being backed up, you should try a test
@@ -2186,8 +2184,8 @@ restore.</p>
 <p>You, the PI, or a designated list of email addresses. HPCCF does NOT, and we cannot emphasize this enough, <strong>does NOT</strong>
 monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.</p>
 <h3 id="how-much-backup-space-do-i-need">How much backup space do I need?<a class="headerlink" href="#how-much-backup-space-do-i-need" title="Permanent link">&para;</a></h3>
-<p>This is an extremely complex question and depends on how much data you are backing up, how much that data changes
-(churn), and the number and type of snapshots you keep. The short version is you need approximately
+<p>This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
+(churn), and the total number of snapshots you keep. The short version is you need approximately
 <code>(quantity + churn) * snapshots</code>.</p>
 <table>
 <thead>
@@ -2232,16 +2230,16 @@ monitor the individual backups. It is up to you to monitor those and open a tick
 </tbody>
 </table>
 <h3 id="what-happens-when-my-backups-exceed-my-purchased-space">What happens when my backups exceed my purchased space?<a class="headerlink" href="#what-happens-when-my-backups-exceed-my-purchased-space" title="Permanent link">&para;</a></h3>
-<p>An error will be sent to list of email address(es) you designated to monitor your backups.</p>
+<p>An error will be sent the email address(es) you designated to monitor your backups.</p>
 <details class="warning" open="open">
-<summary>Purchased quota exceeded</summary>
+<summary>Purchased quota exceeded example message</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">!!!!!!!!!! ERROR !!!!!!!!!!</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">Backup quota exceeded, stored data is greater than purchased quota.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">Backup quota exceeded, backed up data is greater than purchased quota.</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="go">Please see /quobyte/PIgrp/.pbs/README.txt for information about purchasing</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="go">more space, or contact HPCCF to adjust your retention policy, which is</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="go">currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="go">Please see https://docs.hpc.ucdavis.edu/backups for information about</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="go">purchasing more space, or contact HPCCF to adjust your retention policy,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="go">which is currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="go">BACKUP CANCELLED!</span>
 </code></pre></div>
@@ -2267,12 +2265,13 @@ monitor the individual backups. It is up to you to monitor those and open a tick
 <p>The backup system starts at midnight every night and works its way through a randomly shuffled list of PI areas it needs
 to backup. The actual start time of <em>your</em> backup depends on how much data needs to be backed up before you, and your
 order in the shuffle.</p>
-<h3 id="what-are-the-types-of-snapshots-available">What are the types of snapshots available?<a class="headerlink" href="#what-are-the-types-of-snapshots-available" title="Permanent link">&para;</a></h3>
+<h3 id="what-types-of-snapshots-are-available">What types of snapshots are available?<a class="headerlink" href="#what-types-of-snapshots-are-available" title="Permanent link">&para;</a></h3>
 <p>PBS offers the following types of snapshots:</p>
 <ul>
 <li><code>last</code>: Keep the last N snapshots.</li>
 <li><code>daily</code>: Keep the last N daily snapshots.</li>
 <li><code>weekly</code>: Keep the last N weekly snapshots.</li>
+<li><code>monthly</code>: Keep the last N monthly snapshots.</li>
 <li><code>yearly</code>: Keep the last N annual snapshots.</li>
 </ul>
 <p>There is a <a href="https://pbs.proxmox.com/docs/prune-simulator/">simulator</a> to test various settings.</p>
@@ -2283,7 +2282,7 @@ disaster recovery purposes only.</p>
 need to be able to retrieve old versions, or deleted, files.</p>
 <h3 id="are-my-backups-encrypted">Are my backups encrypted?<a class="headerlink" href="#are-my-backups-encrypted" title="Permanent link">&para;</a></h3>
 <p>Yes, all backups are encrypted with a key that is unique to every PI group. This key is protected with normal Linux
-file-system permissions, so only users in the PI group will be able to even read it to restore data.</p>
+file-system permissions, and only users in the PI group will be able to even read it to restore data.</p>
 <h3 id="who-can-restore-files">Who can restore files?<a class="headerlink" href="#who-can-restore-files" title="Permanent link">&para;</a></h3>
 <p>Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
 the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
@@ -2322,7 +2321,7 @@ directory.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 22:23:58">March 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 18, 2025 00:31:40">March 18, 2025</span>
   </span>
 
     
@@ -2332,7 +2331,7 @@ directory.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 22:23:58">March 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 18, 2025 00:31:40">March 18, 2025</span>
   </span>
 
     
