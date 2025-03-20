@@ -28,7 +28,7 @@ and/or directories can be restored by each user.
 
 -   yearly=2
 
-## Group Directories
+## Group directories
 
 ### Rates
 
@@ -206,7 +206,7 @@ Note, this backup mount (`/home/omen/restore-fCnNXIUr` in this example) will aut
 that have `cd`'d into this directory will remain functional until you close them (or `cd` out). You can force the
 directory to umount earlier by pressing Control-c in window where you ran the restore program.
 
-### Restore a file from your Group Directory
+### Restore a file from your group directory
 
 Restoring files from your group directory is similar to restoring files in your
 [home directory](#restore-a-file-from-your-home-directory). There are only two differences. First, start in the PI group
