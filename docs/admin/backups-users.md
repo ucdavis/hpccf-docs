@@ -9,7 +9,7 @@ title: Home Directory and PI group directory Backups
 
 ## What software is used?
 
-HPCCF has written a custom backup system based around the
+HPC@UCD has written a custom backup system based around the
 [Proxmox Backup Server (PBS)](https://www.proxmox.com/en/products/proxmox-backup-server/overview).
 
 ## Home Directories
@@ -57,8 +57,8 @@ restore.
 
 ### Who monitors the backups?
 
-You, the PI, or a designated list of email addresses. HPCCF does NOT, and we cannot emphasize this enough, **does NOT**
-monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.
+You, the PI, or a designated list of email addresses. HPC@UCD does NOT, and we cannot emphasize this enough, **does
+NOT** monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.
 
 ### How much backup space do I need?
 
@@ -86,7 +86,7 @@ An error will be sent the email address(es) you designated to monitor your backu
     Backup quota exceeded, backed up data is greater than purchased quota.
 
     Please see https://docs.hpc.ucdavis.edu/backups for information about
-    purchasing more space, or contact HPCCF to adjust your retention policy,
+    purchasing more space, or contact HPC@UCD to adjust your retention policy,
     which is currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**
 
     BACKUP CANCELLED!
