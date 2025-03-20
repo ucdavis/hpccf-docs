@@ -20,13 +20,12 @@ All of Hive's home directories have a quota of 20 GB and all backed up automatic
 snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
 and/or directories can be restored by each user.
 
--   daily=7
-
--   weekly=5
-
--   monthly=12
-
--   yearly=2
+| Snapshot type | Keep count |
+| ------------- | ---------- |
+| daily         | 7          |
+| weekly        | 5          |
+| monthly       | 12         |
+| yearly        | 2          |
 
 ## Group directories
 
