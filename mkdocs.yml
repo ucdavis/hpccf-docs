@@ -53,6 +53,7 @@ nav:
       - Open OnDemand: admin/ondemand.md
       - Provisioning: admin/provisioning.md
       - PXE boot: admin/PXE.md
+      - Samba: admin/samba.md
       - Software: admin/software.md
       - Virtual Machines: admin/vms.md
 #
