@@ -23,7 +23,7 @@ Puppet.
 
     -   You can verify on `samba.hive` with `grep 'grp]' /etc/samba/smb.conf`
 
-1.  Edit that file to add the new user and ticket # number to the list.
+1.  Edit that file to add the new user (under the appropriate group comment) and ticket # number to the list.
 
     ???+ Note "hpccf::samba::users:"
 
