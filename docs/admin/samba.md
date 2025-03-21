@@ -3,7 +3,7 @@ template: admin.html
 title: Samba Access to HPC@UCD Storage
 ---
 
-## How to grant Samba access on supported clusters
+## How to add users to an existing Samba share
 
 Currently, Samba is supported on Hive and Franklin.
 
