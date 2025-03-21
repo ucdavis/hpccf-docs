@@ -5,7 +5,7 @@ title: Home Directory and PI group directory Backups
 
 ???+ failure
 
-    This is internal, for development purposes. **CURRENTLY THERE ARE NO BACKUPS**.
+    This is internal, for development purposes. **CURRENTLY THERE ARE NO BACKUPS FOR ANY HPC CLUSTERS**.
 
 ## What software is used?
 
