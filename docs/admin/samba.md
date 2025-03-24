@@ -21,7 +21,16 @@ Puppet.
 
             -   Access IP: `128.120.208.42`
 
-    -   You can verify on `samba.hive` with `grep 'grp]' /etc/samba/smb.conf`
+    -   You can verify on `samba.hive` with `grep 'grp\]$' /etc/samba/smb.conf`:
+
+    ???+ Note
+
+        ```
+        ┌─omen@samba.hive: ~
+        └─1 $ grep 'grp\]$' /etc/samba/smb.conf
+        [hpccfgrp]
+        [metabolomicsgrp]
+        ```
 
 1.  Edit that file to add the new user's Login ID and ticket # number to the list under the appropriate group comment.
 
