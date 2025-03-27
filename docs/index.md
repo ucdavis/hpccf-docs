@@ -32,7 +32,7 @@ hpc-help@ucdavis.edu with your affiliation to start the onboarding process. Reso
 purchase resources by inquiring at the hpc-help email address.
 
 For getting started with HPC access under an existing PI, please see
-[requesting an account](https://docs.hpc.ucdavis.edu/general/account-requests/).
+[requesting an account](/general/account-requests/).
 
 ### Our Clusters
 
@@ -42,12 +42,12 @@ An HPC condo-style cluster is a shared computing infrastructure where different 
 (such as compute nodes, storage, or networking) to a common pool, similar to how individual condo owners share common
 amenities.
 
-[**Farm**](https://docs.hpc.ucdavis.edu/farm/): Sponsored by the College of Agriculture and Environmental Sciences. Farm
-resources can be purchased by principal investigators regardless of affiliation.
+[**Farm**](/farm/): Sponsored by the College of Agriculture and Environmental Sciences. Farm resources can be purchased
+by principal investigators regardless of affiliation.
 
-[**Franklin**](https://docs.hpc.ucdavis.edu/franklin/): Sponsored by units within the College of Biological Sciences,
-Franklin is open to PI's within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and
-Cellular Biology, and other approved collaborators.
+[**Franklin**](/franklin/): Sponsored by units within the College of Biological Sciences, Franklin is open to PI's
+within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and Cellular Biology, and other
+approved collaborators.
 
 **HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
 with COE.
