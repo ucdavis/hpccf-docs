@@ -2,6 +2,8 @@
 title: Hive
 ---
 
+![Hive Logo](../assets/hive-icon.png){ width="256" align="right" }
+
 # Hive
 
 Hive is a centrally managed cluster, with standardized hardware and connectivity, and a defined life cycle of support,
