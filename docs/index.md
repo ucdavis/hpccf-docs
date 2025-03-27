@@ -23,13 +23,13 @@ Questions about the documentation or resources supported by the HPC can be direc
 Please read the [Supported Services](https://hpc.ucdavis.edu/supported-services) page.
 
 The high-performance computing model at UC Davis starts with a principal investigator (PI) purchasing resources
-(compute, GPU, storage) and making them available to their lab. HPCCF will assist in onboarding and providing support.
+(compute, GPU, storage) and making them available to their lab. HPC@UCD will assist in onboarding and providing support.
 
 As a new principal investigator who is interested in purchasing resources, please read the **Our Clusters** section
-below to determine which clusters are appropriate for onboarding. HPCCF can assist with hardware and storage investments
-for condo clusters and sell fair-share priority, primary and archive storage for fair-share clusters. Please email
-hpc-help@ucdavis.edu with your affiliation to start the onboarding process. Resources external to UC Davis can also
-purchase resources by inquiring at the hpc-help email address.
+below to determine which clusters are appropriate for onboarding. HPC@UCD can assist with hardware and storage
+investments for condo clusters and sell fair-share priority, primary and archive storage for fair-share clusters. Please
+email hpc-help@ucdavis.edu with your affiliation to start the onboarding process. Resources external to UC Davis can
+also purchase resources by inquiring at the hpc-help email address.
 
 For getting started with HPC access under an existing PI, please see
 [requesting an account](/general/account-requests/).
@@ -49,6 +49,11 @@ by principal investigators regardless of affiliation.
 within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and Cellular Biology, and other
 approved collaborators.
 
+[**Hive**](/hive/): A centrally managed cluster, with standardized hardware and connectivity, and a defined life cycle
+of support, facilitates greater access to HPC for a more significant number of users on campus while maintaining support
+for college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing hardware
+with the new cluster when possible.
+
 **HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
 with COE.
 
@@ -61,12 +66,12 @@ A fair-share HPC algorithm is a resource allocation strategy used to ensure equi
 among multiple users or groups over a long time horizon. The goal is to balance the workload and prevent any single user
 or group from monopolizing the resources.
 
-**LSSC0 (Barbera)** an HPC shared resource which is coordinated and run by HPCCF. LSSC0 is run with a fair-share
+**LSSC0 (Barbera)** an HPC shared resource which is coordinated and run by HPC@UCD. LSSC0 is run with a fair-share
 algorithm.
 
 ## How to request help
 
-Emails sent to HPCCF are documented in Service Now via hpc-help@ucdavis.edu. HPCCF staff are available to respond to
+Emails sent to HPC@UCD are documented in Service Now via hpc-help@ucdavis.edu. HPC@UCD staff are available to respond to
 requests on scheduled university work days from 8:00 am until 5:00 pm, and will respond to your inquiry as soon as
 possible.
 
