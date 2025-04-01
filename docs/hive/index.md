@@ -33,8 +33,7 @@ To request free access, follow the [request a new account](/account-requests/#ho
 documentation and request access to the `UCD HPC Sponsored Public Access (publicgrp)` from the list of sponsors through
 [Hippo](https://hippo.ucdavis.edu/Hive/myaccount).
 
-Additional usage and access may be purchased by contributing to Hive through the node and/or storage rates or by
-purchasing equipment and contributing through the rack fee rate.
+Additional resources on Hive may be purchase two ways. Sponsors (PIs and group leads) may purchase individual compute cores and Tb of storage at our current [rates](https://hpc.ucdavis.edu/rates#hive). In consultation with HPC@UCD, sponsors may also purchase approved nodes to contribute to Hive. HPC@UCD will work with sponsors to understand budgets and specifications and request quotes.
 
 Contributors always receive priority access to the resources that they have purchased within one minute with the
 "one-minute guarantee" through the `high` partition.
