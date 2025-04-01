@@ -27,9 +27,10 @@ UC Davis staff, faculty, and graduate students are entitled to free access to:
 
 -8<- "docs/include/hive-free-access.md"
 
-In addition to this, each new user is allocated a 20GB home directory. To request free access, follow the
-[request a new account](/account-requests/#how-to-request-a-new-account-on-a-cluster) documentation and request access
-to the `UCD HPC Sponsored Public Access (publicgrp)` from the list of sponsors through
+In addition to this, each new user is allocated a 20GB home directory.
+
+To request free access, follow the [request a new account](/account-requests/#how-to-request-a-new-account-on-a-cluster)
+documentation and request access to the `UCD HPC Sponsored Public Access (publicgrp)` from the list of sponsors through
 [Hippo](https://hippo.ucdavis.edu/Hive/myaccount).
 
 Additional usage and access may be purchased by contributing to Hive through the node and/or storage rates or by
