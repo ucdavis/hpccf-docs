@@ -6,7 +6,7 @@ title: Hive
 
 # Hive
 
-Hive is a centrally managed cluster, with standardized hardware and connectivity, and a defined life cycle of support,
+Hive is a centrally managed cluster with standardized hardware and connectivity and a defined life cycle of support,
 facilitates greater access to HPC for a more significant number of users on campus while maintaining support for
 college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing hardware with
 the new cluster when possible.
