@@ -8,9 +8,11 @@ Juniper EX and QFX switches and the Infiniband switches are from Nvidia (formerl
 ## Ethernet
 ### Configuring VLANs
 #### EX
-Log in to EX (Distribution) stack (details in [NetBox](https://netbox.hpc.ucdavis.edu)). The prompt will end with `%`. 
-Enter the CLI. 
-The prompt ending will change to `>` and a note about the current master will appear. 
+
+Log in to EX (Distribution) stack (details in
+[NetBox](https://netbox.hpc.ucdavis.edu)). The prompt will end with
+`%`.  Enter the CLI.  The prompt ending will change to `>` and a note
+about the current master will appear. 
 
 > `% cli`
 
