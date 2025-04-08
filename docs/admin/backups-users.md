@@ -16,8 +16,7 @@ HPC@UCD has written a custom backup system based around the
 
 ### Hive
 
-All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the
-snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
+All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
 and/or directories can be restored by each user.
 
 | Snapshot type | Keep count |
