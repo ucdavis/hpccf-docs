@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/hive/migration-email/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/backups-users/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../backups/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Migration from LSSC0 to Hive Email - HPC@UCD Documentation</title>
+        <title>Home Directory and PI group directory Backups - HPC@UCD Documentation</title>
       
     
     
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#what-software-is-used" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Migration from LSSC0 to Hive Email
+              Home Directory and PI group directory Backups
             
           </span>
         </div>
@@ -1314,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lssc0-data-migration/" class="md-nav__link">
+      <a href="../../hive/lssc0-data-migration/" class="md-nav__link">
         
   
   
@@ -1349,8 +1358,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1361,13 +1372,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1383,7 +1392,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Admin
@@ -1397,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1417,10 +1426,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../admin/backups-users/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Backups UF
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1431,6 +1460,213 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-software-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What software is used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-purchase-backups-for-my-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I purchase backups for my group directory?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backed-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is backed up?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-monitors-the-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who monitors the backups?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much-backup-space-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How much backup space do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-my-backups-exceed-my-purchased-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens when my backups exceed my purchased space?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-taken" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups taken?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      What types of snapshots are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snapshots-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many snapshots do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-my-backups-encrypted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are my backups encrypted?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-can-restore-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who can restore files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-make-changes-to-my-snapshots-or-monitoring-designee-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I make changes to my snapshots or monitoring designee list?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-restore-files-or-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to restore files or directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to restore files or directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-home-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your home directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your group directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1443,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/backups/" class="md-nav__link">
+      <a href="../backups/" class="md-nav__link">
         
   
   
@@ -1466,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/cobbler/" class="md-nav__link">
+      <a href="../cobbler/" class="md-nav__link">
         
   
   
@@ -1489,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -1512,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/dns/" class="md-nav__link">
+      <a href="../dns/" class="md-nav__link">
         
   
   
@@ -1535,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/monitoring/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   
@@ -1558,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/netbox/" class="md-nav__link">
+      <a href="../netbox/" class="md-nav__link">
         
   
   
@@ -1581,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/network/" class="md-nav__link">
+      <a href="../network/" class="md-nav__link">
         
   
   
@@ -1604,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/ondemand/" class="md-nav__link">
+      <a href="../ondemand/" class="md-nav__link">
         
   
   
@@ -1627,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/provisioning/" class="md-nav__link">
+      <a href="../provisioning/" class="md-nav__link">
         
   
   
@@ -1650,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/PXE/" class="md-nav__link">
+      <a href="../PXE/" class="md-nav__link">
         
   
   
@@ -1673,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/samba/" class="md-nav__link">
+      <a href="../samba/" class="md-nav__link">
         
   
   
@@ -1696,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/software/" class="md-nav__link">
+      <a href="../software/" class="md-nav__link">
         
   
   
@@ -1719,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/vms/" class="md-nav__link">
+      <a href="../vms/" class="md-nav__link">
         
   
   
@@ -1760,6 +1996,203 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-software-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What software is used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-purchase-backups-for-my-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I purchase backups for my group directory?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backed-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is backed up?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-monitors-the-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who monitors the backups?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much-backup-space-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How much backup space do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-my-backups-exceed-my-purchased-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens when my backups exceed my purchased space?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-taken" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups taken?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      What types of snapshots are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snapshots-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many snapshots do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-my-backups-encrypted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are my backups encrypted?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-can-restore-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who can restore files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-make-changes-to-my-snapshots-or-monitoring-designee-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I make changes to my snapshots or monitoring designee list?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-restore-files-or-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to restore files or directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to restore files or directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-home-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your home directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your group directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1770,60 +2203,288 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
 
   
   
 
 
-  <h1>Migration from LSSC0 to Hive Email</h1>
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
 
-<div class="admonition note">
-<p class="admonition-title">The following email will be sent to each PI as we work through the migration process</p>
-<p>All</p>
-<p>We are starting the process of migrating users, hardware, and data from LSSC0 to Hive. Labs with login or GPU nodes
-under seven years of age will be migrated to Hive according to our hardware policy at
-https://hpc.ucdavis.edu/model-hpc-hardware-support.</p>
-<p>Please ensure that the software currently used by your team on LSSC0 is available on Hive. If you need specific
-software, please let us know by requesting it using the Software Request Form at
-https://hpc.ucdavis.edu/software-installation-policy . Existing software can be searched with:
-<code>module avail -l | grep -i softwarename</code></p>
-<p>PIs are first required to make an account on Hive by going to the High-Performance Personnel Onboarding Portal at
-https://hippo.ucdavis.edu, selecting Hive as their cluster, and enter the <code>New PI Onboarding (sponsors)</code> group. HPCCF
-staff will approve the request, and the new PI group will be available for users to select. Documentation here:
-https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
-<p>Once the PI group has been created, users are required to make an account on Hive by going to the High-Performance
-Personnel Onboarding Portal at https://hippo.ucdavis.edu, selecting Hive as their cluster, and selecting their PI/lab’s
-group. The PI will receive an email with a link to approve the request. Once it is approved, the user will be added to
-the PI's group and will be able to log in to Hive. Documentation here:
-https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
-<p>Users are responsible for migrating their home directory to Hive. We have helpful instructions for those users who need
-assistance with rsync at https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/</p>
-<p>The lab share data migration takes place over several steps:</p>
+  <h1>Backups UF</h1>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+    <p>
+        This documentation is for internal use.
+        It may be of interest to users who are curious about our internal processes and architecture, but should not be mistaken for describing services that we offer or stable infrastructure that end users should rely upon.
+        <strong>
+        If you find yourself submitting a ticket about something on this page, you are probably making a mistake.
+        </strong>
+    </p>
+</div>
+
+<!-- Page content -->
+<details class="failure" open="open">
+<summary>Failure</summary>
+<p>This is internal, for development purposes. <strong>CURRENTLY THERE ARE NO BACKUPS FOR ANY HPC CLUSTERS</strong>.</p>
+</details>
+<h2 id="what-software-is-used">What software is used?<a class="headerlink" href="#what-software-is-used" title="Permanent link">&para;</a></h2>
+<p>HPC@UCD has written a custom backup system based around the
+<a href="https://www.proxmox.com/en/products/proxmox-backup-server/overview">Proxmox Backup Server (PBS)</a>.</p>
+<h2 id="home-directories">Home Directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h2>
+<h3 id="hive">Hive<a class="headerlink" href="#hive" title="Permanent link">&para;</a></h3>
+<p>All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
+and/or directories can be restored by each user.</p>
+<table>
+<thead>
+<tr>
+<th>Snapshot type</th>
+<th>Keep count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>daily</td>
+<td>7</td>
+</tr>
+<tr>
+<td>weekly</td>
+<td>5</td>
+</tr>
+<tr>
+<td>monthly</td>
+<td>12</td>
+</tr>
+<tr>
+<td>yearly</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-directories">Group directories<a class="headerlink" href="#group-directories" title="Permanent link">&para;</a></h2>
+<h3 id="rates">Rates<a class="headerlink" href="#rates" title="Permanent link">&para;</a></h3>
+<p>Group directory backups are available by request on Hive. The current rates are posted on
+<a href="https://hpc.ucdavis.edu/rates">https://hpc.ucdavis.edu/rates</a> under <code>Rates for Hive</code> -&gt;
+<code>Cost of Backup/Archival (snapshot copy) Storage</code>.</p>
+<h3 id="how-do-i-purchase-backups-for-my-group-directory">How do I purchase backups for my group directory?<a class="headerlink" href="#how-do-i-purchase-backups-for-my-group-directory" title="Permanent link">&para;</a></h3>
+<p>All Hive purchases are through <a href="https://hippo.ucdavis.edu/">Hippo</a>. Select the cluster you are purchasing for, click
+<code>Orders</code> -&gt; <code>Products</code>. Then order <code>Backup Storage</code>. To expedite the process, in the <code>Notes</code> section, please include the
+following information:</p>
 <ol>
 <li>
-<p>HPC staff will copy group data from LSSC0 to Hive during an initial pass.</p>
+<p>The list of contacts (email addresses) that are responsible for monitoring the backup status.</p>
 </li>
 <li>
-<p>PIs will be notified via Service Now email to stop jobs in preparation for a second pass of data and to arrange for
-the final transition to Hive. Service Now tracking allows HPC staff to keep PIs notified and the status tracked.</p>
-<p>Note: HPC staff will add a <code>.CSV</code> file to the ticket with user and group information from the Genome Center
-Computing Portal. It is the PI’s responsibility to validate that the group information is correct so that HPC staff
-can map user data from LSSC0 to Hive during the migration process.</p>
-<p>Users who have not made accounts on Hive will have their group data owned by the PI.</p>
-</li>
-<li>
-<p>Login nodes under seven years of age will be migrated to Hive, and groups will be provisioned with like resources.
-Login nodes over seven years of age will be decommissioned.</p>
-</li>
-<li>
-<p>Final pass of data and permissions adjustment. Data on LSSC0 will be marked read-only.</p>
+<p>The <a href="#what-types-of-snapshots-are-available">number and type of snapshots</a> you would like.</p>
 </li>
 </ol>
-<p>HPCCF is maintaining a list of Frequently Asked Questions:
-https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lssc0-backed-up-data</p>
-</div>
+<p>Please see the <a href="#how-much-backup-space-do-i-need">How much backup space do I need?</a> section if you have questions about
+how much backup space to purchase.</p>
+<h3 id="what-is-backed-up">What is backed up?<a class="headerlink" href="#what-is-backed-up" title="Permanent link">&para;</a></h3>
+<p>The <strong>only</strong> data that is backed up is the data that resides within the <code>BACKED-UP/</code> directory at the top level of the
+PI share. <strong>NO OTHER DATA IS BACKED UP</strong>. If you have questions about what is being backed up, you should try a test
+restore.</p>
+<h3 id="who-monitors-the-backups">Who monitors the backups?<a class="headerlink" href="#who-monitors-the-backups" title="Permanent link">&para;</a></h3>
+<p>You, the PI, or a designated list of email addresses. HPC@UCD does NOT, and we cannot emphasize this enough, <strong>does
+NOT</strong> monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.</p>
+<h3 id="how-much-backup-space-do-i-need">How much backup space do I need?<a class="headerlink" href="#how-much-backup-space-do-i-need" title="Permanent link">&para;</a></h3>
+<p>This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
+(churn), and the total number of snapshots you keep. The short version is you need approximately
+<code>(quantity + churn) * snapshots</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity of Data</th>
+<th>Data Churn</th>
+<th>Snapshots</th>
+<th>Total Required Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 TB</td>
+<td>0 Bytes per day</td>
+<td>Any</td>
+<td>1 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>last=1</td>
+<td>1 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>daily=7</td>
+<td>7 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>daily=7, weekly=4, monthly=6</td>
+<td>17 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>100 GB per day</td>
+<td>daily=7, weekly=4, monthly=6</td>
+<td>2.7 TB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-happens-when-my-backups-exceed-my-purchased-space">What happens when my backups exceed my purchased space?<a class="headerlink" href="#what-happens-when-my-backups-exceed-my-purchased-space" title="Permanent link">&para;</a></h3>
+<p>An error will be sent the email address(es) you designated to monitor your backups.</p>
+<details class="warning" open="open">
+<summary>Purchased quota exceeded example message</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">!!!!!!!!!! ERROR !!!!!!!!!!</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">Backup quota exceeded, backed up data is greater than purchased quota.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">Please see https://docs.hpc.ucdavis.edu/backups for information about</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">purchasing more space, or contact HPC@UCD to adjust your retention policy,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">which is currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">BACKUP CANCELLED!</span>
+</code></pre></div>
+</details>
+<p>At this point you have 4 options:</p>
+<ol>
+<li>
+<p>Purchase more space by visiting <a href="https://hippo.ucdavis.edu/">Hippo</a> and ordering additional backup space.</p>
+</li>
+<li>
+<p>Backup less data by reducing the amount of data in your <code>BACKED-UP/</code> directory. This will require old data to age out
+   before new data can be backed up.</p>
+</li>
+<li>
+<p>Ignore it. Eventually old data will age out and new data will be able to backed up again.</p>
+</li>
+<li>
+<p>Reduce the number of snapshots you keep by emailing hpc-help@ucdavis.edu. For example, if you keep 6 monthly, you
+   could reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.</p>
+</li>
+</ol>
+<h3 id="how-often-are-backups-taken">How often are backups taken?<a class="headerlink" href="#how-often-are-backups-taken" title="Permanent link">&para;</a></h3>
+<p>The backup system starts at midnight every night and works its way through a randomly shuffled list of PI areas it needs
+to backup. The actual start time of <em>your</em> backup depends on how much data needs to be backed up before you, and your
+order in the shuffle.</p>
+<h3 id="what-types-of-snapshots-are-available">What types of snapshots are available?<a class="headerlink" href="#what-types-of-snapshots-are-available" title="Permanent link">&para;</a></h3>
+<p>PBS offers the following types of snapshots:</p>
+<ul>
+<li><code>last</code>: Keep the last N snapshots.</li>
+<li><code>daily</code>: Keep the last N daily snapshots.</li>
+<li><code>weekly</code>: Keep the last N weekly snapshots.</li>
+<li><code>monthly</code>: Keep the last N monthly snapshots.</li>
+<li><code>yearly</code>: Keep the last N annual snapshots.</li>
+</ul>
+<p>There is a <a href="https://pbs.proxmox.com/docs/prune-simulator/">simulator</a> to test various settings.</p>
+<p>Note, <code>last=1</code> means a single copy (the latest) will be retained of each file. This is effectively a "snapshot" copy for
+disaster recovery purposes only.</p>
+<h3 id="how-many-snapshots-do-i-need">How many snapshots do I need?<a class="headerlink" href="#how-many-snapshots-do-i-need" title="Permanent link">&para;</a></h3>
+<p>Unfortunately, we cannot help with this. It depends on your contractual obligations, and/or how far back in time you
+need to be able to retrieve old versions, or deleted, files.</p>
+<h3 id="are-my-backups-encrypted">Are my backups encrypted?<a class="headerlink" href="#are-my-backups-encrypted" title="Permanent link">&para;</a></h3>
+<p>Yes, all backups are encrypted with a key that is unique to every PI group. This key is protected with normal Linux
+file-system permissions, and only users in the PI group will be able to even read it to restore data.</p>
+<h3 id="who-can-restore-files">Who can restore files?<a class="headerlink" href="#who-can-restore-files" title="Permanent link">&para;</a></h3>
+<p>Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
+the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
+prevent PI restore.</p>
+<h3 id="how-do-i-make-changes-to-my-snapshots-or-monitoring-designee-list">How do I make changes to my snapshots or monitoring designee list?<a class="headerlink" href="#how-do-i-make-changes-to-my-snapshots-or-monitoring-designee-list" title="Permanent link">&para;</a></h3>
+<p>Changes can be made by emailing hpc-help@ucdavis.edu.</p>
+<h2 id="how-to-restore-files-or-directories">How to restore files or directories<a class="headerlink" href="#how-to-restore-files-or-directories" title="Permanent link">&para;</a></h2>
+<h3 id="restore-a-file-from-your-home-directory">Restore a file from your home directory<a class="headerlink" href="#restore-a-file-from-your-home-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gp">$ </span>/quobyte/pbs/bin/restore.sh
+</code></pre></div>
+<p>You will see a list of snapshots. Pick the one you want to restore the file from (up/down arrows), then press enter. The
+snapshot you selected will be automatically mounted to a random directory, which is printed (for example
+<code>/home/omen/restore-fCnNXIUr</code>).</p>
+<details class="note">
+<summary>Please chose a snapshot to restore from.</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌─────────────────┤ Please chose a snapshot to restore from. ├─────────────────┐
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│ Snapshots, newest to oldest:                                                 │
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│                                                                              │
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│                      1  host/omen/2025-03-18T07:13:02Z                       │
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│                      2  host/omen/2025-03-17T22:51:54Z                       │
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│                      3  host/omen/2025-03-16T07:16:32Z                       │
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│                      4  host/omen/2025-03-15T07:15:07Z                       │
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│                      5  host/omen/2025-03-14T07:00:04Z                       │
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│                      6  host/omen/2025-03-13T07:05:46Z                       │
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│                      7  host/omen/2025-03-12T07:17:56Z                       │
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│                      8  host/omen/2025-03-09T08:10:37Z                       │
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│                      9  host/omen/2025-03-02T08:17:44Z                       │
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│                      10 host/omen/2025-02-23T08:08:58Z                       │
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│                                                                              │
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│                     &lt;Ok&gt;                         &lt;Cancel&gt;                    │
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>│                                                                              │
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+</details>
+<p>You can open another connection to Hive, then cd into that directory (<code>cd /home/omen/restore-fCnNXIUr</code>), find the
+file(s) or directory(s) you need to restore, then <code>cp</code> to your desired location.</p>
+<details class="note">
+<summary>Snapshot selected.</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─omen@login1.hive: ~
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└─0 $ /quobyte/pbs/bin/restore.sh
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Loading snapshots, done.
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Mounting chosen snapshot: host/omen/2025-03-18T07:13:02Z to /home/omen/restore-zCgS0D1Z
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Encryption key file: &#39;&quot;/quobyte/pbs/home/omen.json&quot;&#39;
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Encryption key fingerprint: &#39;21:96:a0:ec:62:62:ae:34&#39;
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>FUSE library version: 3.14.0
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Backups mounted on /home/omen/restore-zCgS0D1Z
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Please open another shell and copy any file(s)/directory(s) you need to restore.
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>It will remain mounted for 1 hour, then automatically unmount.
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>You can issue Control-c to unmount earlier.
+</code></pre></div>
+</details>
+<p>Note, this backup mount (<code>/home/omen/restore-fCnNXIUr</code> in this example) will automatically unmount in 1 hour. Any shells
+that have <code>cd</code>'d into this directory will remain functional until you close them (or <code>cd</code> out). You can force the
+directory to umount earlier by pressing Control-c in window where you ran the restore program.</p>
+<h3 id="restore-a-file-from-your-group-directory">Restore a file from your group directory<a class="headerlink" href="#restore-a-file-from-your-group-directory" title="Permanent link">&para;</a></h3>
+<p>Restoring files from your group directory is similar to restoring files in your
+<a href="#restore-a-file-from-your-home-directory">home directory</a>. There are only two differences. First, start in the PI group
+directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/quobyte/*PI*grp/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gp">$ </span>/quobyte/pbs/bin/restore.sh
+</code></pre></div>
+<p>Second, the temporary directory will be created in <code>/quobyte/*PI*grp/</code>.</p>
+
+<!-- Source file information -->
 
 
 
@@ -1846,7 +2507,7 @@ https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lss
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 8, 2025 23:02:39">April 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 8, 2025 23:02:37">April 8, 2025</span>
   </span>
 
     
@@ -1856,7 +2517,7 @@ https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lss
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 8, 2025 23:02:39">April 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 14, 2025 23:23:58">March 14, 2025</span>
   </span>
 
     
@@ -1865,10 +2526,14 @@ https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lss
   </aside>
 
 
+<!-- Was this page helpful? -->
 
 
 
-                
+
+<!-- Comment system -->
+
+
               </article>
             </div>
           
