@@ -40,6 +40,7 @@ nav:
               - Modules: franklin/software/modules.md
           - Storage: franklin/storage.md
       - Hive:
+          - About: hive/index.md
           - Migrating from LSSC0: hive/lssc0-data-migration.md
 
   - Admin:

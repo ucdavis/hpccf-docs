@@ -5,8 +5,8 @@ HPC accounts are provisioned on a per-cluster basis and granted with the permiss
 separate home directory.
 
 Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
-using your campus passphrase. For information on creating SSH keys, please visit the
-[access](https://docs.hpc.ucdavis.edu/general/access/) documentation page.
+using your campus passphrase. For information on creating SSH keys, please visit the [access](/general/access/)
+documentation page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
 
