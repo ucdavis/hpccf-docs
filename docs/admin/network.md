@@ -6,7 +6,7 @@ title: Network
 Our core network is split between Ethernet and Infiniband. The Ethernet backbone goes through 
 Juniper EX and QFX switches and the Infiniband switches are from Nvidia (formerly Mellanox).
 ## Ethernet
-### Configuring VLANs
+### Add Existing VLAN to Interface (Port)
 #### EX
 
 Log in to EX (Distribution) stack (details in
