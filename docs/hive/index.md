@@ -37,7 +37,7 @@ Additional resources on Hive may be purchase two ways. Sponsors (PIs and group l
 Contributors always receive priority access to the resources that they have purchased within one minute with the
 "one-minute guarantee" through the `high` partition.
 
-Finally, Hive has a node available for use in graduate teaching. Email `help@ucdavis.edu` to request information or access to these resources.
+Finally, Hive has a node available for use in graduate teaching. Email `hpc-help@ucdavis.edu` to request information or access to these resources.
 
 ## Hive Administration
 
@@ -47,4 +47,4 @@ Hive hardware and software are administrated by the [HPC@UCD team](https://hpc.u
 
 Rates for Hive can be found [here](https://hpc.ucdavis.edu/rates#hive).
 
-For purchases and inquiries, please contact `help@ucdavis.edu`.
+For purchases and inquiries, please contact `hpc-help@ucdavis.edu`.
