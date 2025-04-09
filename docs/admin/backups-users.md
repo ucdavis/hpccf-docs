@@ -223,3 +223,15 @@ $ /quobyte/pbs/bin/restore.sh
 ```
 
 Second, the temporary directory will be created in `/quobyte/*PI*grp/`.
+
+## FAQ
+
+### Where is the backup server located?
+
+The backup server is located in the [Academic Surge](https://maps.app.goo.gl/4Xj6HUaBeVRUZyuT9) building, so it is
+outside the Campus Data Center, but still on-campus. This may be important for certain grant requirements.
+
+### What happens if the backup server is also destroyed?
+
+At this point, the data would be permanently lost. HPC@UCD does **not** replicate the backup data to any off-site
+location(s).
