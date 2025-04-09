@@ -16,7 +16,8 @@ HPC@UCD has written a custom backup system based around the
 
 ### Hive
 
-All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
+All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the
+snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
 and/or directories can be restored by each user.
 
 | Snapshot type | Keep count |
@@ -61,8 +62,9 @@ NOT** monitor the individual backups. It is up to you to monitor those and open 
 ### How much backup space do I need?
 
 This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
-(churn), and the total number of snapshots you keep. The short version is you need approximately
-`(quantity + churn) * snapshots`.
+(churn), and the total number of snapshots you keep. PBS only stores a single copy of each unique data chunk, so
+unchanging data is only stored a single time. The short version is you need approximately
+`(initial quantity * snapshots) + (churn * snapshots)`.
 
 | Quantity of Data | Data Churn      | Snapshots                    | Total Required Space |
 | ---------------- | --------------- | ---------------------------- | -------------------- |
@@ -99,7 +101,7 @@ At this point you have 4 options:
 
 1. Ignore it. Eventually old data will age out and new data will be able to backed up again.
 
-1. Reduce the number of snapshots you keep by emailing hpc-help@ucdavis.edu. For example, if you keep 6 monthly, you
+1. Reduce the number of snapshots you keep by emailing `hpc-help@`ucdavis.edu`. For example, if you keep 6 monthly, you
    could reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.
 
 ### How often are backups taken?
@@ -137,11 +139,16 @@ file-system permissions, and only users in the PI group will be able to even rea
 
 Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
 the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
-prevent PI restore.
+prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by emailing
+`hpc-help@ucdavis.edu` with the following information, and we can restore the files for you.
+
+-   The cluster.
+-   The full path to the files/directories you need restored.
+-   The full path to the place you would like them restored to.
 
 ### How do I make changes to my snapshots or monitoring designee list?
 
-Changes can be made by emailing hpc-help@ucdavis.edu.
+Changes can be made by emailing `hpc-help@ucdavis.edu`.
 
 ## How to restore files or directories
 
