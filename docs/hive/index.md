@@ -6,14 +6,13 @@ title: Hive
 
 # Hive
 
-Hive is a centrally managed cluster with standardized hardware and connectivity and a defined life cycle of support,
-facilitates greater access to HPC for a more significant number of users on campus while maintaining support for
-college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing hardware with
-the new cluster when possible.
+Hive is a centrally managed cluster with standardized hardware and connectivity and a defined life cycle of support.
+Hive was built to provide greater access to HPC for a larger number of users on campus while maintaining support for
+college-level needs. HPC@UCD offers [two tiers of support](https://hpc.ucdavis.edu/model-hpc-hardware-support) moving forward and incentives to merge existing hardware when possible.
 
 ## Hive Hardware
 
-Hive consists of 14 brand new nodes, each with 128 CPU cores and 2 TB of RAM. There are 4x NVIDIA A6000s for general
+Hive consists of 14 nodes, each with 128 CPU cores and 2 TB of RAM. There are 4x NVIDIA A6000s for general
 use, and a single 4x NVIDIA H100 node. Nodes that are new enough are being migrated from other campus clusters to
 simplify administration and maintenance.
 
@@ -38,12 +37,14 @@ Additional resources on Hive may be purchase two ways. Sponsors (PIs and group l
 Contributors always receive priority access to the resources that they have purchased within one minute with the
 "one-minute guarantee" through the `high` partition.
 
+Finally, Hive has a node available for use in graduate teaching. Email `help@ucdavis.edu` to request information or access to these resources.
+
 ## Hive Administration
 
 Hive hardware and software are administrated by the [HPC@UCD team](https://hpc.ucdavis.edu/people).
 
 ### Current Rates
 
-The rates for Hive can be found [here](https://hpc.ucdavis.edu/rates#hive).
+Rates for Hive can be found [here](https://hpc.ucdavis.edu/rates#hive).
 
-New purchases for Hive can be placed through [Hippo](https://hippo.ucdavis.edu/Hive/product/index).
+For purchases and inquiries, please contact `help@ucdavis.edu`.
