@@ -12,7 +12,7 @@ For the absolute fastest way to get started on testing your software in an appta
 
 ## Pulling Apptainer Images
 
-Container images are like filesystems containing an Operating System (OS) with the relevant preinstalled software that is then booted like a Virtual Machine (VM). We recommend downloading your container image(s) locally once before your slurm job by running: `apptainer build tflo.sif docker://tensorflow/tensorflow`. After, you should find the `tflo.sif` apptainer image in your current directory. You can run this image in any number of containers from now on, which is why you only need to do it once and shouldn't run it in every slurm job.
+Container images are like filesystems containing an Operating System (OS) with the relevant preinstalled software that is then booted like a Virtual Machine (VM). We recommend downloading your container image(s) locally once before your slurm job by running: `apptainer build tflo.sif docker://tensorflow/tensorflow`. After, you should find the `tflo.sif` apptainer image in your current directory. You can run this image in any number of future containers, which is why you only need to do it once and shouldn't run it in every slurm job.
 
 ## Running Apptainer Images
 
