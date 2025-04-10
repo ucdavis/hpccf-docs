@@ -43,7 +43,7 @@ For ease of use we recommend writing a wrapper script like such:
     fi
     
     export $APPTAINER_BIND 
-    apptainer shell --nv sif/tflo.sif $@
+    apptainer shell --nv tflo.sif $@
   ```
 
 ## SRUN
