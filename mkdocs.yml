@@ -21,6 +21,7 @@ nav:
           - Module System: software/modules.md
           - Open OnDemand: software/ondemand.md
           - R and RStudio: software/rlang.md
+          - Apptainer: software/apptainer.md
       - Troubleshooting: general/troubleshooting.md
   - Clusters:
       - Farm:
