@@ -66,3 +66,22 @@ Feel free to use this srun script as a starting template for a slurm job:
       tflo.sh $@
     ```
 
+## SBATCH 
+
+Or the same thing as previous but in a form suitable for submitting with sbatch:
+    ```
+    #!/bin/bash
+    
+    #SBATCH --partition=gpuh
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=8
+    #SBATCH --mem=32G
+    #SBATCH --gpus=1
+    #SBATCH --job-name=tflo
+    #SBATCH --time=10:00
+    
+    module purge
+    module load apptainer
+    
+    apptainer exec tflo.sif python3 -c "import tensorflow as tf; print("TensorFlow version:", tf.__version__)"
+    ```
