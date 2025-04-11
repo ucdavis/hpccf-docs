@@ -7,10 +7,89 @@ title: Home Directory and PI group directory Backups
 
     This is internal, for development purposes. **CURRENTLY THERE ARE NO BACKUPS FOR ANY HPC CLUSTERS**.
 
+## Backups?
+
+For supported clusters, we automatically backup home directories once a day. For supported clusters, PI/group directory
+backups can be purchased.
+
 ## What software is used?
 
 HPC@UCD has written a custom backup system based around the
 [Proxmox Backup Server (PBS)](https://www.proxmox.com/en/products/proxmox-backup-server/overview).
+
+## How to restore files or directories
+
+### Restore a file from your home directory
+
+```console
+$ cd ~
+$ /quobyte/pbs/bin/restore.sh
+```
+
+You will see a list of snapshots. Pick the one you want to restore the file from (up/down arrows), then press enter. The
+snapshot you selected will be automatically mounted to a random directory, which is printed (for example
+`/home/omen/restore-fCnNXIUr`).
+
+??? Note "Please chose a snapshot to restore from."
+
+    ```
+    ┌─────────────────┤ Please chose a snapshot to restore from. ├─────────────────┐
+    │ Snapshots, newest to oldest:                                                 │
+    │                                                                              │
+    │                      1  host/omen/2025-03-18T07:13:02Z                       │
+    │                      2  host/omen/2025-03-17T22:51:54Z                       │
+    │                      3  host/omen/2025-03-16T07:16:32Z                       │
+    │                      4  host/omen/2025-03-15T07:15:07Z                       │
+    │                      5  host/omen/2025-03-14T07:00:04Z                       │
+    │                      6  host/omen/2025-03-13T07:05:46Z                       │
+    │                      7  host/omen/2025-03-12T07:17:56Z                       │
+    │                      8  host/omen/2025-03-09T08:10:37Z                       │
+    │                      9  host/omen/2025-03-02T08:17:44Z                       │
+    │                      10 host/omen/2025-02-23T08:08:58Z                       │
+    │                                                                              │
+    │                     <Ok>                         <Cancel>                    │
+    │                                                                              │
+    └──────────────────────────────────────────────────────────────────────────────┘
+    ```
+
+You can open another connection to Hive, then cd into that directory (`cd /home/omen/restore-fCnNXIUr`), find the
+file(s) or directory(s) you need to restore, then `cp` to your desired location.
+
+??? Note "Snapshot selected."
+
+    ```
+    ┌─omen@login1.hive: ~
+    └─0 $ /quobyte/pbs/bin/restore.sh
+    Loading snapshots, done.
+    Mounting chosen snapshot: host/omen/2025-03-18T07:13:02Z to /home/omen/restore-zCgS0D1Z
+    Encryption key file: '"/quobyte/pbs/home/omen.json"'
+    Encryption key fingerprint: '21:96:a0:ec:62:62:ae:34'
+    FUSE library version: 3.14.0
+
+    Backups mounted on /home/omen/restore-zCgS0D1Z
+
+    Please open another shell and copy any file(s)/directory(s) you need to restore.
+
+    It will remain mounted for 1 hour, then automatically unmount.
+    You can issue Control-c to unmount earlier.
+    ```
+
+Note, this backup mount (`/home/omen/restore-fCnNXIUr` in this example) will automatically unmount in 1 hour. Any shells
+that have `cd`'d into this directory will remain functional until you close them (or `cd` out). You can force the
+directory to umount earlier by pressing Control-c in window where you ran the restore program.
+
+### Restore a file from your group directory
+
+Restoring files from your group directory is similar to restoring files in your
+[home directory](#restore-a-file-from-your-home-directory). There are only two differences. First, start in the PI group
+directory:
+
+```console
+$ cd /quobyte/*PI*grp/
+$ /quobyte/pbs/bin/restore.sh
+```
+
+Second, the temporary directory will be created in `/quobyte/*PI*grp/`.
 
 ## Home Directories
 
@@ -149,80 +228,6 @@ prevent PI restore. If you, as a PI, run into this situation, please contact HPC
 ### How do I make changes to my snapshots or monitoring designee list?
 
 Changes can be made by emailing `hpc-help@ucdavis.edu`.
-
-## How to restore files or directories
-
-### Restore a file from your home directory
-
-```console
-$ cd ~
-$ /quobyte/pbs/bin/restore.sh
-```
-
-You will see a list of snapshots. Pick the one you want to restore the file from (up/down arrows), then press enter. The
-snapshot you selected will be automatically mounted to a random directory, which is printed (for example
-`/home/omen/restore-fCnNXIUr`).
-
-??? Note "Please chose a snapshot to restore from."
-
-    ```
-    ┌─────────────────┤ Please chose a snapshot to restore from. ├─────────────────┐
-    │ Snapshots, newest to oldest:                                                 │
-    │                                                                              │
-    │                      1  host/omen/2025-03-18T07:13:02Z                       │
-    │                      2  host/omen/2025-03-17T22:51:54Z                       │
-    │                      3  host/omen/2025-03-16T07:16:32Z                       │
-    │                      4  host/omen/2025-03-15T07:15:07Z                       │
-    │                      5  host/omen/2025-03-14T07:00:04Z                       │
-    │                      6  host/omen/2025-03-13T07:05:46Z                       │
-    │                      7  host/omen/2025-03-12T07:17:56Z                       │
-    │                      8  host/omen/2025-03-09T08:10:37Z                       │
-    │                      9  host/omen/2025-03-02T08:17:44Z                       │
-    │                      10 host/omen/2025-02-23T08:08:58Z                       │
-    │                                                                              │
-    │                     <Ok>                         <Cancel>                    │
-    │                                                                              │
-    └──────────────────────────────────────────────────────────────────────────────┘
-    ```
-
-You can open another connection to Hive, then cd into that directory (`cd /home/omen/restore-fCnNXIUr`), find the
-file(s) or directory(s) you need to restore, then `cp` to your desired location.
-
-??? Note "Snapshot selected."
-
-    ```
-    ┌─omen@login1.hive: ~
-    └─0 $ /quobyte/pbs/bin/restore.sh
-    Loading snapshots, done.
-    Mounting chosen snapshot: host/omen/2025-03-18T07:13:02Z to /home/omen/restore-zCgS0D1Z
-    Encryption key file: '"/quobyte/pbs/home/omen.json"'
-    Encryption key fingerprint: '21:96:a0:ec:62:62:ae:34'
-    FUSE library version: 3.14.0
-
-    Backups mounted on /home/omen/restore-zCgS0D1Z
-
-    Please open another shell and copy any file(s)/directory(s) you need to restore.
-
-    It will remain mounted for 1 hour, then automatically unmount.
-    You can issue Control-c to unmount earlier.
-    ```
-
-Note, this backup mount (`/home/omen/restore-fCnNXIUr` in this example) will automatically unmount in 1 hour. Any shells
-that have `cd`'d into this directory will remain functional until you close them (or `cd` out). You can force the
-directory to umount earlier by pressing Control-c in window where you ran the restore program.
-
-### Restore a file from your group directory
-
-Restoring files from your group directory is similar to restoring files in your
-[home directory](#restore-a-file-from-your-home-directory). There are only two differences. First, start in the PI group
-directory:
-
-```console
-$ cd /quobyte/*PI*grp/
-$ /quobyte/pbs/bin/restore.sh
-```
-
-Second, the temporary directory will be created in `/quobyte/*PI*grp/`.
 
 ## FAQ
 
