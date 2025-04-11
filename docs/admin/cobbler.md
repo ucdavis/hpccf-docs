@@ -3,15 +3,15 @@ template: admin.html
 title: Cobbler
 ---
 
-HPCCF uses [cobbler](https://cobbler.github.io/) for provisioning and managing internal [DNS](../dns).
+HPC@UCD uses [cobbler](https://cobbler.github.io/) for provisioning and managing internal [DNS](../dns).
 
 There is a cobbler server per cluster as well as one for the public HPC VLAN.
 
-- `cobbler.hpc` - public HPC VLAN.
-- `cobbler.hive` - hive private and management VLANs
-- `cobbler.farm` - farm
-- `cobbler.peloton` - peloton
-- `cobbler.franklin` - franklin
+-   `cobbler.hpc` - public HPC VLAN.
+-   `cobbler.hive` - hive private and management VLANs
+-   `cobbler.farm` - farm
+-   `cobbler.peloton` - peloton
+-   `cobbler.franklin` - franklin
 
 `hpc1`, `hpc2`, and `lssc0` do not have associated cobbler servers.
 

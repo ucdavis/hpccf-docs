@@ -7,7 +7,7 @@ There are four general methods for getting data to/from a cluster.
 ## Globus
 
 Farm, Franklin, and Hive have Globus installed. Home directories for all three clusters are already exported. Because of
-the way Globus v5 works, each PI directory must be exported manually by HPCCF staff. If you need a PI directory
+the way Globus v5 works, each PI directory must be exported manually by HPC@UCD staff. If you need a PI directory
 exported, please contact HPC support and CC your PI for approval.
 
 Once the PI group directory is exported, you will be able to read any file you normally have access to, but for security
@@ -19,7 +19,7 @@ home directories, search for a collection named `UC Davis CLUSTERNAME home`. For
 
 ???+ Warning "Globus Free File Transfer limitations"
 
-    HPCCF does not have a paid subscription for Globus, and uses the `Free File Transfer…for users at non-profit research institutions` tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.
+    HPC@UCD does not have a paid subscription for Globus, and uses the `Free File Transfer…for users at non-profit research institutions` tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.
 
 ## Command-line tools
 
@@ -85,7 +85,7 @@ megabytes will fail to transfer through OnDemand, so you will need to use a diff
 
 ## GUI tools
 
-GUI tools do exist to help with file transfer. However, HPCCF cannot provide support for them, so you will need to
+GUI tools do exist to help with file transfer. However, HPC@UCD cannot provide support for them, so you will need to
 contact your local IT support, or make an appointment with [DataLab](/#additional-information) for help.
 
 -   Filezilla is a multi-platform client commonly used to transfer data to and from the cluster.
