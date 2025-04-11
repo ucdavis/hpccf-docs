@@ -100,7 +100,7 @@ extra:
   social:
     - icon: material/email-edit
       link: "mailto:hpc-help@ucdavis.edu"
-      name: Email HPCCF Support
+      name: Email HPC@UCD Support
     - icon: fontawesome/brands/slack
       link: https://ucdavis.slack.com/archives/C053NKA88
       name: "#hpc Channel on ucdavis.slack.com"

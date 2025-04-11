@@ -1,4 +1,4 @@
-# HPCCF Docs
+# HPC@UCD Docs
 
 [![pages-build-deployment](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment)
 
@@ -32,6 +32,7 @@ Once the environment is created and dependencies installed, you only need to act
 
 ## Resources
 
-- Basic markdown syntax: https://www.markdownguide.org/basic-syntax/
-- `mkdocs` docs: https://www.mkdocs.org/
-- `mkdocs-material` docs, which provides our them and many extensions: https://squidfunk.github.io/mkdocs-material/reference/
+-   Basic markdown syntax: https://www.markdownguide.org/basic-syntax/
+-   `mkdocs` docs: https://www.mkdocs.org/
+-   `mkdocs-material` docs, which provides our them and many extensions:
+    https://squidfunk.github.io/mkdocs-material/reference/

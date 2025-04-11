@@ -2,27 +2,27 @@
 
 # Open OnDemand
 
-Some HPCCF clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows access to cluster resources using
-a web browser. All OOD apps are automatically launched through Slurm jobs, so you have access to your normal cluster
-resources. Just like sbatch jobs, OOD apps (jobs) run even when your browser is not attached, so you can reattach to a
-running OOD app just by going back to the OOD website.
+Some HPC@UCD clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows access to cluster resources
+using a web browser. All OOD apps are automatically launched through Slurm jobs, so you have access to your normal
+cluster resources. Just like sbatch jobs, OOD apps (jobs) run even when your browser is not attached, so you can
+reattach to a running OOD app just by going back to the OOD website.
 
 ## Clusters with Open OnDemand:
 
-- [Farm](https://ondemand.farm.hpc.ucdavis.edu)
-- [Franklin](https://ondemand.franklin.hpc.ucdavis.edu)
-- [Hive](https://ondemand.hive.hpc.ucdavis.edu)
+-   [Farm](https://ondemand.farm.hpc.ucdavis.edu)
+-   [Franklin](https://ondemand.franklin.hpc.ucdavis.edu)
+-   [Hive](https://ondemand.hive.hpc.ucdavis.edu)
 
 ## Applications offered with Open OnDemand
 
-- JupyterLab
-- [Cluster Name] Desktop
-- VSCode Server
-- RStudio Server
+-   JupyterLab
+-   [Cluster Name] Desktop
+-   VSCode Server
+-   RStudio Server
 
 ## Desktop notes
 
-HPCCF provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
+HPC@UCD provides a full Ubuntu Desktop using the XFCE4 desktop environment. Chrome and Firefox are included, and can be
 used to download data. This desktop is **not** intended for long term use. To prevent issues, your Firefox and Chrome
 data saved on the cluster is deleted every time you launch a new desktop session. This prevents left-behind lock files
 from blocking browser launch when the Slurm job terminates before you exit the desktop session.
@@ -104,4 +104,4 @@ please work with your PI to figure out an appropriate partition and resource req
 
 If your issue is not listed here, please [submit a ticket](mailto:hpc-help@ucdavis.edu) and send the cluster name, the
 OnDemand app you ran, a list , the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you
-performed. You **must** supply all of this information for HPCCF to be able to debug issues.
+performed. You **must** supply all of this information for HPC@UCD to be able to debug issues.

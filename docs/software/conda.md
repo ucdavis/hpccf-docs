@@ -1,10 +1,10 @@
 # :simple-python: :simple-anaconda: Conda and Python
 
-HPCCF clusters have a centrally installed [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html).
-**conda is our preferred and supported method for Python environments; we prefer not to centrally install any Python
-libraries**. Our conda install can also be levered by users to install arbitrary software available in conda repos in
-their home directories without needing to wait for systems administrators; many users may find this preferable, as our
-software install backlog is substantial.
+HPC@UCD clusters have a centrally installed
+[conda](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html). **conda is our preferred and supported
+method for Python environments; we prefer not to centrally install any Python libraries**. Our conda install can also be
+levered by users to install arbitrary software available in conda repos in their home directories without needing to
+wait for systems administrators; many users may find this preferable, as our software install backlog is substantial.
 
 To help with troubleshooting and compatibility, we **do not** provide support for conda installations in user home
 directories; instead, users should load our central conda with `module load conda`, which will automatically perform the

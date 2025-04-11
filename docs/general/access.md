@@ -1,6 +1,6 @@
 In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of
 keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is
-submitted to HPCCF to grant you access to a cluster.
+submitted to HPC@UCD to grant you access to a cluster.
 
 ## How do I generate an SSH key pair?
 
@@ -123,29 +123,29 @@ If they differ, you should open a ticket.
 
 #### farm.hpc.ucdavis.edu
 
-- `RSA: SHA256:aPUfAVTLNju9Omu8yIr5NYXAmZVKjsCLvewfAt8BLo8 `
-- `ECDSA: SHA256:XsfxXdolugXtm5/nWuEX0UB3mkllshTHTx+yHXQTrE0 `
-- `ED25519: SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I `
+-   `RSA: SHA256:aPUfAVTLNju9Omu8yIr5NYXAmZVKjsCLvewfAt8BLo8 `
+-   `ECDSA: SHA256:XsfxXdolugXtm5/nWuEX0UB3mkllshTHTx+yHXQTrE0 `
+-   `ED25519: SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I `
 
 #### franklin.hpc.ucdavis.edu
 
-- `RSA: SHA256:mXcTBeL5xCfcMmLEEYu4ppIFM82X7vc5AGJjvEyoJxg`
-- `ECDSA: SHA256:e2mldm10c9VYZceHB62MQpMtgL2sZ10W0H3U/tsUHws`
-- `ED25519: SHA256:RFw1dHndgpDgv0p8VyHW1QQt3JVq7CEzlQ9fKnfAAoY`
+-   `RSA: SHA256:mXcTBeL5xCfcMmLEEYu4ppIFM82X7vc5AGJjvEyoJxg`
+-   `ECDSA: SHA256:e2mldm10c9VYZceHB62MQpMtgL2sZ10W0H3U/tsUHws`
+-   `ED25519: SHA256:RFw1dHndgpDgv0p8VyHW1QQt3JVq7CEzlQ9fKnfAAoY`
 
 #### hive.hpc.ucdavis.edu
 
-- `ECDSA: SHA256:AmJ+z2miIMXlSAcm7k8YwKlIWk5+VqxyT0R4q3fvpcA`
-- `ED25519: SHA256:b5nv86Ciaqg1yrUVai6bZ0Hk4IpzAFLWtIPDBdacbQM`
+-   `ECDSA: SHA256:AmJ+z2miIMXlSAcm7k8YwKlIWk5+VqxyT0R4q3fvpcA`
+-   `ED25519: SHA256:b5nv86Ciaqg1yrUVai6bZ0Hk4IpzAFLWtIPDBdacbQM`
 
 #### hpc2.engr.ucdavis.edu
 
-- `RSA: SHA256:ZC23UiJLib0sozDEClkmD5q+TgeZf/mol6xzIQY30xE`
-- `ECDSA: SHA256:ymN3g0Ow4BM2Rd/zE3THZg7nv+mOs75ENCe5GcvWQoM`
-- `ED25519: SHA256:Svzxx62P/NxrsISeyPZ06nW+YkDYsE1xQc1wD/61tFI`
+-   `RSA: SHA256:ZC23UiJLib0sozDEClkmD5q+TgeZf/mol6xzIQY30xE`
+-   `ECDSA: SHA256:ymN3g0Ow4BM2Rd/zE3THZg7nv+mOs75ENCe5GcvWQoM`
+-   `ED25519: SHA256:Svzxx62P/NxrsISeyPZ06nW+YkDYsE1xQc1wD/61tFI`
 
 #### peloton.hpc.ucdavis.edu
 
-- `RSA: SHA256:eVU5TeDV+ezOkVHVA9d/L6CrcPihU1POpw8uPh4iXuQ`
-- `ECDSA: SHA256:QFH7ONkN7edAoYEu0GfTz7prqvi1YYu4bep7hxNrswU`
-- `ED25519: SHA256:ydOUR2t/MX3jbd3JIHDXMJyLjdhRV4OBLr9iJfQB8lw`
+-   `RSA: SHA256:eVU5TeDV+ezOkVHVA9d/L6CrcPihU1POpw8uPh4iXuQ`
+-   `ECDSA: SHA256:QFH7ONkN7edAoYEu0GfTz7prqvi1YYu4bep7hxNrswU`
+-   `ED25519: SHA256:ydOUR2t/MX3jbd3JIHDXMJyLjdhRV4OBLr9iJfQB8lw`

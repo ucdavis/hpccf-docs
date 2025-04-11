@@ -7,7 +7,7 @@ title: Migrating data from LSSC0
 ### Group/PI/Lab directories:
 
 Group directories on Hive are mounted on `/quobyte/`. Please ensure that your group or lab has purchased resources
-before you move data. Group directories are named after the PI or lab owner. For group directories, HPCCF staff are
+before you move data. Group directories are named after the PI or lab owner. For group directories, HPC@UCD staff are
 happy to take care of the actual migration, but we will need to coordinate with each PI group to do the transfer. The
 process looks like this:
 
@@ -23,18 +23,18 @@ process looks like this:
 
     1. The PI approves each of those requests, allowing the accounts to be created on Hive.
 
-1. The PI opens a ticket with HPCCF by emailing hpc-help@ucdavis.edu.
+1. The PI opens a ticket with HPC@UCD by emailing hpc-help@ucdavis.edu.
 
     1. In that ticket, the PI provides the LSSC0 Login ID and the corresponding UC Davis email address.
 
     1. Any user that does not have an active UC Davis account, will be required to create on through the
-       [TAF process](https://taf.ucdavis.edu/). This TAF process happens between the PI and the user, HPCCF is not
+       [TAF process](https://taf.ucdavis.edu/). This TAF process happens between the PI and the user, HPC@UCD is not
        involved in any way.
 
-1. HPCCF starts the initial pass of the data copy.
+1. HPC@UCD starts the initial pass of the data copy.
 
-1. Once that finishes, HPCCF will coordinate with the PI (through the ticket opened above) for a 24-72 business-hour
-   period where no new data will be added on the LSSC0 side and HPCCF will perform the final data copy to ensure Hive
+1. Once that finishes, HPC@UCD will coordinate with the PI (through the ticket opened above) for a 24-72 business-hour
+   period where no new data will be added on the LSSC0 side and HPC@UCD will perform the final data copy to ensure Hive
    contains everything that LSSC0 contains. The exact amount of time will depend on the quantity of data and the number
    of files.
 
@@ -55,7 +55,7 @@ HiPPO).
 
 ??? Note "Hive transfer node"
 
-    HPCCF staff have set up a transfer node within Hive that has direct links to LSSCO networking to facilitate
+    HPC@UCD staff have set up a transfer node within Hive that has direct links to LSSCO networking to facilitate
     data transfer. However, because LSSC0 home directories reside on AFS, performance may be lower than you would expect.
     This transfer node is only for moving data into Hive, it is not for general use.
 
