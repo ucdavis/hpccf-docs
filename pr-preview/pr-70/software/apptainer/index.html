@@ -11,10 +11,10 @@
         <link rel="canonical" href="http://docs.hpc.ucdavis.edu/software/apptainer/">
       
       
-        <link rel="prev" href="../rlang/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../general/troubleshooting/">
+        <link rel="next" href="../conda/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -604,121 +604,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Conda and Python
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Development
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../modules/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Module System
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ondemand/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Open OnDemand
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rlang/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    R and RStudio
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -856,6 +741,121 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conda and Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open OnDemand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R and RStudio
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2049,7 +2049,7 @@
 <h1 id="apptainer">Apptainer<a class="headerlink" href="#apptainer" title="Permanent link">&para;</a></h1>
 <p>Apptainer and other container runtimes have many uses; Mainly, but not limited to, isolated, portable, and reproducible software execution and development. For running containers on HPC systems we offer and use Apptainer ( formerly Singularity ). Other container runtimes like Docker require users to have escalated system priveleges, and for most thats typically not an issue, for shared multi-user systems letting any and all users have escalated privileges can pose a security risk. Luckily, apptainer allows users to run unprivileged containers in user-space inluding Docker containers and any OCI compatible containers.</p>
 <h2 id="module-system">Module System<a class="headerlink" href="#module-system" title="Permanent link">&para;</a></h2>
-<p>On HPC systems, we provide apptainer, as an environment module. Everytime you want to use apptainer you must first run: <code>module load apptainer</code>.</p>
+<p>UC Davis HPC provides apptainer as an environment module. Everytime you want to use apptainer you must first run: <code>module load apptainer</code>.</p>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <p>For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: <code>srun -A adamgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"</code>. But, you may need to curtail some srun parameters for your own needs.</p>
 <h2 id="pulling-apptainer-images">Pulling Apptainer Images<a class="headerlink" href="#pulling-apptainer-images" title="Permanent link">&para;</a></h2>
@@ -2081,7 +2081,7 @@
 #!/bin/bash -l
 
 srun \
-  --account hpccfgrp \
+  --account adamgrp \
   --partition=gpuh \
   --ntasks=1 \
   --cpus-per-task=8 \
@@ -2097,18 +2097,19 @@ srun \
 <p>Or the same thing as previous but in a form suitable for submitting with sbatch:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#!/bin/bash
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#SBATCH --partition=gpuh
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>#SBATCH --ntasks=1
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>#SBATCH --cpus-per-task=8
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>#SBATCH --mem=32G
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>#SBATCH --gpus=1
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>#SBATCH --job-name=tflo
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>#SBATCH --time=10:00
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>module purge
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>module load apptainer
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>apptainer exec tflo.sif python3 -c &quot;import tensorflow as tf; print(&quot;TensorFlow version:&quot;, tf.__version__)&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#SBATCH --account=&lt;accountname&gt;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>#SBATCH --partition=&lt;partitionname&gt;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>#SBATCH --ntasks=1
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>#SBATCH --cpus-per-task=8
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>#SBATCH --mem=32G
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>#SBATCH --gpus=1
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>#SBATCH --job-name=tflo
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>#SBATCH --time=10:00
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>module purge
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>module load apptainer
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>apptainer exec tflo.sif python3 -c &quot;import tensorflow as tf; print(&quot;TensorFlow version:&quot;, tf.__version__)&quot;
 </code></pre></div></p>
 
 
@@ -2132,7 +2133,7 @@ srun \
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 10, 2025 23:53:52">April 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 22:04:27">April 11, 2025</span>
   </span>
 
     
@@ -2142,7 +2143,7 @@ srun \
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 10, 2025 23:53:52">April 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 22:04:27">April 11, 2025</span>
   </span>
 
     
@@ -2194,7 +2195,7 @@ srun \
     
     
     
-    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPCCF Support" class="md-social__link">
+    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPC@UCD Support" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
     </a>
   
