@@ -4,7 +4,7 @@ Apptainer and other container runtimes have many uses; Mainly, but not limited t
 
 ## Module System
 
-On HPC systems, we provide apptainer, as an environment module. Everytime you want to use apptainer you must first run: `module load apptainer`.
+UC Davis HPC provides apptainer as an environment module. Everytime you want to use apptainer you must first run: `module load apptainer`.
 
 ## Quickstart
 
@@ -54,7 +54,7 @@ Feel free to use this srun script as a starting template for a slurm job:
     #!/bin/bash -l
     
     srun \
-      --account hpccfgrp \
+      --account adamgrp \
       --partition=gpuh \
       --ntasks=1 \
       --cpus-per-task=8 \
@@ -71,8 +71,9 @@ Feel free to use this srun script as a starting template for a slurm job:
 Or the same thing as previous but in a form suitable for submitting with sbatch:
     ```
     #!/bin/bash
-    
-    #SBATCH --partition=gpuh
+   
+    #SBATCH --account=<accountname>
+    #SBATCH --partition=<partitionname>
     #SBATCH --ntasks=1
     #SBATCH --cpus-per-task=8
     #SBATCH --mem=32G
