@@ -2127,100 +2127,92 @@
 
 <h1 id="module-system">Module System<a class="headerlink" href="#module-system" title="Permanent link">&para;</a></h1>
 <h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
-<p>High performance compute clusters usually have a variety of software with sometimes conflicting
-dependencies.
-Software packages may need to make modifications to the <a href="../general/environment.md">user environment</a>, or the same
-software may be compiled multiple times to run efficiently on differing hardware within the cluster.
-To support these use cases, software is managed with a module system that prepares the user
-environment to access specific software on load and returns the environment to its former state when
-unloaded.
-A <em>module</em> is the bit of code that enacts and tracks these changes to the user environment, and the
-module <em>system</em> is software that runs these modules and the collection of modules it is aware of.
-Most often, a module is associated with a specific software package at a specific version, but they
-can also be used to make more general changes to a user environment; for example, a module could
-load a set of configurations for the <a href="https://www.gnu.org/software/bash/">BASH</a> shell that set color themes.</p>
-<p>The two most commonly deployed module systems are <a href="https://modules.readthedocs.io/en/latest/">environment
-modules</a> (or <code>envmod</code>) and
-<a href="https://lmod.readthedocs.io/en/latest/index.html">lmod</a>.
-All HPCCF clusters currently use <code>envmod</code>.</p>
+<p>High performance compute clusters usually have a variety of software with sometimes conflicting dependencies. Software
+packages may need to make modifications to the <a href="../general/environment.md">user environment</a>, or the same software may
+be compiled multiple times to run efficiently on differing hardware within the cluster. To support these use cases,
+software is managed with a module system that prepares the user environment to access specific software on load and
+returns the environment to its former state when unloaded. A <em>module</em> is the bit of code that enacts and tracks these
+changes to the user environment, and the module <em>system</em> is software that runs these modules and the collection of
+modules it is aware of. Most often, a module is associated with a specific software package at a specific version, but
+they can also be used to make more general changes to a user environment; for example, a module could load a set of
+configurations for the <a href="https://www.gnu.org/software/bash/">BASH</a> shell that set color themes.</p>
+<p>The two most commonly deployed module systems are <a href="https://modules.readthedocs.io/en/latest/">environment modules</a> (or
+<code>envmod</code>) and <a href="https://lmod.readthedocs.io/en/latest/index.html">lmod</a>. All HPC@UCD clusters currently use <code>envmod</code>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>The <code>module</code> command is the entry point for users to manage modules in their environment.
-All module operations will be of the form <code>module [SUBCOMMAND]</code>. Usage information is available
-on the cluster by running <code>module --help</code>.</p>
-<p>The basic commands are: <code>module load [MODULENAME]</code> to load a module into your environment; <code>module unload [MODULENAME]</code> to remove that module; <code>module avail</code> to see modules available for loading; and <code>module list</code> to see which modules are currently loaded.
-We will go over these commands, and some additional commands, in the following sections.</p>
+<p>The <code>module</code> command is the entry point for users to manage modules in their environment. All module operations will be
+of the form <code>module [SUBCOMMAND]</code>. Usage information is available on the cluster by running <code>module --help</code>.</p>
+<p>The basic commands are: <code>module load [MODULENAME]</code> to load a module into your environment; <code>module unload [MODULENAME]</code>
+to remove that module; <code>module avail</code> to see modules available for loading; and <code>module list</code> to see which modules are
+currently loaded. We will go over these commands, and some additional commands, in the following sections.</p>
 <h3 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h3>
 <h4 id="module-avail"><code>module avail</code><a class="headerlink" href="#module-avail" title="Permanent link">&para;</a></h4>
-<p>Lists the modules <strong>currently available</strong> to load on the system. The following is some example
-output from the Franklin cluster:</p>
+<p>Lists the modules <strong>currently available</strong> to load on the system. The following is some example output from the Franklin
+cluster:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>module<span class="w"> </span>avail
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">--------------------- /share/apps/22.04/modulefiles/spack/core ----------------------</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">aocc/4.1.0                 intel-oneapi-compilers/2023.2.1  pmix/4.2.6+amd    </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cuda/8.0.61                libevent/2.1.12                  pmix/4.2.6+intel  </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">cuda/11.2.2                libevent/2.1.12+amd              pmix/default      </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">cuda/11.7.1                libevent/2.1.12+intel            slurm/23-02-6-1   </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">cuda/default               libevent/default                 slurm/23-02-7-1   </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">environment-modules/5.2.0  openmpi/4.1.5                    ucx/1.14.1        </span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">gcc/7.5.0                  openmpi/4.1.5+amd                ucx/1.14.1+amd    </span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">gcc/11.4.0                 openmpi/4.1.5+intel              ucx/1.14.1+intel  </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">gcc/13.2.0                 openmpi/default                  ucx/default       </span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">hwloc/2.9.1                pmix/4.2.6                       </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">aocc/4.1.0                 intel-oneapi-compilers/2023.2.1  pmix/4.2.6+amd</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cuda/8.0.61                libevent/2.1.12                  pmix/4.2.6+intel</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">cuda/11.2.2                libevent/2.1.12+amd              pmix/default</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">cuda/11.7.1                libevent/2.1.12+intel            slurm/23-02-6-1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">cuda/default               libevent/default                 slurm/23-02-7-1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">environment-modules/5.2.0  openmpi/4.1.5                    ucx/1.14.1</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">gcc/7.5.0                  openmpi/4.1.5+amd                ucx/1.14.1+amd</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">gcc/11.4.0                 openmpi/4.1.5+intel              ucx/1.14.1+intel</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">gcc/13.2.0                 openmpi/default                  ucx/default</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">hwloc/2.9.1                pmix/4.2.6</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">------------------- /share/apps/22.04/modulefiles/spack/software --------------------</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">abyss/2.3.5           igv/2.12.3                        pplacer/1.1.alpha19         </span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">alphafold/2.3.2       infernal/1.1.4                    prodigal/2.6.3              </span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="go">amdfftw/4.1+amd       intel-oneapi-mkl/2023.2.0+intel   prokka/1.14.6               </span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="go">amdfftw/default       intel-oneapi-mkl/default          py-checkm-genome/1.2.1      </span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="go">angsd/0.935           intel-oneapi-tbb/2021.10.0+amd    py-cutadapt/4.4             </span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="go">aragorn/1.2.41        intel-oneapi-tbb/2021.10.0+intel  py-deeptools/3.5.2          </span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="go">abyss/2.3.5           igv/2.12.3                        pplacer/1.1.alpha19</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="go">alphafold/2.3.2       infernal/1.1.4                    prodigal/2.6.3</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="go">amdfftw/4.1+amd       intel-oneapi-mkl/2023.2.0+intel   prokka/1.14.6</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="go">amdfftw/default       intel-oneapi-mkl/default          py-checkm-genome/1.2.1</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="go">angsd/0.935           intel-oneapi-tbb/2021.10.0+amd    py-cutadapt/4.4</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="go">aragorn/1.2.41        intel-oneapi-tbb/2021.10.0+intel  py-deeptools/3.5.2</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="go">aria2/1.36.0          intel-oneapi-tbb/default          py-htseq/2.0.3</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="go">...</span>
 </code></pre></div>
-<p>Each entry corresponds to software available for <a href="./#loading-and-unloading">load</a>.
-Modules that are currently loaded will be highlighted.</p>
+<p>Each entry corresponds to software available for <a href="./#loading-and-unloading">load</a>. Modules that are currently
+loaded will be highlighted.</p>
 <h4 id="module-list"><code>module list</code><a class="headerlink" href="#module-list" title="Permanent link">&para;</a></h4>
-<p>Lists the modules <strong>currently loaded</strong> in the user environment. By default, the output should be
-similar to:</p>
+<p>Lists the modules <strong>currently loaded</strong> in the user environment. By default, the output should be similar to:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>module<span class="w"> </span>list
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">Currently Loaded Modulefiles:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go"> 1) slurm/23-02-7-1   2) ucx/1.14.1   3) openmpi/default  </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go"> 1) slurm/23-02-7-1   2) ucx/1.14.1   3) openmpi/default</span>
 </code></pre></div>
 <p>Additional modules will be added or removed as you load and unload them.</p>
 <h3 id="loading-and-unloading">Loading and Unloading<a class="headerlink" href="#loading-and-unloading" title="Permanent link">&para;</a></h3>
 <h4 id="module-load"><code>module load</code><a class="headerlink" href="#module-load" title="Permanent link">&para;</a></h4>
-<p>This <strong>loads</strong> the requested module into the active environment.
-Loading a module can edit environment variables, such as prepending directories to <code>$PATH</code> so that
-the executables within can be run, set and unset new or existing environment variables, define shell functions,
-and generally, modify your user environment arbitrarily.
-The modifications it makes are tracked, so that when the module is eventually unloaded, any changes can be returned
-to their former state.</p>
+<p>This <strong>loads</strong> the requested module into the active environment. Loading a module can edit environment variables, such
+as prepending directories to <code>$PATH</code> so that the executables within can be run, set and unset new or existing
+environment variables, define shell functions, and generally, modify your user environment arbitrarily. The
+modifications it makes are tracked, so that when the module is eventually unloaded, any changes can be returned to their
+former state.</p>
 <p>Let's load a module.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>module<span class="w"> </span>load<span class="w"> </span>bwa/0.7.17
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">bwa/0.7.17: loaded.</span>
 </code></pre></div>
-<p>Now, you have access to the <code>bwa</code> executable. If you try to run <code>bwa mem</code>, you'll get its help output.
-This also sets the appropriate variables so that you can now run <code>man bwa</code> to view its manpage.</p>
-<p>Note that some modules have multiple versions. Running <code>module load [MODULENAME]</code> without specifying a version
-will load the latest version, unless a default has been specified.</p>
-<p>Some modules are nested under a deeper hierarchy. For example, <code>relion</code> on Franklin has many variants, under both <code>relion/cpu</code> and <code>relion/gpu</code>.
-To load these, you must specify the second layer of the hierarchy: <code>module load relion</code> will fail, but <code>module load relion/cpu</code> will load the default module under <code>relion/cpu</code>, which has the full name <code>relion/cpu/4.0.0+amd</code>.
-More information on this system can be found under <a href="./#organization">Organization</a>.</p>
-<p>The modules are all configured to set a <code>$NAME_ROOT</code> variable that points to the installation prefix.
-This will correspond to the name of the module, minus the version. For example:</p>
+<p>Now, you have access to the <code>bwa</code> executable. If you try to run <code>bwa mem</code>, you'll get its help output. This also sets
+the appropriate variables so that you can now run <code>man bwa</code> to view its manpage.</p>
+<p>Note that some modules have multiple versions. Running <code>module load [MODULENAME]</code> without specifying a version will load
+the latest version, unless a default has been specified.</p>
+<p>Some modules are nested under a deeper hierarchy. For example, <code>relion</code> on Franklin has many variants, under both
+<code>relion/cpu</code> and <code>relion/gpu</code>. To load these, you must specify the second layer of the hierarchy: <code>module load relion</code>
+will fail, but <code>module load relion/cpu</code> will load the default module under <code>relion/cpu</code>, which has the full name
+<code>relion/cpu/4.0.0+amd</code>. More information on this system can be found under <a href="./#organization">Organization</a>.</p>
+<p>The modules are all configured to set a <code>$NAME_ROOT</code> variable that points to the installation prefix. This will
+correspond to the name of the module, minus the version. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$BWA_ROOT</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bwa-0.7.17-y22jt6d7qm63i2tohmu7gqeedxytadky</span>
 </code></pre></div>
 <p>Usually, this will be a very long pathname, as most software on the cluster is managed via the
-<a href="https://spack.readthedocs.io/en/latest/">spack</a> build system.
-This would be most useful if you're <a href="../developing/">developing software</a> on the cluster.</p>
+<a href="https://spack.readthedocs.io/en/latest/">spack</a> build system. This would be most useful if you're
+<a href="../developing/">developing software</a> on the cluster.</p>
 <h4 id="module-unload"><code>module unload</code><a class="headerlink" href="#module-unload" title="Permanent link">&para;</a></h4>
-<p>As one might expect, <code>module unload</code> removes a loaded module from your environment.
-Any changes made by the module are undone and your environment is restored to its
-state prior to loading the module.</p>
+<p>As one might expect, <code>module unload</code> removes a loaded module from your environment. Any changes made by the module are
+undone and your environment is restored to its state prior to loading the module.</p>
 <h3 id="searching-and-metadata">Searching and Metadata<a class="headerlink" href="#searching-and-metadata" title="Permanent link">&para;</a></h3>
 <h4 id="module-whatis"><code>module whatis</code><a class="headerlink" href="#module-whatis" title="Permanent link">&para;</a></h4>
-<p>This command prints a description of the module, if such a description is available.
-For example:</p>
+<p>This command prints a description of the module, if such a description is available. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>module<span class="w"> </span>whatis<span class="w"> </span>gsl
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">-------------------------------------------- /share/apps/22.04/modulefiles/spack/software --------------------------------------------</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">           gsl/2.7.1: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite.</span>
@@ -2239,11 +2231,11 @@ For example:</p>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="go">setenv      CXX /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-evrz2iaatpna4lvzwh5sjujgfrlqprx5/bin/g++</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="go">...</span>
 </code></pre></div>
-<p>This is particularly useful for developing with libraries where you might be interested in
-variables relevant to your build system.</p>
+<p>This is particularly useful for developing with libraries where you might be interested in variables relevant to your
+build system.</p>
 <h4 id="module-search"><code>module search</code><a class="headerlink" href="#module-search" title="Permanent link">&para;</a></h4>
-<p>The <code>module search</code> command allows you to search the names and whatis information for every module.
-The result will be a list of matching modules and the highlighted matching search terms.</p>
+<p>The <code>module search</code> command allows you to search the names and whatis information for every module. The result will be a
+list of matching modules and the highlighted matching search terms.</p>
 
 
 
@@ -2266,7 +2258,7 @@ The result will be a list of matching modules and the highlighted matching searc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2024 20:33:50">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15">April 11, 2025</span>
   </span>
 
     
@@ -2328,7 +2320,7 @@ The result will be a list of matching modules and the highlighted matching searc
     
     
     
-    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPCCF Support" class="md-social__link">
+    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPC@UCD Support" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
     </a>
   

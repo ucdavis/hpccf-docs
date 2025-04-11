@@ -1965,53 +1965,61 @@
 
 <h1 id="farm">Farm<a class="headerlink" href="#farm" title="Permanent link">&para;</a></h1>
 <p><img align="right" alt="CAES unit signature" src="../assets/UCDavis_CAES_logo_RGB_vector.svg" width="400" /></p>
-<p>Farm is a Linux-based supercomputing cluster for the <a href="https://caes.ucdavis.edu/">College of Agricultural and Environmental Sciences</a> (CA&amp;ES) at UC Davis. Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS) software, and more. </p>
+<p>Farm is a Linux-based supercomputing cluster for the
+<a href="https://caes.ucdavis.edu/">College of Agricultural and Environmental Sciences</a> (CA&amp;ES) at UC Davis. Designed for both
+research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide
+selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics
+pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS)
+software, and more.</p>
 <h2 id="farm-hardware">Farm Hardware<a class="headerlink" href="#farm-hardware" title="Permanent link">&para;</a></h2>
-<p>Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three phases, with Farm III as the most recent evolution. </p>
-<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 
-256GB RAM each in low2/med2/high2, plus 26 “bigmem” nodes with up to 128 CPUs and 2TB RAM each in the bml/bmm/bmh queue. All Farm III bigmem and newer parallel nodes and storage are on EDR/100Gbit interconnects. Older parallel nodes and storage are on FDR/55Gbit. </p>
-<p>Farm II consists of 27 parallel nodes with 24 CPUs and 64GB RAM each in low/med/high, 
-plus 1 “old-bigmem” node with 64 CPUs and 512GB RAM each in the bigmeml/bigmemm/bigmemh queues, and 1 additional node with 96 CPUs and 1TB RAM. Farm II nodes are on QDR/32Gbit interconnects. </p>
-<p>Hardware from both Farm II and Farm III are 
-still in service; Farm I has been decommissioned as of 2014. </p>
+<p>Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three
+phases, with Farm III as the most recent evolution.</p>
+<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 256GB RAM each in low2/med2/high2, plus 26 “bigmem” nodes
+with up to 128 CPUs and 2TB RAM each in the bml/bmm/bmh queue. All Farm III bigmem and newer parallel nodes and storage
+are on EDR/100Gbit interconnects. Older parallel nodes and storage are on FDR/55Gbit.</p>
+<p>Farm II consists of 27 parallel nodes with 24 CPUs and 64GB RAM each in low/med/high, plus 1 “old-bigmem” node with 64
+CPUs and 512GB RAM each in the bigmeml/bigmemm/bigmemh queues, and 1 additional node with 96 CPUs and 1TB RAM. Farm II
+nodes are on QDR/32Gbit interconnects.</p>
+<p>Hardware from both Farm II and Farm III are still in service; Farm I has been decommissioned as of 2014.</p>
 <p>Farm also has multiple file servers with over 5.3PB of storage space in total.</p>
 <h2 id="access-to-farm">Access to Farm<a class="headerlink" href="#access-to-farm" title="Permanent link">&para;</a></h2>
 <p>All researchers in CA&amp;ES are entitled to free access to:</p>
 <ul>
 <li>
-<p>8 nodes with 24 CPUs and 64GB RAM each (up to a maximum of 192 CPUs and 512GB RAM) in Farm II’s low, medium, and high-priority batch queues, </p>
+<p>8 nodes with 24 CPUs and 64GB RAM each (up to a maximum of 192 CPUs and 512GB RAM) in Farm II’s low, medium, and
+    high-priority batch queues,</p>
 </li>
 <li>
-<p>4 nodes with 352 CPUs and 768GB RAM each 
-in Farm III's low2, med2, and high2-priority batch queues. </p>
+<p>4 nodes with 352 CPUs and 768GB RAM each in Farm III's low2, med2, and high2-priority batch queues.</p>
 </li>
 <li>
-<p>The bml (bigmem, low priority/requeue) partition, which has 
-24 nodes with a combined 60 TB of RAM. </p>
+<p>The bml (bigmem, low priority/requeue) partition, which has 24 nodes with a combined 60 TB of RAM.</p>
 </li>
 </ul>
-<p>In addition to this, each new user is allocated a 20GB home directory. If you 
-want to use the CA&amp;ES free tier, select “CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>. </p>
-<p>Additional usage and access 
-may be purchased by contributing to Farm III by through the node and/or storage rates or by purchasing equipment and 
-contributing through the rack fee rate. </p>
-<p>Contributors always receive priority access to the resources that they have 
-purchased within one minute with the “one-minute guarantee.” Users can also request additional unused resources on a 
-“fair share” basis in the medium or low partitions.</p>
+<p>In addition to this, each new user is allocated a 20GB home directory. If you want to use the CA&amp;ES free tier, select
+“CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>.</p>
+<p>Additional usage and access may be purchased by contributing to Farm III by through the node and/or storage rates or by
+purchasing equipment and contributing through the rack fee rate.</p>
+<p>Contributors always receive priority access to the resources that they have purchased within one minute with the
+“one-minute guarantee.” Users can also request additional unused resources on a “fair share” basis in the medium or low
+partitions.</p>
 <h2 id="farm-administration">Farm Administration<a class="headerlink" href="#farm-administration" title="Permanent link">&para;</a></h2>
 <p>Farm hardware and software are administrated by the <a href="https://hpc.ucdavis.edu/people">HPC Core Facility Team</a>.</p>
 <h3 id="current-rates">Current Rates<a class="headerlink" href="#current-rates" title="Permanent link">&para;</a></h3>
-<p>As of October 2023, the rates for Farm III: </p>
+<p>As of October 2023, the rates for Farm III:</p>
 <p>Node and Storage Rates (each buy-in guarantees access for 5 years): -</p>
 <ul>
-<li><strong>Parallel (CPU) node:</strong> $13,500 (512 GB RAM, 128 cores/256 threads, 2 TB /scratch) </li>
-<li><strong>Bigmem node:</strong> 128 cores/256 threads, 2TB RAM (bml, bmm, bmh partitions) - $25,000 </li>
+<li><strong>Parallel (CPU) node:</strong> $13,500 (512 GB RAM, 128 cores/256 threads, 2 TB /scratch)</li>
+<li><strong>Bigmem node:</strong> 128 cores/256 threads, 2TB RAM (bml, bmm, bmh partitions) - $25,000</li>
 <li><strong>GPU:</strong> $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 32 threads, 256GB system RAM)</li>
 <li><strong>Storage:</strong> $100/TB with compression for 5 years (does not include backups)</li>
 </ul>
 <p>New purchases for Farm can be placed through <a href="https://hippo.ucdavis.edu/Farm/product/index">Hippo</a>.</p>
 <h3 id="bring-your-own-equipment-byoe">Bring your own equipment (BYOE):<a class="headerlink" href="#bring-your-own-equipment-byoe" title="Permanent link">&para;</a></h3>
-<p>Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment not available through Hippo, you can start a discussion with <a href="acgetchell@ucdavis.edu">Adam Getchell</a> or <a href="hpc-help@ucdavis.edu">HPCCF</a>.</p>
+<p>Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If
+you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment
+not available through Hippo, you can start a discussion with <a href="acgetchell@ucdavis.edu">Adam Getchell</a> or
+<a href="hpc-help@ucdavis.edu">HPC@UCD</a>.</p>
 
 
 
@@ -2034,7 +2042,7 @@ purchased within one minute with the “one-minute guarantee.” Users can also 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 12, 2025 20:48:29">February 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15">April 11, 2025</span>
   </span>
 
     
@@ -2096,7 +2104,7 @@ purchased within one minute with the “one-minute guarantee.” Users can also 
     
     
     
-    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPCCF Support" class="md-social__link">
+    <a href="mailto:hpc-help@ucdavis.edu" target="_blank" rel="noopener" title="Email HPC@UCD Support" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
     </a>
   
