@@ -46,26 +46,6 @@ For ease of use we recommend writing a wrapper script like such:
     apptainer shell --nv tflo.sif $@
   ```
 
-## SRUN
-
-Feel free to use this srun script as a starting template for a slurm job:
-
-    ```
-    #!/bin/bash -l
-    
-    srun \
-      --account adamgrp \
-      --partition=gpuh \
-      --ntasks=1 \
-      --cpus-per-task=8 \
-      --mem=32G \
-      --gpus=1 \
-      --job-name=tflo \
-      --time=10:00 \
-      --pty \
-      tflo.sh $@
-    ```
-
 ## SBATCH 
 
 Or the same thing as previous but in a form suitable for submitting with sbatch:
@@ -85,4 +65,24 @@ Or the same thing as previous but in a form suitable for submitting with sbatch:
     module load apptainer
     
     apptainer exec tflo.sif python3 -c "import tensorflow as tf; print("TensorFlow version:", tf.__version__)"
+    ```
+
+## SRUN
+
+Feel free to use this srun script as a starting template for a slurm job:
+
+    ```
+    #!/bin/bash -l
+    
+    srun \
+      --account=<accountname> \
+      --partition=<partitionname> \
+      --ntasks=1 \
+      --cpus-per-task=8 \
+      --mem=32G \
+      --gpus=1 \
+      --job-name=tflo \
+      --time=10:00 \
+      --pty \
+      tflo.sh $@
     ```
