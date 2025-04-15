@@ -1960,16 +1960,37 @@ with research demands, all while keeping a single directory for PIs.</p>
 <h2 id="access-to-hive">Access to Hive<a class="headerlink" href="#access-to-hive" title="Permanent link">&para;</a></h2>
 <p>UC Davis staff, faculty, and graduate students are entitled to free access to:</p>
 <ul>
-<li>Partition <code>high</code>: the entire group has access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).<ul>
-<li>Each job is limited to a maximum of 8 CPUs, 128 GB of RAM, and 1 GPU.</li>
-<li>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your srun or sbatch command.</li>
+<li>
+<p>Partition <code>high</code>: the entire group has combined access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of:</p>
+<ul>
+<li>8 CPUs</li>
+<li>128 GB of RAM</li>
+<li>1 GPU</li>
 </ul>
 </li>
-<li>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that when
+<li>
+<p>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your srun or sbatch command.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that when
     a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your job can
-    do automatic check-pointing and restarting, all progress is lost when the job is killed.<ul>
-<li>Each job is limited to a maximum a maximum runtime of 3 days (<code>3-00</code>).</li>
-<li>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your srun or sbatch command.</li>
+    do automatic check-pointing and restarting, all progress is lost when the job is killed.</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of:</p>
+<ul>
+<li>3 days (<code>3-00</code>) of runtime</li>
+<li>1 node</li>
+</ul>
+</li>
+<li>
+<p>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your srun or sbatch command.</p>
+</li>
 </ul>
 </li>
 </ul>

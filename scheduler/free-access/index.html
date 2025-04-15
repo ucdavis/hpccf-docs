@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#farm-group-name-adamgrp" class="md-skip">
+        <a href="#farm" class="md-skip">
           Skip to content
         </a>
       
@@ -511,20 +511,59 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#farm-group-name-adamgrp" class="md-nav__link">
+  <a href="#farm" class="md-nav__link">
     <span class="md-ellipsis">
-      Farm (group name adamgrp):
+      Farm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Farm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-adamgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm account name adamgrp
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#hive-group-name-publicgrp" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-gpul-users" class="md-nav__link">
     <span class="md-ellipsis">
-      Hive (group name publicgrp):
+      Slurm account name gpul-users
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-publicgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm account name publicgrp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1855,20 +1894,59 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#farm-group-name-adamgrp" class="md-nav__link">
+  <a href="#farm" class="md-nav__link">
     <span class="md-ellipsis">
-      Farm (group name adamgrp):
+      Farm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Farm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-adamgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm account name adamgrp
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#hive-group-name-publicgrp" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-gpul-users" class="md-nav__link">
     <span class="md-ellipsis">
-      Hive (group name publicgrp):
+      Slurm account name gpul-users
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-account-name-publicgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm account name publicgrp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1894,28 +1972,74 @@
   <h1>Free Access</h1>
 
 <p>Farm and Hive both provide free/sponsored access to a limited amount of resources.</p>
-<h2 id="farm-group-name-adamgrp">Farm (group name <code>adamgrp</code>):<a class="headerlink" href="#farm-group-name-adamgrp" title="Permanent link">&para;</a></h2>
+<h2 id="farm">Farm<a class="headerlink" href="#farm" title="Permanent link">&para;</a></h2>
+<p>See <a href="/general/account-requests/#hippo">here</a> for instructions to request access to the free/sponsored resources for
+Farm.</p>
+<h4 id="slurm-account-name-adamgrp">Slurm account name <code>adamgrp</code><a class="headerlink" href="#slurm-account-name-adamgrp" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Partition <code>high2</code>: the entire group has combined access to 352 CPUs and 768 GB of RAM.</li>
 <li>Partition <code>high</code>: the entire group has combined access to 192 CPUs and 500 GB of RAM.</li>
 </ul>
-<h2 id="hive-group-name-publicgrp">Hive (group name <code>publicgrp</code>):<a class="headerlink" href="#hive-group-name-publicgrp" title="Permanent link">&para;</a></h2>
+<h4 id="slurm-account-name-gpul-users">Slurm account name <code>gpul-users</code><a class="headerlink" href="#slurm-account-name-gpul-users" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Partition <code>high</code>: the entire group has access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).<ul>
-<li>Each job is limited to a maximum of 8 CPUs, 128 GB of RAM, and 1 GPU.</li>
-<li>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your srun or sbatch command.</li>
+<li>
+<p>Partition: <code>gpul</code>: provides access to currently idle GPUs.</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of:</p>
+<ul>
+<li>1 day (<code>1-00</code>) of runtime</li>
+<li>1 node</li>
 </ul>
 </li>
-<li>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that when
+<li>
+<p>You can access these resources by adding <code>--account=gpul-users --partition=gpul --gpus=1</code> to your srun or sbatch
+    command.</p>
+</li>
+<li>
+<p>If you require a specific type of GPU, you can request with <code>--gpus=TYPE:1</code>. The available types are: <code>a100</code>,
+    <code>a5500</code>, <code>titan</code>, and <code>v100</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="hive">Hive<a class="headerlink" href="#hive" title="Permanent link">&para;</a></h2>
+<h4 id="slurm-account-name-publicgrp">Slurm account name <code>publicgrp</code><a class="headerlink" href="#slurm-account-name-publicgrp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Partition <code>high</code>: the entire group has combined access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of:</p>
+<ul>
+<li>8 CPUs</li>
+<li>128 GB of RAM</li>
+<li>1 GPU</li>
+</ul>
+</li>
+<li>
+<p>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your srun or sbatch command.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that when
     a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your job can
-    do automatic check-pointing and restarting, all progress is lost when the job is killed.<ul>
-<li>Each job is limited to a maximum a maximum runtime of 3 days (<code>3-00</code>).</li>
-<li>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your srun or sbatch command.</li>
+    do automatic check-pointing and restarting, all progress is lost when the job is killed.</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of:</p>
+<ul>
+<li>3 days (<code>3-00</code>) of runtime</li>
+<li>1 node</li>
+</ul>
+</li>
+<li>
+<p>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your srun or sbatch command.</p>
+</li>
 </ul>
 </li>
 </ul>
-<p>See <a href="/general/account-requests/#hippo">here</a> for instructions to request access to the free/sponsored resources for
-Farm.</p>
 <p>On Hive, every user is automatically a member of <code>publicgrp</code> and has access. You may need to add <code>--account=publicgrp</code>
 to Slurm jobs to access these resources.</p>
 
@@ -1940,7 +2064,7 @@ to Slurm jobs to access these resources.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 27, 2025 18:36:11">March 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 15, 2025 23:35:09">April 15, 2025</span>
   </span>
 
     
