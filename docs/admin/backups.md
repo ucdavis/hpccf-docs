@@ -5,6 +5,11 @@ title: Proxmox Backup Server new PI backup configuration
 
 ## Proxmox Backup Server new PI backup configuration
 
+### Hive
+
+For Hive, the PBS server is phoenix, the backups can be configured on any Hive system (or fs6), and the initial backup
+should be started from fs6.
+
 #### Phoenix
 
 `./pbs/new-PI-group.sh {CLUSTER} {PI-group-name}` and take note of the token value.
