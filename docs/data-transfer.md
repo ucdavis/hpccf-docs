@@ -6,7 +6,8 @@ There are four general methods for getting data to/from a cluster.
 
 ## Globus
 
-Farm, Franklin, and Hive have Globus v5 installed.
+Farm, Franklin, and Hive have Globus v5 installed, use the [Globus File Manager](https://app.globus.org/) to access
+exported collections.
 
 ### Home directories
 
