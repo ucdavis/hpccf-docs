@@ -17,10 +17,6 @@
          <lastmod>2025-04-23</lastmod>
     </url>
     <url>
-         <loc>http://docs.hpc.ucdavis.edu/admin/backups-users/</loc>
-         <lastmod>2025-04-23</lastmod>
-    </url>
-    <url>
          <loc>http://docs.hpc.ucdavis.edu/admin/backups/</loc>
          <lastmod>2025-04-23</lastmod>
     </url>
@@ -70,6 +66,10 @@
     </url>
     <url>
          <loc>http://docs.hpc.ucdavis.edu/admin/vms/</loc>
+         <lastmod>2025-04-23</lastmod>
+    </url>
+    <url>
+         <loc>http://docs.hpc.ucdavis.edu/backups/</loc>
          <lastmod>2025-04-23</lastmod>
     </url>
     <url>
