@@ -1,13 +1,8 @@
 ---
-template: admin.html
 title: Home Directory and PI group directory Backups
 ---
 
-???+ failure
-
-    This is internal, for development purposes. **CURRENTLY THERE ARE NO BACKUPS FOR ANY HPC CLUSTERS**.
-
-## Backups?
+## Backups? Backups!
 
 Currently, HPC@UCD offers backups for Hive. We automatically backup home directories once a day. PI/group directory
 backups can be purchased.
