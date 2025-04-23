@@ -1,15 +1,10 @@
 ---
-template: admin.html
 title: Home Directory and PI group directory Backups
 ---
 
-???+ failure
+## Backups? Backups!
 
-    This is internal, for development purposes. **CURRENTLY THERE ARE NO BACKUPS FOR ANY HPC CLUSTERS**.
-
-## Backups?
-
-For supported clusters, we automatically backup home directories once a day. For supported clusters, PI/group directory
+Currently, HPC@UCD offers backups for Hive. We automatically backup home directories once a day. PI/group directory
 backups can be purchased.
 
 ## What software is used?
@@ -116,9 +111,17 @@ Group directory backups are available by request on Hive. The current rates are 
 
 ### How do I purchase backups for my group directory?
 
-All Hive purchases are through [Hippo](https://hippo.ucdavis.edu/). Select the cluster you are purchasing for, click
-`Orders` -> `Products`. Then order `Backup Storage`. To expedite the process, in the `Notes` section, please include the
-following information:
+<!--
+All Hive purchases are through [Hippo](https://hippo.ucdavis.edu/). Select the cluster you are purchasing for,
+click `Orders` -> `Products`. Then order `Backup Storage`. To expedite the process, in the `Notes` section, please
+include the following information:
+-->
+
+You can purchase backups for your storage by emailing HPC@UCD help and including:
+
+1. The full path to the PI group storage you need backed up.
+
+1. The amount of storage you would like to purchase.
 
 1. The list of contacts (email addresses) that are responsible for monitoring the backup status.
 
@@ -173,15 +176,19 @@ An error will be sent the email address(es) you designated to monitor your backu
 
 At this point you have 4 options:
 
+<!---
 1. Purchase more space by visiting [Hippo](https://hippo.ucdavis.edu/) and ordering additional backup space.
+-->
+
+1. Contacting HPC@UCD support and purchasing additional backup storage space.
 
 1. Backup less data by reducing the amount of data in your `BACKED-UP/` directory. This will require old data to age out
    before new data can be backed up.
 
-1. Ignore it. Eventually old data will age out and new data will be able to backed up again.
+1. Ignore it. Eventually old data should age out and new data should be able to be backed up again.
 
-1. Reduce the number of snapshots you keep by emailing `hpc-help@`ucdavis.edu`. For example, if you keep 6 monthly, you
-   could reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.
+1. Reduce the number of snapshots you keep by contacting HPC@UCD support. For example, if you keep 6 monthly, you could
+   reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.
 
 ### How often are backups taken?
 
@@ -218,16 +225,20 @@ file-system permissions, and only users in the PI group will be able to even rea
 
 Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
 the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
-prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by emailing
-`hpc-help@ucdavis.edu` with the following information, and we can restore the files for you.
+prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by HPC@UCD support with the
+following information, and we can restore the files for you.
 
 -   The cluster.
 -   The full path to the files/directories you need restored.
 -   The full path to the place you would like them restored to.
 
-### How do I make changes to my snapshots or monitoring designee list?
+### How do I make changes to my quota, snapshots or monitoring designee list?
 
-Changes can be made by emailing `hpc-help@ucdavis.edu`.
+Changes can be made by contacting HPC@UCD support.
+
+### How often are backups run?
+
+Backups are run once a day, starting just after midnight.
 
 ## FAQ
 

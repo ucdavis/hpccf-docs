@@ -7,6 +7,7 @@ nav:
   - General:
       - Accessing Clusters: general/access.md
       - Account Requests: general/account-requests.md
+      - Backups: backups/index.md
       - Data Transfer: data-transfer.md
       - Job Scheduling:
           - About: scheduler/index.md
@@ -45,7 +46,6 @@ nav:
 
   - Admin:
       - admin/index.md
-      - Backups UF: admin/backups-users.md
       - Backups: admin/backups.md
       - Cobbler: admin/cobbler.md
       - Configuration: admin/configuration.md # puppet, etc
