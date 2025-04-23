@@ -6,16 +6,22 @@ There are four general methods for getting data to/from a cluster.
 
 ## Globus
 
-Farm, Franklin, and Hive have Globus installed. Home directories for all three clusters are already exported. Because of
-the way Globus v5 works, each PI directory must be exported manually by HPC@UCD staff. If you need a PI directory
-exported, please contact HPC support and CC your PI for approval.
+Farm, Franklin, and Hive have Globus v5 installed.
 
-Once the PI group directory is exported, you will be able to read any file you normally have access to, but for security
-reasons, you will only be able to write files to `/globus-write/Your-Login-ID/` within the Globus File Manager.
+### Home directories
 
-Home directories, and PI group directories can be access through the [Globus File Manager](https://app.globus.org/). For
-home directories, search for a collection named `UC Davis CLUSTERNAME home`. For PI group directories, search for
-`UC Davis CLUSTERNAME PI-name`.
+Home directories for all three clusters are already exported. On Globus, you can find the home directory collection by
+searching for `UC Davis CLUSTER-NAME home`.
+
+### PI directories
+
+Because of the way Globus v5 works, each PI directory must be exported manually by HPC@UCD staff. If you need a PI
+directory exported, please contact HPC support and CC your PI for approval.
+
+Once the PI group directory is exported, you can find it by searching for a collection named
+`UC Davis CLUSTER-NAME PI-share-name`. In the Globus File Manager for that collection, you will be able to read any file
+you normally have access to, but for security reasons, you will only be able to write files to
+`/globus-write/Your-Login-ID/`.
 
 ???+ Warning "Globus Free File Transfer limitations"
 
