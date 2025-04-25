@@ -50,7 +50,7 @@ required, the PI can purchase additional space for their PI group share.
 #### Copy your LSSC0 home directory to Hive:
 
 Please ensure you have an account on Hive by creating one at [HiPPO](https://hippo.ucdavis.edu), then SSH to
-`transfer.hive.hpc.udavis.edu` using your Campus Login ID and passphrase (or SSH key pair if you submitted one via
+`transfer.hive.hpc.ucdavis.edu` using your Campus Login ID and passphrase (or SSH key pair if you submitted one via
 HiPPO).
 
 ??? Note "Hive transfer node"
@@ -85,7 +85,7 @@ have changed on lssc0, or that have not yet been copied to Hive.
 
 ### Group/PI sub-directories:
 
-Group/PI sub-directories can be also be transferred from LSSC0 with rsync. SSH to `transfer.hive.hpc.udavis.edu` using
+Group/PI sub-directories can be also be transferred from LSSC0 with rsync. SSH to `transfer.hive.hpc.ucdavis.edu` using
 your Campus Login ID and passphrase (or SSH key pair if you submitted one via HiPPO).
 
 Once logged into the Hive transfer node, you can run:
