@@ -47,6 +47,7 @@ nav:
   - Admin:
       - admin/index.md
       - Backups: admin/backups.md
+      - Cheeto: admin/cheeto.md
       - Cobbler: admin/cobbler.md
       - Configuration: admin/configuration.md # puppet, etc
       - DNS: admin/dns.md
