@@ -3,7 +3,8 @@ template: admin.html
 title: Cheeto Introduction
 ---
 
-Cheeto is the swissarmytoolknife of account, storage, QoS, group, etc, creation and manipulation.
+Cheeto is the swissarmytoolknife of account, storage, QoS, group, etc, creation and manipulation. All manipulation is
+done by `hippo-user` on the system `accounts`. **BE VERY CAREFUL** There are no prompts, and there is no undo.
 
 #### Show a user
 
