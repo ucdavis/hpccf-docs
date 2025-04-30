@@ -22,54 +22,46 @@ These commands that run, or otherwise execute containers (shell, exec) can take 
 
 ## Bind Mounts
 
-If you need, you can mount directories from your host machine into the container. We use the `APPTAINER_BIND` evironment variable to specify what directories to mount in the container. Use a comma-delimited string of bind path specifications in the format `src[:dest[:opts]]`, where `src` and `dest` are paths outside and inside of the container respectively. If dest is not given, it is set equal to src. Mount options (opts) may be specified as `ro` (read-only) or `rw` (read/write, which is the default). For example, if you need to mount your group or lab directory in the container you can: `export APPTAINER_BIND=/mnt,/group/subdir:container/dir:rw`.
+If you need, you can mount directories from your host machine into the container. We use the `APPTAINER_BIND` environment variable to specify what directories to mount in the container. Use a comma-delimited string of bind path specifications in the format `src[:dest[:opts]]`, where `src` and `dest` are paths outside and inside of the container respectively. If dest is not given, it is set equal to src. Mount options (opts) may be specified as `ro` (read-only) or `rw` (read/write, which is the default). For example, if you need to mount your group or lab directory in the container you can: `export APPTAINER_BIND=/mnt,/group/subdir:container/dir:rw`.
 
 ## GPUs
 
 If you want to make use of GPUs within your apptainer you can use the `--nv` flag with `apptainer (shell | exec) --nv ...`.
 
-## Script Wrapper
-
-For ease of use we recommend writing a wrapper script like such:
-
-  ```
-    #!/bin/bash
-
-    module purge
-    module load apptainer
-
-    if [ ! -f tflo.sif ]; then
-      apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
-    fi
-    
-    export $APPTAINER_BIND 
-    apptainer shell --nv tflo.sif $@
-  ```
-
 ## SBATCH 
 
-Or the same thing as previous but in a form suitable for submitting with sbatch:
+Here's a basic script template, suitable for submitting with sbatch, that executes a command inside an apptainer:
     ```
-    #!/bin/bash
+      #!/bin/bash
    
-    #SBATCH --account=<accountname>
-    #SBATCH --partition=<partitionname>
-    #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=8
-    #SBATCH --mem=32G
-    #SBATCH --gpus=1
-    #SBATCH --job-name=tflo
-    #SBATCH --time=10:00
-    
-    module purge
-    module load apptainer
-    
-    apptainer exec tflo.sif python3 -c "import tensorflow as tf; print("TensorFlow version:", tf.__version__)"
+      #SBATCH --account=<accountname>
+      #SBATCH --partition=<partitionname>
+      #SBATCH --ntasks=1
+      #SBATCH --cpus-per-task=8
+      #SBATCH --mem=32G
+      #SBATCH --gpus=1
+      #SBATCH --job-name=tflo
+      #SBATCH --time=10:00
+      
+      # load module(s)
+      module purge
+      module load apptainer
+      
+      # specify what path(s) to bind inside the apptainer
+      export $APPTAINER_BIND=$PWD
+
+      # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
+      if [ ! -f tflo.sif ]; then
+        apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
+      fi
+
+      apptainer exec --nv tflo.sif python3 -c "import tensorflow as tf; print('TensorFlow version:', tf.__version__)"
     ```
+Feel free to modify this script for your purposes and to potentially run multiple commands and scripts within an apptainer.
 
 ## SRUN
 
-Feel free to use this srun script as a starting template for a slurm job:
+This is an srun script that is the same as the above sbatch script but instead runs an interactive shell within an apptainer:
 
     ```
     #!/bin/bash -l
@@ -84,5 +76,28 @@ Feel free to use this srun script as a starting template for a slurm job:
       --job-name=tflo \
       --time=10:00 \
       --pty \
-      tflo.sh $@
+      apptainer shell --nv tflo.sif
     ```
+
+## Script Wrapper
+
+For ease of use we recommend writing a wrapper script like such:
+
+  ```
+    #!/bin/bash
+
+    # load module(s)
+    module purge
+    module load apptainer
+    
+    # specify what path(s) to bind inside the apptainer
+    export $APPTAINER_BIND=$PWD
+
+    # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
+    if [ ! -f tflo.sif ]; then
+      apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
+    fi
+    
+    apptainer shell --nv tflo.sif $@ # "$@" adds optional support for additional parameters that can be passed when executing this wrapper script that are passed to the apptainer
+  ```
+This wrapper starts a shell inside whatever apptainer you specify 
