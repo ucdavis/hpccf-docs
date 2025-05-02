@@ -2,10 +2,14 @@
 title: Home Directory and PI group directory Backups
 ---
 
-## Backups? Backups!
+## Backups? Backups! On Hive only.
 
-Currently, HPC@UCD offers backups for Hive. We automatically backup home directories once a day. PI/group directory
-backups can be purchased.
+Currently, HPC@UCD only offers backups on Hive. On Hive, we automatically backup home directories once a day. PI/group
+directory backups [can be purchased](#group-directories).
+
+???+ danger "NO BACKUPS ON OTHER CLUSTERS"
+
+    HPC@UCD does not offer backups on any clusters except Hive. You are responsible for ensuring your critical data is properly backed up offsite.
 
 ## What software is used?
 
