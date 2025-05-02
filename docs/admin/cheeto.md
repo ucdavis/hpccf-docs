@@ -55,3 +55,16 @@ cheeto db slurm show assoc --site=**cluster** --partition=high --group=${GROUP} 
 Use the correct `name:` value from [Find the name of a storage](#find-the-name-of-a-storage)
 
 `cheeto db storage edit source --name=**storage-name** --site=**cluster** --quota=**T`
+
+#### Add an approver (sponsor) to a PI group
+
+Note, all approvers must already have an account on the cluster in question.
+
+`cheeto database group add sponsor --site=**cluster** --user=**LoginID** --group=**group-name**`
+
+Note, there is no error shown if the user does not already have an account, so double check the
+[sponsors list](#show-members-and-sponsors-of-a-pi-group) after.
+
+#### Show members, and sponsors, of a PI group
+
+`cheeto db group show --site=**cluster** --group=**group-name**`
