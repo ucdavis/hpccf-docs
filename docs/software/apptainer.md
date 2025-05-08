@@ -4,7 +4,7 @@ Apptainer and other container runtimes have many uses; Mainly, but not limited t
 
 ## Module System
 
-UC Davis HPC provides apptainer as an environment module. Everytime you want to use apptainer you must first run: `module load apptainer`.
+HPC@UCD provides apptainer as an environment module. Everytime you want to use apptainer you must first run: `module load apptainer`.
 
 ## Quickstart
 
