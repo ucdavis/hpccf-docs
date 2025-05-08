@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/scheduler/resources/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/backups/backups/">
       
       
-        <link rel="prev" href="../jobscripts/">
+        <link rel="prev" href="../../general/account-requests/">
       
       
-        <link rel="next" href="../../software/">
+        <link rel="next" href="../../data-transfer/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Resources - HPC@UCD Documentation</title>
+        <title>Home Directory and PI group directory Backups - HPC@UCD Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requesting-resources" class="md-skip">
+        <a href="#backups-backups-on-hive-only" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resources
+              Home Directory and PI group directory Backups
             
           </span>
         </div>
@@ -351,10 +351,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../backups/backups/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Backups
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -365,6 +385,264 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backups-backups-on-hive-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backups? Backups! On Hive only.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-software-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What software is used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-restore-files-or-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to restore files or directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to restore files or directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-home-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your home directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-a-file-from-your-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore a file from your group directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-purchase-backups-for-my-group-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I purchase backups for my group directory?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backed-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is backed up?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-monitors-the-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who monitors the backups?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much-backup-space-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How much backup space do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-my-backups-exceed-my-purchased-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens when my backups exceed my purchased space?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-taken" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups taken?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      What types of snapshots are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snapshots-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many snapshots do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-my-backups-encrypted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are my backups encrypted?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-can-restore-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who can restore files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-make-changes-to-my-quota-snapshots-or-monitoring-designee-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I make changes to my quota, snapshots or monitoring designee list?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups run?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-is-the-backup-server-located" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where is the backup server located?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-if-the-backup-server-is-also-destroyed" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens if the backup server is also destroyed?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -397,8 +675,6 @@
                 
   
   
-    
-  
   
   
     
@@ -408,11 +684,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
         
           
           <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
@@ -428,7 +706,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
             Job Scheduling
@@ -442,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../scheduler/" class="md-nav__link">
         
   
   
@@ -465,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands/" class="md-nav__link">
+      <a href="../../scheduler/commands/" class="md-nav__link">
         
   
   
@@ -488,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../free-access/" class="md-nav__link">
+      <a href="../../scheduler/free-access/" class="md-nav__link">
         
   
   
@@ -511,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../jobscripts/" class="md-nav__link">
+      <a href="../../scheduler/jobscripts/" class="md-nav__link">
         
   
   
@@ -531,32 +809,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Resources
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../scheduler/resources/" class="md-nav__link">
         
   
   
@@ -567,95 +823,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Partitions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accounts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resource Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Resource Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpus-cores" class="md-nav__link">
-    <span class="md-ellipsis">
-      CPUs / cores
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nodes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nodes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ram-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAM / Memory
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpus-gres" class="md-nav__link">
-    <span class="md-ellipsis">
-      GPUs / GRES
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1948,8 +2115,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1958,64 +2123,235 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
+  <a href="#backups-backups-on-hive-only" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitions
+      Backups? Backups! On Hive only.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accounts" class="md-nav__link">
+  <a href="#what-software-is-used" class="md-nav__link">
     <span class="md-ellipsis">
-      Accounts
+      What software is used?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resource-types" class="md-nav__link">
+  <a href="#how-to-restore-files-or-directories" class="md-nav__link">
     <span class="md-ellipsis">
-      Resource Types
+      How to restore files or directories
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Resource Types">
+    <nav class="md-nav" aria-label="How to restore files or directories">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cpus-cores" class="md-nav__link">
+  <a href="#restore-a-file-from-your-home-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      CPUs / cores
+      Restore a file from your home directory
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nodes" class="md-nav__link">
+  <a href="#restore-a-file-from-your-group-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Nodes
+      Restore a file from your group directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rates
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ram-memory" class="md-nav__link">
+  <a href="#how-do-i-purchase-backups-for-my-group-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      RAM / Memory
+      How do I purchase backups for my group directory?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gpus-gres" class="md-nav__link">
+  <a href="#what-is-backed-up" class="md-nav__link">
     <span class="md-ellipsis">
-      GPUs / GRES
+      What is backed up?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-monitors-the-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who monitors the backups?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much-backup-space-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How much backup space do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-my-backups-exceed-my-purchased-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens when my backups exceed my purchased space?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-taken" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups taken?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-snapshots-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      What types of snapshots are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snapshots-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many snapshots do I need?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-my-backups-encrypted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are my backups encrypted?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-can-restore-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who can restore files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-make-changes-to-my-quota-snapshots-or-monitoring-designee-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I make changes to my quota, snapshots or monitoring designee list?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-often-are-backups-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      How often are backups run?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-is-the-backup-server-located" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where is the backup server located?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-if-the-backup-server-is-also-destroyed" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens if the backup server is also destroyed?
     </span>
   </a>
   
@@ -2045,225 +2381,271 @@
   
 
 
-<h1 id="requesting-resources">Requesting Resources<a class="headerlink" href="#requesting-resources" title="Permanent link">&para;</a></h1>
-<h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
-<p>Each <strong>node</strong> -- physically distinct machines within the cluster -- will be a member of one or more
-<strong>partitions</strong>. A partition consists of a collection of nodes, a policy for job scheduling on that
-partition, a policy for conflicts when nodes are a member of more than one partition (ie.
-preemption), and a policy for managing and restricting resources per user or per group referred to
-as Quality of Service.
-The Slurm documentation has detailed information on how <a href="https://slurm.schedmd.com/preempt.html">preemption</a> and <a href="https://slurm.schedmd.com/qos.html">QOS
-definitions</a> are handled; our per-cluster <em>Resources</em> sections
-describe how partitions are organized and preemption handled on our clusters.</p>
-<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">&para;</a></h2>
-<p>Users are granted access to resources via Slurm <strong>associations</strong>. An association links together a
-<strong>user</strong> with an <strong>account</strong> and a QOS definition. <strong>Accounts</strong> most commonly correspond to your
-lab, but sometimes exist for graduate groups, departments, or institutes.</p>
-<p>To see your associations, and thus which accounts and partitions you have access to, you can use the
-<code>sacctmgr</code> command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span><span class="nv">$USER</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">   Cluster    Account       User  Partition     Share ...   MaxTRESMins                  QOS   Def QOS GrpTRESRunMin </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">---------- ---------- ---------- ---------- --------- ... ------------- -------------------- --------- ------------- </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">  franklin   hpccfgrp       camw mmgdept-g+         1 ...               hpccfgrp-mmgdept-gp+                         </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">  franklin   hpccfgrp       camw mmaldogrp+         1 ...               hpccfgrp-mmaldogrp-+                         </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">  franklin   hpccfgrp       camw cashjngrp+         1 ...               hpccfgrp-cashjngrp-+                         </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">  franklin   hpccfgrp       camw jalettsgr+         1 ...               hpccfgrp-jalettsgrp+                         </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">  franklin   hpccfgrp       camw jawdatgrp+         1 ...               hpccfgrp-jawdatgrp-+                         </span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">  franklin   hpccfgrp       camw        low         1 ...                   hpccfgrp-low-qos                         </span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="go">  franklin   hpccfgrp       camw       high         1 ...                  hpccfgrp-high-qos                         </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="go">  franklin  jawdatgrp       camw        low         1 ...                    mcbdept-low-qos                         </span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">  franklin  jawdatgrp       camw jawdatgrp+         1 ...               jawdatgrp-jawdatgrp+                         </span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="go">  franklin jalettsgrp       camw jalettsgr+         1 ...               jalettsgrp-jalettsg+                         </span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">  franklin jalettsgrp       camw        low         1 ...                    mcbdept-low-qos                         </span>
+  <h1>Backups</h1>
+
+<h2 id="backups-backups-on-hive-only">Backups? Backups! On Hive only.<a class="headerlink" href="#backups-backups-on-hive-only" title="Permanent link">&para;</a></h2>
+<p>Currently, HPC@UCD only offers backups on Hive. On Hive, we automatically backup home directories once a day. PI/group
+directory backups <a href="#group-directories">can be purchased</a>.</p>
+<details class="danger" open="open">
+<summary>NO BACKUPS ON OTHER CLUSTERS</summary>
+<p>HPC@UCD does not offer backups on any clusters except Hive. You are responsible for ensuring your critical data is properly backed up offsite.</p>
+</details>
+<h2 id="what-software-is-used">What software is used?<a class="headerlink" href="#what-software-is-used" title="Permanent link">&para;</a></h2>
+<p>HPC@UCD has written a custom backup system based around the
+<a href="https://www.proxmox.com/en/products/proxmox-backup-server/overview">Proxmox Backup Server (PBS)</a>.</p>
+<h2 id="how-to-restore-files-or-directories">How to restore files or directories<a class="headerlink" href="#how-to-restore-files-or-directories" title="Permanent link">&para;</a></h2>
+<h3 id="restore-a-file-from-your-home-directory">Restore a file from your home directory<a class="headerlink" href="#restore-a-file-from-your-home-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">$ </span>/quobyte/pbs/bin/restore.sh
 </code></pre></div>
-<p>The output is very wide, so you may want to pipe it through <code>less</code> to make it more readable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">sacctmgr show assoc user=$USER | less -S</span>
-</code></pre></div>
-<p>Or, perhaps preferably, output it in a more compact format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span><span class="nv">$USER</span><span class="w"> </span><span class="nv">format</span><span class="o">=</span><span class="s2">&quot;account%20,partition%20,qos%40&quot;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">             Account            Partition                                      QOS </span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">-------------------- -------------------- ---------------------------------------- </span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">            hpccfgrp          mmgdept-gpu                 hpccfgrp-mmgdept-gpu-qos </span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">            hpccfgrp        mmaldogrp-gpu               hpccfgrp-mmaldogrp-gpu-qos </span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">            hpccfgrp        cashjngrp-gpu               hpccfgrp-cashjngrp-gpu-qos </span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="go">            hpccfgrp       jalettsgrp-gpu              hpccfgrp-jalettsgrp-gpu-qos </span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="go">            hpccfgrp        jawdatgrp-gpu               hpccfgrp-jawdatgrp-gpu-qos </span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="go">            hpccfgrp                  low                         hpccfgrp-low-qos </span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">            hpccfgrp                 high                        hpccfgrp-high-qos </span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="go">           jawdatgrp                  low                          mcbdept-low-qos </span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="go">           jawdatgrp        jawdatgrp-gpu              jawdatgrp-jawdatgrp-gpu-qos </span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="go">          jalettsgrp       jalettsgrp-gpu            jalettsgrp-jalettsgrp-gpu-qos </span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="go">          jalettsgrp                  low                          mcbdept-low-qos </span>
-</code></pre></div>
-<p>In the above example, we can see that user <code>camw</code> has access to the <code>high</code> partition via an
-association with <code>hpccfgrp</code> and the <code>jalettsgrp-gpu</code> partition via the <code>jalettsgrp</code> account.</p>
-<h2 id="resource-types">Resource Types<a class="headerlink" href="#resource-types" title="Permanent link">&para;</a></h2>
-<h3 id="cpus-cores">CPUs / cores<a class="headerlink" href="#cpus-cores" title="Permanent link">&para;</a></h3>
-<p>CPUs are the central compute power behind your jobs.
-Most scientific software supports multiprocessing (multiple instances of an executable with discrete memory resources,
-possibly but not necessarily communicating with each other), multithreading (multiple paths, or threads, of execution
-within a process on a node, sharing the same memory resources, but able to execute on different cores), or both.
-This allows computation to scale with increased numbers of CPUs, allowing bigger datasets to be analyzed.</p>
-<p>Slurm's CPU management methods are complex and can quickly become confusing.
-For the purposes of this documentation, we will provide a simplified explanation; those with advanced needs
-should consult <a href="https://slurm.schedmd.com/cpu_management.html">the Slurm documentation</a>.</p>
-<p>Slurm follows a distinction between its physical resources -- cluster nodes and CPUs or cores on a node -- and virtual
-resources, or <strong>tasks</strong>, which specify how requested physical resources will be grouped and distributed.
-By default, Slurm will minimize the number of nodes allocated to a job, and attempt to keep the job's CPU requests
-localized within a node.
-<strong>Tasks</strong> group together CPUs (or other resources): CPUs within a task will be kept together on the same node.
-Different tasks may end up on different nodes, but Slurm will exhaust the CPUs on a given node before splitting tasks between
-nodes unless specifically requested.</p>
-<div class="admonition note">
-<p class="admonition-title">A Complication: SMT / Hyperthreading</p>
-<p>Slurm understands the distinction between physical and logical cores.
-Most modern CPUs support <a href="https://en.wikipedia.org/wiki/Simultaneous_multithreading">Simultaneous Multithreading (SMT)</a>,
-which allows multiple independent processes to run on a single
-physical core.
-Although each of these is not a <em>full fledged</em> core, they have independent hardware for certain operations, and can
-greatly improve scalability for some tasks.
-However, using an individual thread within a single core makes little sense, as it shares hardware with the other SMT threads
-on its core; so, Slurm will always keep these threads together.
-In practice, this means if you ask for an odd number of CPUs, your request will be rounded up so as not to split an SMT
-thread between different job allocations.</p>
-</div>
-<p>The primary parameters controlling these are:</p>
-<ul>
-<li><code>--cpus-per-task/-c</code>: How many CPUs to request per task. The number of CPUs requested here will always be on the same node. By default, 1.</li>
-<li><code>--ntasks/-n</code>: The number of tasks to request. By default, 1.</li>
-<li><code>--nodes/-N</code>: The <em>minimum</em> number of nodes to request, by default, 1.</li>
-</ul>
-<p>Let's explore some examples. The simple request would be to ask for 2 CPUs.
-We will use <code>srun</code> to request resources and then immediately run the <code>nproc</code> command within the allocation
-to report how many CPUs are available:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc<span class="w"> </span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">682</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="m">2</span>
-</code></pre></div>
-<p>We asked for 2 CPUs per task, and Slurm gave us 2 CPUs and 1 task.
-What happens if we ask for 2 tasks instead of 2 CPUs?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">683</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">1</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">1</span>
-</code></pre></div>
-<p>This time, we were given 2 separate tasks, each of which got 1 CPU.
-Each task ran its own instance of the <code>nproc</code> command, and so each reported <code>1</code>.
-If we ask for more CPUs per task:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>nproc
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">684</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="m">2</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="m">2</span>
-</code></pre></div>
-<p>We still asked for 2 tasks, but this time we requested 2 CPUs in each.
-So, we got 2 instances of <code>nproc</code>, each reported <code>2</code> CPUs in their task.</p>
-<div class="admonition abstract">
-<p class="admonition-title">Summary</p>
-<p>If you want to run multithreaded jobs, use <code>--cpus-per-task N_THREADS</code> and <code>-ntasks 1</code>.
-If you want a multiprocess job (or an MPI job), increase <code>-ntasks</code>.</p>
-</div>
-<details class="info">
-<summary>The SMT Edge Case</summary>
-<p>If we use <code>-c 1</code> without specifying the number of tasks, we might be taken by surprise:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc<span class="w">     </span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">685</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="m">1</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="m">1</span>
-</code></pre></div>
-<p>We only asked for 1 CPU per task, but we got 2 tasks! This is due to SMT, described in the note above.
-Because Slurm will not split SMT threads, and there are 2 SMT threads per physical core, the request
-was rounded up to 2 CPUs total.
-In order to keep with the 1 CPU-per-task constraint, it spawned 2 tasks. Similarly, if we specify
-that we only want 1 task, CPUs per task will instead be bumped:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">srun</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>nproc
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">686</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="m">2</span>
+<p>You will see a list of snapshots. Pick the one you want to restore the file from (up/down arrows), then press enter. The
+snapshot you selected will be automatically mounted to a random directory, which is printed (for example
+<code>/home/omen/restore-fCnNXIUr</code>).</p>
+<details class="note">
+<summary>Please chose a snapshot to restore from.</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌─────────────────┤ Please chose a snapshot to restore from. ├─────────────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│ Snapshots, newest to oldest:                                                 │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│                                                                              │
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│                      1  host/omen/2025-03-18T07:13:02Z                       │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│                      2  host/omen/2025-03-17T22:51:54Z                       │
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│                      3  host/omen/2025-03-16T07:16:32Z                       │
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│                      4  host/omen/2025-03-15T07:15:07Z                       │
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│                      5  host/omen/2025-03-14T07:00:04Z                       │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│                      6  host/omen/2025-03-13T07:05:46Z                       │
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│                      7  host/omen/2025-03-12T07:17:56Z                       │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│                      8  host/omen/2025-03-09T08:10:37Z                       │
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│                      9  host/omen/2025-03-02T08:17:44Z                       │
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│                      10 host/omen/2025-02-23T08:08:58Z                       │
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│                                                                              │
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│                     &lt;Ok&gt;                         &lt;Cancel&gt;                    │
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│                                                                              │
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>└──────────────────────────────────────────────────────────────────────────────┘
 </code></pre></div>
 </details>
-<h3 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h3>
-<p>Let's explore multiple nodes a bit further.
-We have seen previously that the <code>-n/ntasks</code> parameter will allocate discrete groups of cores.
-In our prior examples, however, we used small resource requests.
-What happens when we want to distribute jobs across nodes?</p>
-<p>Slurm uses the <a href="https://slurm.schedmd.com/sbatch.html#OPT_block">block distribution</a> method by default to distribute
-tasks between nodes.
-It will exhaust all the CPUs on a node with task groups before moving to a new node.
-For these examples, we're going to create a script that reports both the hostname (ie, the node) and the number
-of CPUs:</p>
-<div class="copy highlight"><span class="filename">host-nprocs.sh</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">echo</span><span class="w"> </span><span class="sb">`</span>hostname<span class="sb">`</span>:<span class="w"> </span><span class="sb">`</span>nproc<span class="sb">`</span>
+<p>You can open another connection to Hive, then cd into that directory (<code>cd /home/omen/restore-fCnNXIUr</code>), find the
+file(s) or directory(s) you need to restore, then <code>cp</code> to your desired location.</p>
+<details class="note">
+<summary>Snapshot selected.</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌─omen@login1.hive: ~
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└─0 $ /quobyte/pbs/bin/restore.sh
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Loading snapshots, done.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Mounting chosen snapshot: host/omen/2025-03-18T07:13:02Z to /home/omen/restore-zCgS0D1Z
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Encryption key file: &#39;&quot;/quobyte/pbs/home/omen.json&quot;&#39;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Encryption key fingerprint: &#39;21:96:a0:ec:62:62:ae:34&#39;
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>FUSE library version: 3.14.0
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Backups mounted on /home/omen/restore-zCgS0D1Z
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Please open another shell and copy any file(s)/directory(s) you need to restore.
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>It will remain mounted for 1 hour, then automatically unmount.
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>You can issue Control-c to unmount earlier.
 </code></pre></div>
-<p>And make it executable with <code class="highlight">chmod<span class="w"> </span>+x<span class="w"> </span>host-nprocs.sh</code>. </p>
-<p>Now let's make a multiple-task request:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">srun: job 691 queued and waiting for resources</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">srun: job 691 has been allocated resources</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">c-8-42: 2</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">c-8-42: 2</span>
+</details>
+<p>Note, this backup mount (<code>/home/omen/restore-fCnNXIUr</code> in this example) will automatically unmount in 1 hour. Any shells
+that have <code>cd</code>'d into this directory will remain functional until you close them (or <code>cd</code> out). You can force the
+directory to umount earlier by pressing Control-c in window where you ran the restore program.</p>
+<h3 id="restore-a-file-from-your-group-directory">Restore a file from your group directory<a class="headerlink" href="#restore-a-file-from-your-group-directory" title="Permanent link">&para;</a></h3>
+<p>Restoring files from your group directory is similar to restoring files in your
+<a href="#restore-a-file-from-your-home-directory">home directory</a>. There are only two differences. First, start in the PI group
+directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/quobyte/*PI*grp/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="gp">$ </span>/quobyte/pbs/bin/restore.sh
 </code></pre></div>
-<p>As before, we asked for 2 tasks and 2 CPUs per task.
-Both tasks were assigned to <code>c-8-42</code>, because it had enough CPUs to fulfill the request.
-What if it did not?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">srun: job 692 queued and waiting for resources</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">srun: job 692 has been allocated resources</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">c-8-50: 120</span>
+<p>Second, the temporary directory will be created in <code>/quobyte/*PI*grp/</code>.</p>
+<h2 id="home-directories">Home Directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h2>
+<h3 id="hive">Hive<a class="headerlink" href="#hive" title="Permanent link">&para;</a></h3>
+<p>All of Hive's home directories have a quota of 20 GB and all backed up automatically every night. As of March 2025, the
+snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
+and/or directories can be restored by each user.</p>
+<table>
+<thead>
+<tr>
+<th>Snapshot type</th>
+<th>Keep count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>daily</td>
+<td>7</td>
+</tr>
+<tr>
+<td>weekly</td>
+<td>5</td>
+</tr>
+<tr>
+<td>monthly</td>
+<td>12</td>
+</tr>
+<tr>
+<td>yearly</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-directories">Group directories<a class="headerlink" href="#group-directories" title="Permanent link">&para;</a></h2>
+<h3 id="rates">Rates<a class="headerlink" href="#rates" title="Permanent link">&para;</a></h3>
+<p>Group directory backups are available by request on Hive. The current rates are posted on
+<a href="https://hpc.ucdavis.edu/rates">https://hpc.ucdavis.edu/rates</a> under <code>Rates for Hive</code> -&gt;
+<code>Cost of Backup/Archival (snapshot copy) Storage</code>.</p>
+<h3 id="how-do-i-purchase-backups-for-my-group-directory">How do I purchase backups for my group directory?<a class="headerlink" href="#how-do-i-purchase-backups-for-my-group-directory" title="Permanent link">&para;</a></h3>
+<!--
+All Hive purchases are through [Hippo](https://hippo.ucdavis.edu/). Select the cluster you are purchasing for,
+click `Orders` -> `Products`. Then order `Backup Storage`. To expedite the process, in the `Notes` section, please
+include the following information:
+-->
+
+<p>You can purchase backups for your storage by emailing HPC@UCD help and including:</p>
+<ol>
+<li>
+<p>The full path to the PI group storage you need backed up.</p>
+</li>
+<li>
+<p>The amount of storage you would like to purchase.</p>
+</li>
+<li>
+<p>The list of contacts (email addresses) that are responsible for monitoring the backup status.</p>
+</li>
+<li>
+<p>The <a href="#what-types-of-snapshots-are-available">number and type of snapshots</a> you would like.</p>
+</li>
+</ol>
+<p>Please see the <a href="#how-much-backup-space-do-i-need">How much backup space do I need?</a> section if you have questions about
+how much backup space to purchase.</p>
+<h3 id="what-is-backed-up">What is backed up?<a class="headerlink" href="#what-is-backed-up" title="Permanent link">&para;</a></h3>
+<p>The <strong>only</strong> data that is backed up is the data that resides within the <code>BACKED-UP/</code> directory at the top level of the
+PI share. <strong>NO OTHER DATA IS BACKED UP</strong>. If you have questions about what is being backed up, you should try a test
+restore.</p>
+<h3 id="who-monitors-the-backups">Who monitors the backups?<a class="headerlink" href="#who-monitors-the-backups" title="Permanent link">&para;</a></h3>
+<p>You, the PI, or a designated list of email addresses. HPC@UCD does NOT, and we cannot emphasize this enough, <strong>does
+NOT</strong> monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.</p>
+<h3 id="how-much-backup-space-do-i-need">How much backup space do I need?<a class="headerlink" href="#how-much-backup-space-do-i-need" title="Permanent link">&para;</a></h3>
+<p>This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
+(churn), and the total number of snapshots you keep. PBS only stores a single copy of each unique data chunk, so
+unchanging data is only stored a single time. The short version is you need approximately
+<code>(initial quantity * snapshots) + (churn * snapshots)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity of Data</th>
+<th>Data Churn</th>
+<th>Snapshots</th>
+<th>Total Required Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 TB</td>
+<td>0 Bytes per day</td>
+<td>Any</td>
+<td>1 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>last=1</td>
+<td>1 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>daily=7</td>
+<td>7 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>1 TB per day</td>
+<td>daily=7, weekly=4, monthly=6</td>
+<td>17 TB</td>
+</tr>
+<tr>
+<td>1 TB</td>
+<td>100 GB per day</td>
+<td>daily=7, weekly=4, monthly=6</td>
+<td>2.7 TB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-happens-when-my-backups-exceed-my-purchased-space">What happens when my backups exceed my purchased space?<a class="headerlink" href="#what-happens-when-my-backups-exceed-my-purchased-space" title="Permanent link">&para;</a></h3>
+<p>An error will be sent the email address(es) you designated to monitor your backups.</p>
+<details class="warning" open="open">
+<summary>Purchased quota exceeded example message</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">!!!!!!!!!! ERROR !!!!!!!!!!</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">Backup quota exceeded, backed up data is greater than purchased quota.</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">Please see https://docs.hpc.ucdavis.edu/backups for information about</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="go">purchasing more space, or contact HPC@UCD to adjust your retention policy,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">which is currently: --keep-daily=14 --keep-weekly=5 --keep-monthly=2 **EXAMPLE ONLY**</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="go">BACKUP CANCELLED!</span>
 </code></pre></div>
-<p>This time, we asked for 3 tasks each with 120 CPUs.
-The first two tasks were able to be fulfilled by the node <code>c-8-42</code>, but that node did not have enough
-CPUs to allocate another 120 on top of that.
-So, the third task was distributed to <code>c-8-50</code>.
-Thus, this task spanned multiple nodes.</p>
-<p>Sometimes, we want to make sure each task has its own node.
-We can achieve this with the <code>--nodes/-N</code> parameter.
-This specifies the <em>minimum number of nodes</em> the tasks should be allocated across.
-If we rerun the above example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-c<span class="w"> </span><span class="m">120</span><span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>-N<span class="w"> </span><span class="m">3</span><span class="w"> </span>./host-nprocs.sh
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">srun: job 693 queued and waiting for resources</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">srun: job 693 has been allocated resources</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">c-8-42: 120</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">c-8-50: 120</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">c-8-58: 120</span>
-</code></pre></div>
-<p>We still asked for 3 tasks and 3 CPUs per task, but this time we specified we wanted a minimum of 3 nodes.
-As a result, we were allocated portions of <code>c-8-42</code>, <code>c-8-50</code>, and <code>c-8-58</code>.</p>
-<h3 id="ram-memory">RAM / Memory<a class="headerlink" href="#ram-memory" title="Permanent link">&para;</a></h3>
-<p>Random Access Memory (RAM) is the fast, volatile storage that your programs use to store data during execution.
-This can be contrasted with disk storage, which is non-volatile and many orders of magnitude slower to access,
-and is used for long term data -- say, your sequencing runs or cryo-EM images.
-RAM is a limited resource on each node, so Slurm enforces memory limits for jobs using <a href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a>.
-If a job step consumes more RAM than requested, the step will be killed.</p>
-<p>Some (mutually exclusive) parameters for requesting RAM are:</p>
+</details>
+<p>At this point you have 4 options:</p>
+<!---
+1. Purchase more space by visiting [Hippo](https://hippo.ucdavis.edu/) and ordering additional backup space.
+-->
+
+<ol>
+<li>
+<p>Contacting HPC@UCD support and purchasing additional backup storage space.</p>
+</li>
+<li>
+<p>Backup less data by reducing the amount of data in your <code>BACKED-UP/</code> directory. This will require old data to age out
+   before new data can be backed up.</p>
+</li>
+<li>
+<p>Ignore it. Eventually old data should age out and new data should be able to be backed up again.</p>
+</li>
+<li>
+<p>Reduce the number of snapshots you keep by contacting HPC@UCD support. For example, if you keep 6 monthly, you could
+   reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.</p>
+</li>
+</ol>
+<h3 id="how-often-are-backups-taken">How often are backups taken?<a class="headerlink" href="#how-often-are-backups-taken" title="Permanent link">&para;</a></h3>
+<p>The backup system starts at midnight every night and works its way through a randomly shuffled list of PI areas it needs
+to backup. The actual start time of <em>your</em> backup depends on how much data needs to be backed up before you, and your
+order in the shuffle.</p>
+<h3 id="what-types-of-snapshots-are-available">What types of snapshots are available?<a class="headerlink" href="#what-types-of-snapshots-are-available" title="Permanent link">&para;</a></h3>
+<p>PBS offers the following types of snapshots:</p>
 <ul>
-<li><code>--mem</code>: The memory required <em>per-node</em>. Usually, you want to use <code>--mem-per-cpu</code>.</li>
-<li><code>--mem-per-cpu</code>: The memory required <em>per CPU or core</em>. If you requested <span class="arithmatex">\(N\)</span> tasks, <span class="arithmatex">\(C\)</span> CPUs per task, and <span class="arithmatex">\(M\)</span> memory per CPU, your total memory usage will be <span class="arithmatex">\(N * C * M\)</span>. Note that, if <span class="arithmatex">\(N \gt 1\)</span>, you will have <span class="arithmatex">\(N\)</span> discrete <span class="arithmatex">\(C * M\)</span>-sized chunks of RAM requested, possibly across different nodes.</li>
-<li><code>--mem-per-gpu</code>: Memory required <em>per GPU</em>, which will scale with GPUs in the same way as <code>--mem-per-cpu</code> will with CPUs.</li>
+<li><code>last</code>: Keep the last N snapshots.</li>
+<li><code>daily</code>: Keep the last N daily snapshots.</li>
+<li><code>weekly</code>: Keep the last N weekly snapshots.</li>
+<li><code>monthly</code>: Keep the last N monthly snapshots.</li>
+<li><code>yearly</code>: Keep the last N annual snapshots.</li>
 </ul>
-<p>For all memory requests, units can be specified explicitly with the suffixes <code>[K|M|G|T]</code> for <code>[kilobytes|megabytes|gigabytes|terabytes]</code>,
-with the default units being <code>M</code>/<code>megabytes</code>.
-So, <code>--mem-per-cpu=500</code> will requested 500 megabytes of RAM per CPU, and <code>--mem-per-cpu=32G</code> will request 32 gigabytes
-of RAM per CPU.</p>
-<p>Here is an example of a task overrunning its memory allocation.
-We will use the <code>stress-ng</code> program to allocate 8 gigabytes of RAM in a job that only requested 200 megabytes.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem-per-cpu<span class="w"> </span>200M<span class="w"> </span>stress-ng<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>--vm-bytes<span class="w"> </span>8G<span class="w"> </span>--oomable<span class="w">         </span><span class="m">1</span><span class="w"> </span>↵
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">srun: job 706 queued and waiting for resources</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">srun: job 706 has been allocated resources</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">stress-ng: info:  [3037475] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">stress-ng: info:  [3037475] dispatching hogs: 1 vm</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">stress-ng: info:  [3037475] successful run completed in 2.23s</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">slurmstepd: error: Detected 1 oom-kill event(s) in StepId=706.0. Some of your processes may have been killed by the cgroup out-of-memory handler.</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="go">srun: error: c-8-42: task 0: Out Of Memory</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="go">srun: launch/slurm: _step_signal: Terminating StepId=706.0</span>
-</code></pre></div>
-<h3 id="gpus-gres">GPUs / GRES<a class="headerlink" href="#gpus-gres" title="Permanent link">&para;</a></h3>
+<p>There is a <a href="https://pbs.proxmox.com/docs/prune-simulator/">simulator</a> to test various settings.</p>
+<p>Note, <code>last=1</code> means a single copy (the latest) will be retained of each file. This is effectively a "snapshot" copy for
+disaster recovery purposes only.</p>
+<h3 id="how-many-snapshots-do-i-need">How many snapshots do I need?<a class="headerlink" href="#how-many-snapshots-do-i-need" title="Permanent link">&para;</a></h3>
+<p>Unfortunately, we cannot help with this. It depends on your contractual obligations, and/or how far back in time you
+need to be able to retrieve old versions, or deleted, files.</p>
+<h3 id="are-my-backups-encrypted">Are my backups encrypted?<a class="headerlink" href="#are-my-backups-encrypted" title="Permanent link">&para;</a></h3>
+<p>Yes, all backups are encrypted with a key that is unique to every PI group. This key is protected with normal Linux
+file-system permissions, and only users in the PI group will be able to even read it to restore data.</p>
+<h3 id="who-can-restore-files">Who can restore files?<a class="headerlink" href="#who-can-restore-files" title="Permanent link">&para;</a></h3>
+<p>Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
+the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
+prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by HPC@UCD support with the
+following information, and we can restore the files for you.</p>
+<ul>
+<li>The cluster.</li>
+<li>The full path to the files/directories you need restored.</li>
+<li>The full path to the place you would like them restored to.</li>
+</ul>
+<h3 id="how-do-i-make-changes-to-my-quota-snapshots-or-monitoring-designee-list">How do I make changes to my quota, snapshots or monitoring designee list?<a class="headerlink" href="#how-do-i-make-changes-to-my-quota-snapshots-or-monitoring-designee-list" title="Permanent link">&para;</a></h3>
+<p>Changes can be made by contacting HPC@UCD support.</p>
+<h3 id="how-often-are-backups-run">How often are backups run?<a class="headerlink" href="#how-often-are-backups-run" title="Permanent link">&para;</a></h3>
+<p>Backups are run once a day, starting just after midnight.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="where-is-the-backup-server-located">Where is the backup server located?<a class="headerlink" href="#where-is-the-backup-server-located" title="Permanent link">&para;</a></h3>
+<p>The backup server is located in the <a href="https://maps.app.goo.gl/4Xj6HUaBeVRUZyuT9">Academic Surge</a> building, so it is
+outside the Campus Data Center, but still on-campus. This may be important for certain grant requirements.</p>
+<h3 id="what-happens-if-the-backup-server-is-also-destroyed">What happens if the backup server is also destroyed?<a class="headerlink" href="#what-happens-if-the-backup-server-is-also-destroyed" title="Permanent link">&para;</a></h3>
+<p>At this point, the data would be permanently lost. HPC@UCD does <strong>not</strong> replicate the backup data to any off-site
+location(s).</p>
 
 
 
