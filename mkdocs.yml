@@ -17,6 +17,7 @@ nav:
           - Resources: scheduler/resources.md
       - Software:
           - About: software/index.md
+          - Apptainer: software/apptainer.md
           - Conda and Python: software/conda.md
           - Development: software/developing.md
           - Module System: software/modules.md
