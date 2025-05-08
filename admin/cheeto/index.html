@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/network/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/cheeto/">
       
       
-        <link rel="prev" href="../netbox/">
+        <link rel="prev" href="../backups/">
       
       
-        <link rel="next" href="../ondemand/">
+        <link rel="next" href="../cobbler/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Network - HPC@UCD Documentation</title>
+        <title>Cheeto Introduction - HPC@UCD Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#network-overview" class="md-skip">
+        <a href="#show-a-user" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Network
+              Cheeto Introduction
             
           </span>
         </div>
@@ -1518,10 +1518,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cheeto/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cheeto
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1532,6 +1552,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#show-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dump-all-user-login-ids-in-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump all user Login IDs in a cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dump-all-user-data-in-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump all user data in a cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a new QoS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit a QoS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-an-association" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show an association
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-the-name-of-a-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find the name of a storage:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjust-a-quota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjust a quota
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-approver-sponsor-to-a-pi-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add an approver (sponsor) to a PI group
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-members-and-sponsors-of-a-pi-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show members, and sponsors, of a PI group
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1656,32 +1793,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Network Architecture
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
         
   
   
@@ -1692,98 +1807,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ethernet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ethernet
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ethernet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-existing-vlan-to-interface-port" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add Existing VLAN to Interface (Port)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add Existing VLAN to Interface (Port)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ex" class="md-nav__link">
-    <span class="md-ellipsis">
-      EX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qfx" class="md-nav__link">
-    <span class="md-ellipsis">
-      QFX
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infiniband" class="md-nav__link">
-    <span class="md-ellipsis">
-      Infiniband
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Infiniband">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cable-orientation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cable Orientation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1951,8 +1974,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1961,74 +1982,101 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ethernet" class="md-nav__link">
+  <a href="#show-a-user" class="md-nav__link">
     <span class="md-ellipsis">
-      Ethernet
+      Show a user
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Ethernet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-existing-vlan-to-interface-port" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add Existing VLAN to Interface (Port)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add Existing VLAN to Interface (Port)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ex" class="md-nav__link">
-    <span class="md-ellipsis">
-      EX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qfx" class="md-nav__link">
-    <span class="md-ellipsis">
-      QFX
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#infiniband" class="md-nav__link">
+  <a href="#dump-all-user-login-ids-in-a-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Infiniband
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Infiniband">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cable-orientation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cable Orientation
+      Dump all user Login IDs in a cluster
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#dump-all-user-data-in-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump all user data in a cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a new QoS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit a QoS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-an-association" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show an association
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-the-name-of-a-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find the name of a storage:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjust-a-quota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjust a quota
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-approver-sponsor-to-a-pi-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add an approver (sponsor) to a PI group
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-members-and-sponsors-of-a-pi-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show members, and sponsors, of a PI group
+    </span>
+  </a>
   
 </li>
       
@@ -2080,6 +2128,8 @@
   page title (or respectively site name) is used as the main headline.
 -->
 
+  <h1>Cheeto</h1>
+
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2093,58 +2143,43 @@
 </div>
 
 <!-- Page content -->
-<h1 id="network-overview">Network Overview<a class="headerlink" href="#network-overview" title="Permanent link">&para;</a></h1>
-<p>Our core network is split between Ethernet and Infiniband. The Ethernet backbone goes through 
-Juniper EX and QFX switches and the Infiniband switches are from Nvidia (formerly Mellanox).</p>
-<h2 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h2>
-<h3 id="add-existing-vlan-to-interface-port">Add Existing VLAN to Interface (Port)<a class="headerlink" href="#add-existing-vlan-to-interface-port" title="Permanent link">&para;</a></h3>
-<h4 id="ex">EX<a class="headerlink" href="#ex" title="Permanent link">&para;</a></h4>
-<p>Log in to EX (Distribution) stack (details in
-<a href="https://netbox.hpc.ucdavis.edu">NetBox</a>). The prompt will end with
-<code>%</code>.  Enter the CLI.  The prompt ending will change to <code>&gt;</code> and a note
-about the current master will appear. </p>
-<blockquote>
-<p><code>% cli</code></p>
-</blockquote>
-<p>Enter Configuration mode. The prompt ending will change once more, this time to <code>#</code>. The word <code>edit</code> will 
-appear beside the previous note. </p>
-<blockquote>
-<p><code>&gt; conf</code></p>
-</blockquote>
-<p>Once in configuration mode, issue the following command, adjusting interface name and VLAN name as necessary. </p>
-<blockquote>
-<p><code># set interfaces ge-0/0/44.0 family ethernet-switching vlan members HPCCF-1-NR</code></p>
-</blockquote>
-<p>When finished with your changes, commit them.</p>
-<blockquote>
-<p><code># commit</code></p>
-</blockquote>
-<h4 id="qfx">QFX<a class="headerlink" href="#qfx" title="Permanent link">&para;</a></h4>
-<p>There are some diffrences when setting an interface on a QFX switch. We need to remove the <code>inet</code> family first. 
-Log in to QFX (Core) stack (details in <a href="https://netbox.hpc.ucdavis.edu">NetBox</a>). The prompt will end with <code>%</code>. 
-Enter the CLI. 
-The prompt ending will change to <code>&gt;</code> and a note about the current master will appear. </p>
-<blockquote>
-<p><code>% cli</code></p>
-</blockquote>
-<p>Enter Configuration mode. The prompt ending will change once more, this time to <code>#</code>. The word <code>edit</code> will 
-appear beside the previous note. </p>
-<blockquote>
-<p><code>&gt; conf</code></p>
-</blockquote>
-<p>Once in configuration mode, issue the following commands, adjusting interface name and VLAN name as necessary. </p>
-<blockquote>
-<p><code>delete interfaces xe-0/0/28:0 unit 0 family inet</code></p>
-<p><code>set interfaces xe-0/0/28:0 unit 0 family ethernet-switching interface-mode access vlan members HPCCF-1-NR</code></p>
-</blockquote>
-<p>When finished with your changes, commit them.</p>
-<blockquote>
-<p><code># commit</code></p>
-</blockquote>
-<h2 id="infiniband">Infiniband<a class="headerlink" href="#infiniband" title="Permanent link">&para;</a></h2>
-<h3 id="cable-orientation">Cable Orientation<a class="headerlink" href="#cable-orientation" title="Permanent link">&para;</a></h3>
-<p>Cables will lock in place when properly inserted. Based on the position of the card, the cable may be oriented 
-differently. When using a dual port card, make sure that the primary connection is next to the indicator lights. </p>
+<p>Cheeto is the swissarmytoolknife of account, storage, QoS, group, etc, creation and manipulation. All manipulation is
+done by <code>hippo-user</code> on the system <code>accounts</code>. <strong>BE VERY CAREFUL</strong> There are no prompts, and there is no undo.</p>
+<h4 id="show-a-user">Show a user<a class="headerlink" href="#show-a-user" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db user show --site=**cluster** --user=**LoginID**</code></p>
+<h4 id="dump-all-user-login-ids-in-a-cluster">Dump all user Login IDs in a cluster<a class="headerlink" href="#dump-all-user-login-ids-in-a-cluster" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db user show --site=**cluster** --list</code></p>
+<h4 id="dump-all-user-data-in-a-cluster">Dump all user data in a cluster<a class="headerlink" href="#dump-all-user-data-in-a-cluster" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db user show --site=**cluster**</code></p>
+<h4 id="find-a-user">Find a user<a class="headerlink" href="#find-a-user" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db user show --find jeff</code></p>
+<h4 id="add-a-new-qos">Add a new QoS:<a class="headerlink" href="#add-a-new-qos" title="Permanent link">&para;</a></h4>
+<p>Two step process, first create the Qos, then allow the group to access it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">export GROUP=&quot;**GroupName**&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">cheeto database slurm new qos --group-limits mem=****G,cpus=**,gpus=** --qosname=${GROUP}-high-qos --site=**cluster**</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">cheeto database slurm new assoc --group=${GROUP} --partition=high --qos=${GROUP}-high-qos --site=**cluster**</span>
+</code></pre></div>
+<h4 id="edit-a-qos">Edit a QoS<a class="headerlink" href="#edit-a-qos" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db slurm edit qos --site=**cluster** --qosname=**group-name**-high-qos --group-limits mem=****G,cpus=***,gpus=*</code></p>
+<h4 id="show-an-association">Show an association<a class="headerlink" href="#show-an-association" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">export GROUP=&quot;**GroupName**&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">cheeto db slurm show assoc --site=**cluster** --partition=high --group=${GROUP} --qos=${GROUP}-high-qos</span>
+</code></pre></div>
+<h4 id="find-the-name-of-a-storage">Find the name of a storage:<a class="headerlink" href="#find-the-name-of-a-storage" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db storage show --site=**cluster** --host=**hostname**</code></p>
+<h4 id="adjust-a-quota">Adjust a quota<a class="headerlink" href="#adjust-a-quota" title="Permanent link">&para;</a></h4>
+<p>Use the correct <code>name:</code> value from <a href="#find-the-name-of-a-storage">Find the name of a storage</a></p>
+<p><code>cheeto db storage edit source --name=**storage-name** --site=**cluster** --quota=**T</code></p>
+<h4 id="add-an-approver-sponsor-to-a-pi-group">Add an approver (sponsor) to a PI group<a class="headerlink" href="#add-an-approver-sponsor-to-a-pi-group" title="Permanent link">&para;</a></h4>
+<p>Note, all approvers must already have an account on the cluster in question.</p>
+<p><code>cheeto database group add sponsor --site=**cluster** --user=**LoginID** --group=**group-name**</code></p>
+<p>Note, there is no error shown if the user does not already have an account, so double check the
+<a href="#show-members-and-sponsors-of-a-pi-group">sponsors list</a> after.</p>
+<h4 id="show-members-and-sponsors-of-a-pi-group">Show members, and sponsors, of a PI group<a class="headerlink" href="#show-members-and-sponsors-of-a-pi-group" title="Permanent link">&para;</a></h4>
+<p><code>cheeto db group show --site=**cluster** --group=**group-name**</code></p>
 
 <!-- Source file information -->
 
@@ -2169,7 +2204,7 @@ differently. When using a dual port card, make sure that the primary connection 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 8, 2025 22:46:29">April 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 2, 2025 21:07:28">May 2, 2025</span>
   </span>
 
     
@@ -2179,7 +2214,7 @@ differently. When using a dual port card, make sure that the primary connection 
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2024 17:59:03">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 30, 2025 00:49:44">April 30, 2025</span>
   </span>
 
     
