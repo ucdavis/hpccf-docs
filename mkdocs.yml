@@ -48,6 +48,8 @@ nav:
   - Admin:
       - admin/index.md
       - Backups: admin/backups.md
+      - BMC:
+          - Remote Media: admin/bmc/remote-media.md
       - Cheeto: admin/cheeto.md
       - Cobbler: admin/cobbler.md
       - Configuration: admin/configuration.md # puppet, etc
