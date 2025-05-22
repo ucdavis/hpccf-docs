@@ -3,7 +3,7 @@ template: admin.html
 title: BMC / VMedia ISO configuration
 ---
 
-This is a HOWTO enable VMedia so an KVM session can remote-mount an ISO for installation/recovery/memtest/etc.
+This is a how to enable VMedia so a KVM session can remote-mount an ISO for installation/recovery/memtest/etc.
 
 Note: this is **not** `Home > Settings > Media Redirection > General Settings`, that can remain off.
 
