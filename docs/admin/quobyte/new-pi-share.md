@@ -47,7 +47,11 @@ All PIs get their own Quobyte Tenent, within which we create a volume.
 
 PREREQUISITE: update `qmgmt.sh` to use a r/w user.
 
-Option: create a dedicated script that takes a PI name and quota and does all the work.
+-   Option: create a dedicated script that takes a PI name and quota and does all the work.
+
+    -   Show currently allocated quota in dedicated script.
+
+[]()
 
 1. SSH to `quobyte.hpc`.
 
