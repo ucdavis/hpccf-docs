@@ -60,6 +60,8 @@ nav:
       - Open OnDemand: admin/ondemand.md
       - Provisioning: admin/provisioning.md
       - PXE boot: admin/PXE.md
+      - Quobyte:
+          - New PI share: admin/quobyte/new-pi-share.md
       - Samba: admin/samba.md
       - Software: admin/software.md
       - Virtual Machines: admin/vms.md
