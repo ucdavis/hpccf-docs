@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/cobbler/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/bmc/remote-media/">
       
       
-        <link rel="prev" href="../cheeto/">
+        <link rel="prev" href="../../backups/">
       
       
-        <link rel="next" href="../configuration/">
+        <link rel="next" href="../../cheeto/">
       
       
-      <link rel="icon" href="../../assets/HPCCF-logo.png">
+      <link rel="icon" href="../../../assets/HPCCF-logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Cobbler - HPC@UCD Documentation</title>
+        <title>BMC / VMedia ISO configuration - HPC@UCD Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#add-a-new-host" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -92,9 +87,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HPC@UCD Documentation" class="md-header__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
+    <a href="../../.." title="HPC@UCD Documentation" class="md-header__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
       
-  <img src="../../assets/HPCCF-logo-dark.png" alt="logo">
+  <img src="../../../assets/HPCCF-logo-dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cobbler
+              BMC / VMedia ISO configuration
             
           </span>
         </div>
@@ -234,9 +229,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HPC@UCD Documentation" class="md-nav__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
+    <a href="../../.." title="HPC@UCD Documentation" class="md-nav__button md-logo" aria-label="HPC@UCD Documentation" data-md-component="logo">
       
-  <img src="../../assets/HPCCF-logo-dark.png" alt="logo">
+  <img src="../../../assets/HPCCF-logo-dark.png" alt="logo">
 
     </a>
     HPC@UCD Documentation
@@ -308,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/access/" class="md-nav__link">
+      <a href="../../../general/access/" class="md-nav__link">
         
   
   
@@ -331,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/account-requests/" class="md-nav__link">
+      <a href="../../../general/account-requests/" class="md-nav__link">
         
   
   
@@ -354,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backups/backups/" class="md-nav__link">
+      <a href="../../../backups/backups/" class="md-nav__link">
         
   
   
@@ -377,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-transfer/" class="md-nav__link">
+      <a href="../../../data-transfer/" class="md-nav__link">
         
   
   
@@ -442,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scheduler/" class="md-nav__link">
+      <a href="../../../scheduler/" class="md-nav__link">
         
   
   
@@ -465,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scheduler/commands/" class="md-nav__link">
+      <a href="../../../scheduler/commands/" class="md-nav__link">
         
   
   
@@ -488,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scheduler/free-access/" class="md-nav__link">
+      <a href="../../../scheduler/free-access/" class="md-nav__link">
         
   
   
@@ -511,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scheduler/jobscripts/" class="md-nav__link">
+      <a href="../../../scheduler/jobscripts/" class="md-nav__link">
         
   
   
@@ -534,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scheduler/resources/" class="md-nav__link">
+      <a href="../../../scheduler/resources/" class="md-nav__link">
         
   
   
@@ -607,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/" class="md-nav__link">
+      <a href="../../../software/" class="md-nav__link">
         
   
   
@@ -630,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/apptainer/" class="md-nav__link">
+      <a href="../../../software/apptainer/" class="md-nav__link">
         
   
   
@@ -653,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/conda/" class="md-nav__link">
+      <a href="../../../software/conda/" class="md-nav__link">
         
   
   
@@ -676,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/developing/" class="md-nav__link">
+      <a href="../../../software/developing/" class="md-nav__link">
         
   
   
@@ -699,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/modules/" class="md-nav__link">
+      <a href="../../../software/modules/" class="md-nav__link">
         
   
   
@@ -722,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/ondemand/" class="md-nav__link">
+      <a href="../../../software/ondemand/" class="md-nav__link">
         
   
   
@@ -745,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/rlang/" class="md-nav__link">
+      <a href="../../../software/rlang/" class="md-nav__link">
         
   
   
@@ -776,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/troubleshooting/" class="md-nav__link">
+      <a href="../../../general/troubleshooting/" class="md-nav__link">
         
   
   
@@ -893,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../farm/" class="md-nav__link">
+      <a href="../../../farm/" class="md-nav__link">
         
   
   
@@ -916,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../farm/scheduling/" class="md-nav__link">
+      <a href="../../../farm/scheduling/" class="md-nav__link">
         
   
   
@@ -939,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../farm/resources/" class="md-nav__link">
+      <a href="../../../farm/resources/" class="md-nav__link">
         
   
   
@@ -1004,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../farm/software/modules/" class="md-nav__link">
+      <a href="../../../farm/software/modules/" class="md-nav__link">
         
   
   
@@ -1035,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../farm/storage/" class="md-nav__link">
+      <a href="../../../farm/storage/" class="md-nav__link">
         
   
   
@@ -1108,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/" class="md-nav__link">
+      <a href="../../../franklin/" class="md-nav__link">
         
   
   
@@ -1131,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/scheduling/" class="md-nav__link">
+      <a href="../../../franklin/scheduling/" class="md-nav__link">
         
   
   
@@ -1154,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/resources/" class="md-nav__link">
+      <a href="../../../franklin/resources/" class="md-nav__link">
         
   
   
@@ -1219,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/software/alphafold/" class="md-nav__link">
+      <a href="../../../franklin/software/alphafold/" class="md-nav__link">
         
   
   
@@ -1242,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/software/cryoem/" class="md-nav__link">
+      <a href="../../../franklin/software/cryoem/" class="md-nav__link">
         
   
   
@@ -1265,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/software/modules/" class="md-nav__link">
+      <a href="../../../franklin/software/modules/" class="md-nav__link">
         
   
   
@@ -1296,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../franklin/storage/" class="md-nav__link">
+      <a href="../../../franklin/storage/" class="md-nav__link">
         
   
   
@@ -1369,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hive/" class="md-nav__link">
+      <a href="../../../hive/" class="md-nav__link">
         
   
   
@@ -1392,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hive/lssc0-data-migration/" class="md-nav__link">
+      <a href="../../../hive/lssc0-data-migration/" class="md-nav__link">
         
   
   
@@ -1475,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -1498,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backups/" class="md-nav__link">
+      <a href="../../backups/" class="md-nav__link">
         
   
   
@@ -1518,6 +1513,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1527,13 +1524,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1549,7 +1544,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             BMC
@@ -1560,10 +1555,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bmc/remote-media/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1574,6 +1576,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1594,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheeto/" class="md-nav__link">
+      <a href="../../cheeto/" class="md-nav__link">
         
   
   
@@ -1614,30 +1617,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Cobbler
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../cobbler/" class="md-nav__link">
         
   
   
@@ -1648,48 +1631,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-new-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add a new host
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add a new host">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hive
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1702,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../configuration/" class="md-nav__link">
         
   
   
@@ -1725,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns/" class="md-nav__link">
+      <a href="../../dns/" class="md-nav__link">
         
   
   
@@ -1748,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
+      <a href="../../monitoring/" class="md-nav__link">
         
   
   
@@ -1771,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../netbox/" class="md-nav__link">
+      <a href="../../netbox/" class="md-nav__link">
         
   
   
@@ -1794,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network/" class="md-nav__link">
+      <a href="../../network/" class="md-nav__link">
         
   
   
@@ -1817,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ondemand/" class="md-nav__link">
+      <a href="../../ondemand/" class="md-nav__link">
         
   
   
@@ -1840,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provisioning/" class="md-nav__link">
+      <a href="../../provisioning/" class="md-nav__link">
         
   
   
@@ -1863,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PXE/" class="md-nav__link">
+      <a href="../../PXE/" class="md-nav__link">
         
   
   
@@ -1928,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quobyte/new-pi-share/" class="md-nav__link">
+      <a href="../../quobyte/new-pi-share/" class="md-nav__link">
         
   
   
@@ -1959,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../samba/" class="md-nav__link">
+      <a href="../../samba/" class="md-nav__link">
         
   
   
@@ -1982,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         
   
   
@@ -2005,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vms/" class="md-nav__link">
+      <a href="../../vms/" class="md-nav__link">
         
   
   
@@ -2045,38 +1986,6 @@
   
   
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-new-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add a new host
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add a new host">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hive
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2124,7 +2033,7 @@
   page title (or respectively site name) is used as the main headline.
 -->
 
-  <h1>Cobbler</h1>
+  <h1>Remote Media</h1>
 
 
 <div class="admonition warning">
@@ -2139,85 +2048,41 @@
 </div>
 
 <!-- Page content -->
-<p>HPC@UCD uses <a href="https://cobbler.github.io/">cobbler</a> for provisioning and managing internal <a href="../dns">DNS</a>.</p>
-<p>There is a cobbler server per cluster as well as one for the public HPC VLAN.</p>
-<ul>
-<li><code>cobbler.hpc</code> - public HPC VLAN.</li>
-<li><code>cobbler.hive</code> - hive private and management VLANs</li>
-<li><code>cobbler.farm</code> - farm</li>
-<li><code>cobbler.peloton</code> - peloton</li>
-<li><code>cobbler.franklin</code> - franklin</li>
-</ul>
-<p><code>hpc1</code>, <code>hpc2</code>, and <code>lssc0</code> do not have associated cobbler servers.</p>
-<h2 id="add-a-new-host">Add a new host<a class="headerlink" href="#add-a-new-host" title="Permanent link">&para;</a></h2>
-<h3 id="hive">Hive<a class="headerlink" href="#hive" title="Permanent link">&para;</a></h3>
-<p><code>**something**</code> or bold text must be replaced with correct, per-host values.</p>
-<details open="open">
-<summary>Initial setup</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh root@cobbler.hive
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd /var/www/cobbler-html
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HOSTNAME=**cluster-location-row-rack-U*2**
-</code></pre></div>
-<p><strong>Pay attention to the output from the scripts.</strong> Some of it is large amounts of spew from cobbler, but the rest could have critical information.</p>
-<p>Configure the BMC first.</p>
-<p><code>./cobbler-add-from-netbox.sh "$HOSTNAME" bmc</code></p>
-<p>Then the main Ethernet iface.</p>
-<p>If this is a host with a 25G Mellanox Ethernet card that we have not
-been able to PXE boot from, you need to add: <strong>-I InstallationEthDeviceFromNetbox</strong></p>
-<p><code>./cobbler-add-from-netbox.sh -I eth**N** "$HOSTNAME" eth**N**</code></p>
-<p>IFF this is not a <em>standard</em> hive node disk configuration (pair of smaller, one larger NVMe),
-you will need to add: <code>-d name_of_disk_layout_template</code></p>
-<p>Available options in: <code>hpccf-cobbler-templates/partitions/</code></p>
-<p>Pay attention to the information at the end, it will have the installation hostname, IP, BMC hostname, BMC IP, etc.</p>
-</details>
-<p><a href="/admin/PXE/">UPDATE BIOS TO PXE INSTALL</a></p>
-<p>Reset the system, watch in BMC, OR, watch in SSH: <code>ssh installer@$HOSTNAME**(-install)?**</code></p>
-<p>Wait for installation to finish</p>
-<details open="open">
-<summary>Find production Ethernet MAC</summary>
-<p><code>ssh root@$HOSTNAME**(-install)?**</code></p>
-<p>Look at <code>ethtool '*'</code> and <code>ifconfig eth*N*</code> to figure out which one is the &gt;1G Ethernet connection that will be used in production.</p>
-</details>
-<details open="open">
-<summary>Puppet work</summary>
-<p><code>ssh puppet.hpc</code></p>
-<ul>
+<p>This is a how to enable VMedia so a KVM session can remote-mount an ISO for installation/recovery/memtest/etc.</p>
+<p>Note: this is <strong>not</strong> <code>Home &gt; Settings &gt; Media Redirection &gt; General Settings</code>, that can remain off.</p>
+<ol>
 <li>
-<p>Create: <code>data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml</code></p>
+<p>Go to <code>Profile</code> for the <code>hpccfadmin</code> user:</p>
+<p><img alt="Step 1" src="../../../img/bmc/vmedia-1.png" /></p>
 </li>
 <li>
-<p>Contents: <code>infiniband::network::netplan::ethmac: **10G::mac::addr:here**</code></p>
+<p>Click the <code>VMedia Access</code> checkbox. If <code>KVM Access</code> is unchecked, click it too.</p>
+<p><img alt="Step 2" src="../../../img/bmc/vmedia-2.png" /></p>
 </li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git add data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git commit
-</code></pre></div>
-<p>Contact Omen or Camille for review and push. Note, this change will go live on Hive without a push.</p>
-</details>
-<details open="open">
-<summary>Final host work</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh $HOSTNAME**(-install)?**
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>puppet agent -t
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>reboot
-</code></pre></div>
-</details>
-<details open="open">
-<summary>Verify host rebooted correctly</summary>
-<p><code>ssh $USER@$HOSTNAME</code></p>
-<p>Verify everything looks okay</p>
-</details>
-<details open="open">
-<summary>Check Monitoring</summary>
-<p>Verify no alerts:</p>
-<p><code>https://monitoring.hpc.ucdavis.edu/icingaweb2/monitoring/host/services?host=**fqdn**</code></p>
-</details>
-<details open="open">
-<summary>Validate node</summary>
-<p>Add to Slurm's <code>burnin</code> partition.</p>
-<p>Checklist TBD, but including test in Slurm.</p>
-</details>
-<p>Move to Slurm's production partition(s).</p>
-<p>Rejoice.</p>
+<li>
+<p><code>Save</code> the changes.</p>
+</li>
+<li>
+<p>Log back into the BMC.</p>
+</li>
+<li>
+<p>Open the KVM.</p>
+</li>
+<li>
+<p>In the top right, select <code>Browse File</code> and select the desired ISO:</p>
+<p><img alt="Step 3" src="../../../img/bmc/vmedia-3.png" /></p>
+</li>
+<li>
+<p>Force the system to boot from the <code>CD/ROM</code>, most easily accomplished from the KVM's <code>Boot Option</code> menu:</p>
+<p><img alt="Step 4" src="../../../img/bmc/vmedia-4.png" /></p>
+</li>
+<li>
+<p>Boot/Reboot the system. It should boot into the mounted ISO, which will stream from your system.</p>
+</li>
+<li>
+<p>Profit! Or at least a lot less hair tearing trying to mount remote images.</p>
+</li>
+</ol>
 
 <!-- Source file information -->
 
@@ -2242,7 +2107,7 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15 UTC">April 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 22, 2025 00:19:49 UTC">May 22, 2025</span>
   </span>
 
     
@@ -2252,7 +2117,7 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2024 21:53:30 UTC">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 21, 2025 23:44:23 UTC">May 21, 2025</span>
   </span>
 
     
@@ -2334,12 +2199,12 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
       
