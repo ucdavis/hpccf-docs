@@ -47,9 +47,13 @@ All PIs get their own Quobyte Tenent, within which we create a volume.
 
 PREREQUISITE: update `qmgmt.sh` to use a r/w user.
 
+Option: create a dedicated script that takes a PI name and quota and does all the work.
+
 1. SSH to `quobyte.hpc`.
 
-1. `export PI={PI-Login=ID}`
+1. `export PI={PI-Login-ID}`
+
+1. `export PIQuota={Quota-in-TiB}`
 
 1. Verify the PI tenant does not already exist.
 
@@ -62,4 +66,4 @@ PREREQUISITE: update `qmgmt.sh` to use a r/w user.
 1. Create the volume: `sudo /opt/hpccf/sbin/qmgmt.sh volume create "${PI}grp/${PI}grp" ${PI} ${PI}grp 2770`
 
 1. Set the quota:
-   `sudo /opt/hpccf/sbin/qmgmt.sh quota create TENANT ${PI}grp LOGICAL_DISK_SPACE $(( {TiBHERE} * 1024**4))`
+   `sudo /opt/hpccf/sbin/qmgmt.sh quota create TENANT ${PI}grp LOGICAL_DISK_SPACE $(( ${PIQuota} * 1024**4))`
