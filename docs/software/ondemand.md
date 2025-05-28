@@ -32,26 +32,6 @@ from blocking browser launch when the Slurm job terminates before you exit the d
 If your OOD jobs launches, but fails very quickly, please click the long, random `Session ID:`. From there, open the
 `output.log` file and carefully look over the output.
 
-### Clearing Your R Cache
-
-Generally, many of the RStudio issues users come across can be resolved by clearing out your old rsession caches.
-
-#### rsession
-
-Your rsession cache stores any of your previous sessions with your previously installed libraries you chose to save and this rsession data can be located in these locations:
-
-`~/.RData`
-`~/.local/share/rstudio*`
-
-We also recommend ensuring that the "Restore .RData into workspace at startup" setting, under Options>General>Workspace, be disabled to prevent recurring issues.
-
-#### configs
-
-In most cases it might not be necessary to clear these files, but in case it is you can find the rest of your cached rstudio configs here:
-
-`~/.cache/rstudio*`
-`~/.config/rstudio*`
-
 ### Incorrect Conda environment specified
 
 Some OOD Apps allow you to specify a specific conda environment that will load. If you see a line like this in
@@ -69,8 +49,11 @@ If upon loading the RStudio IDE, you see an error like the following:
 Connected to your session in progress, last started 2025-May-23 22:35:30 UTC (3 days ago)
 R version change [4.2.3 -> 4.4.2] detected when restoring session; search path not restored
 ```
+You can resolve these errors by clearing your rstudio session cache which you can learn to do [here](rstudio.md#clearing-your-r-cache)
 
-Or you are unable to install.packages(). You can resolve these errors by clearing your rstudio session cache which you can learn to do [here](#clearing-your-r-cache)
+### Unable to install.packages()
+
+If you find you are unable to install.packages() you might be suffering from [this issue](#rstudio-r-version-change-error) 
 
 ### Out of Memory (OOM) events
 
