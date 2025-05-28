@@ -41,7 +41,7 @@ Generally, many of the RStudio issues users come across can be resolved by clear
 Your rsession cache stores any of your previous sessions with your previously installed libraries you chose to save and this rsession data can be located in these locations:
 
 `~/.RData`
-`~/.local/share/rstudio-server`
+`~/.local/share/rstudio*`
 
 We also recommend ensuring that the "Restore .RData into workspace at startup" setting, under Options>General>Workspace, be disabled to prevent recurring issues.
 
@@ -49,8 +49,8 @@ We also recommend ensuring that the "Restore .RData into workspace at startup" s
 
 In most cases it might not be necessary to clear these files, but in case it is you can find the rest of your cached rstudio configs here:
 
-`~/.cache/rstudio-server`
-`~/.config/rstudio-server`
+`~/.cache/rstudio*`
+`~/.config/rstudio*`
 
 ### Incorrect Conda environment specified
 
