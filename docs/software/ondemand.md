@@ -42,6 +42,19 @@ EnvironmentNameNotFound: Could not find conda environment: r-4.3.3-typo
 You can list all discoverable environments with `conda info --envs`.
 ```
 
+### RStudio R version change error
+
+If upon loading the RStudio IDE, you see an error like the following:
+```
+Connected to your session in progress, last started 2025-May-23 22:35:30 UTC (3 days ago)
+R version change [4.2.3 -> 4.4.2] detected when restoring session; search path not restored
+```
+You can resolve these errors by clearing your rstudio session cache which you can learn to do [here](rstudio.md#clearing-your-r-cache)
+
+### Unable to install.packages()
+
+If you find you are unable to install.packages() you might be suffering from [this issue](#rstudio-r-version-change-error) 
+
 ### Out of Memory (OOM) events
 
 If your Jupyter or RStudio jobs keep failing with errors like `abnormally terminated due to an unexpected crash`, and,
