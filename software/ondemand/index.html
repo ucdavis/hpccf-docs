@@ -14,7 +14,7 @@
         <link rel="prev" href="../modules/">
       
       
-        <link rel="next" href="../rlang/">
+        <link rel="next" href="../rstudio/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -818,6 +818,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#rstudio-r-version-change-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio R version change error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-installpackages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unable to install.packages()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#out-of-memory-oom-events" class="md-nav__link">
     <span class="md-ellipsis">
       Out of Memory (OOM) events
@@ -892,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rlang/" class="md-nav__link">
+      <a href="../rstudio/" class="md-nav__link">
         
   
   
@@ -2186,6 +2204,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#rstudio-r-version-change-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio R version change error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-installpackages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unable to install.packages()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#out-of-memory-oom-events" class="md-nav__link">
     <span class="md-ellipsis">
       Out of Memory (OOM) events
@@ -2296,10 +2332,18 @@ from blocking browser launch when the Slurm job terminates before you exit the d
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>EnvironmentNameNotFound: Could not find conda environment: r-4.3.3-typo
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>You can list all discoverable environments with `conda info --envs`.
 </code></pre></div>
+<h3 id="rstudio-r-version-change-error">RStudio R version change error<a class="headerlink" href="#rstudio-r-version-change-error" title="Permanent link">&para;</a></h3>
+<p>If upon loading the RStudio IDE, you see an error like the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Connected to your session in progress, last started 2025-May-23 22:35:30 UTC (3 days ago)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>R version change [4.2.3 -&gt; 4.4.2] detected when restoring session; search path not restored
+</code></pre></div>
+You can resolve these errors by clearing your rstudio session cache which you can learn to do <a href="../rstudio/#clearing-your-r-cache">here</a></p>
+<h3 id="unable-to-installpackages">Unable to install.packages()<a class="headerlink" href="#unable-to-installpackages" title="Permanent link">&para;</a></h3>
+<p>If you find you are unable to install.packages() you might be suffering from <a href="#rstudio-r-version-change-error">this issue</a> </p>
 <h3 id="out-of-memory-oom-events">Out of Memory (OOM) events<a class="headerlink" href="#out-of-memory-oom-events" title="Permanent link">&para;</a></h3>
 <p>If your Jupyter or RStudio jobs keep failing with errors like <code>abnormally terminated due to an unexpected crash</code>, and,
 when your job finishes, you see a line like this in <code>output.log</code>, then you have not requested enough RAM:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>slurmstepd: error: Detected 3 oom_kill events in StepId=20294700.batch. Some of the step tasks have been OOM Killed.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>slurmstepd: error: Detected 3 oom_kill events in StepId=20294700.batch. Some of the step tasks have been OOM Killed.
 </code></pre></div>
 <p>Other indications of an OOM event are an RStudio or Jupyter window like these:</p>
 <details class="note" open="open">
@@ -2310,24 +2354,24 @@ when your job finishes, you see a line like this in <code>output.log</code>, the
 <h3 id="self-installed-conda-or-miniconda-break-rstudio-server">Self installed conda or miniconda break RStudio Server<a class="headerlink" href="#self-installed-conda-or-miniconda-break-rstudio-server" title="Permanent link">&para;</a></h3>
 <p>If you self-install conda, or miniconda, it will conflict with our centrally installed conda. If you see lines like
 this, then you need to remove that to use RStudio Server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ERROR: CONDA_EXE is currently defined: /home/omen/conda/bin/conda.
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This module will almost certainly interfere with your conda installation.
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Remove existing conda installation and its shell hooks from your PATH before proceeding.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ERROR: CONDA_EXE is currently defined: /home/omen/conda/bin/conda.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>This module will almost certainly interfere with your conda installation.
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Remove existing conda installation and its shell hooks from your PATH before proceeding.
 </code></pre></div>
 <p>See <a href="/software/conda/#migrating-from-user-installed-conda">Migrating from User-installed Conda</a></p>
 <h3 id="time-limit">Time limit<a class="headerlink" href="#time-limit" title="Permanent link">&para;</a></h3>
 <p>If you see output like this, it means you did not request enough hours during the app configuration in OOD:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>slurmstepd: error: *** JOB 20296118 ON cpu-6-96 CANCELLED AT 2025-01-21T17:34:19 DUE TO TIME LIMIT ***
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>slurmstepd: error: *** JOB 20296118 ON cpu-6-96 CANCELLED AT 2025-01-21T17:34:19 DUE TO TIME LIMIT ***
 </code></pre></div>
 <h3 id="failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob">Failed to submit session with the following error (QOSMaxMemoryPerJob):<a class="headerlink" href="#failed-to-submit-session-with-the-following-error-qosmaxmemoryperjob" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbatch: error: QOSMaxMemoryPerJob
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user&#39;s size and/or time limits)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sbatch: error: QOSMaxMemoryPerJob
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user&#39;s size and/or time limits)
 </code></pre></div>
 <p>If your job is rejected at submission time with this error, it means you requested resources that are not available in
 the <code>Account</code>/<code>Partition</code> you specified. Normally you should work with your PI to find out what resources are available.
 On Hive, in <code>publicgrp</code>/<code>high</code> (the free-tier), the limits <a href="/scheduler/free-tier">are documented here</a>.</p>
 <h3 id="failed-to-submit-session-with-the-following-error">Failed to submit session with the following error:<a class="headerlink" href="#failed-to-submit-session-with-the-following-error" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sbatch: error: Batch job submission failed: Requested node configuration is not available
 </code></pre></div>
 <p>If your job is rejected at submission time for reasons like this (basically anything that starts with <code>sbatch: error:</code>),
 please work with your PI to figure out an appropriate partition and resource request.</p>
@@ -2357,7 +2401,7 @@ performed. You <strong>must</strong> supply all of this information for HPC@UCD 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15 UTC">April 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 28, 2025 18:23:53 UTC">May 28, 2025</span>
   </span>
 
     
