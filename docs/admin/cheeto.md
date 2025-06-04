@@ -22,28 +22,43 @@ done by `hippo-user` on the system `accounts`. **BE VERY CAREFUL** There are no 
 
 `cheeto db user show --find jeff`
 
+#### Create a new Partition
+
+```console
+export PARTITION="**PartitionName**"
+export CLUSTER="**ClusterName**"
+
+cheeto database slurm new partition --name=${PARTITION} --site=${CLUSTER}
+
+# Give the HPC staff access to this new partition, but use our high partition QoS so we have no limits.
+cheeto database slurm new assoc --group=hpccfgrp --partition=${PARTITION} --qos=hpccfgrp-high-qos --site=${CLUSTER}
+```
+
 #### Add a new QoS:
 
 Two step process, first create the Qos, then allow the group to access it.
 
 ```console
 export GROUP="**GroupName**"
+export PARTITION="**PartitionName**"
+export CLUSTER="**ClusterName**"
 
-cheeto database slurm new qos --group-limits mem=****G,cpus=**,gpus=** --qosname=${GROUP}-high-qos --site=**cluster**
+cheeto database slurm new qos --group-limits mem=****G,cpus=**,gpus=** --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
 
-cheeto database slurm new assoc --group=${GROUP} --partition=high --qos=${GROUP}-high-qos --site=**cluster**
+cheeto database slurm new assoc --group=${GROUP} --partition=${PARTITION} --qos=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
 ```
 
 #### Edit a QoS
 
-`cheeto db slurm edit qos --site=**cluster** --qosname=**group-name**-high-qos --group-limits mem=****G,cpus=***,gpus=*`
+`cheeto db slurm edit qos --site=**cluster** --qosname=**group-name**-**partition-name**-qos --group-limits mem=****G,cpus=***,gpus=*`
 
 #### Show an association
 
 ```console
 export GROUP="**GroupName**"
+export PARTITION="**PartitionName**"
 
-cheeto db slurm show assoc --site=**cluster** --partition=high --group=${GROUP} --qos=${GROUP}-high-qos
+cheeto db slurm show assoc --site=**cluster** --partition=${PARTITION} --group=${GROUP} --qos=${GROUP}-high-qos
 ```
 
 #### Find the name of a storage:
