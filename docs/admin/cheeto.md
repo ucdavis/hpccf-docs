@@ -80,6 +80,12 @@ Note, all approvers must already have an account on the cluster in question.
 Note, there is no error shown if the user does not already have an account, so double check the
 [sponsors list](#show-members-and-sponsors-of-a-pi-group) after.
 
+#### Create a lab group
+
+Sometimes, PIs need an additional group that are named after the lab they run. These can be created with:
+
+`cheeto database group new lab --site=**site** --groups=**lab-name**-grp --sponsors=**sponsor**`
+
 #### Show members, and sponsors, of a PI group
 
 `cheeto db group show --site=**cluster** --group=**group-name**`
