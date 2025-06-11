@@ -32,18 +32,18 @@ Cluster specific information:
 
 #### How to request a new account on a cluster:
 
-??? note "Click to expand"
+???+ note "New account"
 
     1. Login to [HiPPO](https://hippo.ucdavis.edu)
     1. Select the cluster you would like an account on.
     1. Under `Who is sponsoring your account?`
-        - If you are a PI, enter `New Sponsor Onboarding`.
+        - If you are a PI, enter: `New PI Onboarding`
         - If you have a PI, search for their name.
         - If you need access to the free-tier, see above (Cluster specific information).
     1. Under `Who is your supervising PI?`
-        - If you are the PI, enter `self`.
+        - If you are the PI, enter: `self`
         - If you have a PI, enter the PI's name.
-        - If you need access to the free-tier, enter `free-tier`.
+        - If you need access to the free-tier, enter: `free-tier`
     1. Under `Access Type`, select one or more:
         - If you only need access to [Open OnDemand](/software/ondemand/), select `OpenOnDemand`.
         - If you need command-line access to the cluster via SSH, select `SshKey`.
@@ -52,34 +52,31 @@ Cluster specific information:
 
 #### How to request access to another group on a cluster:
 
-??? note "Click to expand"
+???+ note "Join another group"
 
     1. Login to [HiPPO](https://hippo.ucdavis.edu)
     1. Select the cluster.
     1. Click the `Request Access to Another Group` button.
     1. In the first box (`Select a group`):
-        - If you are a PI, enter `New Sponsor Onboarding`.
-        - If you have a PI, search for their name.
-        - If you need access to the free-tier, see above (Cluster specific information).
+        - Search for the group you would like to join.
     1. Under `Who is your supervising PI?`
-        - If you are the PI, enter `self`.
+        - If you are the PI, enter: `self`
         - If you have a PI, enter the PI's name.
-        - If you need access to the free-tier, enter `free-tier`.
-    1. Click `Confirm`.
+    1. Click: `Confirm`
     1. After you are granted access to this group's resources, you will need to specifically request it by adding `--account=NewlyGrantedPIgrp` to each srun or sbatch job.
 
 #### If you are a PI and have bought, or are planning to purchase, resources:
 
-??? note "Click to expand"
+???+ note "PI become a sponsor"
 
     1. Login to [HiPPO](https://hippo.ucdavis.edu)
     1. Select the cluster you would like an account on.
     1. Click the `Request Access to Another Group` button.
     1. In the first box (`Select a group`):
-        - Enter `New Sponsor Onboarding`.
+        - Enter: `New PI Onboarding`
     1. Under `Who is your supervising PI?`
-        - Enter `self`.
-    1. Click `Confirm.
+        - Enter: `self`
+    1. Click: `Confirm`
 
 ### How long does it take my account to be created?
 
