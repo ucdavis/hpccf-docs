@@ -2177,9 +2177,9 @@
 <p><code>**something**</code> or bold text must be replaced with correct, per-host values.</p>
 <details open="open">
 <summary>Initial setup</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh root@cobbler.hive
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd /var/www/cobbler-html
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HOSTNAME=**cluster-location-row-rack-U*2**
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">ssh root@cobbler.hive</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">cd /var/www/cobbler-html</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">export HOSTNAME=**cluster-location-row-rack-U*2**</span>
 </code></pre></div>
 <p><strong>Pay attention to the output from the scripts.</strong> Some of it is large amounts of spew from cobbler, but the rest could have critical information.</p>
 <p>Configure the BMC first.</p>
@@ -2187,18 +2187,18 @@
 <p>Then the main Ethernet iface.</p>
 <p>If this is a host with a 25G Mellanox Ethernet card that we have not
 been able to PXE boot from, you need to add: <strong>-I InstallationEthDeviceFromNetbox</strong></p>
-<p><code>./cobbler-add-from-netbox.sh -I eth**N** "$HOSTNAME" eth**N**</code></p>
+<p><code>./cobbler-add-from-netbox.sh -I eth**M** "$HOSTNAME" eth**N**</code></p>
 <p>IFF this is not a <em>standard</em> hive node disk configuration (pair of smaller, one larger NVMe),
 you will need to add: <code>-d name_of_disk_layout_template</code></p>
 <p>Available options in: <code>hpccf-cobbler-templates/partitions/</code></p>
 <p>Pay attention to the information at the end, it will have the installation hostname, IP, BMC hostname, BMC IP, etc.</p>
 </details>
 <p><a href="/admin/PXE/">UPDATE BIOS TO PXE INSTALL</a></p>
-<p>Reset the system, watch in BMC, OR, watch in SSH: <code>ssh installer@$HOSTNAME**(-install)?**</code></p>
+<p>Reset the system, watch in BMC, OR, watch in SSH: <code>ssh installer@**HOSTNAME**(-install)?</code></p>
 <p>Wait for installation to finish</p>
 <details open="open">
 <summary>Find production Ethernet MAC</summary>
-<p><code>ssh root@$HOSTNAME**(-install)?**</code></p>
+<p><code>ssh root@**HOSTNAME**(-install)?</code></p>
 <p>Look at <code>ethtool '*'</code> and <code>ifconfig eth*N*</code> to figure out which one is the &gt;1G Ethernet connection that will be used in production.</p>
 </details>
 <details open="open">
@@ -2212,21 +2212,21 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
 <p>Contents: <code>infiniband::network::netplan::ethmac: **10G::mac::addr:here**</code></p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git add data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git commit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">git add data/nodes/**HOSTNAME**.hive.hpc.ucdavis.edu.yaml</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">git commit</span>
 </code></pre></div>
 <p>Contact Omen or Camille for review and push. Note, this change will go live on Hive without a push.</p>
 </details>
 <details open="open">
 <summary>Final host work</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh $HOSTNAME**(-install)?**
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>puppet agent -t
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>reboot
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">ssh **HOSTNAME**(-install)?**</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">puppet agent -t</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">reboot</span>
 </code></pre></div>
 </details>
 <details open="open">
 <summary>Verify host rebooted correctly</summary>
-<p><code>ssh $USER@$HOSTNAME</code></p>
+<p><code>ssh $USER@**HOSTNAME**</code></p>
 <p>Verify everything looks okay</p>
 </details>
 <details open="open">
@@ -2235,11 +2235,24 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
 <p><code>https://monitoring.hpc.ucdavis.edu/icingaweb2/monitoring/host/services?host=**fqdn**</code></p>
 </details>
 <details open="open">
+<summary>Update Slurm's topology</summary>
+<p>Farm and Hive are using Slurm's topology plugin. The InfiniBand switch connection data requires re-generation every time a node with InfiniBand is added, or removed.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">ssh -A $USER@hive-dc-7-10-18</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">ib-topology-generate.py --topology --cluster=**cluster** # &lt;-- Can be either Hive or Farm</span>
+</code></pre></div>
+Follow printed instructions to scp the newly generated file to puppet, then:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">ssh $USER@puppet.hpc</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">cd /etc/puppetlabs/code/environments/production</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">git commit modules/hpccf/slurm/templates/**cluster**.hpc.ucdavis.edu/slurm/topology.conf.epp</span>
+</code></pre></div>
+Contact Omen or Camille for review and push. Note, this change will go live on Hive without a push.</p>
+</details>
+<details open="open">
 <summary>Validate node</summary>
 <p>Add to Slurm's <code>burnin</code> partition.</p>
 <p>Checklist TBD, but including test in Slurm.</p>
-</details>
 <p>Move to Slurm's production partition(s).</p>
+</details>
 <p>Rejoice.</p>
 
 <!-- Source file information -->
@@ -2265,7 +2278,7 @@ you will need to add: <code>-d name_of_disk_layout_template</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15 UTC">April 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 20, 2025 16:20:41 UTC">June 20, 2025</span>
   </span>
 
     
