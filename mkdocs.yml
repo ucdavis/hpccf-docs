@@ -47,7 +47,8 @@ nav:
 
     - Admin:
           - admin/index.md
-          - Backups: admin/backups.md
+          - Backups:
+                - PBS: admin/backups/pbs.md
           - BMC:
                 - Remote Media: admin/bmc/remote-media.md
           - Cheeto: admin/cheeto.md

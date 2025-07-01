@@ -36,7 +36,7 @@ backup.sh: ERROR: no API password at $PBS_PASSWORD_FILE: /quobyte/pbs/group/{PIg
 Generate an API token and put the 'value' part in that file.
 ```
 
-Paste the token into the indicated file:
+Paste the contents of the token's (generated on phoenix) `value` (without the quotes) into the indicated file:
 
 ```console
 root@hive: ~ # vim /quobyte/pbs/group/{PIgrp}/backup.token
@@ -86,13 +86,13 @@ Finally, start the backup. Depending on the amount of data already in `{PIgrp}/B
 so run the initial backup in screen and monitor closely.
 
 ```console
-root@fs6: ~ # screen
-root@fs6: ~ # /quobyte/pbs/bin/backup.sh group {PIgrp}
+root@flash.hpc: ~ # screen
+root@flash.hpc: ~ # /quobyte/pbs/bin/backup.sh group {PIgrp}
 ```
 
 ### Puppet
 
-Once the initial backup finishes, edit `data/backups.yaml` and add `{PIgrp}` to the list so it is backed up
-automatically.
+Once the initial backup finishes, edit `data/backups.yaml` on `puppet.hpc.ucdavis.edu` and add `{PIgrp}` to the list so
+it is backed up automatically. Commit, and if possible, push your git changes.
 
 ## TODO: explain the layout
