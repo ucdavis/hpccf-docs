@@ -86,7 +86,12 @@ Wait for installation to finish
 
 ???+ "Verify host rebooted correctly"
 
-    `ssh $USER@**HOSTNAME**`
+    ```console
+    ssh $USER@**HOSTNAME**`
+    sudo puppet agent -t
+    ```
+
+    Verify this Puppet run did not make any changes.
 
     Verify everything looks okay
 
