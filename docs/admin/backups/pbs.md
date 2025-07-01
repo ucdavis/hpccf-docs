@@ -79,7 +79,7 @@ root@hive: ~ # vim /quobyte/{PIgrp}/.pbs/config
     KEEP_YEARLY=
 
     # A list of space separated email addresses to send PBS output to.
-    MAIL_TO="" # <--- EDIT
+    MAIL_TO="" # <--- START WITH YOUR EMAIL HERE
     ```
 
 Finally, start the backup. Depending on the amount of data already in `{PIgrp}/BACKED-UP`, this may take multiple days,
@@ -90,7 +90,15 @@ root@flash.hpc: ~ # screen
 root@flash.hpc: ~ # /quobyte/pbs/bin/backup.sh group {PIgrp}
 ```
 
-### Puppet
+Once the initial backup finishes successfully, set the email list to the correct list:
+
+```console
+root@hive: ~ # vim /quobyte/{PIgrp}/.pbs/config
+    # A list of space separated email addresses to send PBS output to.
+    MAIL_TO="" # <--- AS SPECIFIED IN THE TICKET/PURCHASE
+```
+
+### puppet.hpc
 
 Once the initial backup finishes, edit `data/backups.yaml` on `puppet.hpc.ucdavis.edu` and add `{PIgrp}` to the list so
 it is backed up automatically. Commit, and if possible, push your git changes.
