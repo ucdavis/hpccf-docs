@@ -13,6 +13,8 @@ All PIs get their own Quobyte Tenent, within which we create a volume.
 
 1. Verify the PI does not already have a tenant/volume.
 
+    1. Enter `{PI-Login-ID}` into `Filter` box.
+
 1. `Tenant` -> `Create tenant...`
 
     1. `Tenant name`: `{PI-Login-ID}grp`
@@ -25,7 +27,15 @@ All PIs get their own Quobyte Tenent, within which we create a volume.
 
         1. Ensure `Unit: Binary (Default decimal)` is set.
 
-        1. Enter their quota into `Any type`
+        1. `Logical quota` -> `Any type`
+
+            1. Switch dropdown to `TiB`
+
+            1. Enter quota
+
+        1. `Save`
+
+1. Click the three vertical dots next to the PI's tenant name
 
     1. `Create tenant volume...`
 
@@ -37,9 +47,25 @@ All PIs get their own Quobyte Tenent, within which we create a volume.
 
         1. `POSIX permission mask`: `2770`
 
+        1. `Create`
+
 1. Verify the new volume exists:
 
-    1. `ls -l /quobyte/{PI-Login-ID}grp`
+    1. `df -h /quobyte/{PI-Login-ID}grp/`
+
+1. Farm only, update Hippo
+
+    1. Move state to `Active`
+
+    1. `Edit Order`
+
+        1. `+ Add Metadata`
+
+            1. `nas` -> `Quobyte`
+
+1. Create/update ServiceNow ticket to let them know their new storage is available to be used:
+
+    1. Access path, on both Farm and Hive is `/quobyte/{PI-Login-ID}grp/`
 
 1. Research!
 
