@@ -2400,17 +2400,19 @@
 <!-- Page content -->
 <p>Cheeto is the swissarmytoolknife of account, storage, QoS, group, etc, creation and manipulation. All manipulation is
 done by <code>hippo-user</code> on the system <code>accounts</code>. <strong>BE VERY CAREFUL</strong> There are no prompts, and there is no undo.</p>
+<p>Most changes require a sync process to run on a different system. This happens automatically via cron on the appropriate
+systems, so changes are <strong>not</strong> instantaneous on the clusters.</p>
 <h4 id="show-a-user">Show a user<a class="headerlink" href="#show-a-user" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db user show --site=**cluster** --user=**LoginID**</code></p>
+<p><code>cheeto db user show --site=##cluster## --user=##LoginID##</code></p>
 <h4 id="dump-all-user-login-ids-in-a-cluster">Dump all user Login IDs in a cluster<a class="headerlink" href="#dump-all-user-login-ids-in-a-cluster" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db user show --site=**cluster** --list</code></p>
+<p><code>cheeto db user show --site=##cluster## --list</code></p>
 <h4 id="dump-all-user-data-in-a-cluster">Dump all user data in a cluster<a class="headerlink" href="#dump-all-user-data-in-a-cluster" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db user show --site=**cluster**</code></p>
+<p><code>cheeto db user show --site=##cluster##</code></p>
 <h4 id="find-a-user">Find a user<a class="headerlink" href="#find-a-user" title="Permanent link">&para;</a></h4>
 <p><code>cheeto db user show --find jeff</code></p>
 <h4 id="create-a-new-partition">Create a new Partition<a class="headerlink" href="#create-a-new-partition" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">export PARTITION=&quot;**PartitionName**&quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">export CLUSTER=&quot;**ClusterName**&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">export PARTITION=&quot;##PartitionName##&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">export CLUSTER=&quot;##ClusterName##&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cheeto database slurm new partition --name=${PARTITION} --site=${CLUSTER}</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
@@ -2419,37 +2421,76 @@ done by <code>hippo-user</code> on the system <code>accounts</code>. <strong>BE 
 </code></pre></div>
 <h4 id="add-a-new-qos">Add a new QoS:<a class="headerlink" href="#add-a-new-qos" title="Permanent link">&para;</a></h4>
 <p>Two step process, first create the Qos, then allow the group to access it.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">export GROUP=&quot;**GroupName**&quot;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">export PARTITION=&quot;**PartitionName**&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">export CLUSTER=&quot;**ClusterName**&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">export GROUP=&quot;##GroupName##&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">export PARTITION=&quot;##PartitionName##&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">export CLUSTER=&quot;##ClusterName##&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="go">cheeto database slurm new qos --group-limits mem=****G,cpus=**,gpus=** --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="go">cheeto database slurm new qos --group-limits mem=####G,cpus=##,gpus=## --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="go">cheeto database slurm new assoc --group=${GROUP} --partition=${PARTITION} --qos=${GROUP}-${PARTITION}-qos --site=${CLUSTER}</span>
 </code></pre></div>
+<details class="note">
+<summary>Example: <strong>DO NOT BLINDLY COPY/PASTE</strong></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">export GROUP=&quot;rudolphgrp&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">export PARTITION=&quot;high&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">export CLUSTER=&quot;hive&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="gp">#</span><span class="c1">##cheeto database slurm new qos --group-limits mem=3000G,cpus=384,gpus=0 --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="go">group_limits:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="go">    cpus: 384</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="go">    mem: 3072000M</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">job_limits:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="go">    cpus: -1</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="go">    gpus: -1</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="go">qosname: rudolphgrp-high-qos</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="go">sitename: hive</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="go">user_limits:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="go">    cpus: -1</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="go">    gpus: -1</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="gp">#</span><span class="c1">##cheeto database slurm new assoc --group=${GROUP} --partition=${PARTITION} --qos=${GROUP}-${PARTITION}-qos --site=${CLUSTER}</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="go">──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="go">group: rudolphgrp</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="go">partitionname: high</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="go">qos:</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="go">sitename: hive</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="go">qosname: rudolphgrp-high-qos</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="go">group_limits:</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="go">    cpus: 384</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="go">    mem: 3072000M</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="go">user_limits:</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="go">    cpus: -1</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="go">    gpus: -1</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="go">job_limits:</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="go">    cpus: -1</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="go">    gpus: -1</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="go">sitename: hive</span>
+</code></pre></div>
+</details>
 <h4 id="edit-a-qos">Edit a QoS<a class="headerlink" href="#edit-a-qos" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db slurm edit qos --site=**cluster** --qosname=**group-name**-**partition-name**-qos --group-limits mem=****G,cpus=***,gpus=*</code></p>
+<p><code>cheeto db slurm edit qos --site=##cluster## --qosname=##group-name##-##partition-name##-qos --group-limits mem=####G,cpus=###,gpus=#</code></p>
 <h4 id="show-an-association">Show an association<a class="headerlink" href="#show-an-association" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">export GROUP=&quot;**GroupName**&quot;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">export PARTITION=&quot;**PartitionName**&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">cheeto db slurm show assoc --site=**cluster** --partition=${PARTITION} --group=${GROUP} --qos=${GROUP}-high-qos</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">export GROUP=&quot;##GroupName##&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">export PARTITION=&quot;##PartitionName##&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="go">cheeto db slurm show assoc --site=##cluster## --partition=${PARTITION} --group=${GROUP} --qos=${GROUP}-high-qos</span>
 </code></pre></div>
 <h4 id="find-the-name-of-a-storage">Find the name of a storage:<a class="headerlink" href="#find-the-name-of-a-storage" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db storage show --site=**cluster** --host=**hostname**</code></p>
+<p><code>cheeto db storage show --site=##cluster## --host=##hostname##</code></p>
 <h4 id="adjust-a-quota">Adjust a quota<a class="headerlink" href="#adjust-a-quota" title="Permanent link">&para;</a></h4>
 <p>Use the correct <code>name:</code> value from <a href="#find-the-name-of-a-storage">Find the name of a storage</a></p>
-<p><code>cheeto db storage edit source --name=**storage-name** --site=**cluster** --quota=**T</code></p>
+<p><code>cheeto db storage edit source --name=##storage-name## --site=##cluster## --quota=##T</code></p>
 <h4 id="add-an-approver-sponsor-to-a-pi-group">Add an approver (sponsor) to a PI group<a class="headerlink" href="#add-an-approver-sponsor-to-a-pi-group" title="Permanent link">&para;</a></h4>
 <p>Note, all approvers must already have an account on the cluster in question.</p>
-<p><code>cheeto database group add sponsor --site=**cluster** --user=**LoginID** --group=**group-name**</code></p>
+<p><code>cheeto database group add sponsor --site=##cluster## --user=##LoginID## --group=##group-name##</code></p>
 <p>Note, there is no error shown if the user does not already have an account, so double check the
 <a href="#show-members-and-sponsors-of-a-pi-group">sponsors list</a> after.</p>
 <h4 id="create-a-lab-group">Create a lab group<a class="headerlink" href="#create-a-lab-group" title="Permanent link">&para;</a></h4>
 <p>Sometimes, PIs need an additional group that are named after the lab they run. These can be created with:</p>
-<p><code>cheeto database group new lab --site=**site** --groups=**lab-name**-grp --sponsors=**sponsor**</code></p>
+<p><code>cheeto database group new lab --site=##site## --groups=##lab-name##-grp --sponsors=##sponsor##</code></p>
 <h4 id="show-members-and-sponsors-of-a-pi-group">Show members, and sponsors, of a PI group<a class="headerlink" href="#show-members-and-sponsors-of-a-pi-group" title="Permanent link">&para;</a></h4>
-<p><code>cheeto db group show --site=**cluster** --group=**group-name**</code></p>
+<p><code>cheeto db group show --site=##cluster## --group=##group-name##</code></p>
 
 <!-- Source file information -->
 
@@ -2474,7 +2515,7 @@ done by <code>hippo-user</code> on the system <code>accounts</code>. <strong>BE 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2025 00:57:26 UTC">June 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 12, 2025 00:04:39 UTC">July 12, 2025</span>
   </span>
 
     
