@@ -6,17 +6,20 @@ title: Cheeto Introduction
 Cheeto is the swissarmytoolknife of account, storage, QoS, group, etc, creation and manipulation. All manipulation is
 done by `hippo-user` on the system `accounts`. **BE VERY CAREFUL** There are no prompts, and there is no undo.
 
+Most changes require a sync process to run on a different system. This happens automatically via cron on the appropriate
+systems, so changes are **not** instantaneous on the clusters.
+
 #### Show a user
 
-`cheeto db user show --site=**cluster** --user=**LoginID**`
+`cheeto db user show --site=##cluster## --user=##LoginID##`
 
 #### Dump all user Login IDs in a cluster
 
-`cheeto db user show --site=**cluster** --list`
+`cheeto db user show --site=##cluster## --list`
 
 #### Dump all user data in a cluster
 
-`cheeto db user show --site=**cluster**`
+`cheeto db user show --site=##cluster##`
 
 #### Find a user
 
@@ -25,8 +28,8 @@ done by `hippo-user` on the system `accounts`. **BE VERY CAREFUL** There are no 
 #### Create a new Partition
 
 ```console
-export PARTITION="**PartitionName**"
-export CLUSTER="**ClusterName**"
+export PARTITION="##PartitionName##"
+export CLUSTER="##ClusterName##"
 
 cheeto database slurm new partition --name=${PARTITION} --site=${CLUSTER}
 
@@ -39,43 +42,83 @@ cheeto database slurm new assoc --group=hpccfgrp --partition=${PARTITION} --qos=
 Two step process, first create the Qos, then allow the group to access it.
 
 ```console
-export GROUP="**GroupName**"
-export PARTITION="**PartitionName**"
-export CLUSTER="**ClusterName**"
+export GROUP="##GroupName##"
+export PARTITION="##PartitionName##"
+export CLUSTER="##ClusterName##"
 
-cheeto database slurm new qos --group-limits mem=****G,cpus=**,gpus=** --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
+cheeto database slurm new qos --group-limits mem=####G,cpus=##,gpus=## --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
 
 cheeto database slurm new assoc --group=${GROUP} --partition=${PARTITION} --qos=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
 ```
 
+??? note "Example: **DO NOT BLINDLY COPY/PASTE**"
+
+    ```console
+    export GROUP="rudolphgrp"
+    export PARTITION="high"
+    export CLUSTER="hive"
+
+    ###cheeto database slurm new qos --group-limits mem=3000G,cpus=384,gpus=0 --qosname=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
+    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    group_limits:
+        cpus: 384
+        mem: 3072000M
+    job_limits:
+        cpus: -1
+        gpus: -1
+    qosname: rudolphgrp-high-qos
+    sitename: hive
+    user_limits:
+        cpus: -1
+        gpus: -1
+
+    ###cheeto database slurm new assoc --group=${GROUP} --partition=${PARTITION} --qos=${GROUP}-${PARTITION}-qos --site=${CLUSTER}
+    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    group: rudolphgrp
+    partitionname: high
+    qos:
+    sitename: hive
+    qosname: rudolphgrp-high-qos
+    group_limits:
+        cpus: 384
+        mem: 3072000M
+    user_limits:
+        cpus: -1
+        gpus: -1
+    job_limits:
+        cpus: -1
+        gpus: -1
+    sitename: hive
+    ```
+
 #### Edit a QoS
 
-`cheeto db slurm edit qos --site=**cluster** --qosname=**group-name**-**partition-name**-qos --group-limits mem=****G,cpus=***,gpus=*`
+`cheeto db slurm edit qos --site=##cluster## --qosname=##group-name##-##partition-name##-qos --group-limits mem=####G,cpus=###,gpus=#`
 
 #### Show an association
 
 ```console
-export GROUP="**GroupName**"
-export PARTITION="**PartitionName**"
+export GROUP="##GroupName##"
+export PARTITION="##PartitionName##"
 
-cheeto db slurm show assoc --site=**cluster** --partition=${PARTITION} --group=${GROUP} --qos=${GROUP}-high-qos
+cheeto db slurm show assoc --site=##cluster## --partition=${PARTITION} --group=${GROUP} --qos=${GROUP}-high-qos
 ```
 
 #### Find the name of a storage:
 
-`cheeto db storage show --site=**cluster** --host=**hostname**`
+`cheeto db storage show --site=##cluster## --host=##hostname##`
 
 #### Adjust a quota
 
 Use the correct `name:` value from [Find the name of a storage](#find-the-name-of-a-storage)
 
-`cheeto db storage edit source --name=**storage-name** --site=**cluster** --quota=**T`
+`cheeto db storage edit source --name=##storage-name## --site=##cluster## --quota=##T`
 
 #### Add an approver (sponsor) to a PI group
 
 Note, all approvers must already have an account on the cluster in question.
 
-`cheeto database group add sponsor --site=**cluster** --user=**LoginID** --group=**group-name**`
+`cheeto database group add sponsor --site=##cluster## --user=##LoginID## --group=##group-name##`
 
 Note, there is no error shown if the user does not already have an account, so double check the
 [sponsors list](#show-members-and-sponsors-of-a-pi-group) after.
@@ -84,8 +127,8 @@ Note, there is no error shown if the user does not already have an account, so d
 
 Sometimes, PIs need an additional group that are named after the lab they run. These can be created with:
 
-`cheeto database group new lab --site=**site** --groups=**lab-name**-grp --sponsors=**sponsor**`
+`cheeto database group new lab --site=##site## --groups=##lab-name##-grp --sponsors=##sponsor##`
 
 #### Show members, and sponsors, of a PI group
 
-`cheeto db group show --site=**cluster** --group=**group-name**`
+`cheeto db group show --site=##cluster## --group=##group-name##`
