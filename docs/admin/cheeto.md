@@ -9,6 +9,8 @@ done by `hippo-user` on the system `accounts`. **BE VERY CAREFUL** There are no 
 Most changes require a sync process to run on a different system. This happens automatically via cron on the appropriate
 systems, so changes are **not** instantaneous on the clusters.
 
+## Manipulating the database that drives most of the systems
+
 #### Show a user
 
 `cheeto db user show --site=##cluster## --user=##LoginID##`
@@ -127,8 +129,36 @@ Note, there is no error shown if the user does not already have an account, so d
 
 Sometimes, PIs need an additional group that are named after the lab they run. These can be created with:
 
-`cheeto database group new lab --site=##site## --groups=##lab-name##-grp --sponsors=##sponsor##`
+`cheeto database group new lab --site=##cluster## --groups=##lab-name##-grp --sponsors=##sponsor##`
 
 #### Show members, and sponsors, of a PI group
 
 `cheeto db group show --site=##cluster## --group=##group-name##`
+
+## Fixes for common errors
+
+#### User not in `login-ssh-users`
+
+Occasionally, cheeto gets cheated by a MongoDB issue, causing a new user to be unable to login to a cluster. From the
+users side, the connection just closes. You can diagnose on the login node by running `showuser.sh ##Login-ID##` and
+looking for `User is NOT in login-ssh-users, and thus not allowed to login. This is usually a bug.`. You can also run
+`id ##Login-ID##` and see there is no `login-ssh-users` listed for that user.
+
+To fix, you can run the following command on accounts:
+
+`cheeto database site to-ldap --site=##cluster## --force`
+
+This takes approximately 15 seconds on Franklin, and 2 minutes on Farm. During that time, users may run into issues
+logging in.
+
+Then, on the login node, you can run `sudo sss_cache -E`. Then re-verify with `showuser.sh` or `id`. You can also
+directly check LDAP:
+
+```console
+┌─omen@franklin².hpc: ~
+└─0 $ source /opt/hpccf/etc/cluster_name.conf
+
+┌─omen@franklin².hpc: ~
+└─0 $ ldapsearch -o ldif-wrap=no -LLL -x -b ou=groups,ou=${CLUSTER_NAME},dc=hpc,dc=ucdavis,dc=edu  cn=login-ssh-users | grep ##Login-ID##
+memberUid: ##Login-ID##
+```
