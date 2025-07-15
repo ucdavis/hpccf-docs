@@ -43,6 +43,11 @@ cheeto database slurm new assoc --group=hpccfgrp --partition=${PARTITION} --qos=
 
 Two step process, first create the Qos, then allow the group to access it.
 
+???+ warning "Slurm Bug in 25.05.0"
+
+    Slurm 25.05.0 [has a bug](https://support.schedmd.com/show_bug.cgi?id=23127) that prevents Cheeto's newly added QoSs from working.
+    The work-around is to restart the slurmdbd service after new QoSs are added.
+
 ```console
 export GROUP="##GroupName##"
 export PARTITION="##PartitionName##"
