@@ -26,7 +26,8 @@ Farm has a dedicated grafana instance for metrics collection:
 
 ## Statuspage
 
-Farm has a dedicated Atlassian Statuspage for public incident notification:
+Hive and Farm have dedicated Atlassian Statuspages for public incident tracking:
 
-- [https://status.farm.caes.ucdavis.edu/](https://status.farm.caes.ucdavis.edu/)
+- Hive: [https://status.hpc.ucdavis.edu/](https://status.hpc.ucdavis.edu/)
+- Farm: [https://status.farm.caes.ucdavis.edu/](https://status.farm.caes.ucdavis.edu/)
 
