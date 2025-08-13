@@ -24,7 +24,7 @@ Once the PI group directory is exported, you can find it by searching for a coll
 you normally have access to, but for security reasons, you will only be able to write files to
 `/globus-write/Your-Login-ID/`. On the cluster, your newly written files will be under your PI's storage.
 
-**Farm:**
+**Farm, Franklin:**
 
 : `/group/Your-PI-Group-grp/globus-write/Your-Login-ID/`
 
