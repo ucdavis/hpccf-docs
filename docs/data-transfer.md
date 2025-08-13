@@ -22,7 +22,15 @@ directory exported, please contact HPC support and CC your PI for approval.
 Once the PI group directory is exported, you can find it by searching for a collection named
 `UC Davis CLUSTER-NAME PI-share-name`. In the Globus File Manager for that collection, you will be able to read any file
 you normally have access to, but for security reasons, you will only be able to write files to
-`/globus-write/Your-Login-ID/`.
+`/globus-write/Your-Login-ID/`. On the cluster, your newly written data will be under your PI's storage.
+
+**Farm, Franklin:**
+
+: `/group/Your-PI-Group-grp/globus-write/Your-Login-ID/`
+
+**Hive:**
+
+: `/quobyte/Your-PI-Group-grp/globus-write/Your-Login-ID/`
 
 ???+ Warning "Globus Free File Transfer limitations"
 
