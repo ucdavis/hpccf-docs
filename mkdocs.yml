@@ -40,6 +40,7 @@ nav:
                       - alphafold: franklin/software/alphafold.md
                       - cryo-EM: franklin/software/cryoem.md
                       - Modules: franklin/software/modules.md
+                - Databases: franklin/databases.md
                 - Storage: franklin/storage.md
           - Hive:
                 - About: hive/index.md
