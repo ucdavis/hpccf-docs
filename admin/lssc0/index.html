@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/netbox/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/admin/lssc0/">
       
       
-        <link rel="prev" href="../monitoring/">
+        <link rel="prev" href="../globus/">
       
       
-        <link rel="next" href="../network/">
+        <link rel="next" href="../monitoring/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Netbox - HPC@UCD Documentation</title>
+        <title>LSSC0 - HPC@UCD Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#netbox-features" class="md-skip">
+        <a href="#afs" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Netbox
+              LSSC0
             
           </span>
         </div>
@@ -1779,10 +1779,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lssc0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    LSSC0
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1793,6 +1813,183 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#afs" class="md-nav__link">
+    <span class="md-ellipsis">
+      AFS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#become-the-afs-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Become the AFS admin:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-admin-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do admin things
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Do admin things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-afs-group-memberships" class="md-nav__link">
+    <span class="md-ellipsis">
+      List AFS group memberships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-afs-groups-a-user-is-a-member-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show AFS groups a user is a member of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-user-to-an-afs-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a user to an AFS group
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrument VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hpc-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      HPC VLANs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      To access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-make-rule-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      To make rule changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allied-telesis-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allied Telesis switches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1825,30 +2022,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Netbox
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../netbox/" class="md-nav__link">
         
   
   
@@ -1859,75 +2036,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#netbox-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Netbox Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#netbox-administration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Netbox Administration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Netbox Administration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-add-assets-into-netbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to add assets into Netbox
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-add-components-to-an-asset" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to add components to an Asset
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-connect-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to connect components
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2199,46 +2307,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#netbox-features" class="md-nav__link">
+  <a href="#afs" class="md-nav__link">
     <span class="md-ellipsis">
-      Netbox Features
+      AFS
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#netbox-administration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Netbox Administration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Netbox Administration">
+    <nav class="md-nav" aria-label="AFS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-add-assets-into-netbox" class="md-nav__link">
+  <a href="#become-the-afs-admin" class="md-nav__link">
     <span class="md-ellipsis">
-      How to add assets into Netbox
+      Become the AFS admin:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-add-components-to-an-asset" class="md-nav__link">
+  <a href="#do-admin-things" class="md-nav__link">
     <span class="md-ellipsis">
-      How to add components to an Asset
+      Do admin things
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Do admin things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-afs-group-memberships" class="md-nav__link">
+    <span class="md-ellipsis">
+      List AFS group memberships
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-connect-components" class="md-nav__link">
+  <a href="#show-afs-groups-a-user-is-a-member-of" class="md-nav__link">
     <span class="md-ellipsis">
-      How to connect components
+      Show AFS groups a user is a member of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-user-to-an-afs-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a user to an AFS group
     </span>
   </a>
   
@@ -2246,6 +2364,104 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrument VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hpc-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      HPC VLANs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      To access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-make-rule-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      To make rule changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allied-telesis-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allied Telesis switches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS
+    </span>
+  </a>
   
 </li>
       
@@ -2297,7 +2513,7 @@
   page title (or respectively site name) is used as the main headline.
 -->
 
-  <h1>Netbox</h1>
+  <h1>LSSC0</h1>
 
 
 <div class="admonition warning">
@@ -2312,95 +2528,73 @@
 </div>
 
 <!-- Page content -->
-<p><a href="https://netbox.hpc.ucdavis.edu/dcim/sites/">HPC@UCD's Netbox Site</a> is our source of truth for our rack layouts, network
-addressing, and other infrastructure. NetBox is an infrastructure resource modeling (IRM) application designed to
-empower network automation. NetBox was developed specifically to address the needs of network and infrastructure
-engineers.</p>
-<h2 id="netbox-features">Netbox Features<a class="headerlink" href="#netbox-features" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Comprehensive Data Model</li>
-<li>Focused Development</li>
-<li>Extensible and Customizable</li>
-<li>Flexible Permissions</li>
-<li>Custom Validation &amp; Protection Rules</li>
-<li>Device Configuration Rendering</li>
-<li>Custom Scripts</li>
-<li>Automated Events</li>
-<li>Comprehensive Change Logging</li>
-</ul>
-<h2 id="netbox-administration">Netbox Administration<a class="headerlink" href="#netbox-administration" title="Permanent link">&para;</a></h2>
-<p>This section will give an overview of how HPC@UCD admins utilize and administer Netbox.</p>
-<h3 id="how-to-add-assets-into-netbox">How to add assets into Netbox<a class="headerlink" href="#how-to-add-assets-into-netbox" title="Permanent link">&para;</a></h3>
+<h2 id="afs">AFS<a class="headerlink" href="#afs" title="Permanent link">&para;</a></h2>
+<h4 id="become-the-afs-admin">Become the AFS admin:<a class="headerlink" href="#become-the-afs-admin" title="Permanent link">&para;</a></h4>
 <ol>
-<li>
-<p>Navigate to HPC@UCD's Netbox instance here: <a href="https://netbox.hpc.ucdavis.edu/dcim/sites/">HPC@UCD's Netbox Site</a>
-   <img alt="netbox1" src="../../img/netbox1.jpeg" /></p>
+<li><code>kinit admin</code></li>
+<li><code>aklog</code></li>
+</ol>
+<h3 id="do-admin-things">Do admin things<a class="headerlink" href="#do-admin-things" title="Permanent link">&para;</a></h3>
+<h4 id="list-afs-group-memberships">List AFS group memberships<a class="headerlink" href="#list-afs-group-memberships" title="Permanent link">&para;</a></h4>
+<p><code>pts membership admin:rcc</code></p>
+<h4 id="show-afs-groups-a-user-is-a-member-of">Show AFS groups a user is a member of<a class="headerlink" href="#show-afs-groups-a-user-is-a-member-of" title="Permanent link">&para;</a></h4>
+<p><code>pts membership omen</code></p>
+<h4 id="add-a-user-to-an-afs-group">Add a user to an AFS group<a class="headerlink" href="#add-a-user-to-an-afs-group" title="Permanent link">&para;</a></h4>
+<p><code>pts adduser -user omen -group admin:rcc</code></p>
+<h2 id="firewalls">Firewalls<a class="headerlink" href="#firewalls" title="Permanent link">&para;</a></h2>
+<h3 id="names">Names<a class="headerlink" href="#names" title="Permanent link">&para;</a></h3>
+<p>Genome Center firewalls are in pairs and run FreeBSD. Normally, the 1st one in the pair will be the primary/active.</p>
+<p>TODO: add the actual VLANs (CR name, CIDR, and tag #) that each pair covers.</p>
+<h4 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h4>
+<ol>
+<li>fw1.genomecenter</li>
+<li>fw2-gc4.genomecenter</li>
+</ol>
+<h4 id="instrument-vlan">Instrument VLAN<a class="headerlink" href="#instrument-vlan" title="Permanent link">&para;</a></h4>
+<ol>
+<li>inst-fw1</li>
+<li>inst-fw2</li>
+</ol>
+<h4 id="hpc-vlans">HPC VLANs<a class="headerlink" href="#hpc-vlans" title="Permanent link">&para;</a></h4>
+<ol>
+<li>fw1.hpc</li>
+<li>fw2.hpc</li>
+</ol>
+<h3 id="to-access">To access<a class="headerlink" href="#to-access" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">ssh GCLoginID@garbanzo.genomecenter.ucdavis.edu</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">ssh root@FireWall#1</span>
+</code></pre></div>
+<h3 id="to-make-rule-changes">To make rule changes<a class="headerlink" href="#to-make-rule-changes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>ssh root@active(usually #1)</code></li>
+<li>Figure out which file to edit: <code>ls -l /etc/pf.conf*</code></li>
+<li>Edit resolved symlink: <code>vim ResolvedSymlink</code></li>
+<li>Check to make sure new rules can load: <code>pfctl -n -f /etc/pf.confFullNameOfSymlink</code></li>
+<li>Apply the new rules: <code>pfctl -f /etc/pf.confFullNameOfSymlink</code></li>
+<li>Check into git:<ol>
+<li><code>kinit GCLoginID</code></li>
+<li><code>cd /opt/gc/config/pf</code></li>
+<li><code>git status</code></li>
+<li><code>git add file1 file2 file3 ...</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
+</ol>
 </li>
-<li>
-<p>Select the site to which you will be adding an asset too. In this example I have chosen Campus DC:
-   <img alt="netbox2" src="../../img/netbox2.jpeg" /></p>
-</li>
-<li>
-<p>Scroll down to the bottom of this page and select which of the locations you will add your asset too, here I chose
-   the Storage Cabinet: <img alt="netbox3" src="../../img/netbox3.jpeg" /> <img alt="netbox4" src="../../img/netbox4.jpeg" /></p>
-</li>
-<li>
-<p>On this page scroll to the bottom and select Add a Device: <img alt="netbox5" src="../../img/netbox5.jpeg" /></p>
-</li>
-<li>
-<p>After you have selected Add a Device you should see a page like this: <img alt="netbox6" src="../../img/netbox6.jpeg" /></p>
-</li>
-<li>
-<p>Fill out this page with specifics of the asset, some fields are not required but try to fill out this section as much
-   as possible with the fields available, here is an example of a created asset and how it should look:
-   <img alt="netbox7" src="../../img/netbox7.jpeg" /><img alt="netbox8" src="../../img/netbox8.jpeg" /><img alt="netbox9" src="../../img/netbox9.jpeg" /><img alt="netbox10" src="../../img/netbox10.jpeg" /><img alt="netbox11" src="../../img/netbox11.jpeg" /><img alt="netbox12" src="../../img/netbox12.jpeg" /><img alt="netbox13" src="../../img/netbox13.jpeg" /></p>
-</li>
-<li>
-<p>Ensure to click on Save to have the device added.</p>
+<li>Apply to other firewall in pair:<ol>
+<li><code>ssh root@#2</code></li>
+<li><code>kinit GCLoginID</code></li>
+<li><code>cd /opt/gc/config/pf</code></li>
+<li><code>git pull</code></li>
+<li><code>pfctl -n -f /etc/pf.confFullNameOfSymlink</code></li>
+<li><code>pfctl -f /etc/pf.confFullNameOfSymlink</code></li>
+</ol>
 </li>
 </ol>
-<h3 id="how-to-add-components-to-an-asset">How to add components to an Asset<a class="headerlink" href="#how-to-add-components-to-an-asset" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>On the asset page select the + Add Components dropdown and select the component you wish to add, for this I have
-   chosen a Console Port: <img alt="netbox14" src="../../img/netbox14.jpeg" /></p>
-</li>
-<li>
-<p>Here again you will fill out the dropdowns as thoroughly as possible, the example here is of an interface that has
-   already been added:
-   <img alt="netbox15" src="../../img/netbox15.jpeg" /><img alt="netbox16" src="../../img/netbox16.jpeg" /><img alt="netbox17" src="../../img/netbox17.jpeg" /><img alt="netbox18" src="../../img/netbox18.jpeg" /></p>
-</li>
-<li>
-<p>Again make sure to click Save to ensure the component has been added.</p>
-</li>
-<li>
-<p>This process can be used to add all of the following componentes to a device:<img alt="netbox19" src="../../img/netbox19.jpeg" /></p>
-</li>
-</ol>
-<h3 id="how-to-connect-components">How to connect components<a class="headerlink" href="#how-to-connect-components" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>After a component has been created such as an interface, power port or any other type of component you will want to
-   connect it to something. For any component the process is similar within Netbox. In this example it will show how to
-   connect an Infiniban port on a device to a port on an Infiniban switch. First navigate to the device you wish to work
-   with and select the appropriate tab, in this case it will be Interfaces and you will see a page like this:
-   <img alt="netbox20" src="../../img/netbox20.jpeg" /></p>
-</li>
-<li>
-<p>Here we will connect ib1 to an infiniban switch by clicking the green dropdown off to the right of ib1 and we will be
-   connecting to another interface on the infiniban switch so we will choose interface as shown here:
-   <img alt="netbox21" src="../../img/netbox21.jpeg" /></p>
-</li>
-<li>
-<p>Once selected you will come to a screen that looks like this:
-   <img alt="netbox22" src="../../img/netbox22.jpeg" /><img alt="netbox23" src="../../img/netbox23.jpeg" /><img alt="netbox24" src="../../img/netbox24.jpeg" /></p>
-</li>
-<li>
-<p>Once all filled out with the required information to complete the connection (and any additional information that can
-   be provided) at the bottom make sure to create the connection, your screen should look something like this:
-   <img alt="netbox25" src="../../img/netbox25.jpeg" /><img alt="netbox26" src="../../img/netbox26.jpeg" /><img alt="netbox27" src="../../img/netbox27.jpeg" /></p>
-</li>
-</ol>
+<h2 id="allied-telesis-switches">Allied Telesis switches<a class="headerlink" href="#allied-telesis-switches" title="Permanent link">&para;</a></h2>
+<p>https://docs.google.com/document/d/1aHBZtZ_hx0vyjEEpX8jYg32Cb9MsBPanXtjb1viHtow/edit?tab=t.0</p>
+<p>TODO: move gdoc here.</p>
+<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
+<p>Dunno, but it probably looks a bit like firewall changes? Maybe.</p>
 
 <!-- Source file information -->
 
@@ -2425,7 +2619,7 @@ engineers.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15 UTC">April 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2025 00:38:41 UTC">August 16, 2025</span>
   </span>
 
     
@@ -2435,7 +2629,7 @@ engineers.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2024 17:59:03 UTC">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2025 00:38:41 UTC">August 16, 2025</span>
   </span>
 
     
