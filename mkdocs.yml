@@ -57,6 +57,7 @@ nav:
           - Configuration: admin/configuration.md # puppet, etc
           - DNS: admin/dns.md
           - Globus: admin/globus.md
+          - LSSC0: admin/lssc0.md
           - Monitoring: admin/monitoring.md
           - Netbox: admin/netbox.md
           - Network Architecture: admin/network.md
