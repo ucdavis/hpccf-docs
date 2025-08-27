@@ -8,7 +8,7 @@ summary: An overview of the software module system and how to use it.
 ## Intro
 
 High performance compute clusters usually have a variety of software with sometimes conflicting dependencies. Software
-packages may need to make modifications to the [user environment](../general/environment.md), or the same software may
+packages may need to make modifications to the user environment], or the same software may
 be compiled multiple times to run efficiently on differing hardware within the cluster. To support these use cases,
 software is managed with a module system that prepares the user environment to access specific software on load and
 returns the environment to its former state when unloaded. A _module_ is the bit of code that enacts and tracks these
@@ -103,7 +103,7 @@ the latest version, unless a default has been specified.
 Some modules are nested under a deeper hierarchy. For example, `relion` on Franklin has many variants, under both
 `relion/cpu` and `relion/gpu`. To load these, you must specify the second layer of the hierarchy: `module load relion`
 will fail, but `module load relion/cpu` will load the default module under `relion/cpu`, which has the full name
-`relion/cpu/4.0.0+amd`. More information on this system can be found under [Organization](modules.md#organization).
+`relion/cpu/4.0.0+amd`. 
 
 The modules are all configured to set a `$NAME_ROOT` variable that points to the installation prefix. This will
 correspond to the name of the module, minus the version. For example:

@@ -68,5 +68,5 @@ New purchases for Farm can be placed through [Hippo](https://hippo.ucdavis.edu/F
 
 Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If
 you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment
-not available through Hippo, you can start a discussion with [Adam Getchell](acgetchell@ucdavis.edu) or
-[HPC@UCD](hpc-help@ucdavis.edu).
+not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or
+[HPC@UCD](mailto:hpc-help@ucdavis.edu).

@@ -94,14 +94,14 @@ As always, see `man rsync` for the manual.
 
 ## Open OnDemand
 
-For clusters that have [Open OnDemand](/software/ondemand/), you can copy files to/from your home directory. Log in to
+For clusters that have [Open OnDemand](software/ondemand.md), you can copy files to/from your home directory. Log in to
 the OnDemand dashboard for the cluster, and select `Files` -> `Home Directory`. Files larger than a couple hundred
 megabytes will fail to transfer through OnDemand, so you will need to use a different method.
 
 ## GUI tools
 
 GUI tools do exist to help with file transfer. However, HPC@UCD cannot provide support for them, so you will need to
-contact your local IT support, or make an appointment with [DataLab](/#additional-information) for help.
+contact your local IT support, or make an appointment with [DataLab](index.md#additional-information) for help.
 
 -   Filezilla is a multi-platform client commonly used to transfer data to and from the cluster.
 

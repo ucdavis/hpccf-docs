@@ -83,7 +83,7 @@ This module will almost certainly interfere with your conda installation.
 Remove existing conda installation and its shell hooks from your PATH before proceeding.
 ```
 
-See [Migrating from User-installed Conda](/software/conda/#migrating-from-user-installed-conda)
+See [Migrating from User-installed Conda](conda.md#migrating-from-user-installed-conda)
 
 ### Time limit
 
@@ -102,7 +102,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 
 If your job is rejected at submission time with this error, it means you requested resources that are not available in
 the `Account`/`Partition` you specified. Normally you should work with your PI to find out what resources are available.
-On Hive, in `publicgrp`/`high` (the free-tier), the limits [are documented here](/scheduler/free-tier).
+On Hive, in `publicgrp`/`high` (the free-tier), the limits [are documented here](../scheduler/free-access.md).
 
 ### Failed to submit session with the following error:
 

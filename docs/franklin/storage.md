@@ -48,7 +48,7 @@ Windows mounts Samba shares natively.
 First, through the File Browser, right-click __"This PC"__ and select __"Map network drive..."__
 
 <figure markdown>
-![File Explorer dialogue](../../img/map_drive_dialogue.png){ width="300"}
+![File Explorer dialogue](../img/map_drive_dialogue.png){ width="300"}
 </figure>
 
 In the network drive dialogue box, enter `\\172.16.1.4\[STORAGE_NAME]`, where `[STORAGE_NAME]` corresponds 
@@ -57,26 +57,26 @@ Usually, this is the name of your group, such as `cashjngrp` or `jalettsgrp`.
 Make sure to also select the __Connect using different credentials__ checkbox.
 
 <figure markdown>
-![Map drive dialogue](../../img/map_drive_flow.png){ width="600"}
+![Map drive dialogue](../img/map_drive_flow.png){ width="600"}
 </figure>
 
 Hit __"Finish"__, at which point you should be presented with a password prompt.
 Enter your Franklin username and the password from your `~/samba-password` file.
 
 <figure markdown>
-![Map drive credentials prompt](../../img/map_drive_creds.png){ width="400"}
+![Map drive credentials prompt](../img/map_drive_creds.png){ width="400"}
 </figure>
 
 Your storage array will now be available at the mapped location (in this example, at `Z:`).
 Any files you write will be owned by your Linux user and your lab's group.
 
 <figure markdown>
-![Mapped drive](../../img/mapped_drive.png){ width="600"}
+![Mapped drive](../img/mapped_drive.png){ width="600"}
 </figure>
 
 If you are logged in to Windows with a shared user, make sure to disconnect when you are finished.
 Do this by right-clicking the mapped drive in the File Explorer and selecting __"Disconnect"__.
 
 <figure markdown>
-![Disconnect mapped drive](../../img/mapped_drive_disconnect.png){ width="400"}
+![Disconnect mapped drive](../img/mapped_drive_disconnect.png){ width="400"}
 </figure>
