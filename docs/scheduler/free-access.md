@@ -6,7 +6,7 @@ Farm and Hive both provide free/sponsored access to a limited amount of resource
 
 ## Farm
 
-See [here](/general/account-requests/#hippo) for instructions to request access to the free/sponsored resources for
+See [here](..//general/account-requests.md#hippo) for instructions to request access to the free/sponsored resources for
 Farm.
 
 #### Slurm account name `adamgrp`

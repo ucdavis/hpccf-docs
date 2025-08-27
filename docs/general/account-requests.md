@@ -5,7 +5,7 @@ HPC accounts are provisioned on a per-cluster basis and granted with the permiss
 separate home directory.
 
 Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
-using your campus passphrase. For information on creating SSH keys, please visit the [access](/general/access/)
+using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md)
 documentation page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
@@ -45,10 +45,10 @@ Cluster specific information:
         - If you have a PI, enter the PI's name.
         - If you need access to the free-tier, enter: `free-tier`
     1. Under `Access Type`, select one or more:
-        - If you only need access to [Open OnDemand](/software/ondemand/), select `OpenOnDemand`.
+        - If you only need access to [Open OnDemand](../software/ondemand.md), select `OpenOnDemand`.
         - If you need command-line access to the cluster via SSH, select `SshKey`.
         - Note: Hive allows SSH with campus passphrases or a SSH key, all other clusters **require** a SSH key.
-        - For help generating a SSH key, see [How do I generate an SSH key pair?](/general/access/#how-do-i-generate-an-ssh-key-pair)
+        - For help generating a SSH key, see [How do I generate an SSH key pair?](access.md#how-do-i-generate-an-ssh-key-pair)
 
 #### How to request access to another group on a cluster:
 

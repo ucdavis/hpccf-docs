@@ -28,7 +28,7 @@ The generic architecture on Franklin is [`x86-64-v3`](https://lists.llvm.org/pip
 The various conda modules have their own naming scheme.
 These are of the form `conda/ENVIRONMENT/VERSION`.
 The `conda/base/VERSION` module(s) load the base conda environment and set the appropriate variables to use the `conda activate` and `deactivate` commands, while the the modules for the other environments first load `conda/base` and then activate the environment to which they correspond.
-The the [`conda`](conda.md) section for more information on `conda` and Python on Franklin.
+The [`conda`](../../software/conda.md) section for more information on `conda` and Python on Franklin.
 
 
 ## Spack-managed Modules

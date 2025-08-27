@@ -12,13 +12,13 @@ happy to take care of the actual migration, but we will need to coordinate with 
 process looks like this:
 
 1. The PI
-   [requests a `sponsor` account on Hive](/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources).
+   [requests a `sponsor` account on Hive](../general/account-requests.md#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources).
 
 1. The PI logs into Hive to verify access.
 
 1. All users that need access to the PI's resources on Hive requests access (either
-   [`new account`](/general/account-requests/#how-to-request-a-new-account-on-a-cluster), or
-   [`access to another group`](/general/account-requests/#how-to-request-access-to-another-group-on-a-cluster)) through
+   [`new account`](..//general/account-requests.md#how-to-request-a-new-account-on-a-cluster), or
+   [`access to another group`](..//general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster)) through
    Hippo.
 
     1. The PI approves each of those requests, allowing the accounts to be created on Hive.

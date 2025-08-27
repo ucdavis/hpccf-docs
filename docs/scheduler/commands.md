@@ -42,7 +42,7 @@ The job script is a normal shell script -- note the `#!/bin/bash` -- that contai
 - `--cpus-per-task`: Number of CPUs (cores) to allocate per task.
 - `--time`: Maximum wallclock time for the job.
 - `--mem`: Maximum amount of memory for the job.
-- `--partition`: The queue partition to submit to. See the [queueing](queues.md) section for more details.
+- `--partition`: The partition queue to submit to.
 
 ??? warning
 
@@ -133,7 +133,7 @@ To kill a job before it has completed, use the scancel command:
 $ scancel JOBID # (1)!
 ```
 
-1. Replace `JOBID` with the ID of your job, which can be obtained with [`squeue`](jobs.md#listing-jobs-squeue).
+1. Replace `JOBID` with the ID of your job, which can be obtained with [`squeue`](#listing-jobs-squeue).
 
 You can cancel many jobs at a time; for example, you could cancel all of your running jobs with:
 
