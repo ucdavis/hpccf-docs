@@ -8,7 +8,7 @@ summary: An overview of the software module system and how to use it.
 ## Intro
 
 High performance compute clusters usually have a variety of software with sometimes conflicting dependencies. Software
-packages may need to make modifications to the user environment], or the same software may
+packages may need to make modifications to the user environment, or the same software may
 be compiled multiple times to run efficiently on differing hardware within the cluster. To support these use cases,
 software is managed with a module system that prepares the user environment to access specific software on load and
 returns the environment to its former state when unloaded. A _module_ is the bit of code that enacts and tracks these
