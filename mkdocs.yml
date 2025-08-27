@@ -24,51 +24,27 @@ nav:
                 - Open OnDemand: software/ondemand.md
                 - R and RStudio: software/rstudio.md
           - Troubleshooting: general/troubleshooting.md
-    - Clusters:
-          - Farm:
-                - About: farm/index.md
-                - Job Scheduling: farm/scheduling.md
-                - Resources: farm/resources.md
-                - Software:
-                      - Modules: farm/software/modules.md
-                - Storage: farm/storage.md
-          - Franklin:
-                - About: franklin/index.md
-                - Job Scheduling: franklin/scheduling.md
-                - Resources: franklin/resources.md
-                - Software:
-                      - alphafold: franklin/software/alphafold.md
-                      - cryo-EM: franklin/software/cryoem.md
-                      - Modules: franklin/software/modules.md
-                - Databases: franklin/databases.md
-                - Storage: franklin/storage.md
-          - Hive:
-                - About: hive/index.md
-                - Migrating from LSSC0: hive/lssc0-data-migration.md
+    - Farm:
+          - About: farm/index.md
+          - Job Scheduling: farm/scheduling.md
+          - Resources: farm/resources.md
+          - Software:
+                - Modules: farm/software/modules.md
+          - Storage: farm/storage.md
+    - Franklin:
+          - About: franklin/index.md
+          - Job Scheduling: franklin/scheduling.md
+          - Resources: franklin/resources.md
+          - Software:
+                - alphafold: franklin/software/alphafold.md
+                - cryo-EM: franklin/software/cryoem.md
+                - Modules: franklin/software/modules.md
+          - Databases: franklin/databases.md
+          - Storage: franklin/storage.md
+    - Hive:
+          - About: hive/index.md
+          - Migrating from LSSC0: hive/lssc0-data-migration.md
 
-    - Admin:
-          - admin/index.md
-          - Backups:
-                - PBS: admin/backups/pbs.md
-          - BMC:
-                - Remote Media: admin/bmc/remote-media.md
-          - Cheeto: admin/cheeto.md
-          - Cobbler: admin/cobbler.md
-          - Configuration: admin/configuration.md # puppet, etc
-          - DNS: admin/dns.md
-          - Globus: admin/globus.md
-          - LSSC0: admin/lssc0.md
-          - Monitoring: admin/monitoring.md
-          - Netbox: admin/netbox.md
-          - Network Architecture: admin/network.md
-          - Open OnDemand: admin/ondemand.md
-          - Provisioning: admin/provisioning.md
-          - PXE boot: admin/PXE.md
-          - Quobyte:
-                - New PI share: admin/quobyte/new-pi-share.md
-          - Samba: admin/samba.md
-          - Software: admin/software.md
-          - Virtual Machines: admin/vms.md
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
 #
