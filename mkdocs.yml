@@ -23,6 +23,8 @@ nav:
                 - Module System: software/modules.md
                 - Open OnDemand: software/ondemand.md
                 - R and RStudio: software/rstudio.md
+
+          - Support: general/support.md
           - Troubleshooting: general/troubleshooting.md
     - Farm:
           - About: farm/index.md
@@ -43,6 +45,7 @@ nav:
           - Storage: franklin/storage.md
     - Hive:
           - About: hive/index.md
+          - Job Scheduling: hive/scheduling.md
           - Migrating from LSSC0: hive/lssc0-data-migration.md
 
 #
