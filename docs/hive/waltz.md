@@ -14,4 +14,4 @@ The path to access Waltz is `/nfs/peloton/waltz/`. If you have permission issues
 
     Only some of the Hive nodes have InfiniBand, so use the `--constraint=mpi` flag to ensure your job can access Waltz.
 
-    Neither of the Hive login nodes, nor `transfer.hive` have InfiniBand, so you cannot access Waltz from Hive's login or transfer nodes.
+    Neither of the Hive login nodes (`login1.hive`, and `login2.hive`), nor `transfer.hive` have InfiniBand, so you cannot access Waltz from Hive's login or transfer nodes.
