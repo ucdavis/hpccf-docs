@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/hive/migration-email/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/general/support/">
       
       
+        <link rel="prev" href="../../backups/backups/">
+      
+      
+        <link rel="next" href="../../data-transfer/">
       
       
       <link rel="icon" href="../../assets/HPCCF-logo.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Migration from LSSC0 to Hive Email - HPC@UCD Documentation</title>
+        <title>HPC@UCD Support - HPC@UCD Documentation</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Migration from LSSC0 to Hive Email
+              HPC@UCD Support
             
           </span>
         </div>
@@ -251,8 +255,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -263,13 +269,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -285,7 +289,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             General
@@ -299,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/access/" class="md-nav__link">
+      <a href="../access/" class="md-nav__link">
         
   
   
@@ -322,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/account-requests/" class="md-nav__link">
+      <a href="../account-requests/" class="md-nav__link">
         
   
   
@@ -365,10 +369,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../general/support/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -379,6 +390,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -790,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   
@@ -1368,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../hive/" class="md-nav__link">
         
   
   
@@ -1391,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scheduling/" class="md-nav__link">
+      <a href="../../hive/scheduling/" class="md-nav__link">
         
   
   
@@ -1414,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lssc0-data-migration/" class="md-nav__link">
+      <a href="../../hive/lssc0-data-migration/" class="md-nav__link">
         
   
   
@@ -1437,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../waltz/" class="md-nav__link">
+      <a href="../../hive/waltz/" class="md-nav__link">
         
   
   
@@ -1495,53 +1507,23 @@
   
 
 
-  <h1>Migration from LSSC0 to Hive Email</h1>
+  <h1>Contact Support</h1>
 
-<div class="admonition note">
-<p class="admonition-title">The following email will be sent to each PI as we work through the migration process</p>
-<p>All</p>
-<p>We are starting the process of migrating users, hardware, and data from LSSC0 to Hive. Labs with login or GPU nodes
-under seven years of age will be migrated to Hive according to our hardware policy at
-https://hpc.ucdavis.edu/model-hpc-hardware-support.</p>
-<p>Please ensure that the software currently used by your team on LSSC0 is available on Hive. If you need specific
-software, please let us know by requesting it using the Software Request Form at
-https://hpc.ucdavis.edu/software-installation-policy . Existing software can be searched with:
-<code>module avail -l | grep -i softwarename</code></p>
-<p>PIs are first required to make an account on Hive by going to the High-Performance Personnel Onboarding Portal at
-https://hippo.ucdavis.edu, selecting Hive as their cluster, and enter the <code>New PI Onboarding (sponsors)</code> group. HPC@UCD
-staff will approve the request, and the new PI group will be available for users to select. Documentation here:
-https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
-<p>Once the PI group has been created, users are required to make an account on Hive by going to the High-Performance
-Personnel Onboarding Portal at https://hippo.ucdavis.edu, selecting Hive as their cluster, and selecting their PI/lab’s
-group. The PI will receive an email with a link to approve the request. Once it is approved, the user will be added to
-the PI's group and will be able to log in to Hive. Documentation here:
-https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources</p>
-<p>Users are responsible for migrating their home directory to Hive. We have helpful instructions for those users who need
-assistance with rsync at https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/</p>
-<p>The lab share data migration takes place over several steps:</p>
-<ol>
+<p>To help us provide better and more consistent support, per department policy, requests emailed directly to team members
+will not be addressed. Such requests must be submitted through the ticketing system. See below for information.</p>
+<ul>
 <li>
-<p>HPC staff will copy group data from LSSC0 to Hive during an initial pass.</p>
+<p>Any general service inquiries and all HPC support questions and concerns related to compute and storage
+    infrastructure, user account support, and other technical issues must be submitted to the
+    <a href="mailto:hpc-help@ucdavis.edu">HPC@UCD Help Desk</a>.</p>
 </li>
 <li>
-<p>PIs will be notified via Service Now email to stop jobs in preparation for a second pass of data and to arrange for
-the final transition to Hive. Service Now tracking allows HPC staff to keep PIs notified and the status tracked.</p>
-<p>Note: HPC staff will add a <code>.CSV</code> file to the ticket with user and group information from the Genome Center
-Computing Portal. It is the PI’s responsibility to validate that the group information is correct so that HPC staff
-can map user data from LSSC0 to Hive during the migration process.</p>
-<p>Users who have not made accounts on Hive will have their group data owned by the PI.</p>
+<p>Farm cluster support should be directed to <a href="mailto:farm-hpc@ucdavis.edu">farm-hpc@ucdavis.edu</a>.</p>
 </li>
 <li>
-<p>Login nodes under seven years of age will be migrated to Hive, and groups will be provisioned with like resources.
-Login nodes over seven years of age will be decommissioned.</p>
+<p>Note, emails sent to the general IT Express email will incur slowdowns as ITX will need to route that ticket to HPC.</p>
 </li>
-<li>
-<p>Final pass of data and permissions adjustment. Data on LSSC0 will be marked read-only.</p>
-</li>
-</ol>
-<p>HPC@UCD is maintaining a list of Frequently Asked Questions:
-https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lssc0-backed-up-data</p>
-</div>
+</ul>
 
 
 
@@ -1564,7 +1546,7 @@ https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lss
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 11, 2025 00:41:15 UTC">April 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 02:19:47 UTC">August 29, 2025</span>
   </span>
 
     
@@ -1574,7 +1556,7 @@ https://docs.hpc.ucdavis.edu/hive/lssc0-data-migration/#what-happens-with-my-lss
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 17, 2025 20:45:47 UTC">March 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 28, 2025 20:19:17 UTC">August 28, 2025</span>
   </span>
 
     
