@@ -49,6 +49,17 @@ nav:
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
 #
 
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
 markdown_extensions:
     - toc:
           permalink: true
@@ -80,6 +91,18 @@ plugins:
           enable_creation_date: true
     - macros:
           module_name: macros
+    - spellcheck:
+        backends:  # the backends you want to use
+        - symspellpy  # as strings
+        - codespell:  # or nested configs
+            dictionaries: [clear, rare, names, code, usage]
+            C: 2
+        # known_words can also be a list of words
+        known_words: extra-dictionary.txt
+        # ignore words in <code> tags
+        ignore_code: true
+        skip_files:
+          - franklin/software/modules.md
 
 extra:
     spack_modulefiles_path: spack-ucdavis/modulefiles/hpccf/franklin/
