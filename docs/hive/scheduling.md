@@ -12,7 +12,7 @@ Hive resources are generally purchased by the CPU. The current rates can be seen
 Specialized needs (entire nodes or GPU nodes) can be purchased by contacting [HPC@UCD support](../general/support.md).
 HPC will work with you to find a configuration suitable to use in Hive.
 
-#### College/Group Resources
+### College/Group Resources
 
 Some colleges have purchased group resources, which you may be able to request access to through
 [Hippo](../general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster).
@@ -22,19 +22,19 @@ Once you have access to group resources, you can request to use them with
 ID, followed by `grp`. A summary of the Slurm accounts you have access to, as well as the amount of resources in those
 accounts, is printed every time you log in to Hive.
 
-#### Slurm Resource Mediation
+### Slurm Resource Mediation
 
 Access to resources is mediated by Slurm. Nodes are not assigned to a user/group/PI. Instead, Slurm grants access to the
 requested resources on the next available node. This allows a group to continue to access resources, even when any
 particular node is down.
 
-#### WARNING: `--exclusive` sbatch/srun flag
+### WARNING: `--exclusive` sbatch/srun flag
 
 Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
 erroneously flags these jobs with `(QOSGrpCpuLimit)`.
 
-#### MPI jobs
+### MPI jobs
 
 Not all nodes that have been brought into Hive have InfiniBand hardware, so jobs that do MPI and require InfiniBand
 connectivity need to use the `--constraint=mpi` flag.
