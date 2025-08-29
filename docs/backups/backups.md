@@ -75,7 +75,7 @@ file(s) or directory(s) you need to restore, then `cp` to your desired location.
 
 Note, this backup mount (`/home/omen/restore-fCnNXIUr` in this example) will automatically unmount in 1 hour. Any shells
 that have `cd`'d into this directory will remain functional until you close them (or `cd` out). You can force the
-directory to umount earlier by pressing Control-c in window where you ran the restore program.
+directory to unmount earlier by pressing Control-c in window where you ran the restore program.
 
 ### Restore a file from your group directory
 
@@ -162,7 +162,7 @@ unchanging data is only stored a single time. The short version is you need appr
 
 ### What happens when my backups exceed my purchased space?
 
-An error will be sent the email address(es) you designated to monitor your backups.
+An error will be sent the email addresses you designated to monitor your backups.
 
 ???+ Warning "Purchased quota exceeded example message"
 

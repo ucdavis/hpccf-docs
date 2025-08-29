@@ -4,7 +4,7 @@
 
 Some HPC@UCD clusters have [Open OnDemand](https://openondemand.org/) (OOD). OOD allows access to cluster resources
 using a web browser. All OOD apps are automatically launched through Slurm jobs, so you have access to your normal
-cluster resources. Just like sbatch jobs, OOD apps (jobs) run even when your browser is not attached, so you can
+cluster resources. Just like `sbatch` jobs, OOD apps (jobs) run even when your browser is not attached, so you can
 reattach to a running OOD app just by going back to the OOD website.
 
 ## Clusters with Open OnDemand:

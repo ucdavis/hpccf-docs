@@ -74,7 +74,7 @@ CPUs are the central compute power behind your jobs.
 Most scientific software supports multiprocessing (multiple instances of an executable with discrete memory resources,
 possibly but not necessarily communicating with each other), multithreading (multiple paths, or threads, of execution
 within a process on a node, sharing the same memory resources, but able to execute on different cores), or both.
-This allows computation to scale with increased numbers of CPUs, allowing bigger datasets to be analyzed.
+This allows computation to scale with increased numbers of CPUs, allowing bigger datasets to be analysed.
 
 Slurm's CPU management methods are complex and can quickly become confusing.
 For the purposes of this documentation, we will provide a simplified explanation; those with advanced needs
@@ -187,7 +187,7 @@ It will exhaust all the CPUs on a node with task groups before moving to a new n
 For these examples, we're going to create a script that reports both the hostname (ie, the node) and the number
 of CPUs:
 
-``` { .bash .copy title="host-nprocs.sh" }
+``` { .bash .copy title="<code>host-nprocs.sh</code>" }
 #!/bin/bash
 
 echo `hostname`: `nproc`

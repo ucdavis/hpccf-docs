@@ -5,7 +5,7 @@ Information about Partitions - what is low, med and high and what are available 
 
 Free tier access to 20GB capped storage.
 
-Low partition - Internittent access to idle resources abbove limit
+Low partition - intermittent access to idle resources above limit
 
 Medium Partition - Shared use of idle resources above permitted limit
 

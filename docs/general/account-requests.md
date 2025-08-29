@@ -63,7 +63,7 @@ Cluster specific information:
         - If you are the PI, enter: `self`
         - If you have a PI, enter the PI's name.
     1. Click: `Confirm`
-    1. After you are granted access to this group's resources, you will need to specifically request it by adding `--account=NewlyGrantedPIgrp` to each srun or sbatch job.
+    1. After you are granted access to this group's resources, you will need to specifically request it by adding `--account=NewlyGrantedPIgrp` to each `srun` or `sbatch` job.
 
 #### If you are a PI and have bought, or are planning to purchase, resources:
 
