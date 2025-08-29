@@ -47,6 +47,7 @@ nav:
           - About: hive/index.md
           - Job Scheduling: hive/scheduling.md
           - Migrating from LSSC0: hive/lssc0-data-migration.md
+          - Waltz temporary access: hive/waltz.md
 
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
