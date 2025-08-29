@@ -23,7 +23,7 @@ Farm.
         -   1 day (`1-00`) of runtime
         -   1 node
 
-    -   You can access these resources by adding `--account=gpul-users --partition=gpul --gpus=1` to your srun or sbatch
+    -   You can access these resources by adding `--account=gpul-users --partition=gpul --gpus=1` to your `srun` or `sbatch`
         command.
 
     -   If you require a specific type of GPU, you can request with `--gpus=TYPE:1`. The available types are: `a100`,

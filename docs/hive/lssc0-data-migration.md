@@ -23,7 +23,7 @@ process looks like this:
 
     1. The PI approves each of those requests, allowing the accounts to be created on Hive.
 
-1. The PI opens a ticket with HPC@UCD by emailing hpc-help@ucdavis.edu.
+1. The PI opens a ticket with HPC@UCD by emailing [hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu).
 
     1. In that ticket, the PI provides the LSSC0 Login ID and the corresponding UC Davis email address.
 

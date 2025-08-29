@@ -14,7 +14,7 @@ The batch job script specifies the resources needed for the job, such as the num
 cores, memory, and walltime.
 A simple example would be:
 
-``` { .slurm .copy title="jobscript.sh" }
+``` { .slurm .copy title="<code>jobscript.sh</code>" }
 #!/bin/bash 
 # (1)
 #SBATCH --ntasks=1
@@ -125,9 +125,9 @@ JOBID      PARTITION                 NAME       USER  ST                START_TI
 Try `man squeue` or [visit the official docs](https://slurm.schedmd.com/squeue.html) for more options.
  
 
-## Canceling jobs: `scancel`
+## Cancelling jobs: `scancel`
 
-To kill a job before it has completed, use the scancel command:
+To kill a job before it has completed, use the `scancel` command:
 
 ```console
 $ scancel JOBID # (1)!
@@ -275,5 +275,5 @@ c-8-58         1          low*        idle 256    2:64:2 100000        0      1 
 ...
 ```
 
-This view gives the nodes' socket, core, and thread configurations, their RAM, and the feature list, which you can read about in the [**Resources**](resources.md#features) section. Try `man scontrol` or `man sinfo`, or visit the official docs
+This view gives the nodes' socket, core, and thread configurations, their RAM, and the feature list, which you can read about in the [**Resources**](resources.md) section. Try `man scontrol` or `man sinfo`, or visit the official docs
 for [`scontrol`](https://slurm.schedmd.com/scontrol.html) and [`sinfo`](https://slurm.schedmd.com/sinfo.html), for more options.

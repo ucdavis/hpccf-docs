@@ -28,7 +28,7 @@ means that most `conda` commands can be replaced with `mamba` commands for a per
 
 ???+ Note
 
-    For extremely large conda environments, you may need to run it on a node using srun, i.e.
+    For extremely large conda environments, you may need to run it on a node using `srun`, i.e.
 
     ```bash
     $ srun --partition=high2 --time=1-00 --mem=20G --ntasks=2 --pty /usr/bin/bash
