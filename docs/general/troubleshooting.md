@@ -24,6 +24,15 @@ To ensure this is the case, you can do the following:
 chown 600 $HOME/.ssh/id_rsa
 ```
 
+When generating SSH key pair, you are asked to set a password for your private key, we recommend to give a password for security purposes. 
+But if you want to reset your private key password, enter this command (only when you know your current password):-
+
+```bash
+ssh-keygen -p -f /root/.ssh/id_rsa
+```
+
+If you have forgotten your private key password and cannot reset it, you can generate a new SSH key pair and assign a new password for it, but send your new public key to us.
+
 On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this file.
 Doing so will cause you will lose access.
 
