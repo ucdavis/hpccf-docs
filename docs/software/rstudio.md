@@ -1,7 +1,7 @@
 # :simple-r: :simple-rstudio: R and RStudio
 
 ## Using RStudio
-You can run RStudio on our clusters using OpenOnDemand by navigating to [https://ondemand.<clustername>.hpc.ucdavis.edu](https://ondemand.<clustername>.hpc.ucdavis.edu). OpenOnDemand (OOD) allows access to cluster resources and software via a web browser. Learn more about OpenOnDemand [here](ondemand.md#open-ondemand)
+You can run RStudio on our clusters using Open OnDemand by navigating to `https://ondemand.<clustername>.hpc.ucdavis.edu`. Open OnDemand (OOD) allows access to cluster resources and software via a web browser. Learn more about Open OnDemand [here](ondemand.md#open-ondemand)
 
 ## RStudio Troubleshooting
 
