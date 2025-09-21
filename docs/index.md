@@ -57,9 +57,6 @@ with the new cluster when possible.
 **HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
 with COE.
 
-**Peloton**: Peloton is open to principal investigators associated with the College of Letters and Science. Peloton has
-a shared tier open to users associated with CLAS.
-
 #### Fair-Share Clusters
 
 A fair-share HPC algorithm is a resource allocation strategy used to ensure equitable access to computing resources

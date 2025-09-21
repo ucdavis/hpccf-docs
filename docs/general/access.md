@@ -143,9 +143,3 @@ If they differ, you should open a ticket.
 -   `RSA: SHA256:ZC23UiJLib0sozDEClkmD5q+TgeZf/mol6xzIQY30xE`
 -   `ECDSA: SHA256:ymN3g0Ow4BM2Rd/zE3THZg7nv+mOs75ENCe5GcvWQoM`
 -   `ED25519: SHA256:Svzxx62P/NxrsISeyPZ06nW+YkDYsE1xQc1wD/61tFI`
-
-#### peloton.hpc.ucdavis.edu
-
--   `RSA: SHA256:eVU5TeDV+ezOkVHVA9d/L6CrcPihU1POpw8uPh4iXuQ`
--   `ECDSA: SHA256:QFH7ONkN7edAoYEu0GfTz7prqvi1YYu4bep7hxNrswU`
--   `ED25519: SHA256:ydOUR2t/MX3jbd3JIHDXMJyLjdhRV4OBLr9iJfQB8lw`
