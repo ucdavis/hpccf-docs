@@ -45,8 +45,8 @@ Contributors receive priority access to the amount of resources that they have p
 No guarantees are made, but generally, jobs will start within a couple of minutes. There are some
 [edge cases](scheduling.md#high-partition-edge-cases).
 
-Finally, Hive has a node available for use in graduate teaching. Contact [support](../general/support.md) to request
-information or access to these resources.
+Finally, Hive has a node available for use in graduate teaching. Contact [support](../support.md) to request information
+or access to these resources.
 
 ## Hive Administration
 
@@ -56,4 +56,4 @@ Hive hardware and software are administered by the [HPC@UCD team](https://hpc.uc
 
 Rates for Hive can be found [here](https://hpc.ucdavis.edu/rates#hive).
 
-For purchases and inquiries, please contact [support](../general/support.md).
+For purchases and inquiries, please contact [support](../support.md).

@@ -8,7 +8,7 @@ the `--constraint=mpi` flag to your sbatch/srun job. See the [MPI documentation]
 information.
 
 The path to access Waltz is `/nfs/peloton/waltz/`. If you have permission issues, please open a ticket with
-[HPC@UCD support](../general/support.md).
+[HPC@UCD support](../support.md).
 
 !!! warning "InfiniBand Limitations"
 
