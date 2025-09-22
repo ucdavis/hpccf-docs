@@ -1483,6 +1483,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#high-partition-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      high Partition Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warning-exclusive-sbatchsrun-flag" class="md-nav__link">
     <span class="md-ellipsis">
       WARNING: --exclusive sbatch/srun flag
@@ -1629,6 +1638,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#high-partition-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      high Partition Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warning-exclusive-sbatchsrun-flag" class="md-nav__link">
     <span class="md-ellipsis">
       WARNING: --exclusive sbatch/srun flag
@@ -1689,6 +1707,25 @@ accounts, is printed every time you log in to Hive.</p>
 <p>Access to resources is mediated by Slurm. Nodes are not assigned to a user/group/PI. Instead, Slurm grants access to the
 requested resources on the next available node. This allows a group to continue to access resources, even when any
 particular node is down.</p>
+<h3 id="high-partition-edge-cases"><code>high</code> Partition Edge Cases<a class="headerlink" href="#high-partition-edge-cases" title="Permanent link">&para;</a></h3>
+<p>Contributors receive priority access to the amount of resources that they have purchased through the <code>high</code> partition.
+No guarantees are made, but generally, jobs will start within a couple of minutes. There are some edge cases:</p>
+<ol>
+<li>
+<p>The CPUs and/or RAM are already fully occupied by another user in the group. In this case, the users will see
+   <code>(QOSGrpCpuLimit)</code> or <code>(QOSGrpMemLimit)</code> in the output of <code>squeue</code> for their job(s).</p>
+</li>
+<li>
+<p>The job requested a large chunk of CPUs or RAM on a single node, but due to job fragmentation, that amount of
+   resources is not currently available on a single node (rare).</p>
+</li>
+<li>
+<p>There is a cluster-wide issue causing too many nodes to be unavailable for jobs (very rare).</p>
+</li>
+<li>
+<p>A Slurm database backup is in-progress.</p>
+</li>
+</ol>
 <h3 id="warning-exclusive-sbatchsrun-flag">WARNING: <code>--exclusive</code> sbatch/srun flag<a class="headerlink" href="#warning-exclusive-sbatchsrun-flag" title="Permanent link">&para;</a></h3>
 <p>Note for users coming from other clusters. The use of the <code>--exclusive</code> flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
@@ -1724,7 +1761,7 @@ If you instead request CPUs with <code>--cpus-per-task=128</code> then you will 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 21:34:44 UTC">August 29, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2025 22:52:15 UTC">September 22, 2025</span>
   </span>
 
     
