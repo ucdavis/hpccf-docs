@@ -12,8 +12,8 @@ documentation page.
 
 ## HiPPO
 
-The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, Hive, and
-Peloton HPC clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS
+The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, and Hive 
+HPC clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS
 and selecting their PI in the `Select a group` box.
 
 Cluster specific information:
@@ -24,9 +24,6 @@ Cluster specific information:
 
 -   `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
     `UCD HPC Sponsored Public Access` (`publicgrp`) group.
-
--   `Peloton`: Users who do not have a PI and who are affiliated with the College of Letters and Science (L&S) can
-    select the Jeremy Phillips (IT director for L&S) `jeremygrp` group.
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
