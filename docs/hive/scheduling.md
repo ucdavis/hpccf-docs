@@ -9,8 +9,8 @@ See the [Free Access](../scheduler/free-access.md#hive) docs.
 ## Paid Access
 
 Hive resources are generally purchased by the CPU. The current rates can be seen [here](https://hpc.ucdavis.edu/rates).
-Specialized needs (entire nodes or GPU nodes) can be purchased by contacting [HPC@UCD support](../general/support.md).
-HPC will work with you to find a configuration suitable to use in Hive.
+Specialized needs (entire nodes or GPU nodes) can be purchased by contacting [HPC@UCD support](../support.md). HPC will
+work with you to find a configuration suitable to use in Hive.
 
 ### College/Group Resources
 

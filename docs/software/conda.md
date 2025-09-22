@@ -217,6 +217,5 @@ unset __conda_setup
 ```
 
 Delete this block, and log out and back in to the cluster, after which you should be able to `module load conda`. If you
-run into problems with migrating, file a support ticket at
-[hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu?subject=Migrating%20to%20Central%20Conda), being sure to specify
-which cluster you are using.
+run into problems with migrating, file a support ticket with [support](../support.md). Be sure to specify which cluster
+you are using and that you need help with migrating to the central Conda.
