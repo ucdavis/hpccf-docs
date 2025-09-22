@@ -28,7 +28,7 @@ The high-performance computing model at UC Davis starts with a principal investi
 As a new principal investigator who is interested in purchasing resources, please read the **Our Clusters** section
 below to determine which clusters are appropriate for onboarding. HPC@UCD can assist with hardware and storage
 investments for condo clusters and sell fair-share priority, primary and archive storage for fair-share clusters. Please
-email hpc-help@ucdavis.edu with your affiliation to start the onboarding process. Resources external to UC Davis can
+contact [support](support.md) with your affiliation to start the onboarding process. Resources external to UC Davis can
 also purchase resources by inquiring at the hpc-help email address.
 
 For getting started with HPC access under an existing PI, please see
