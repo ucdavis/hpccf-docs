@@ -28,6 +28,21 @@ Access to resources is mediated by Slurm. Nodes are not assigned to a user/group
 requested resources on the next available node. This allows a group to continue to access resources, even when any
 particular node is down.
 
+### `high` Partition Edge Cases
+
+Contributors receive priority access to the amount of resources that they have purchased through the `high` partition.
+No guarantees are made, but generally, jobs will start within a couple of minutes. There are some edge cases:
+
+1. The CPUs and/or RAM are already fully occupied by another user in the group. In this case, the users will see
+   `(QOSGrpCpuLimit)` or `(QOSGrpMemLimit)` in the output of `squeue` for their job(s).
+
+1. The job requested a large chunk of CPUs or RAM on a single node, but due to job fragmentation, that amount of
+   resources is not currently available on a single node (rare).
+
+1. There is a cluster-wide issue causing too many nodes to be unavailable for jobs (very rare).
+
+1. A Slurm database backup is in-progress.
+
 ### WARNING: `--exclusive` sbatch/srun flag
 
 Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
