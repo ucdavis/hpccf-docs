@@ -68,7 +68,7 @@ algorithm.
 
 ## How to request help
 
-Emails sent to HPC@UCD are documented in Service Now via hpc-help@ucdavis.edu. HPC@UCD staff are available to respond to
+Emails sent to HPC@UCD [support](support.md) are documented in Service Now. HPC@UCD staff are available to respond to
 requests on scheduled university work days from 8:00 am until 5:00 pm, and will respond to your inquiry as soon as
 possible.
 
