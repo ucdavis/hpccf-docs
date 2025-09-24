@@ -43,6 +43,8 @@ No guarantees are made, but generally, jobs will start within a couple of minute
 
 1. A Slurm database backup is in-progress.
 
+## Slurm Scheduling Requirements
+
 ### WARNING: `--output=` and `--error=` files need to be unique on Quobyte
 
 Due a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
