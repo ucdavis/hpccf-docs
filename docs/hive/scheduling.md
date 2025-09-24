@@ -55,11 +55,11 @@ cluster, which requires admin intervention to resolve.
 This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every `StdOut` and `StdErr` file
 needs to be unique per writer. This can easily be accomplished in sbatch files like this:
 
--   For a small job running on a single node, include the `%j` replacement pattern in the filename:
+-   For a small job running on a single node, include the `%J` replacement pattern in the filename:
 
     ```bash
-    #SBATCH --output=slurm-%j.out
-    #SBATCH --error=slurm-%j.err
+    #SBATCH --output=slurm-%J.out
+    #SBATCH --error=slurm-%J.err
     ```
 
 -   For an array job, include the `%A_%a` replacement patterns in the filename:
@@ -75,8 +75,8 @@ needs to be unique per writer. This can easily be accomplished in sbatch files l
 : Standard job
 
     ```bash
-    #SBATCH --output=slurm-%j_%N.out
-    #SBATCH --error=slurm-%j_%N.err
+    #SBATCH --output=slurm-%J_%N.out
+    #SBATCH --error=slurm-%J_%N.err
     ```
 
 : Array job
@@ -104,6 +104,8 @@ Additionally, we have configured Slurm to understand the InfiniBand switch topol
 throughput, you can use the `--switches=1` flag. Like any Slurm constraint, it will take longer for your job to schedule
 with this flag enabled.
 
-MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request `--ntasks=1`.
+MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request `--ntasks=128`.
 If you instead request CPUs with `--cpus-per-task=128` then you will end up with a single MPI worker that has access to
-128 CPUs, which is generally not what you want.
+128 CPUs, which is typically not what you want.
+
+For more information about CPU cores and job scheduling, see [CPUs / cores](../../scheduler/resources/#cpus-cores)
