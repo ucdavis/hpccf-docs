@@ -45,7 +45,7 @@ No guarantees are made, but generally, jobs will start within a couple of minute
 
 ## Slurm Scheduling Requirements
 
-### WARNING: `--output=` and `--error=` files need to be unique on Quobyte
+### `--output=` and `--error=` files need to be unique on Quobyte
 
 Due a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
 contention and eventually full blockage, allowing no data to be written to the file. When this happens with Slurm's
@@ -89,7 +89,7 @@ needs to be unique per writer. This can easily be accomplished in sbatch files l
 We have an open support case with the vendor. Quobyte has indicated they may add an option to make this type of IO
 timeout and return an IO error to the application (Slurm in this case).
 
-### NOTE: `--exclusive` sbatch/srun flag
+### `--exclusive` sbatch/srun flag
 
 Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
