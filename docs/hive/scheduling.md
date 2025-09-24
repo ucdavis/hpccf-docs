@@ -51,7 +51,7 @@ contention and eventually full blockage, allowing no data to be written to the f
 cluster, which requires admin intervention to resolve.
 
 This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every `StdOut` and `StdErr` file
-needs to be unique per writer. This can easily be accomplished like this:
+needs to be unique per writer. This can easily be accomplished in sbatch files like this:
 
 -   For a small job running on a single node, include the `%j` replacement pattern in the filename:
 
