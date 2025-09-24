@@ -43,7 +43,51 @@ No guarantees are made, but generally, jobs will start within a couple of minute
 
 1. A Slurm database backup is in-progress.
 
-### WARNING: `--exclusive` sbatch/srun flag
+### WARNING: `--output=` and `--error=` files need to be unique on Quobyte
+
+Due a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
+contention and eventually full blockage, allowing no data to be written to the file. When this happens with Slurm's
+`StdOut` and `StdErr` files, it causes the `slurmd` process to block, which causes the nodes to get kicked out of the
+cluster, which requires admin intervention to resolve.
+
+This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every `StdOut` and `StdErr` file
+needs to be unique per writer. This can easily be accomplished like this:
+
+-   For a small job running on a single node, include the `%j` replacement pattern in the filename:
+
+    ```bash
+    #SBATCH --output=slurm-%j.out
+    #SBATCH --error=slurm-%j.err
+    ```
+
+-   For an array job, include the `%A_%a` replacement patterns in the filename:
+
+    ```bash
+    #SBATCH --output=slurm-%A_%a.out
+    #SBATCH --error=slurm-%A_%a.err
+    ```
+
+-   For an MPI job, or any other job that will run on multiple nodes, include the `%N` replacement pattern in addition
+    to the other patterns:
+
+: Standard job
+
+    ```bash
+    #SBATCH --output=slurm-%j_%N.out
+    #SBATCH --error=slurm-%j_%N.err
+    ```
+
+: Array job
+
+    ```bash
+    #SBATCH --output=slurm-%A_%a_%N.out
+    #SBATCH --error=slurm-%A_%a_%N.err
+    ```
+
+We have an open support case with the vendor. Quobyte has indicated they may add an option to make this type of IO
+timeout and return an IO error to the application (Slurm in this case).
+
+### NOTE: `--exclusive` sbatch/srun flag
 
 Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
