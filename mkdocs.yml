@@ -8,6 +8,7 @@ nav:
           - Accessing Clusters: general/access.md
           - Account Requests: general/account-requests.md
           - Backups: backups/backups.md
+          - Contact Support: support.md
           - Data Transfer: data-transfer.md
           - Job Scheduling:
                 - About: scheduler/index.md
@@ -23,6 +24,7 @@ nav:
                 - Module System: software/modules.md
                 - Open OnDemand: software/ondemand.md
                 - R and RStudio: software/rstudio.md
+
           - Troubleshooting: general/troubleshooting.md
     - Farm:
           - About: farm/index.md
@@ -43,7 +45,9 @@ nav:
           - Storage: franklin/storage.md
     - Hive:
           - About: hive/index.md
+          - Job Scheduling: hive/scheduling.md
           - Migrating from LSSC0: hive/lssc0-data-migration.md
+          - Waltz temporary access: hive/waltz.md
 
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).

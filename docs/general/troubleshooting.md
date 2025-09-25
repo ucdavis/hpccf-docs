@@ -4,7 +4,7 @@ Here are some of the most common issues users face when using SSH.
 
 ### Keys
 
-The following clusters use SSH keys: Atomate, Farm, Franklin, HPC1, HPC2, Impact, Peloton. 
+The following clusters use SSH keys: Farm, Franklin, Hive, and HPC2.
 
 If you connect to one of these and are asked for a password (as distinct from a passphrase for your key), 
 your key is not being recognized. This is usually because of permissions or an unexpected filename. 

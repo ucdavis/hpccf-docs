@@ -18,12 +18,12 @@ process looks like this:
 
 1. All users that need access to the PI's resources on Hive requests access (either
    [`new account`](..//general/account-requests.md#how-to-request-a-new-account-on-a-cluster), or
-   [`access to another group`](..//general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster)) through
-   Hippo.
+   [`access to another group`](..//general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster))
+   through Hippo.
 
     1. The PI approves each of those requests, allowing the accounts to be created on Hive.
 
-1. The PI opens a ticket with HPC@UCD by emailing [hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu).
+1. The PI opens a ticket with [HPC@UCD](../support.md).
 
     1. In that ticket, the PI provides the LSSC0 Login ID and the corresponding UC Davis email address.
 

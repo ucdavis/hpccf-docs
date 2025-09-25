@@ -45,15 +45,19 @@ You can list all discoverable environments with `conda info --envs`.
 ### RStudio R version change error
 
 If upon loading the RStudio IDE, you see an error like the following:
+
 ```
 Connected to your session in progress, last started 2025-May-23 22:35:30 UTC (3 days ago)
 R version change [4.2.3 -> 4.4.2] detected when restoring session; search path not restored
 ```
-You can resolve these errors by clearing your rstudio session cache which you can learn to do [here](rstudio.md#clearing-your-r-cache)
+
+You can resolve these errors by clearing your rstudio session cache which you can learn to do
+[here](rstudio.md#clearing-your-r-cache)
 
 ### Unable to install.packages()
 
-If you find you are unable to install.packages() you might be suffering from [this issue](#rstudio-r-version-change-error) 
+If you find you are unable to install.packages() you might be suffering from
+[this issue](#rstudio-r-version-change-error)
 
 ### Out of Memory (OOM) events
 
@@ -115,6 +119,6 @@ please work with your PI to figure out an appropriate partition and resource req
 
 ### Other error
 
-If your issue is not listed here, please [submit a ticket](mailto:hpc-help@ucdavis.edu) and send the cluster name, the
-OnDemand app you ran, a list , the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you
-performed. You **must** supply all of this information for HPC@UCD to be able to debug issues.
+If your issue is not listed here, please [submit a ticket](../support.md) and send the cluster name, the OnDemand app
+you ran, a list , the `Session ID` of the failed job, any errors you noticed, and any troubleshooting you performed. You
+**must** supply all of this information for HPC@UCD to be able to debug issues.

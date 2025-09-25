@@ -18,7 +18,7 @@ interacting with HPC supported clusters, an overview of available software ecosy
 software and access patterns. It is split into a Users section for end-users and an Admin section with information
 relevant to system administrators and advanced users.
 
-Questions about the documentation or resources supported by the HPC can be directed to [hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu).
+Questions about the documentation or resources supported by the HPC can be directed to [support](support.md).
 
 ## Getting Started with HPC
 
@@ -30,7 +30,7 @@ The high-performance computing model at UC Davis starts with a principal investi
 As a new principal investigator who is interested in purchasing resources, please read the **Our Clusters** section
 below to determine which clusters are appropriate for onboarding. HPC@UCD can assist with hardware and storage
 investments for condo clusters and sell fair-share priority, primary and archive storage for fair-share clusters. Please
-email [hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu) with your affiliation to start the onboarding process. Resources external to UC Davis can
+contact [support](support.md) with your affiliation to start the onboarding process. Resources external to UC Davis can
 also purchase resources by inquiring at the hpc-help email address.
 
 For getting started with HPC access under an existing PI, please see
@@ -44,23 +44,20 @@ An HPC condo-style cluster is a shared computing infrastructure where different 
 (such as compute nodes, storage, or networking) to a common pool, similar to how individual condo owners share common
 amenities.
 
-[**Farm**](farm/index.md): Sponsored by the College of Agriculture and Environmental Sciences. Farm resources can be purchased
-by principal investigators regardless of affiliation.
+[**Farm**](farm/index.md): Sponsored by the College of Agriculture and Environmental Sciences. Farm resources can be
+purchased by principal investigators regardless of affiliation.
 
-[**Franklin**](franklin/index.md): Sponsored by units within the College of Biological Sciences, Franklin is open to PI's
-within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and Cellular Biology, and other
-approved collaborators.
+[**Franklin**](franklin/index.md): Sponsored by units within the College of Biological Sciences, Franklin is open to
+PI's within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and Cellular Biology, and
+other approved collaborators.
 
-[**Hive**](hive/index.md): A centrally managed cluster, with standardized hardware and connectivity, and a defined life cycle
-of support, facilitates greater access to HPC for a more significant number of users on campus while maintaining support
-for college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing hardware
-with the new cluster when possible.
+[**Hive**](hive/index.md): A centrally managed cluster, with standardized hardware and connectivity, and a defined life
+cycle of support, facilitates greater access to HPC for a more significant number of users on campus while maintaining
+support for college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing
+hardware with the new cluster when possible.
 
 **HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
 with COE.
-
-**Peloton**: Peloton is open to principal investigators associated with the College of Letters and Science. Peloton has
-a shared tier open to users associated with CLAS.
 
 #### Fair-Share Clusters
 
@@ -73,7 +70,7 @@ algorithm.
 
 ## How to request help
 
-Emails sent to HPC@UCD are documented in Service Now via [hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu). HPC@UCD staff are available to respond to
+Emails sent to HPC@UCD [support](support.md) are documented in Service Now. HPC@UCD staff are available to respond to
 requests on scheduled university work days from 8:00 am until 5:00 pm, and will respond to your inquiry as soon as
 possible.
 
