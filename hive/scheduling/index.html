@@ -1491,10 +1491,34 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#warning-exclusive-sbatchsrun-flag" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-scheduling-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      WARNING: --exclusive sbatch/srun flag
+      Slurm Scheduling Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slurm Scheduling Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-output-and-error-files-need-to-be-unique-on-quobyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      --output= and --error= files need to be unique on Quobyte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-exclusive-sbatchsrun-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      --exclusive sbatch/srun flag
     </span>
   </a>
   
@@ -1646,10 +1670,34 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#warning-exclusive-sbatchsrun-flag" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-scheduling-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      WARNING: --exclusive sbatch/srun flag
+      Slurm Scheduling Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slurm Scheduling Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-output-and-error-files-need-to-be-unique-on-quobyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      --output= and --error= files need to be unique on Quobyte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-exclusive-sbatchsrun-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      --exclusive sbatch/srun flag
     </span>
   </a>
   
@@ -1726,7 +1774,49 @@ No guarantees are made, but generally, jobs will start within a couple of minute
 <p>A Slurm database backup is in-progress.</p>
 </li>
 </ol>
-<h3 id="warning-exclusive-sbatchsrun-flag">WARNING: <code>--exclusive</code> sbatch/srun flag<a class="headerlink" href="#warning-exclusive-sbatchsrun-flag" title="Permanent link">&para;</a></h3>
+<h2 id="slurm-scheduling-requirements">Slurm Scheduling Requirements<a class="headerlink" href="#slurm-scheduling-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="-output-and-error-files-need-to-be-unique-on-quobyte"><code>--output=</code> and <code>--error=</code> files need to be unique on Quobyte<a class="headerlink" href="#-output-and-error-files-need-to-be-unique-on-quobyte" title="Permanent link">&para;</a></h3>
+<p>Due a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
+contention and eventually full blockage, allowing no data to be written to the file. When this happens with Slurm's
+<code>StdOut</code> and <code>StdErr</code> files, it causes the <code>slurmd</code> process to block, which causes the nodes to get kicked out of the
+cluster, which requires admin intervention to resolve.</p>
+<p>This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every <code>StdOut</code> and <code>StdErr</code> file
+needs to be unique per writer. This can easily be accomplished in sbatch files like this:</p>
+<ul>
+<li>
+<p>For a small job running on a single node, include the <code>%j</code> replacement pattern in the filename:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#SBATCH --output=slurm-%j.out</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#SBATCH --error=slurm-%j.err</span>
+</code></pre></div>
+</li>
+<li>
+<p>For an array job, include the <code>%A_%a</code> replacement patterns in the filename:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#SBATCH --output=slurm-%A_%a.out</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#SBATCH --error=slurm-%A_%a.err</span>
+</code></pre></div>
+</li>
+<li>
+<p>For an MPI job, or any other job that will run on multiple nodes, include the <code>%N</code> replacement pattern in addition
+    to the other patterns:</p>
+</li>
+</ul>
+<dl>
+<dd>
+<p>Standard job</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#SBATCH --output=slurm-%j_%N.out</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#SBATCH --error=slurm-%j_%N.err</span>
+</code></pre></div>
+</dd>
+<dd>
+<p>Array job</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">#SBATCH --output=slurm-%A_%a_%N.out</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">#SBATCH --error=slurm-%A_%a_%N.err</span>
+</code></pre></div>
+</dd>
+</dl>
+<p>We have an open support case with the vendor. Quobyte has indicated they may add an option to make this type of IO
+timeout and return an IO error to the application (Slurm in this case).</p>
+<h3 id="-exclusive-sbatchsrun-flag"><code>--exclusive</code> sbatch/srun flag<a class="headerlink" href="#-exclusive-sbatchsrun-flag" title="Permanent link">&para;</a></h3>
 <p>Note for users coming from other clusters. The use of the <code>--exclusive</code> flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
 erroneously flags these jobs with <code>(QOSGrpCpuLimit)</code>.</p>
@@ -1736,9 +1826,10 @@ connectivity need to use the <code>--constraint=mpi</code> flag.</p>
 <p>Additionally, we have configured Slurm to understand the InfiniBand switch topology, so for maximum internode
 throughput, you can use the <code>--switches=1</code> flag. Like any Slurm constraint, it will take longer for your job to schedule
 with this flag enabled.</p>
-<p>MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request <code>--ntasks=1</code>.
+<p>MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request <code>--ntasks=128</code>.
 If you instead request CPUs with <code>--cpus-per-task=128</code> then you will end up with a single MPI worker that has access to
-128 CPUs, which is generally not what you want.</p>
+128 CPUs, which is typically not what you want.</p>
+<p>For more information about CPU cores and job scheduling, see <a href="../../scheduler/resources/#cpus-cores">CPUs / cores</a></p>
 
 
 
@@ -1761,7 +1852,7 @@ If you instead request CPUs with <code>--cpus-per-task=128</code> then you will 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2025 23:36:58 UTC">September 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 24, 2025 22:40:24 UTC">September 24, 2025</span>
   </span>
 
     
