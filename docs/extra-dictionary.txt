@@ -74,7 +74,9 @@ designee
 globus
 filezilla
 cyberduck
-
+hpc
+hpc@ucd
+quobyte
 
 3dtk
 3proxy
