@@ -1,5 +1,6 @@
 conda
 condas
+backtick
 ondemand
 rsession
 manpage

@@ -48,6 +48,8 @@ nav:
           - Job Scheduling: hive/scheduling.md
           - Migrating from LSSC0: hive/lssc0-data-migration.md
           - Waltz temporary access: hive/waltz.md
+    - Meta:
+          - Style Guide: meta/style.md
 
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
