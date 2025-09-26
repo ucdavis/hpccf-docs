@@ -53,7 +53,7 @@ contention and eventually full blockage, allowing no data to be written to the f
 cluster, which requires admin intervention to resolve.
 
 This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every `StdOut` and `StdErr` file
-needs to be unique per writer. This can easily be accomplished in sbatch files like this:
+needs to be unique per writer. This can easily be accomplished in `sbatch` files like this:
 
 -   For a small job running on a single node, include the `%j` replacement pattern in the filename:
 
@@ -89,7 +89,7 @@ needs to be unique per writer. This can easily be accomplished in sbatch files l
 We have an open support case with the vendor. Quobyte has indicated they may add an option to make this type of IO
 timeout and return an IO error to the application (Slurm in this case).
 
-### `--exclusive` sbatch/srun flag
+### `--exclusive` `sbatch`/`srun` flag
 
 Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
 time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
@@ -108,4 +108,4 @@ MPI jobs generally need to request one task per MPI worker. If you need 128 MPI 
 If you instead request CPUs with `--cpus-per-task=128` then you will end up with a single MPI worker that has access to
 128 CPUs, which is typically not what you want.
 
-For more information about CPU cores and job scheduling, see [CPUs / cores](../../scheduler/resources/#cpus-cores)
+For more information about CPU cores and job scheduling, see [CPUs / cores](../scheduler/resources.md#cpus-cores)

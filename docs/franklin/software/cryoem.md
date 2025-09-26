@@ -201,7 +201,7 @@ with your work.
 
 **Each time you want to switch Relion modules for a project**, you will need to run this after loading the new module.
 
-For now, relion-helper only has the `reset-cache` subcommand. You can skip `cd`ing to the project directory by passing
+For now, relion-helper only has the `reset-cache` subcommand. You can skip having to `cd` to the project directory by passing
 the project directory to it instead:
 
 ```console
@@ -267,7 +267,7 @@ necessary directives, given a module and job partition, are as follows:
 | `relion/gpu/[3.1.3,4.0.0]+intel` | `low`            | `--constraint=intel --gres=gpu:[$N_GPUs]` or `--gres=gpu:[rtx_2080_ti]:[$N_GPUs]` |
 | `relion/gpu/[3.1.3,4.0.0]+intel` | `jawdatgrp-gpu`  | `--gres=gpu:[$N_GPUs]`                                                            |
 
-For example, to use the CPU-optimized Relion module `relion/cpu/4.0.0+amd` on the free, preemptable `low` partition, you
+For example, to use the CPU-optimized Relion module `relion/cpu/4.0.0+amd` on the free, preemptible `low` partition, you
 should submit jobs with `--constraint=amd` so as to eliminate the Intel nodes in that partition from consideration.
 However, if you have access to and are using the `high` partition with the same module, no additional Slurm directives
 are required, as the `high` partition only has CPU compute nodes. Alternatively, if you were using an AMD-optimized GPU
