@@ -2170,15 +2170,15 @@ restore.</p>
 <p>You, the PI, or a designated list of email addresses. HPC@UCD does NOT, and we cannot emphasize this enough, <strong>does
 NOT</strong> monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.</p>
 <h3 id="how-much-backup-space-do-i-need">How much backup space do I need?<a class="headerlink" href="#how-much-backup-space-do-i-need" title="Permanent link">&para;</a></h3>
-<p>This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
-(churn), and the total number of snapshots you keep. PBS only stores a single copy of each unique data chunk, so
-unchanging data is only stored a single time. The short version is you need approximately
-<code>(initial quantity * snapshots) + (churn * snapshots)</code>.</p>
+<p>This is a surprisingly complex question. It depends on how much data you are backing up, how much that data changes
+(<code>added files + deleted files + changed data</code> = <code>churn</code>), and the total number of snapshots you keep. PBS only stores a
+single copy of each unique data chunk, so unchanging data is only stored a single time. The short version is you need
+approximately <code>(initial quantity * snapshots) + (churn * snapshots)</code>.</p>
 <table>
 <thead>
 <tr>
 <th>Quantity of Data</th>
-<th>Data Churn</th>
+<th>Data added + deleted + changed</th>
 <th>Snapshots</th>
 <th>Total Required Space</th>
 </tr>
@@ -2317,7 +2317,7 @@ location(s).</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 2, 2025 17:57:14 UTC">May 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 30, 2025 01:54:26 UTC">September 30, 2025</span>
   </span>
 
     
