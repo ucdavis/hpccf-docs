@@ -344,8 +344,6 @@ If your cluster supports it, you can also specify memory per GPU using:
 This ensures your job is allocated sufficient memory in proportion to the number of GPUs requested. 
 
 
-Example job script (GPU job)
-
 Here’s a minimal sbatch script requesting one GPU:
 
 ```console
