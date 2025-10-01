@@ -277,3 +277,103 @@ srun: launch/slurm: _step_signal: Terminating StepId=706.0
 
 
 ### GPUs / GRES
+####Requesting GPU Resources (GRES / GPUs)
+
+To use GPU-equipped nodes, you must request the GPU resource via Slurm’s Generic RESources (GRES) system. Below are guidelines and examples:
+
+**Basic syntax**
+
+Add the following option to your `sbatch` or `srun` command:
+
+`--gres=gpu:<count>`
+
+- gpu is the generic resource name.
+
+- `<count>` is the number of GPUs you need (e.g. 1, 2, etc.).
+
+Example:
+`#SBATCH --gres=gpu:1
+`
+This requests 1 GPU on whichever node your job is scheduled.
+
+You may also combine it with other resource flags, for example:
+
+```console
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
+#SBATCH --mem=32G
+#SBATCH --time=04:00:00
+```
+
+This requests:
+
+- 1 node
+- 1 task
+- 4 CPU cores for that task
+- 32 GB of memory
+- 1 GPU
+- a time limit of 4 hours
+
+
+####Partition / QOS constraints
+
+Some GPU nodes may only be available in certain partitions (e.g. gpu, gpu-rt, etc.). Be sure to request the GPU-compatible partition, e.g.:
+
+`#SBATCH --partition=gpu`
+
+
+Your account or QOS may also impose limits on how many GPUs you’re allowed to use concurrently. The cluster scheduler enforces those limits.
+
+You can check your associations via:
+
+`sacctmgr show assoc user=$USER`
+
+OR
+
+run: `/opt/hpccf/bin/slurm-show-resources.py --full`
+
+####Memory per GPU (optional)
+
+If your cluster supports it, you can also specify memory per GPU using:
+
+`--mem-per-gpu=<amount>`
+
+
+This ensures your job is allocated sufficient memory in proportion to the number of GPUs requested. 
+
+
+Example job script (GPU job)
+
+Here’s a minimal sbatch script requesting one GPU:
+
+```console
+#!/bin/bash
+#SBATCH --job-name=my_gpu_job
+#SBATCH --output=out_%j.txt
+#SBATCH --error=err_%j.txt
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+
+# load modules or your environment
+module load cuda/11.8
+
+# run your program
+./my_gpu_application --some-option
+```
+
+####Tips & Caveats
+
+If you request more GPUs than are available in a partition (or more than your allocation allows), your job will remain pending until resources free up.
+
+Don’t request GPUs unless your application actually uses them — unnecessary GPU requests may starve other users.
+
+Always check cluster-specific gpu partition names using `sinfo`. The resource name might be different.
+
+Use GPU-monitoring tools (e.g. nvidia-smi) inside your job to verify you got the GPU(s) you requested.
