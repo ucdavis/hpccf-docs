@@ -147,18 +147,18 @@ NOT** monitor the individual backups. It is up to you to monitor those and open 
 
 ### How much backup space do I need?
 
-This is a surprisingly complex question and depends on how much data you are backing up, how much that data changes
-(churn), and the total number of snapshots you keep. PBS only stores a single copy of each unique data chunk, so
-unchanging data is only stored a single time. The short version is you need approximately
-`(initial quantity * snapshots) + (churn * snapshots)`.
+This is a surprisingly complex question. It depends on how much data you are backing up, how much that data changes
+(`added files + deleted files + changed data` = `churn`), and the total number of snapshots you keep. PBS only stores a
+single copy of each unique data chunk, so unchanging data is only stored a single time. The short version is you need
+approximately `(initial quantity * snapshots) + (churn * snapshots)`.
 
-| Quantity of Data | Data Churn      | Snapshots                    | Total Required Space |
-| ---------------- | --------------- | ---------------------------- | -------------------- |
-| 1 TB             | 0 Bytes per day | Any                          | 1 TB                 |
-| 1 TB             | 1 TB per day    | last=1                       | 1 TB                 |
-| 1 TB             | 1 TB per day    | daily=7                      | 7 TB                 |
-| 1 TB             | 1 TB per day    | daily=7, weekly=4, monthly=6 | 17 TB                |
-| 1 TB             | 100 GB per day  | daily=7, weekly=4, monthly=6 | 2.7 TB               |
+| Quantity of Data | Data added + deleted + changed | Snapshots                    | Total Required Space |
+| ---------------- | ------------------------------ | ---------------------------- | -------------------- |
+| 1 TB             | 0 Bytes per day                | Any                          | 1 TB                 |
+| 1 TB             | 1 TB per day                   | last=1                       | 1 TB                 |
+| 1 TB             | 1 TB per day                   | daily=7                      | 7 TB                 |
+| 1 TB             | 1 TB per day                   | daily=7, weekly=4, monthly=6 | 17 TB                |
+| 1 TB             | 100 GB per day                 | daily=7, weekly=4, monthly=6 | 2.7 TB               |
 
 ### What happens when my backups exceed my purchased space?
 
