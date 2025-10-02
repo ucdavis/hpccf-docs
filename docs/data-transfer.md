@@ -38,9 +38,9 @@ you normally have access to, but for security reasons, you will only be able to 
 
 ## Command-line tools
 
-### scp — OpenSSH secure file copy
+### `scp` — OpenSSH secure file copy
 
-If you only need to move a single file, or a small directory, scp will work well. From your desktop/laptop you can push,
+If you only need to move a single file, or a small directory, `scp` will work well. From your desktop/laptop you can push,
 or pull, file(s) and/or directories.
 
 To push a file, you specify the source from your local system, and the destination on a cluster:
@@ -55,7 +55,7 @@ The final `.` will put the files/directories into the current directory.
 
 `scp` arguments:
 
--   `-r` Recursively copy entire directories. Note that scp follows symbolic links encountered in the tree traversal.
+-   `-r` Recursively copy entire directories. Note that `scp` follows symbolic links encountered in the tree traversal.
 
 -   `-p` Preserves modification times, access times, and file mode bits from the source file.
 
@@ -72,7 +72,7 @@ algorithm, which reduces the amount of data sent over the network by sending onl
 files and the existing files in the destination. Rsync is widely used for backups and mirroring and as an improved copy
 command for everyday use.
 
-Like scp, rsync can operate in a push, or a pull, mode, depending on which arguments you put first. To use rsync to copy
+Like `scp`, `rsync` can operate in a push, or a pull, mode, depending on which arguments you put first. To use `rsync` to copy
 files from your local system, to a cluster, preserving permissions, ownership, and file times, you can use the following
 command.
 
