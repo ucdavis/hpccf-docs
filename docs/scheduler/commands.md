@@ -282,6 +282,6 @@ c-8-58         1          low*        idle 256    2:64:2 100000        0      1 
 ```
 
 This view gives the nodes' socket, core, and thread configurations, their RAM, and the feature list, which you can read
-about in the [**Resources**](resources.md#features) section. Try `man scontrol` or `man sinfo`, or visit the official
+about in the [**Resources**](resources.md) section. Try `man scontrol` or `man sinfo`, or visit the official
 docs for [`scontrol`](https://slurm.schedmd.com/scontrol.html) and [`sinfo`](https://slurm.schedmd.com/sinfo.html), for
 more options.
