@@ -2,8 +2,6 @@
 title: Documentation Overview
 ---
 
-ASDJKLAHSDJKAHSJKASDH
-
 ![HPC unit signature](assets/HPC-unit-signature.png){width="400" align="right"}
 
 Welcome to the High-Performance Computing (HPC@UCD) Documentation Site. These pages are intended to be a how-to for
