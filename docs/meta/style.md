@@ -81,3 +81,16 @@ But this will not:
 ```
 When using `sbatch`, be sure to...
 ```
+
+## Formatting
+
+### Markdown
+
+Section headings should start at the second level: `##`, not `#`. The single hash is reserved for
+page titles.
+
+Make sure that your headings have a space after the hashes: `## Section`, not `##Section`.
+
+### `mkdocs.yaml`
+
+Please use two spaces per tab in the configuration file.
