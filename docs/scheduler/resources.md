@@ -287,7 +287,7 @@ Add the following option to your `sbatch` or `srun` command:
 
 `--gres=gpu:<count>`
 
-- gpu is the generic resource name.
+- `gpu` is the generic resource name.
 
 - `<count>` is the number of GPUs you need (e.g. 1, 2, etc.).
 
@@ -306,7 +306,7 @@ You may also combine it with other resource flags, for example:
 
 #### Partition / QOS constraints
 
-Some GPU nodes may only be available in certain partitions (e.g. gpu-a100 on Hive, gpul on Farm cluster and cnsdept-gpu on Franklin cluster). Be sure to request the GPU-compatible partition, e.g.:
+Some GPU nodes may only be available in certain partitions (e.g. `gpu-a100` on Hive, `gpul` on Farm cluster and `cnsdept-gpu` on Franklin cluster). Be sure to request the GPU-compatible partition, e.g.:
 
 `#SBATCH --partition=gpul`
 
