@@ -757,18 +757,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sbatch" class="md-nav__link">
+  <a href="#slurm-batch-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      SBATCH
+      Slurm Batch Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#srun" class="md-nav__link">
+  <a href="#slurm-interactive-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      SRUN
+      Slurm Interactive Jobs
     </span>
   </a>
   
@@ -1592,6 +1592,81 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Style Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1673,18 +1748,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sbatch" class="md-nav__link">
+  <a href="#slurm-batch-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      SBATCH
+      Slurm Batch Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#srun" class="md-nav__link">
+  <a href="#slurm-interactive-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      SRUN
+      Slurm Interactive Jobs
     </span>
   </a>
   
@@ -1719,22 +1794,22 @@
 
 
 <h1 id="apptainer">Apptainer<a class="headerlink" href="#apptainer" title="Permanent link">&para;</a></h1>
-<p>Apptainer and other container runtimes have many uses; Mainly, but not limited to, isolated, portable, and reproducible software execution and development. For running containers on HPC systems we offer and use Apptainer ( formerly Singularity ). Other container runtimes like Docker require users to have escalated system priveleges, and for most thats typically not an issue, for shared multi-user systems letting any and all users have escalated privileges can pose a security risk. Luckily, apptainer allows users to run unprivileged containers in user-space inluding Docker containers and any OCI compatible containers.</p>
+<p>Apptainer and other container runtimes have many uses; Mainly, but not limited to, isolated, portable, and reproducible software execution and development. For running containers on HPC systems we offer and use Apptainer ( formerly Singularity ). Other container runtimes like Docker require users to have escalated system privileges, and for most that's typically not an issue, for shared multi-user systems letting any and all users have escalated privileges can pose a security risk. Luckily, apptainer allows users to run unprivileged containers in user-space including Docker containers and any OCI compatible containers.</p>
 <h2 id="module-system">Module System<a class="headerlink" href="#module-system" title="Permanent link">&para;</a></h2>
-<p>HPC@UCD provides apptainer as an environment module. Everytime you want to use apptainer you must first run: <code>module load apptainer</code>.</p>
+<p>HPC@UCD provides apptainer as an environment module. Every time you want to use apptainer you must first run: <code>module load apptainer</code>.</p>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
-<p>For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: <code>srun -A adamgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"</code>. But, you may need to curtail some srun parameters for your own needs.</p>
+<p>For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: <code>srun -A adamgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"</code>. But, you may need to curtail some <code>srun</code> parameters for your own needs.</p>
 <h2 id="pulling-apptainer-images">Pulling Apptainer Images<a class="headerlink" href="#pulling-apptainer-images" title="Permanent link">&para;</a></h2>
-<p>Container images are like filesystems containing an Operating System (OS) with the relevant preinstalled software that is then booted like a Virtual Machine (VM). We recommend downloading your container image(s) locally once before your slurm job by running: <code>apptainer build tflo.sif docker://tensorflow/tensorflow</code>. After, you should find the <code>tflo.sif</code> apptainer image in your current directory. You can run this image in any number of future containers, which is why you only need to do it once and shouldn't run it in every slurm job.</p>
+<p>Container images are like filesystems containing an Operating System (OS) with the relevant pre-installed software that is then booted like a Virtual Machine (VM). We recommend downloading your container image(s) locally once before your slurm job by running: <code>apptainer build tflo.sif docker://tensorflow/tensorflow</code>. After, you should find the <code>tflo.sif</code> apptainer image in your current directory. You can run this image in any number of future containers, which is why you only need to do it once and shouldn't run it in every slurm job.</p>
 <h2 id="running-apptainer-images">Running Apptainer Images<a class="headerlink" href="#running-apptainer-images" title="Permanent link">&para;</a></h2>
 <p>There are a few ways to interact with your apptainer image. Using <code>apptainer shell tflo.sif</code> will open an interactive shell within the container allowing you to interact with the installed software directly as though it were a typical VM.Using <code>apptainer exec tflo.sif &lt;command(s)&gt;...</code> is non-interactive and will execute the commands you specify within the container and return the output. There's also <code>apptainer run</code> if you or your apptainer have provided runscripts which you can learn more about <em><a href="https://apptainer.org/docs/user/latest/quick_start.html#running-a-container">here</a></em>.</p>
 <p>These commands that run, or otherwise execute containers (shell, exec) can take an --nv option, which will setup the container’s environment to use an NVIDIA GPU and the basic CUDA libraries to run a CUDA enabled application.</p>
 <h2 id="bind-mounts">Bind Mounts<a class="headerlink" href="#bind-mounts" title="Permanent link">&para;</a></h2>
-<p>If you need, you can mount directories from your host machine into the container. We use the <code>APPTAINER_BIND</code> environment variable to specify what directories to mount in the container. Use a comma-delimited string of bind path specifications in the format <code>src[:dest[:opts]]</code>, where <code>src</code> and <code>dest</code> are paths outside and inside of the container respectively. If dest is not given, it is set equal to src. Mount options (opts) may be specified as <code>ro</code> (read-only) or <code>rw</code> (read/write, which is the default). For example, if you need to mount your group or lab directory in the container you can: <code>export APPTAINER_BIND=/mnt,/group/subdir:container/dir:rw</code>.</p>
+<p>If you need, you can mount directories from your host machine into the container. We use the <code>APPTAINER_BIND</code> environment variable to specify what directories to mount in the container. Use a comma-delimited string of bind path specifications in the format <code>src[:dest[:opts]]</code>, where <code>src</code> and <code>dest</code> are paths outside and inside of the container respectively. If <code>dest</code> is not given, it is set equal to <code>src</code>. Mount options (opts) may be specified as <code>ro</code> (read-only) or <code>rw</code> (read/write, which is the default). For example, if you need to mount your group or lab directory in the container you can: <code>export APPTAINER_BIND=/mnt,/group/subdir:container/dir:rw</code>.</p>
 <h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">&para;</a></h2>
 <p>If you want to make use of GPUs within your apptainer you can use the <code>--nv</code> flag with <code>apptainer (shell | exec) --nv ...</code>.</p>
-<h2 id="sbatch">SBATCH<a class="headerlink" href="#sbatch" title="Permanent link">&para;</a></h2>
-<p>Here's a basic script template, suitable for submitting with sbatch, that executes a command inside an apptainer:
+<h2 id="slurm-batch-jobs">Slurm Batch Jobs<a class="headerlink" href="#slurm-batch-jobs" title="Permanent link">&para;</a></h2>
+<p>Here's a basic script template, suitable for submitting with <code>sbatch</code>, that executes a command inside an apptainer:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  #!/bin/bash
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  #SBATCH --account=&lt;accountname&gt;
@@ -1761,8 +1836,8 @@
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  apptainer exec --nv tflo.sif python3 -c &quot;import tensorflow as tf; print(&#39;TensorFlow version:&#39;, tf.__version__)&quot;
 </code></pre></div>
 Feel free to modify this script for your purposes and to potentially run multiple commands and scripts within an apptainer.</p>
-<h2 id="srun">SRUN<a class="headerlink" href="#srun" title="Permanent link">&para;</a></h2>
-<p>This is an srun script that is the same as the above sbatch script but instead runs an interactive shell within an apptainer:</p>
+<h2 id="slurm-interactive-jobs">Slurm Interactive Jobs<a class="headerlink" href="#slurm-interactive-jobs" title="Permanent link">&para;</a></h2>
+<p>This is an <code>srun</code> script that is the same as the above <code>sbatch</code> script but instead runs an interactive shell within an apptainer:</p>
 <div class="highlight"><pre><span></span><code>```
 #!/bin/bash -l
 
@@ -1820,7 +1895,7 @@ This wrapper starts a shell inside whatever apptainer you specify </p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 8, 2025 22:26:00 UTC">May 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 21:05:35 UTC">August 29, 2025</span>
   </span>
 
     
