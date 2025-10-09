@@ -6,7 +6,7 @@
         -   128 GB of RAM
         -   1 GPU
 
-    -   You can access these resources by adding `--account=publicgrp --partition=high` to your srun or sbatch command.
+    -   You can access these resources by adding `--account=publicgrp --partition=high` to your `srun` or `sbatch` command.
 
 -   Partition `low`: This partition allows access to all the unused resources in the cluster. The downside is that when
     a job is submitted to `high` that needs these resources, your job will be killed and requeued. Unless your job can
@@ -17,4 +17,4 @@
         -   3 days (`3-00`) of runtime
         -   1 node
 
-    -   You can access these resources by adding `--account=publicgrp --partition=low` to your srun or sbatch command.
+    -   You can access these resources by adding `--account=publicgrp --partition=low` to your `srun` or `sbatch` command.
