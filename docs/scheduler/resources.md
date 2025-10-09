@@ -311,7 +311,7 @@ Some GPU nodes may only be available in certain partitions (e.g. `gpu-a100` on H
 `#SBATCH --partition=gpul`
 
 
-Your account or QOS may also impose limits on how many GPUs you’re allowed to use concurrently. The cluster scheduler enforces those limits.
+Your account or QOS may also impose limits on how many GPUs you are allowed to use concurrently. The cluster scheduler enforces those limits.
 
 You can check your associations via:
 
