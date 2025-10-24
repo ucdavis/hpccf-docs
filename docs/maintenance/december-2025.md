@@ -4,8 +4,8 @@ title: December 2025 Maintenance Window
 
 The Fall 2025 maintenance window coincides with the campus data center generator test and is scheduled for the week of
 December 15th. HPC@UCD will be bringing servers down on Monday, December 15th, and they will be made available for use
-after planned maintenance tasks are completed. During this time, Farm will be unavailable for use, and all jobs will be
-stopped.
+after planned maintenance tasks are completed. During this time, Farm, Franklin, and Hive will be unavailable for use,
+and all jobs will be stopped.
 
 ## All Clusters
 
