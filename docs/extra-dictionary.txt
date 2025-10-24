@@ -1,3 +1,5 @@
+lifecycle
+cgroups
 conda
 condas
 backtick
