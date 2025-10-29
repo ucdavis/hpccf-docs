@@ -92,6 +92,68 @@ To pull a directory from a cluster to your local machine:
 
 As always, see `man rsync` for the manual.
 
+### rclone for UC Davis Box - transfer or sync data to/from the UC Davis Box client
+
+As this process requires launching a web browser for OAuth authorization, we recommend using [Open OnDemand](https://docs.hpc.ucdavis.edu/software/ondemand/) for the intial setup process
+
+1\. Install rclone
+
+`wget https://downloads.rclone.org/rclone-current-linux-amd64.zip`
+`unzip rclone-current-linux-amd64.zip`
+`cd rclone-v1.71.2-linux-amd64/`
+`./rclone`
+
+2\. Create a Box App Token
+
+Box uses OAuth2 for authentication. You need to create an app in Box’s developer console.
+
+1.  Go to https://app.box.com/developers/console
+2.  Click Create Platform App → Custom App    
+3.  Give it a name, select the Purpose (suggest: Automation) and create it.
+4.  Select User Authentication (OAuth 2.0)
+5.  In the app settings:
+-   Add `http://localhost:53682/` AND `http://127.0.0.1:53682/` to Redirect URIs (rclone’s local auth server).
+-   Enable BOTH Read AND Write all files and folders
+7.  Save changes.
+
+3\. Configure rclone for Box
+
+Run: `./rclone config`
+
+Then follow the prompts:
+
+`n) New remote name> mybox Storage> Box`
+
+When asked:
+
+-   Client ID → Enter from Box app settings.
+-   Client Secret → Enter from Box app settings.
+-   Box Config File → leave blank 
+-   Access Token → leave blank
+-   Box Sub Type → user (1)
+-   Edit advanced config? → No (unless you need special settings).
+-   Use auto config? → Yes (if running locally with a browser).
+
+A browser will open for Box login → click "Sign in with SSO" → enter @ucdavis.edu email address → approve access → rclone saves the token.  
+
+-   Quit the rclone setup process
+
+4\. Test the Connection: `./rclone ls mybox:`
+
+This lists files in your Box root.
+
+5\. Common Commands
+
+-   Upload a file: `rclone copy ./localfile.txt mybox:/BackupFolder`
+-   Download a file: `rclone copy mybox:/BackupFolder/file.txt ./localdir`
+-   Sync a folder (mirror changes): `rclone sync ./localdir mybox:/RemoteDir --progress`
+
+6\. Automating Backups
+
+Example cron job (Linux) to sync daily at 2 AM:
+
+`0 2 * * * /usr/bin/rclone sync /home/user/data mybox:/Backup --log-file=/var/log/rclone.log --log-level INFO`
+
 ## Open OnDemand
 
 For clusters that have [Open OnDemand](software/ondemand.md), you can copy files to/from your home directory. Log in to
