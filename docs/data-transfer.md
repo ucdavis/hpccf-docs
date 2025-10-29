@@ -40,8 +40,8 @@ you normally have access to, but for security reasons, you will only be able to 
 
 ### `scp` — OpenSSH secure file copy
 
-If you only need to move a single file, or a small directory, `scp` will work well. From your desktop/laptop you can push,
-or pull, file(s) and/or directories.
+If you only need to move a single file, or a small directory, `scp` will work well. From your desktop/laptop you can
+push, or pull, file(s) and/or directories.
 
 To push a file, you specify the source from your local system, and the destination on a cluster:
 
@@ -55,9 +55,9 @@ The final `.` will put the files/directories into the current directory.
 
 `scp` arguments:
 
--   `-r` Recursively copy entire directories. Note that `scp` follows symbolic links encountered in the tree traversal.
+- `-r` Recursively copy entire directories. Note that `scp` follows symbolic links encountered in the tree traversal.
 
--   `-p` Preserves modification times, access times, and file mode bits from the source file.
+- `-p` Preserves modification times, access times, and file mode bits from the source file.
 
 See `man scp` for the full manual.
 
@@ -72,9 +72,9 @@ algorithm, which reduces the amount of data sent over the network by sending onl
 files and the existing files in the destination. Rsync is widely used for backups and mirroring and as an improved copy
 command for everyday use.
 
-Like `scp`, `rsync` can operate in a push, or a pull, mode, depending on which arguments you put first. To use `rsync` to copy
-files from your local system, to a cluster, preserving permissions, ownership, and file times, you can use the following
-command.
+Like `scp`, `rsync` can operate in a push, or a pull, mode, depending on which arguments you put first. To use `rsync`
+to copy files from your local system, to a cluster, preserving permissions, ownership, and file times, you can use the
+following command.
 
 `rsync --archive --one-file-system --info=progress2 local-directory/ UCD-LOGIN-ID@CLUSTERNAME.hpc.ucdavis.edu:~/destination/`
 
@@ -84,9 +84,9 @@ To pull a directory from a cluster to your local machine:
 
 #### Explanation of options:
 
--   `--archive` preserves symbolic links, permissions, ownership, file timestamps, and recursively copies directories.
--   `--one-file-system` don't cross filesystem boundaries.
--   `--info=progress2` show reasonable progress as rsync processes files.
+- `--archive` preserves symbolic links, permissions, ownership, file timestamps, and recursively copies directories.
+- `--one-file-system` don't cross filesystem boundaries.
+- `--info=progress2` show reasonable progress as rsync processes files.
 
 -8<- "docs/include/rsync-warnings.md"
 
@@ -94,65 +94,83 @@ As always, see `man rsync` for the manual.
 
 ### rclone for UC Davis Box - transfer or sync data to/from the UC Davis Box client
 
-As this process requires launching a web browser for OAuth authorization, we recommend using [Open OnDemand](https://docs.hpc.ucdavis.edu/software/ondemand/) for the intial setup process
+As this process requires launching a web browser for OAuth authorization, we recommend using a `Desktop` session through
+[Open OnDemand](software/ondemand.md) for the initial setup process
 
-1\. Install rclone
+1.  Load the module
 
-`wget https://downloads.rclone.org/rclone-current-linux-amd64.zip`
-`unzip rclone-current-linux-amd64.zip`
-`cd rclone-v1.71.2-linux-amd64/`
-`./rclone`
+    `module load rclone`
 
-2\. Create a Box App Token
+1.  Create a Box App Token
 
-Box uses OAuth2 for authentication. You need to create an app in Box’s developer console.
+    Box uses OAuth2 for authentication. You need to create an app in the Box developer console.
 
-1.  Go to https://app.box.com/developers/console
-2.  Click Create Platform App → Custom App    
-3.  Give it a name, select the Purpose (suggest: Automation) and create it.
-4.  Select User Authentication (OAuth 2.0)
-5.  In the app settings:
--   Add `http://localhost:53682/` AND `http://127.0.0.1:53682/` to Redirect URIs (rclone’s local auth server).
--   Enable BOTH Read AND Write all files and folders
-7.  Save changes.
+    1. Go to [https://app.box.com/developers/console](https://app.box.com/developers/console).
+    2. Click `Create Platform App` → `Custom App`
+    3. Give it a name, select the `Purpose` (suggest:` Automation`) and create it.
+    4. Select `User Authentication (OAuth 2.0)`
+    5. In the app settings:
+       - Add `http://localhost:53682/` AND `http://127.0.0.1:53682/` to Redirect URIs (rclone’s local auth server).
+       - Enable BOTH Read AND Write all files and folders
+    6. Save changes.
 
-3\. Configure rclone for Box
+1.  Configure `rclone` for Box
 
-Run: `./rclone config`
+    Run: `rclone config`, follow the prompts:
 
-Then follow the prompts:
+    1. `n) New remote`
+    1. `name> mybox`
+    1. `Storage> box`
 
-`n) New remote name> mybox Storage> Box`
+    When asked:
 
-When asked:
+    - `Client ID` → Enter from Box app settings.
+    - `Client Secret` → Enter from Box app settings.
+    - `Box Config File` → leave blank
+    - `Access Token` → leave blank
+    - `Box Sub Type` → `user (1)`
+    - `Edit advanced config?` → No (unless you need special settings).
+    - `Use auto config?` → Yes (if running locally with a browser).
 
--   Client ID → Enter from Box app settings.
--   Client Secret → Enter from Box app settings.
--   Box Config File → leave blank 
--   Access Token → leave blank
--   Box Sub Type → user (1)
--   Edit advanced config? → No (unless you need special settings).
--   Use auto config? → Yes (if running locally with a browser).
+    A browser will open for Box login
 
-A browser will open for Box login → click "Sign in with SSO" → enter @ucdavis.edu email address → approve access → rclone saves the token.  
+    1.  click `Sign in with SSO`
+    1.  enter your `@ucdavis.edu` email address
+    1.  `approve access`
+    1.  rclone saves the token.
+    1.  Quit the rclone setup process
 
--   Quit the rclone setup process
+1.  Test the Connection: `rclone ls mybox:`
 
-4\. Test the Connection: `./rclone ls mybox:`
+    This lists files in your Box root.
 
-This lists files in your Box root.
+1.  Common Commands
 
-5\. Common Commands
+    - Upload a file: `rclone copy ./localfile.txt mybox:/BackupFolder`
+    - Download a file: `rclone copy mybox:/BackupFolder/file.txt ./localdir`
+    - Sync a folder (mirror changes): `rclone sync ./localdir mybox:/RemoteDir --progress`
 
--   Upload a file: `rclone copy ./localfile.txt mybox:/BackupFolder`
--   Download a file: `rclone copy mybox:/BackupFolder/file.txt ./localdir`
--   Sync a folder (mirror changes): `rclone sync ./localdir mybox:/RemoteDir --progress`
+1.  Automating Backups
 
-6\. Automating Backups
+    Example cron job to sync daily at 2 AM:
 
-Example cron job (Linux) to sync daily at 2 AM:
+    `0 2 * * * $HOME/bin/rclone-sync.sh`
 
-`0 2 * * * /usr/bin/rclone sync /home/user/data mybox:/Backup --log-file=/var/log/rclone.log --log-level INFO`
+    Then the contents of `$HOME/bin/rclone-sync.sh` look like this. You will need to adjust the local and remote
+    directories.
+
+    ```bash
+    #!/usr/bin/bash
+
+    source /etc/profile.d/modules.sh
+
+    module load rclone
+
+    rclone sync $HOME/data mybox:/Backup --log-file=$HOME/rclone-$(date -Im).log --log-level INFO
+    ```
+
+    If you require help with cron, please contact your local IT support. HPC@UCD is unable to help with this type of
+    support.
 
 ## Open OnDemand
 
@@ -165,8 +183,8 @@ megabytes will fail to transfer through OnDemand, so you will need to use a diff
 GUI tools do exist to help with file transfer. However, HPC@UCD cannot provide support for them, so you will need to
 contact your local IT support, or make an appointment with [DataLab](index.md#additional-information) for help.
 
--   Filezilla is a multi-platform client commonly used to transfer data to and from the cluster.
+- Filezilla is a multi-platform client commonly used to transfer data to and from the cluster.
 
--   Cyberduck is another popular file transfer client for Mac or Windows computers.
+- Cyberduck is another popular file transfer client for Mac or Windows computers.
 
--   WinSCP is Windows-only file transfer software.
+- WinSCP is Windows-only file transfer software.
