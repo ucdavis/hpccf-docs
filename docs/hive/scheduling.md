@@ -97,26 +97,26 @@ erroneously flags these jobs with `(QOSGrpCpuLimit)`.
 
 ### MPI jobs
 
-Not all nodes that have been brought into Hive have InfiniBand hardware, so jobs that do MPI and require InfiniBand
+Not all nodes that have been brought into Hive have InfiniBand hardware. Jobs that do MPI and require InfiniBand
 connectivity need to use the `--constraint=mpi` flag.
 
 MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request `--ntasks=128`.
-If you instead request CPUs with `--cpus-per-task=128` then you will end up with a single MPI worker that has access to
-128 CPUs, which is typically not what you want.
+If you instead request CPUs with `--cpus-per-task=128` you will end up with a single MPI worker that has access to 128
+CPUs, which is typically not what you want.
 
 Additionally, we have configured Slurm to understand the InfiniBand switch topology, so for maximum internode
-throughput, you can use the `--switches=1@1:00:00` flag. This constraint means all nodes the job runs on will be no more
-than 1 InfiniBand switch apart, but Slurm will not delay the job by more than 1 hour if it cannot meet this requirement.
+throughput, you can use the `--switches=1@1-00` flag. This constraint means all nodes the job runs on will be no more
+than 1 InfiniBand switch apart, but Slurm will not delay the job by more than 1 day if it cannot meet this requirement.
 
-Other useful Slurm flags are the `--nodes=1-4` which can be used to constrain your job to a limited number of nodes so
-it does not scatter across too many nodes.
+Another useful Slurm flag is `--nodes=1-4` which can be used to constrain your job to a limited number of nodes so it
+does not scatter across too many nodes.
 
 Slurm can be told to pack the jobs tighter on the nodes with `--distribution=block,pack`.
 
 Like any Slurm constraint, it will take longer for your job to schedule with these flags enabled, but your job should
 run better once it schedules.
 
-Putting it all together, the MPI parts of an sbatch script could look like this:
+Putting it all together, the MPI parts of a sbatch script could look like this:
 
 ```bash
 #SBATCH --ntasks=256
@@ -127,7 +127,7 @@ Putting it all together, the MPI parts of an sbatch script could look like this:
 
 #SBATCH --constraint=mpi
 #SBATCH --distribution=block,pack
-#SBATCH --switches=1
+#SBATCH --switches=1@1-00
 ```
 
 For more information about CPU cores and job scheduling, see [CPUs / cores](../scheduler/resources.md#cpus-cores)
