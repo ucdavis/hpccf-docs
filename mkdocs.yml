@@ -7,7 +7,7 @@ nav:
   - General:
       - Accessing Clusters: general/access.md
       - Account Requests: general/account-requests.md
-      - Backups: backups/backups.md
+      - Backups: backups/index.md
       - Contact Support: support.md
       - Data Transfer: data-transfer.md
       - Job Scheduling:
