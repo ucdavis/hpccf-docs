@@ -13,8 +13,7 @@ directory backups [can be purchased](#group-directories).
 
 ## What software is used?
 
-HPC@UCD has written a custom backup system based around the
-[Proxmox Backup Server (PBS)](https://www.proxmox.com/en/products/proxmox-backup-server/overview).
+HPC@UCD has written a custom backup system based around [Restic](https://restic.readthedocs.io/en/stable/).
 
 ## How to restore files or directories
 
@@ -22,60 +21,24 @@ HPC@UCD has written a custom backup system based around the
 
 ```console
 $ cd ~
-$ /quobyte/pbs/bin/restore.sh
+$ /quobyte/backups/bin/restore.sh
+
+Backups will be mounted on /home/omen/backup-mount-UgySgiqt/snapshots/
+and will remain mounted until you press Control-c.
+
+Please open another shell to this host and copy any file(s)/directory(s) you need to restore.
+
+Mounting backups, this may take several minutes...
+repository 3dfc0b37 opened (version 2, compression level auto)
+unable to open cache: mkdir /nfs: permission denied
+[0:00] 100.00%  18 / 18 index files loaded
+Now serving the repository at /home/omen/backup-mount-UgySgiqt
+Use another terminal or tool to browse the contents of this folder.
+When finished, quit with Ctrl-c here or umount the mountpoint.
 ```
 
-You will see a list of snapshots. Pick the one you want to restore the file from (up/down arrows), then press enter. The
-snapshot you selected will be automatically mounted to a random directory, which is printed (for example
-`/home/omen/restore-fCnNXIUr`).
-
-??? Note "Please chose a snapshot to restore from."
-
-    ```
-    ┌─────────────────┤ Please chose a snapshot to restore from. ├─────────────────┐
-    │ Snapshots, newest to oldest:                                                 │
-    │                                                                              │
-    │                      1  host/omen/2025-03-18T07:13:02Z                       │
-    │                      2  host/omen/2025-03-17T22:51:54Z                       │
-    │                      3  host/omen/2025-03-16T07:16:32Z                       │
-    │                      4  host/omen/2025-03-15T07:15:07Z                       │
-    │                      5  host/omen/2025-03-14T07:00:04Z                       │
-    │                      6  host/omen/2025-03-13T07:05:46Z                       │
-    │                      7  host/omen/2025-03-12T07:17:56Z                       │
-    │                      8  host/omen/2025-03-09T08:10:37Z                       │
-    │                      9  host/omen/2025-03-02T08:17:44Z                       │
-    │                      10 host/omen/2025-02-23T08:08:58Z                       │
-    │                                                                              │
-    │                     <Ok>                         <Cancel>                    │
-    │                                                                              │
-    └──────────────────────────────────────────────────────────────────────────────┘
-    ```
-
-You can open another connection to Hive, then cd into that directory (`cd /home/omen/restore-fCnNXIUr`), find the
-file(s) or directory(s) you need to restore, then `cp` to your desired location.
-
-??? Note "Snapshot selected."
-
-    ```
-    ┌─omen@login1.hive: ~
-    └─0 $ /quobyte/pbs/bin/restore.sh
-    Loading snapshots, done.
-    Mounting chosen snapshot: host/omen/2025-03-18T07:13:02Z to /home/omen/restore-zCgS0D1Z
-    Encryption key file: '"/quobyte/pbs/home/omen.json"'
-    Encryption key fingerprint: '21:96:a0:ec:62:62:ae:34'
-    FUSE library version: 3.14.0
-
-    Backups mounted on /home/omen/restore-zCgS0D1Z
-
-    Please open another shell and copy any file(s)/directory(s) you need to restore.
-
-    It will remain mounted for 1 hour, then automatically unmount.
-    You can issue Control-c to unmount earlier.
-    ```
-
-Note, this backup mount (`/home/omen/restore-fCnNXIUr` in this example) will automatically unmount in 1 hour. Any shells
-that have `cd`'d into this directory will remain functional until you close them (or `cd` out). You can force the
-directory to unmount earlier by pressing Control-c in window where you ran the restore program.
+This backup mount (`/home/omen/backup-mount-UgySgiqt/snapshots/` in this example) will remain mounted until you
+Control-c the restore script.
 
 ### Restore a file from your group directory
 
@@ -85,7 +48,7 @@ directory:
 
 ```console
 $ cd /quobyte/*PI*grp/
-$ /quobyte/pbs/bin/restore.sh
+$ /quobyte/backups/bin/restore.sh
 ```
 
 Second, the temporary directory will be created in `/quobyte/*PI*grp/`.
@@ -98,12 +61,14 @@ All of Hive's home directories have a quota of 20 GB and all backed up automatic
 snapshot keep schedule is listed below, but this is subject to revision as the backup space fills. Individual files
 and/or directories can be restored by each user.
 
+[comment]: # "See: /quobyte/restic/home/.restic/config"
+
 | Snapshot type | Keep count |
 | ------------- | ---------- |
 | daily         | 7          |
 | weekly        | 5          |
-| monthly       | 12         |
-| yearly        | 2          |
+| monthly       | 3          |
+| yearly        | 0          |
 
 ## Group directories
 
@@ -148,8 +113,8 @@ NOT** monitor the individual backups. It is up to you to monitor those and open 
 ### How much backup space do I need?
 
 This is a surprisingly complex question. It depends on how much data you are backing up, how much that data changes
-(`added files + deleted files + changed data` = `churn`), and the total number of snapshots you keep. PBS only stores a
-single copy of each unique data chunk, so unchanging data is only stored a single time. The short version is you need
+(`added files + deleted files + changed data` = `churn`), and the total number of snapshots you keep. Restic only stores
+a single copy of each unique data chunk, so unchanging data is only stored a single time. The short version is you need
 approximately `(initial quantity * snapshots) + (churn * snapshots)`.
 
 | Quantity of Data | Data added + deleted + changed | Snapshots                    | Total Required Space |
@@ -196,21 +161,19 @@ At this point you have 4 options:
 
 ### How often are backups taken?
 
-The backup system starts at midnight every night and works its way through a randomly shuffled list of PI areas it needs
-to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and your
-order in the shuffle.
+The backup system starts after midnight every night and works its way through a randomly shuffled list of PI areas it
+needs to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and
+your order in the shuffle.
 
 ### What types of snapshots are available?
 
-PBS offers the following types of snapshots:
+Restic offers the following types of snapshots:
 
--   `last`: Keep the last N snapshots.
--   `daily`: Keep the last N daily snapshots.
--   `weekly`: Keep the last N weekly snapshots.
--   `monthly`: Keep the last N monthly snapshots.
--   `yearly`: Keep the last N annual snapshots.
-
-There is a [simulator](https://pbs.proxmox.com/docs/prune-simulator/) to test various settings.
+- `last`: Keep the last N snapshots.
+- `daily`: Keep the last N daily snapshots.
+- `weekly`: Keep the last N weekly snapshots.
+- `monthly`: Keep the last N monthly snapshots.
+- `yearly`: Keep the last N annual snapshots.
 
 Note, `last=1` means a single copy (the latest) will be retained of each file. This is effectively a "snapshot" copy for
 disaster recovery purposes only.
@@ -232,9 +195,9 @@ the time the file was backed up. This means that files/directories with permissi
 prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by HPC@UCD support with the
 following information, and we can restore the files for you.
 
--   The cluster.
--   The full path to the files/directories you need restored.
--   The full path to the place you would like them restored to.
+- The cluster.
+- The full path to the files/directories you need restored.
+- The full path to the place you would like them restored to.
 
 ### How do I make changes to my quota, snapshots or monitoring designee list?
 
