@@ -11,4 +11,4 @@ You can also view our Status Pages:
 
 - Farm: [https://status.farm.caes.ucdavis.edu/](https://status.farm.caes.ucdavis.edu/)
 
-- Franklin and Hive: [https://status.hpc.ucdavis.edu/](https://status.hpc.ucdavis.edu/).
+- Franklin and Hive: [https://status.hpc.ucdavis.edu/](https://status.hpc.ucdavis.edu/)
