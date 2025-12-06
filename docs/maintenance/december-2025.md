@@ -2,19 +2,26 @@
 title: December 2025 Maintenance Window
 ---
 
-The Fall 2025 maintenance window coincides with the campus data center generator test and is scheduled for the week of
+The fall 2025 maintenance window coincides with the campus data center generator test and is scheduled for the week of
 December 15th. HPC@UCD will be bringing servers down on Monday, December 15th, and they will be made available for use
 after planned maintenance tasks are completed. During this time, Farm, Franklin, and Hive will be unavailable for use,
 and all jobs will be stopped.
+
+No jobs that have a runtime longer than the current time to the start of the maintenance window will be able to start.
+This exact amount of time is printed every time you log in to each of the clusters. If your job is held because of the
+maintenance reservation, you will see this in your `squeue` output:
+
+`(ReqNodeNotAvail, Reserved for maintenance)`
 
 ## All Clusters
 
 During the maintenance window, the following software items will be updated:
 
-- CVMFS (Software Module Distribution)
-- Linux Cgroups
+- CVMFS (Software Distribution)
+- Linux cgroups
 - NVidia GPU drivers
 - Open OnDemand
+- Quobyte
 - Slurm
 - ZFS
 
@@ -49,4 +56,10 @@ significant delays in the delivery of computing hardware.
 
 ## Franklin Specific
 
+None at this time.
+
 ## Hive Specific
+
+The two current virtual login nodes will be replaced with physical hardware. This will double the number of CPUs and
+quadruple the amount of RAM each has. Additionally, the physical machines have InfiniBand, which should reduce overhead
+when accessing storage.
