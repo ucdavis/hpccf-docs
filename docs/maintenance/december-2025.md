@@ -58,7 +58,7 @@ significant delays in the delivery of computing hardware.
 
 The long-term group name used for free-tier Farm access will be changing. The new group name will be `publicgrp`, but
 the description in Hippo will remain the same (`CA&ES Free Tier sponsored by Adam Getchell`). All users in the previous
-group have been automatically transitioned.
+group will be automatically transitioned.
 
 ### New Login Node
 
@@ -73,7 +73,7 @@ None at this time.
 
 ## Hive Specific
 
-### New Login Node
+### New Login Nodes
 
 The two current virtual login nodes will be replaced with physical hardware. Changes:
 
