@@ -7,8 +7,8 @@ December 15th. HPC@UCD will be bringing servers down on Monday, December 15th, a
 after planned maintenance tasks are completed. During this time, Farm, Franklin, and Hive will be unavailable for use,
 and all jobs will be stopped.
 
-No jobs that have a runtime longer than the current time to the start of the maintenance window will be able to start.
-This exact amount of time is printed every time you log in to each of the clusters. If your job is held because of the
+Jobs that have a runtime longer than the current time until the start of the maintenance window will not start. This
+exact amount of time is printed every time you log in to each of the clusters. If your job is held because of the
 maintenance reservation, you will see this in your `squeue` output:
 
 `(ReqNodeNotAvail, Reserved for maintenance)`
