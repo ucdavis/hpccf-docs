@@ -34,21 +34,22 @@ hardware will be renamed.
 
 ### Farm Slurm Partition Status as of December 15, 2025
 
-| Old partition name    | New Name/Status                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------ |
-| `high2`               | `high`                                                                                     |
-| `med2`                | Deleted                                                                                    |
-| `low2`                | `low`                                                                                      |
-| `high`                | Deleted                                                                                    |
-| `med`                 | Deleted                                                                                    |
-| `low`                 | Deleted                                                                                    |
-| `bigmemh`             | Deleted                                                                                    |
-| `bigmemm`             | Deleted                                                                                    |
-| `bigmeml`             | Deleted                                                                                    |
-| `bit150h`             | Deleted                                                                                    |
-| `ecl243`              | Deleted                                                                                    |
-| `bmh` / `bmm` / `bml` | Untouched                                                                                  |
-| `gpul`                | Functionality folded into `low`. Access with: <br/>`--partition=low --gres=gpu:TYPE:COUNT` |
+| Old partition name | New Name/Status                                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| `high2`            | `high`                                                                                     |
+| `med2`             | Deleted                                                                                    |
+| `low2`             | `low`                                                                                      |
+| `high`             | Deleted                                                                                    |
+| `med`              | Deleted                                                                                    |
+| `low`              | Deleted                                                                                    |
+| `bigmemh`          | Deleted                                                                                    |
+| `bigmemm`          | Deleted                                                                                    |
+| `bigmeml`          | Deleted                                                                                    |
+| `bit150h`          | Deleted                                                                                    |
+| `ecl243`           | Deleted                                                                                    |
+| `bmh` / `bml`      | Untouched                                                                                  |
+| `bmm`              | Deleted                                                                                    |
+| `gpul`             | Functionality folded into `low`. Access with: <br/>`--partition=low --gres=gpu:TYPE:COUNT` |
 
 If you need to start an order for new hardware, see
 [https://hippo.ucdavis.edu/Farm/product/index](https://hippo.ucdavis.edu/Farm/product/index). Note that there are
