@@ -28,7 +28,7 @@ During the maintenance window, the following software items will be updated:
 ## Farm Specific
 
 Farm sells hardware and storage with a five-year guarantee. Many Farm hardware components have exceeded their lifecycle
-and will be retired during the December 2025 maintenance window. At the request of CAES IT, all hardware more than five
+and will be retired during the December 2025 maintenance window. At the request of CA&ES IT, all hardware more than five
 years old will be retired, and those Slurm partitions will be removed. Additionally, the partition names for the newer
 hardware will be renamed.
 
@@ -54,12 +54,30 @@ If you need to start an order for new hardware, see
 [https://hippo.ucdavis.edu/Farm/product/index](https://hippo.ucdavis.edu/Farm/product/index). Note that there are
 significant delays in the delivery of computing hardware.
 
+### New Public Access Group Name
+
+The long-term group name used for free-tier Farm access will be changing. The new group name will be `publicgrp`, but
+the description in Hippo will remain the same (`CA&ES Free Tier sponsored by Adam Getchell`). All users in the previous
+group have been automatically transitioned.
+
+### New Login Node
+
+Farm's login node will be upgraded to a new system. Changes:
+
+- CPUs: 32 -> 256
+- RAM: 64 GB -> 512 GB
+
 ## Franklin Specific
 
 None at this time.
 
 ## Hive Specific
 
-The two current virtual login nodes will be replaced with physical hardware. This will double the number of CPUs and
-quadruple the amount of RAM each has. Additionally, the physical machines have InfiniBand, which should reduce overhead
-when accessing storage.
+### New Login Node
+
+The two current virtual login nodes will be replaced with physical hardware. Changes:
+
+- CPUs: 32 -> 64
+- RAM: 64 GB -> 256 GB
+
+Additionally, the physical machines have InfiniBand, which should reduce overhead when accessing storage.
