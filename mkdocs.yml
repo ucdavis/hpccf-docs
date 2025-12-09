@@ -1,12 +1,14 @@
 site_name: HPC@UCD Documentation
 site_url: http://docs.hpc.ucdavis.edu
 repo_url: https://github.com/ucdavis/hpccf-docs
-copyright: Copyright &copy; 2023-24 The Regents of the University of California, Davis
+copyright: Copyright &copy; 2023-25 The Regents of the University of California, Davis
 
 nav:
   - General:
       - Accessing Clusters: general/access.md
       - Account Requests: general/account-requests.md
+      - Backups: backups/index.md
+      - Contact Support: support.md
       - Data Transfer: data-transfer.md
       - Job Scheduling:
           - About: scheduler/index.md
@@ -21,53 +23,63 @@ nav:
           - Development: software/developing.md
           - Module System: software/modules.md
           - Open OnDemand: software/ondemand.md
-          - R and RStudio: software/rlang.md
+          - R and RStudio: software/rstudio.md
+      - Maintenance:
+          - December 2025: maintenance/december-2025.md
       - Troubleshooting: general/troubleshooting.md
-  - Clusters:
-      - Farm:
-          - About: farm/index.md
-          - Job Scheduling: farm/scheduling.md
-          - Resources: farm/resources.md
-          - Software:
-              - Modules: farm/software/modules.md
-          - Storage: farm/storage.md
-      - Franklin:
-          - About: franklin/index.md
-          - Job Scheduling: franklin/scheduling.md
-          - Resources: franklin/resources.md
-          - Software:
-              - alphafold: franklin/software/alphafold.md
-              - cryo-EM: franklin/software/cryoem.md
-              - Modules: franklin/software/modules.md
-          - Storage: franklin/storage.md
-      - Hive:
-          - Migrating from LSSC0: hive/lssc0-data-migration.md
+  - Farm:
+      - About: farm/index.md
+      - Job Scheduling: farm/scheduling.md
+      - Resources: farm/resources.md
+      - Software:
+          - Modules: farm/software/modules.md
+      - Storage: farm/storage.md
+  - Franklin:
+      - About: franklin/index.md
+      - Job Scheduling: franklin/scheduling.md
+      - Resources: franklin/resources.md
+      - Software:
+          - alphafold: franklin/software/alphafold.md
+          - cryo-EM: franklin/software/cryoem.md
+          - Modules: franklin/software/modules.md
+      - Databases: franklin/databases.md
+      - Storage: franklin/storage.md
+  - Hive:
+      - About: hive/index.md
+      - Job Scheduling: hive/scheduling.md
+      - Migrating from LSSC0: hive/lssc0-data-migration.md
+      - Waltz temporary access: hive/waltz.md
+  - Meta:
+      - Style Guide: meta/style.md
 
-  - Admin:
-      - admin/index.md
-      - Cobbler: admin/cobbler.md
-      - Configuration: admin/configuration.md # puppet, etc
-      - DNS: admin/dns.md
-      - Monitoring: admin/monitoring.md
-      - Netbox: admin/netbox.md
-      - Network Architecture: admin/network.md
-      - Open OnDemand: admin/ondemand.md
-      - Provisioning: admin/provisioning.md
-      - PXE boot: admin/PXE.md
-      - Software: admin/software.md
-      - Virtual Machines: admin/vms.md
 #
 # Here be dragons! Don't edit these settings unless you Know What You're Doing (tm).
 #
 
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+strict: true
+
 markdown_extensions:
   - toc:
       permalink: true
-  - def_list
-  - attr_list
+
   - admonition
-  - md_in_html
+  - attr_list
+  - def_list
   - footnotes
+  - md_in_html
+  - tables
+
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
@@ -78,9 +90,13 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - search
@@ -88,20 +104,32 @@ plugins:
       enable_creation_date: true
   - macros:
       module_name: macros
+  - spellcheck:
+      backends: # the backends you want to use
+        - symspellpy # as strings
+        - codespell: # or nested configs
+            dictionaries: [clear, rare, names, code, usage]
+            C: 2
+      # known_words can also be a list of words
+      known_words: extra-dictionary.txt
+      # ignore words in <code> tags
+      ignore_code: true
+      skip_files:
+        - franklin/software/modules.md
 
 extra:
   spack_modulefiles_path: spack-ucdavis/modulefiles/hpccf/franklin/
   social:
     - icon: material/email-edit
       link: "mailto:hpc-help@ucdavis.edu"
-      name: Email HPCCF Support
+      name: Email HPC@UCD Support
     - icon: fontawesome/brands/slack
       link: https://ucdavis.slack.com/archives/C053NKA88
       name: "#hpc Channel on ucdavis.slack.com"
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
-  - javascripts/mathjax.js
+  - javascript/mathjax.js
   - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

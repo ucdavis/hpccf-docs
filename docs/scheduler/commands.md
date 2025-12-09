@@ -2,19 +2,16 @@
 title: Slurm Commands
 ---
 
-After [logging in to a cluster](../general/access.md), your session exists on the **head node**: a single,
-less powerful computer that serves as the gatekeeper to the rest of the cluster.
-To do actual work, you will need to write submission scripts that define your job and submit
-them to the cluster along with resource requests.
+After [logging in to a cluster](../general/access.md), your session exists on the **head node**: a single, less powerful
+computer that serves as the gatekeeper to the rest of the cluster. To do actual work, you will need to write submission
+scripts that define your job and submit them to the cluster along with resource requests.
 
 ## Batch Jobs: `sbatch`
 
-Most of the time, you will want to submit jobs in the form of job scripts.
-The batch job script specifies the resources needed for the job, such as the number of nodes, 
-cores, memory, and walltime.
-A simple example would be:
+Most of the time, you will want to submit jobs in the form of job scripts. The batch job script specifies the resources
+needed for the job, such as the number of nodes, cores, memory, and walltime. A simple example would be:
 
-``` { .slurm .copy title="jobscript.sh" }
+``` { .slurm .copy title="<code>jobscript.sh</code>" }
 #!/bin/bash 
 # (1)
 #SBATCH --ntasks=1
@@ -30,19 +27,19 @@ echo "Running on $(hostname)"
 
 Which can be submitted to the scheduler by running:
 
-``` console
+```console
 $ sbatch jobscript.sh
 Submitted batch job 629
 ```
 
-The job script is a normal shell script -- note the `#!/bin/bash` -- that contains additional directives.
-`#SBATCH` lines specify directives to be sent to the scheduler; in this case, our resource requests:
+The job script is a normal shell script -- note the `#!/bin/bash` -- that contains additional directives. `#SBATCH`
+lines specify directives to be sent to the scheduler; in this case, our resource requests:
 
-- `--ntasks`: Number of tasks to run. Slurm may schedule tasks on the same or different nodes.
-- `--cpus-per-task`: Number of CPUs (cores) to allocate per task.
-- `--time`: Maximum wallclock time for the job.
-- `--mem`: Maximum amount of memory for the job.
-- `--partition`: The queue partition to submit to. See the [queueing](queues.md) section for more details.
+-   `--ntasks`: Number of tasks to run. Slurm may schedule tasks on the same or different nodes.
+-   `--cpus-per-task`: Number of CPUs (cores) to allocate per task.
+-   `--time`: Maximum wallclock time for the job.
+-   `--mem`: Maximum amount of memory for the job.
+-   `--partition`: The partition queue to submit to.
 
 ??? warning
 
@@ -50,38 +47,48 @@ The job script is a normal shell script -- note the `#!/bin/bash` -- that contai
     There is no limit on spawning threads, but keep in mind that using far more threads than requested cores
     will result in rapidly decreasing performance.
 
-`#SBATCH` directives directly correspond to arguments passed to the `sbatch` command. As such, one could remove
-the lines starting with `#SBATCH` from the previous job script and submit it with:
+`#SBATCH` directives directly correspond to arguments passed to the `sbatch` command. As such, one could remove the
+lines starting with `#SBATCH` from the previous job script and submit it with:
 
-``` console
+```console
 $ sbatch --ntasks=1 --cpus-per-task=1 --time=01:00:00 --mem=100MB --partition=low jobscript.sh
 ```
 
 Using directives with job scripts is recommended, as it helps you document your resource requests.
 
-Try `man sbatch` or [visit the official docs](https://slurm.schedmd.com/sbatch.html) for more options.
-More information on resource requests can be found in the [**Resources**](resources.md) section,
-and more examples on writing job scripts can be found in the [**Job Scripts**](jobscripts.md) section.
+Try `man sbatch` or [visit the official docs](https://slurm.schedmd.com/sbatch.html) for more options. More information
+on resource requests can be found in the [**Resources**](resources.md) section, and more examples on writing job scripts
+can be found in the [**Job Scripts**](jobscripts.md) section.
+
+### Interactive shell within an existing batch job
+
+Occasionally you need shell access to a job that is already running. This can be accomplished with:
+
+```console
+$ srun --jobid=JOBID --overlap --pty /bin/bash -l # (1)!
+```
+
+1. Replace `JOBID` with the ID of your job, which can be obtained with [`squeue`](#listing-jobs-squeue).
+
+You are still constrained to the total amount of resources requested in the original job. If you use too much RAM, you
+will cause an out-of-memory (OOM) event, and Slurm will kill part of your job.
 
 ## Interactive jobs: `srun`
 
-Sometimes, you want to run an interactive shell session on a node, such as running an [IPython](https://ipython.org/) session.
-`srun` takes the same parameters as `sbatch`, while also allowing you to specify a shell.
-For example:
+Sometimes, you want to run an interactive shell session on a node, such as running an [IPython](https://ipython.org/)
+session. `srun` takes the same parameters as `sbatch` while also allowing you to specify a shell. For example:
 
-``` console
+```console
 $ srun --ntasks=1 --time=01:00:00 --mem=100MB --partition=low --pty /bin/bash
 srun: job 630 queued and waiting for resources
 srun: job 630 has been allocated resources
 camw@c-8-42:~$
 ```
 
-Note that addition of the `--pty /bin/bash` argument.
-You can see that the job is queued and then allocated resources, but instead of exiting, you are brought
-to a new prompt.
-In the example above, the user `camw` has been moved onto the node `c-8-42`, which is indicated by the new terminal
-prompt, `camw@c-8-42`.
-The same resource and time constraints apply in this session as in `sbatch` scripts.
+Note that addition of the `--pty /bin/bash` argument. You can see that the job is queued and then allocated resources,
+but instead of exiting, you are brought to a new prompt. In the example above, the user `camw` has been moved onto the
+node `c-8-42`, which is indicated by the new terminal prompt, `camw@c-8-42`. The same resource and time constraints
+apply in this session as in `sbatch` scripts.
 
 ??? note
 
@@ -89,13 +96,12 @@ The same resource and time constraints apply in this session as in `sbatch` scri
 
 Try `man srun` or [visit the official docs](https://slurm.schedmd.com/srun.html) for more options.
 
-
 ## Listing jobs: `squeue`
 
-`squeue` can be used to monitor running and queued jobs.
-Running it with no arguments will show *all* the jobs on the cluster; depending on how many users are active, this could be a lot!
+`squeue` can be used to monitor running and queued jobs. Running it with no arguments will show _all_ the jobs on the
+cluster; depending on how many users are active, this could be a lot!
 
-``` console
+```console
 $ squeue
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                589 jawdatgrp Refine3D adtaheri  R 1-13:51:39      1 gpu-9-18
@@ -104,18 +110,19 @@ $ squeue
 ...
 ```
 
-To view only *your* jobs, you can use `squeue --me`.
+To view only _your_ jobs, you can use `squeue --me`.
 
-``` console
+```console
 $ squeue --me
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                631       low jobscrip     camw  R       0:02      1 c-8-42
 ```
 
-The format -- which columns and their width -- can be tuned with the [`--format`](https://slurm.schedmd.com/squeue.html#OPT_format) parameter.
-For example, you might way to also include how many cores the job requested, and widen the fields:
+The format -- which columns and their width -- can be tuned with the
+[`--format`](https://slurm.schedmd.com/squeue.html#OPT_format) parameter. For example, you might way to also include how
+many cores the job requested, and widen the fields:
 
-``` {.console .copy}
+```{.console .copy}
 $ squeue --format="%10i %.9P %.20j %.10u %.3t %.25S %.15L %.10C %.6D %.20R"
 JOBID      PARTITION                 NAME       USER  ST                START_TIME       TIME_LEFT       CPUS  NODES     NODELIST(REASON)
 589        jawdatgrp     Refine3D/job015/   adtaheri   R       2023-01-31T22:51:59         9:58:38          6      1             gpu-9-18
@@ -123,32 +130,31 @@ JOBID      PARTITION                 NAME       USER  ST                START_TI
 ```
 
 Try `man squeue` or [visit the official docs](https://slurm.schedmd.com/squeue.html) for more options.
- 
 
-## Canceling jobs: `scancel`
+## Cancelling jobs: `scancel`
 
-To kill a job before it has completed, use the scancel command:
+To kill a job before it has completed, use the `scancel` command:
 
 ```console
 $ scancel JOBID # (1)!
 ```
 
-1. Replace `JOBID` with the ID of your job, which can be obtained with [`squeue`](jobs.md#listing-jobs-squeue).
+1. Replace `JOBID` with the ID of your job, which can be obtained with [`squeue`](#listing-jobs-squeue).
 
 You can cancel many jobs at a time; for example, you could cancel all of your running jobs with:
 
-``` {.console .copy}
+```{.console .copy}
 $ scancel -u $USER #(1)!
 ```
 
-1. `$USER` is an environment variable containing *your username*, so leave this as is to use it.
+1. `$USER` is an environment variable containing _your username_, so leave this as is to use it.
 
 Try `man scancel` or [visit the official docs](https://slurm.schedmd.com/scancel.html) for more options.
 
-## Job and Cluster Information:  `scontrol`
+## Job and Cluster Information: `scontrol`
 
-`scontrol show` can be used to display any information known to Slurm.
-For users, the most useful are the detailed job and node information.
+`scontrol show` can be used to display any information known to Slurm. For users, the most useful are the detailed job
+and node information.
 
 To display details for a job, run:
 
@@ -183,24 +189,24 @@ JobId=635 JobName=jobscript.sh
    Power=
 ```
 
-Where `635` should be replaced with the ID for your job.
-For example, you can see that this job was allocated resources on `c-8-42` (`NodeList=c-8-42`),
-that its priority score is 6563 (`Priority=6563`), and that the script it ran with is located at `/home/camw/jobscript.sh`.
+Where `635` should be replaced with the ID for your job. For example, you can see that this job was allocated resources
+on `c-8-42` (`NodeList=c-8-42`), that its priority score is 6563 (`Priority=6563`), and that the script it ran with is
+located at `/home/camw/jobscript.sh`.
 
 We can also get details on nodes. Let's interrogate `c-8-42`:
 
 ```console
 $ scontrol show n c-8-42
-NodeName=c-8-42 Arch=x86_64 CoresPerSocket=64 
+NodeName=c-8-42 Arch=x86_64 CoresPerSocket=64
    CPUAlloc=4 CPUEfctv=256 CPUTot=256 CPULoad=0.12
    AvailableFeatures=amd,cpu
    ActiveFeatures=amd,cpu
    Gres=(null)
    NodeAddr=c-8-42 NodeHostName=c-8-42 Version=22.05.6
-   OS=Linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 
+   OS=Linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022
    RealMemory=1000000 AllocMem=200 FreeMem=98124 Sockets=2 Boards=1
    State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
-   Partitions=low,high 
+   Partitions=low,high
    BootTime=2022-12-11T02:25:44 SlurmdStartTime=2022-12-14T10:34:25
    LastBusyTime=2023-02-02T13:13:22
    CfgTRES=cpu=256,mem=1000000M,billing=256
@@ -210,9 +216,8 @@ NodeName=c-8-42 Arch=x86_64 CoresPerSocket=64
    ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
 ```
 
-`CPUAlloc=4` tells us that 4 cores are currently allocated on the node.
-`AllocMem=200` indicates that 200MiB of RAM are currently allocated, with
-`RealMemory=1000000` telling us that there is 1TiB of RAM total on the node.
+`CPUAlloc=4` tells us that 4 cores are currently allocated on the node. `AllocMem=200` indicates that 200MiB of RAM are
+currently allocated, with `RealMemory=1000000` telling us that there is 1TiB of RAM total on the node.
 
 ## Node Status: `sinfo`
 
@@ -229,51 +234,54 @@ jawdatgrp-gpu    up   infinite      2    mix gpu-9-[10,18]
 jawdatgrp-gpu    up   infinite      1   idle gpu-9-26
 ```
 
-In this case, we can see that there are 3 partially-allocated nodes in the `low` partition (they have state `mix`),
-and that the time limit for jobs on the `low` partition is 12 hours.
+In this case, we can see that there are 3 partially-allocated nodes in the `low` partition (they have state `mix`), and
+that the time limit for jobs on the `low` partition is 12 hours.
 
 Passing the `-N` flag tells `sinfo` to display node-centric information:
 
 ```console
 $ sinfo -N
-NODELIST   NODES     PARTITION STATE 
-c-8-42         1          low* idle  
-c-8-42         1          high idle  
-c-8-50         1          low* idle  
-c-8-50         1          high idle  
-c-8-58         1          low* idle  
-c-8-58         1          high idle  
-c-8-62         1          low* idle  
-c-8-62         1          high idle  
-c-8-70         1          low* idle  
-c-8-70         1          high idle  
-c-8-74         1          low* idle  
-c-8-74         1          high idle  
-gpu-9-10       1          low* mix   
-gpu-9-10       1 jawdatgrp-gpu mix   
-gpu-9-18       1          low* mix   
-gpu-9-18       1 jawdatgrp-gpu mix   
-gpu-9-26       1          low* idle  
-gpu-9-26       1 jawdatgrp-gpu idle  
-gpu-9-58       1          low* mix   
+NODELIST   NODES     PARTITION STATE
+c-8-42         1          low* idle
+c-8-42         1          high idle
+c-8-50         1          low* idle
+c-8-50         1          high idle
+c-8-58         1          low* idle
+c-8-58         1          high idle
+c-8-62         1          low* idle
+c-8-62         1          high idle
+c-8-70         1          low* idle
+c-8-70         1          high idle
+c-8-74         1          low* idle
+c-8-74         1          high idle
+gpu-9-10       1          low* mix
+gpu-9-10       1 jawdatgrp-gpu mix
+gpu-9-18       1          low* mix
+gpu-9-18       1 jawdatgrp-gpu mix
+gpu-9-26       1          low* idle
+gpu-9-26       1 jawdatgrp-gpu idle
+gpu-9-58       1          low* mix
 gpu-9-66       1          low* idle
 ```
 
-There is an entry for each node in each of its partitions. `c-8-42` is in both the `low` and `high` partitions, while `gpu-9-10` is in the `low` and `jawdatgrp-gpu` partitions.
+There is an entry for each node in each of its partitions. `c-8-42` is in both the `low` and `high` partitions, while
+`gpu-9-10` is in the `low` and `jawdatgrp-gpu` partitions.
 
 More verbose information can be obtained by also passing the `-l` or `--long` flag:
 
 ```console
 $ sinfo -N -l
 Thu Feb 02 14:04:48 2023
-NODELIST   NODES     PARTITION       STATE CPUS    S:C:T MEMORY TMP_DISK WEIGHT AVAIL_FE REASON              
-c-8-42         1          low*        idle 256    2:64:2 100000        0      1  amd,cpu none                
-c-8-42         1          high        idle 256    2:64:2 100000        0      1  amd,cpu none                
-c-8-50         1          low*        idle 256    2:64:2 100000        0      1  amd,cpu none                
-c-8-50         1          high        idle 256    2:64:2 100000        0      1  amd,cpu none                
+NODELIST   NODES     PARTITION       STATE CPUS    S:C:T MEMORY TMP_DISK WEIGHT AVAIL_FE REASON
+c-8-42         1          low*        idle 256    2:64:2 100000        0      1  amd,cpu none
+c-8-42         1          high        idle 256    2:64:2 100000        0      1  amd,cpu none
+c-8-50         1          low*        idle 256    2:64:2 100000        0      1  amd,cpu none
+c-8-50         1          high        idle 256    2:64:2 100000        0      1  amd,cpu none
 c-8-58         1          low*        idle 256    2:64:2 100000        0      1  amd,cpu none
 ...
 ```
 
-This view gives the nodes' socket, core, and thread configurations, their RAM, and the feature list, which you can read about in the [**Resources**](resources.md#features) section. Try `man scontrol` or `man sinfo`, or visit the official docs
-for [`scontrol`](https://slurm.schedmd.com/scontrol.html) and [`sinfo`](https://slurm.schedmd.com/sinfo.html), for more options.
+This view gives the nodes' socket, core, and thread configurations, their RAM, and the feature list, which you can read
+about in the [**Resources**](resources.md) section. Try `man scontrol` or `man sinfo`, or visit the official
+docs for [`scontrol`](https://slurm.schedmd.com/scontrol.html) and [`sinfo`](https://slurm.schedmd.com/sinfo.html), for
+more options.

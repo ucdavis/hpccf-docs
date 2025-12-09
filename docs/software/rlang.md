@@ -1,1 +1,0 @@
-# :simple-r: :simple-rstudio: R and RStudio

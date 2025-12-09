@@ -2,7 +2,7 @@
 
 For running containers on HPC systems we offer and use Apptainer ( formerly Singularity ). Other container runtimes like Docker require users to have escalated system priveleges, and for most that's typically not an issue, but for shared multi-user systems letting any and all users have escalated privileges can pose a security risk. Luckily, apptainer allows users to run unprivileged containers in user-space including Docker containers and any OCI compatible containers.
 
-# Quickstart
+## Quickstart
 
 The quick and dirty way to get started on exploring and testing your software in an apptainer ASAP:
 
@@ -20,7 +20,6 @@ Mostly for if you want the image in a specific location, not really necessary. B
 
 Or with: `apptainer cache --help`
 
-
 ## Running Apptainer Images
 
 There are a few ways to interact with your apptainers. 
@@ -35,7 +34,6 @@ is non-interactive and will execute the commands you specify within the containe
 is also non-interactive and similar to exec or for if you have provided runscripts.
 
 You can learn more about these *[here](https://apptainer.org/docs/user/latest/quick_start.html#running-a-container)*.
-
 
 ## Definition Files
 
@@ -55,9 +53,9 @@ If not using a definition file:
 
 If you want to make use of Nvidia GPUs within your apptainer you can use the `--nv` flag with `apptainer (shell | exec) --nv ...`.
 
-## SBATCH 
+## Slurm Batch Jobs
 
-Here's a basic script template, suitable for submitting with sbatch, that executes a command inside an apptainer:
+Here's a basic script template, suitable for submitting with `sbatch`, that executes a command inside an apptainer:
     ```
       #!/bin/bash
    
@@ -86,9 +84,9 @@ Here's a basic script template, suitable for submitting with sbatch, that execut
     ```
 Feel free to modify this script for your purposes and to potentially run multiple commands and scripts within an apptainer.
 
-## SRUN
+## Slurm Interactive Jobs
 
-This is an srun script that is the same as the above sbatch script but instead runs an interactive shell within an apptainer:
+This is an `srun` script that is the same as the above `sbatch` script but instead runs an interactive shell within an apptainer:
 
     ```
     #!/bin/bash -l

@@ -1,10 +1,10 @@
 # :simple-python: :simple-anaconda: Conda and Python
 
-HPCCF clusters have a centrally installed [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html).
-**conda is our preferred and supported method for Python environments; we prefer not to centrally install any Python
-libraries**. Our conda install can also be levered by users to install arbitrary software available in conda repos in
-their home directories without needing to wait for systems administrators; many users may find this preferable, as our
-software install backlog is substantial.
+HPC@UCD clusters have a centrally installed
+[conda](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html). **conda is our preferred and supported
+method for Python environments; we prefer not to centrally install any Python libraries**. Our conda install can also be
+levered by users to install arbitrary software available in conda repos in their home directories without needing to
+wait for systems administrators; many users may find this preferable, as our software install backlog is substantial.
 
 To help with troubleshooting and compatibility, we **do not** provide support for conda installations in user home
 directories; instead, users should load our central conda with `module load conda`, which will automatically perform the
@@ -28,7 +28,7 @@ means that most `conda` commands can be replaced with `mamba` commands for a per
 
 ???+ Note
 
-    For extremely large conda environments, you may need to run it on a node using srun, i.e.
+    For extremely large conda environments, you may need to run it on a node using `srun`, i.e.
 
     ```bash
     $ srun --partition=high2 --time=1-00 --mem=20G --ntasks=2 --pty /usr/bin/bash
@@ -217,6 +217,5 @@ unset __conda_setup
 ```
 
 Delete this block, and log out and back in to the cluster, after which you should be able to `module load conda`. If you
-run into problems with migrating, file a support ticket at
-[hpc-help@ucdavis.edu](mailto:hpc-help@ucdavis.edu?subject=Migrating%20to%20Central%20Conda), being sure to specify
-which cluster you are using.
+run into problems with migrating, file a support ticket with [support](../support.md). Be sure to specify which cluster
+you are using and that you need help with migrating to the central Conda.

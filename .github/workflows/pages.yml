@@ -31,7 +31,7 @@ jobs:
           path: .cache
       - run: pip install -r requirements.txt
       - name: mkdocs build
-        run: mkdocs build
+        run: mkdocs build -s
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:

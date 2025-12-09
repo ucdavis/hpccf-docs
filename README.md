@@ -1,8 +1,9 @@
-# HPCCF Docs
+# HPC@UCD Docs
 
 [![pages-build-deployment](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment)
 
-To get started with local development, clone repo docs and spack-ucdavis repos:
+To get started with local development, first stop, and read our [style guide](docs.hpc.ucdavis.edu/meta/style). 
+Then, clone the docs and spack-ucdavis repos:
 
     git clone git@github.com:ucdavis/hpccf-docs.git
     git clone git@github.com:ucdavis/spack-ucdavis.git
@@ -32,6 +33,7 @@ Once the environment is created and dependencies installed, you only need to act
 
 ## Resources
 
-- Basic markdown syntax: https://www.markdownguide.org/basic-syntax/
-- `mkdocs` docs: https://www.mkdocs.org/
-- `mkdocs-material` docs, which provides our them and many extensions: https://squidfunk.github.io/mkdocs-material/reference/
+-   Basic markdown syntax: https://www.markdownguide.org/basic-syntax/
+-   `mkdocs` docs: https://www.mkdocs.org/
+-   `mkdocs-material` docs, which provides our them and many extensions:
+    https://squidfunk.github.io/mkdocs-material/reference/
