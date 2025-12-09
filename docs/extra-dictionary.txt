@@ -1,5 +1,6 @@
 config
 cron
+sbatch
 lifecycle
 cgroups
 conda
