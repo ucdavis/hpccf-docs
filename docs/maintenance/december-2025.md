@@ -55,6 +55,10 @@ If you need to start an order for new hardware, see
 [https://hippo.ucdavis.edu/Farm/product/index](https://hippo.ucdavis.edu/Farm/product/index). Note that there are
 significant delays in the delivery of computing hardware.
 
+### ALL Farm queued jobs killed
+
+Because of the above partition work, all queued jobs had to be killed.
+
 ### New Public Access Group Name
 
 The long-term group name used for free-tier Farm access will be changing. The new group name will be `publicgrp`, but
