@@ -1,7 +1,6 @@
 ## The Farm cluster Resources
 
-Sponsor - CAES
-Information about Partitions - what is low, med and high and what are available GPUs on Farm?
+Sponsor - CAES Information about Partitions - what is low, high, and what are available GPUs on Farm?
 
 Free tier access to 20GB capped storage.
 
@@ -23,5 +22,4 @@ Node Count - 202
 
 Inter-Connect - 200Gbps
 
-Total number of Users -    726/328
-
+Total number of Users - 726/328
