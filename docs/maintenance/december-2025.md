@@ -36,20 +36,21 @@ hardware will be renamed.
 
 | Old partition name | New Name/Status                                                                            |
 | ------------------ | ------------------------------------------------------------------------------------------ |
-| `high2`            | `high`                                                                                     |
-| `med2`             | Deleted                                                                                    |
-| `low2`             | `low`                                                                                      |
-| `high`             | Deleted                                                                                    |
-| `med`              | Deleted                                                                                    |
-| `low`              | Deleted                                                                                    |
 | `bigmemh`          | Deleted                                                                                    |
-| `bigmemm`          | Deleted                                                                                    |
 | `bigmeml`          | Deleted                                                                                    |
+| `bigmemm`          | Deleted                                                                                    |
 | `bit150h`          | Deleted                                                                                    |
-| `ecl243`           | Deleted                                                                                    |
-| `bmh` / `bml`      | Untouched                                                                                  |
+| `bmh` / `bml`      | No change                                                                                  |
 | `bmm`              | Deleted                                                                                    |
+| `ecl243`           | Deleted                                                                                    |
 | `gpul`             | Functionality folded into `low`. Access with: <br/>`--partition=low --gres=gpu:TYPE:COUNT` |
+| `gpuh` / `gpum`    | No change                                                                                  |
+| `high`             | Deleted                                                                                    |
+| `high2`            | `high`                                                                                     |
+| `low`              | Deleted                                                                                    |
+| `low2`             | `low`                                                                                      |
+| `med`              | Deleted                                                                                    |
+| `med2`             | Deleted                                                                                    |
 
 If you need to start an order for new hardware, see
 [https://hippo.ucdavis.edu/Farm/product/index](https://hippo.ucdavis.edu/Farm/product/index). Note that there are
