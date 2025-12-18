@@ -86,3 +86,8 @@ The two current virtual login nodes will be replaced with physical hardware. Cha
 - RAM: 64 GB -> 256 GB
 
 Additionally, the physical machines have InfiniBand, which should reduce overhead when accessing storage.
+
+### H100 GPUs removed
+
+The PI who owned the single Hive node with H100s has withdrawn it. This means Hive no longer has any H100 available to
+be used in `low`.
