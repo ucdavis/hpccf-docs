@@ -39,10 +39,11 @@ hardware will be renamed.
 | `bigmemh`          | Deleted                                                                                    |
 | `bigmeml`          | Deleted                                                                                    |
 | `bigmemm`          | Deleted                                                                                    |
+| `bigmemht`         | Deleted                                                                                    |
 | `bit150h`          | Deleted                                                                                    |
 | `bmh` / `bml`      | No change                                                                                  |
 | `bmm`              | Deleted                                                                                    |
-| `ecl243`           | Deleted                                                                                    |
+| `ecl243h`          | Deleted                                                                                    |
 | `gpul`             | Functionality folded into `low`. Access with: <br/>`--partition=low --gres=gpu:TYPE:COUNT` |
 | `gpuh` / `gpum`    | No change                                                                                  |
 | `high`             | Deleted                                                                                    |
