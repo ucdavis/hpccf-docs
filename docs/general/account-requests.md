@@ -5,25 +5,25 @@ HPC accounts are provisioned on a per-cluster basis and granted with the permiss
 separate home directory.
 
 Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
-using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md)
-documentation page.
+using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md) documentation
+page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
 
 ## HiPPO
 
-The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, and Hive 
-HPC clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS
-and selecting their PI in the `Select a group` box.
+The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, and Hive HPC
+clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS and
+selecting their PI in the `Select a group` box.
 
 Cluster specific information:
 
--   `Farm`: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` (`adamgrp`) group.
+- `Farm`: Users who do not have a PI can select the `CA&ES Free Tier sponsored by Adam Getchell` (`publicgrp`) group.
 
--   `Franklin`: No public/free-tier available.
+- `Franklin`: No public/free-tier available.
 
--   `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
-    `UCD HPC Sponsored Public Access` (`publicgrp`) group.
+- `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
+  `UCD HPC Sponsored Public Access` (`publicgrp`) group.
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
