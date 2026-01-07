@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2120,31 +2120,25 @@ software, and more.</p>
 <h2 id="farm-hardware">Farm Hardware<a class="headerlink" href="#farm-hardware" title="Permanent link">&para;</a></h2>
 <p>Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three
 phases, with Farm III as the most recent evolution.</p>
-<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 256GB RAM each in <code>low2</code>/<code>med2</code>/<code>high2</code>, plus 26 “bigmem” nodes
-with up to 128 CPUs and 2TB RAM each in the <code>bml</code>/<code>bmm</code>/<code>bmh</code> queue. All Farm III bigmem and newer parallel nodes and storage
-are on EDR/100Gbit interconnects. Older parallel nodes and storage are on FDR/55Gbit.</p>
-<p>Farm II consists of 27 parallel nodes with 24 CPUs and 64GB RAM each in <code>low</code>/<code>med</code>/<code>high</code>, plus 1 “old-bigmem” node with 64
-CPUs and 512GB RAM each in the <code>bigmeml</code>/<code>bigmemm</code>/<code>bigmemh</code> queues, and 1 additional node with 96 CPUs and 1TB RAM. Farm II
-nodes are on QDR/32Gbit interconnects.</p>
-<p>Hardware from both Farm II and Farm III are still in service; Farm I has been decommissioned as of 2014.</p>
+<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 256GB RAM each in <code>low</code>/<code>high</code>, plus 27 "bigmem" nodes
+with up to 128 CPUs and 2 TB RAM each in the <code>bml</code>/<code>bmh</code> queue. All Farm III bigmem and newer parallel nodes and storage
+are on EDR/100Gbit interconnects.</p>
+<p>Hardware from Farm III is still in service; Farm I has been decommissioned as of 2014, and Farm II has been
+decommissioned as of 2025-12.</p>
 <p>Farm also has multiple file servers with over 5.3PB of storage space in total.</p>
 <h2 id="access-to-farm">Access to Farm<a class="headerlink" href="#access-to-farm" title="Permanent link">&para;</a></h2>
 <p>All researchers in CA&amp;ES are entitled to free access to:</p>
 <ul>
 <li>
-<p>8 nodes with 24 CPUs and 64GB RAM each (up to a maximum of 192 CPUs and 512GB RAM) in Farm II’s low, medium, and
-    high-priority batch queues,</p>
+<p>4 nodes with 352 CPUs and 768GB RAM each in Farm III's low, and high-priority batch queues.</p>
 </li>
 <li>
-<p>4 nodes with 352 CPUs and 768GB RAM each in Farm III's low2, med2, and high2-priority batch queues.</p>
-</li>
-<li>
-<p>The bml (bigmem, low priority/requeue) partition, which has 24 nodes with a combined 60 TB of RAM.</p>
+<p>The <code>bml</code> (bigmem, low priority/requeue) partition, which has 27 nodes with a combined 30 TB of RAM.</p>
 </li>
 </ul>
-<p>In addition to this, each new user is allocated a 20GB home directory. If you want to use the CA&amp;ES free tier, select
-“CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>.</p>
-<p>Additional usage and access may be purchased by contributing to Farm III by through the node and/or storage rates or by
+<p>In addition to this, each new user is allocated a 20 GB home directory. If you want to use the CA&amp;ES free tier, select
+"CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>.</p>
+<p>Additional usage and access may be purchased by contributing to Farm III through the node and/or storage rates or by
 purchasing equipment and contributing through the rack fee rate.</p>
 <p>Contributors always receive priority access to the resources that they have purchased within one minute with the
 “one-minute guarantee.” Users can also request additional unused resources on a “fair share” basis in the medium or low
@@ -2156,9 +2150,9 @@ partitions.</p>
 <p>Node and Storage Rates (each buy-in guarantees access for 5 years): -</p>
 <ul>
 <li><strong>Parallel (CPU) node:</strong> $13,500 (512 GB RAM, 128 cores/256 threads, 2 TB /scratch)</li>
-<li><strong>Bigmem node:</strong> 128 cores/256 threads, 2TB RAM (<code>bml</code>, <code>bmm</code>, <code>bmh</code> partitions) - $25,000</li>
-<li><strong>GPU:</strong> $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 32 threads, 256GB system RAM)</li>
-<li><strong>Storage:</strong> $100/TB with compression for 5 years (does not include backups)</li>
+<li><strong>Bigmem node:</strong> 128 cores/256 threads, 2 TB RAM (<code>bml</code>, <code>bmh</code> partitions) - $25,000</li>
+<li><strong>GPU:</strong> $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 32 threads, 256 GB system RAM)</li>
+<li><strong>Storage:</strong> $100/TB for 5 years (does not include backups)</li>
 </ul>
 <p>New purchases for Farm can be placed through <a href="https://hippo.ucdavis.edu/Farm/product/index">Hippo</a>.</p>
 <h3 id="bring-your-own-equipment-byoe">Bring your own equipment (BYOE):<a class="headerlink" href="#bring-your-own-equipment-byoe" title="Permanent link">&para;</a></h3>
@@ -2188,7 +2182,7 @@ not available through Hippo, you can start a discussion with <a href="mailto:acg
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2025 23:36:58 UTC">September 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 18, 2025 02:41:00 UTC">December 18, 2025</span>
   </span>
 
     
@@ -2278,10 +2272,10 @@ not available through Hippo, you can start a discussion with <a href="mailto:acg
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../javascript/mathjax.js"></script>
       
