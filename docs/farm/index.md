@@ -45,7 +45,7 @@ partitions.
 
 Farm hardware and software are administrated by the [HPC Core Facility Team](https://hpc.ucdavis.edu/people).
 
-### Current Rates
+## Current Rates
 
 Current Farm rates can be seen [here](https://hpc.ucdavis.edu/rates).
 
