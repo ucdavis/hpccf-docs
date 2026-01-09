@@ -47,20 +47,8 @@ Farm hardware and software are administrated by the [HPC Core Facility Team](htt
 
 ### Current Rates
 
-As of October 2023, the rates for Farm III:
-
-Node and Storage Rates (each buy-in guarantees access for 5 years): -
-
-- **Parallel (CPU) node:** $13,500 (512 GB RAM, 128 cores/256 threads, 2 TB /scratch)
-- **Bigmem node:** 128 cores/256 threads, 2 TB RAM (`bml`, `bmh` partitions) - $25,000
-- **GPU:** $19,500 1/4 of a GPU node (A100 with 80GB GPU RAM, 16 CPU cores / 32 threads, 256 GB system RAM)
-- **Storage:** $100/TB for 5 years (does not include backups)
-
-New purchases for Farm can be placed through [Hippo](https://hippo.ucdavis.edu/Farm/product/index).
+Current Farm rates can be seen [here](https://hpc.ucdavis.edu/rates).
 
 ### Bring your own equipment (BYOE):
 
-Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If
-you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment
-not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or
-[HPC@UCD](../support.md).
+Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. If you require custom equipment not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or [HPC@UCD](../support.md).
