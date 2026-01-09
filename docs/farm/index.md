@@ -45,11 +45,10 @@ partitions.
 
 Farm hardware and software are administrated by the [HPC Core Facility Team](https://hpc.ucdavis.edu/people).
 
-New purchases for Farm can be placed through [Hippo](https://hippo.ucdavis.edu/Farm/product/index).
+### Current Rates
+
+Current Farm rates can be seen [here](https://hpc.ucdavis.edu/rates).
 
 ### Bring your own equipment (BYOE):
 
-Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If
-you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. You require custom equipment
-not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or
-[HPC@UCD](../support.md).
+Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. If you require custom equipment not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or [HPC@UCD](../support.md).
