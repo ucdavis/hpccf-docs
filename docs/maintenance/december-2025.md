@@ -67,6 +67,19 @@ The long-term group name used for free-tier Farm access will be changing. The ne
 the description in Hippo will remain the same (`CA&ES Free Tier sponsored by Adam Getchell`). All users in the previous
 group will be automatically transitioned.
 
+### Changed Public Access to Resources
+
+As part of the CA&ES-requested changes to Farm during the December maintenance window, sponsored access to all high
+partitions was removed. The only sponsored compute resources available on Farm are accessed through the low partition.
+
+The low partition has access to all unused resources on Farm. For instance, you can request GPU resources with
+--partition=low --gres=gpu:1, or you can request access to an abundance of RAM with --mem=300G.
+
+Please note that the high2 partition has been renamed to high, and users who were formerly in the adamgrp are now
+members of publicgrp.
+
+To view all partitions you have access to on Farm, please run: /opt/hpccf/bin/slurm-show-resources.py --full
+
 ### New Login Node
 
 Farm's login node will be upgraded to a new system. Changes:
