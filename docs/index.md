@@ -36,8 +36,6 @@ For getting started with HPC access under an existing PI, please see
 
 ### Our Clusters
 
-#### Condo Clusters
-
 An HPC condo-style cluster is a shared computing infrastructure where different users or groups contribute resources
 (such as compute nodes, storage, or networking) to a common pool, similar to how individual condo owners share common
 amenities.
@@ -46,25 +44,16 @@ amenities.
 purchased by principal investigators regardless of affiliation.
 
 [**Franklin**](franklin/index.md): Sponsored by units within the College of Biological Sciences, Franklin is open to
-PI's within the Center for Neuroscience, Microbiology and and Molecular Genetics, Molecular and Cellular Biology, and
-other approved collaborators.
+PI's within the Center for Neuroscience, Microbiology and Molecular Genetics, Molecular and Cellular Biology, and other
+approved collaborators.
 
 [**Hive**](hive/index.md): A centrally managed cluster, with standardized hardware and connectivity, and a defined life
-cycle of support, facilitates greater access to HPC for a more significant number of users on campus while maintaining
+cycle of support, facilitating greater access to HPC for a more significant number of users on campus while maintaining
 support for college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing
 hardware with the new cluster when possible.
 
 **HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
-with COE.
-
-#### Fair-Share Clusters
-
-A fair-share HPC algorithm is a resource allocation strategy used to ensure equitable access to computing resources
-among multiple users or groups over a long time horizon. The goal is to balance the workload and prevent any single user
-or group from monopolizing the resources.
-
-**LSSC0 (Barbera)** an HPC shared resource which is coordinated and run by HPC@UCD. LSSC0 is run with a fair-share
-algorithm.
+with CoE.
 
 ## How to request help
 
@@ -90,6 +79,6 @@ This site is written in markdown using [MkDocs](https://daringfireball.net/proje
 
 ## Additional Information
 
--   [HPC@UCD home page](https://hpc.ucdavis.edu)
--   [Research Computing at UC Davis](https://researchcomputing.ucdavis.edu)
--   [UC Davis DataLab](https://datalab.ucdavis.edu)
+- [HPC@UCD home page](https://hpc.ucdavis.edu)
+- [Research Computing at UC Davis](https://researchcomputing.ucdavis.edu)
+- [UC Davis DataLab](https://datalab.ucdavis.edu)
