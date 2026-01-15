@@ -67,7 +67,7 @@ The long-term group name used for free-tier Farm access will be changing. The ne
 the description in Hippo will remain the same (`CA&ES Free Tier sponsored by Adam Getchell`). All users in the previous
 group will be automatically transitioned.
 
-### Changed Free Access to Resources
+### Changed Access to Free Resources
 
 As part of the CA&ES-requested changes to Farm during the December maintenance window, sponsored access to all `high`
 partitions was removed. The only sponsored compute resources available on Farm are accessed through the low partition.
