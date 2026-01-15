@@ -159,12 +159,6 @@ At this point you have 4 options:
 1. Reduce the number of snapshots you keep by contacting HPC@UCD support. For example, if you keep 6 monthly, you could
    reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.
 
-### How often are backups taken?
-
-The backup system starts after midnight every night and works its way through a randomly shuffled list of PI areas it
-needs to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and
-your order in the shuffle.
-
 ### What types of snapshots are available?
 
 Restic offers the following types of snapshots:
@@ -205,7 +199,9 @@ Changes can be made by contacting HPC@UCD support.
 
 ### How often are backups run?
 
-Backups are run once a day, starting just after midnight.
+The backup system starts after midnight every night and works its way through a randomly shuffled list of PI areas it
+needs to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and
+your order in the shuffle.
 
 ## FAQ
 
@@ -218,3 +214,17 @@ outside the Campus Data Center, but still on-campus. This may be important for c
 
 At this point, the data would be permanently lost. HPC@UCD does **not** replicate the backup data to any off-site
 location(s).
+
+### Can the backup system back up symlinks?
+
+Yes, the backup system will back up the symlinks. However, it will not back up the files the symlinks point to. This
+means that data you need backed up must reside within the [backed-up](#what-is-backed-up) directory. You are free to
+create symlinks that reside outside the backup area and point to files within the backup area.
+
+### How is Hive different than LSSC0's separate primary and archive storage?
+
+On Hive, the only storage you have direct access to is your Quobyte PI share. In LSSC0 terminology, this could be
+considered primary storage. Archive storage, as a separate PI share, does not exist. We provide a
+[BACKED-UP](#what-is-backed-up) folder in your regular Quobyte share, and back up data in that folder up to the amount
+of backup space you have paid for. We provide regular email logs so you can monitor your backup status and how close you
+are to your backup space limit.
