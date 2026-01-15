@@ -226,5 +226,5 @@ create symlinks that reside outside the backup area and point to files within th
 On Hive, the only storage you have direct access to is your Quobyte PI share. In LSSC0 terminology, this could be
 considered primary storage. Archive storage, as a separate PI share, does not exist. We provide a
 [BACKED-UP](#what-is-backed-up) folder in your regular Quobyte share, and back up data in that folder up to the amount
-of backup space you have paid for. We provide regular email logs so you can monitor you backup status and how close you
+of backup space you have paid for. We provide regular email logs so you can monitor your backup status and how close you
 are to your backup space limit.
