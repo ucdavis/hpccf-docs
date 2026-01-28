@@ -17,5 +17,9 @@ contention and eventually full blockage, preventing data from being written to t
 being able to finalize those tasks, which causes the nodes to get kicked out of the cluster, which requires admin
 intervention to resolve.
 
+!!! warning
+
+    Because this causes cluster-wide impact, jobs found doing this are subject to being killed and the user's account temporarily locked.
+
 We have an open feature request to allow an error to be returned to the client in these cases. In the meanwhile, please
 ensure you do not write to the same file from multiple nodes.
