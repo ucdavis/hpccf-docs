@@ -24,8 +24,8 @@ nav:
           - Module System: software/modules.md
           - Open OnDemand: software/ondemand.md
           - R and RStudio: software/rstudio.md
-      - Maintenance:
-          - December 2025: maintenance/december-2025.md
+      - Storage:
+          - Quobyte: storage/quobyte.md
       - Troubleshooting: general/troubleshooting.md
   - Farm:
       - About: farm/index.md
@@ -33,7 +33,8 @@ nav:
       - Resources: farm/resources.md
       - Software:
           - Modules: farm/software/modules.md
-      - Storage: farm/storage.md
+      #- Storage: # TODO: write this.
+      # - Farm: farm/storage.md
   - Franklin:
       - About: franklin/index.md
       - Job Scheduling: franklin/scheduling.md
@@ -49,6 +50,8 @@ nav:
       - Job Scheduling: hive/scheduling.md
       - Migrating from LSSC0: hive/lssc0-data-migration.md
       - Waltz temporary access: hive/waltz.md
+  - Maintenance:
+      - December 2025: maintenance/december-2025.md
   - Meta:
       - Style Guide: meta/style.md
 
