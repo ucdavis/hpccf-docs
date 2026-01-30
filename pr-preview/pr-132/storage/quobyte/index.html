@@ -2073,7 +2073,7 @@
 <a href="../../support/">support</a> with an amount to purchase and a campus chart string. Share names are normally the PI's Login
 ID followed by <code>grp</code>, e.g. <code>jrigrp</code>. For campus organizations, we can also create the share based on your lab.</p>
 <h2 id="quobyte-concurrent-file-writes-from-multiple-nodes">Quobyte concurrent file writes from multiple nodes<a class="headerlink" href="#quobyte-concurrent-file-writes-from-multiple-nodes" title="Permanent link">&para;</a></h2>
-<p>Due to a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
+<p>Due to a known pathology in the Quobyte parallel file system, multiple nodes writing to the same file cause lock
 contention and eventually full blockage, preventing data from being written to that file. This prevents <code>slurmd</code> from
 being able to finalize those tasks, which causes the nodes to get kicked out of the cluster, which requires admin
 intervention to resolve.</p>
@@ -2081,8 +2081,12 @@ intervention to resolve.</p>
 <p class="admonition-title">Warning</p>
 <p>Because this causes cluster-wide impact, jobs found doing this are subject to being killed and the user's account temporarily locked.</p>
 </div>
-<p>We have an open feature request to allow an error to be returned to the client in these cases. In the meanwhile, please
-ensure you do not write to the same file from multiple nodes.</p>
+<p>Unique filenames can be generated using a combination of the host name, and variables that Slurm sets.</p>
+<p>For a normal job: <code>OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}.results"</code></p>
+<p>For an array job: <code>OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}.results"</code></p>
+<p>If you are writing software, then you need to use <a href="https://en.wikipedia.org/wiki/File_locking">file locks</a>.</p>
+<p>We have an open feature request to allow an error to be returned in these cases. In the meanwhile, please ensure you do
+not write to the same file from multiple nodes.</p>
 
 
 
@@ -2105,7 +2109,7 @@ ensure you do not write to the same file from multiple nodes.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 28, 2026 01:16:47 UTC">January 28, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 30, 2026 01:09:23 UTC">January 30, 2026</span>
   </span>
 
     
@@ -2115,7 +2119,7 @@ ensure you do not write to the same file from multiple nodes.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 28, 2026 01:16:47 UTC">January 28, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 30, 2026 01:09:23 UTC">January 30, 2026</span>
   </span>
 
     

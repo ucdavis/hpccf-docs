@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/include/hive-free-access/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/include/quobyte-concurrent-writes/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Hive free access - HPC@UCD Documentation</title>
+        <title>Quobyte concurrent writes - HPC@UCD Documentation</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hive free access
+              Quobyte concurrent writes
             
           </span>
         </div>
@@ -1982,43 +1982,16 @@
   
 
 
-  <h1>Hive free access</h1>
+  <h1>Quobyte concurrent writes</h1>
 
-<ul>
-<li>
-<p>Partition <code>high</code>: the entire group has combined access to 128 CPUs, 2000 GB of RAM, and 4 GPUs (NVIDIA A6000s).</p>
-<ul>
-<li>
-<p>Each job is limited to a maximum of:</p>
-<ul>
-<li>8 CPUs</li>
-<li>128 GB of RAM</li>
-<li>1 GPU</li>
-</ul>
-</li>
-<li>
-<p>You can access these resources by adding <code>--account=publicgrp --partition=high</code> to your <code>srun</code> or <code>sbatch</code> command.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Partition <code>low</code>: This partition allows access to all the unused resources in the cluster. The downside is that when
-    a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your job can
-    do automatic check-pointing and restarting, all progress is lost when the job is killed.</p>
-<ul>
-<li>
-<p>Each job is limited to a maximum of:</p>
-<ul>
-<li>3 days (<code>3-00</code>) of runtime</li>
-<li>1 node</li>
-</ul>
-</li>
-<li>
-<p>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your <code>srun</code> or <code>sbatch</code> command.</p>
-</li>
-</ul>
-</li>
-</ul>
+<p>Due to a known pathology in the Quobyte parallel file system, multiple nodes writing to the same file cause lock
+contention and eventually full blockage, preventing data from being written to that file. This prevents <code>slurmd</code> from
+being able to finalize those tasks, which causes the nodes to get kicked out of the cluster, which requires admin
+intervention to resolve.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Because this causes cluster-wide impact, jobs found doing this are subject to being killed and the user's account temporarily locked.</p>
+</div>
 
 
 
