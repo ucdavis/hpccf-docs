@@ -43,18 +43,24 @@ No guarantees are made, but generally, jobs will start within a couple of minute
 
 1. A Slurm database backup is in-progress.
 
-## Slurm scheduling tips
+### Exclusive node access
 
-### `--output=` and `--error=` files need to be unique on Quobyte
+Note for users coming from other clusters: the use of the `--exclusive` flag will cause your job to take a very long
+time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
+erroneously flags these jobs with `(QOSGrpCpuLimit)`.
 
-This is a specialized case of the more general
+## Quobyte concurrent write pathology
+
+The `--output=` and `--error=` files must be unique on Quobyte. This is a specialized case of the more general
 [Quobyte issue](../storage/quobyte.md#quobyte-concurrent-file-writes-from-multiple-nodes) with concurrent file writes.
+
+-8<- "docs/include/quobyte-concurrent-writes.md"
 
 When this happens with Slurm's `StdOut` and `StdErr` files, it causes the `slurmd` process to block, which causes the
 nodes to get kicked out of the cluster, which requires admin intervention to resolve.
 
-This is a very bad thing. Luckily there is a simple workaround. When written Quobyte, every `StdOut` and `StdErr` file
-needs to be unique per writer. This can easily be accomplished in `sbatch` files like this:
+This is a very bad thing. Luckily there is a simple workaround. When writing to Quobyte, every `StdOut` and `StdErr`
+file needs to be unique per writer. This can easily be accomplished in `sbatch` files like this:
 
 - For a small job running on a single node, include the `%j` replacement pattern in the filename:
 
@@ -73,38 +79,27 @@ needs to be unique per writer. This can easily be accomplished in `sbatch` files
 - For an MPI job, or any other job that will run on multiple nodes, include the `%N` replacement pattern in addition to
   the other patterns:
 
-: Standard job
+      MPI standard job
 
-    ```bash
-    #SBATCH --output=slurm-%j_%N.out
-    #SBATCH --error=slurm-%j_%N.err
-    ```
+      ```bash
+      #SBATCH --output=slurm-%j_%N.out
+      #SBATCH --error=slurm-%j_%N.err
+      ```
 
-: Array job
+      MPI array job
 
-    ```bash
-    #SBATCH --output=slurm-%A_%a_%N.out
-    #SBATCH --error=slurm-%A_%a_%N.err
-    ```
-
-We have an open support case with the vendor. Quobyte has indicated they may add an option to make this type of IO
-timeout and return an IO error to the application (Slurm in this case).
-
-### `--exclusive` `sbatch`/`srun` flag
-
-Note for users coming from other clusters. The use of the `--exclusive` flag will cause your job to take a very long
-time to schedule. If you are using this flag and your job will not start on Hive, please remove it and resubmit. Slurm
-erroneously flags these jobs with `(QOSGrpCpuLimit)`.
+      ```bash
+      #SBATCH --output=slurm-%A_%a_%N.out
+      #SBATCH --error=slurm-%A_%a_%N.err
+      ```
 
 ## MPI jobs
 
-Not all nodes that have been brought into Hive have InfiniBand hardware. Jobs that do MPI and require InfiniBand
-connectivity need to use the `--constraint=ib` flag.
-
-Hive currently has 4 generations of AMD EYPC processors as well as some Intel Icelake. If you would like to constrain
-your job to only running on one generation of CPU, you can constrain it to one of the following CPU types: `zen`,
-`zen2`, `zen3`, `zen4`, or `icelake`. For example: `--constraint='ib&zen3'`. As with all constraints, the more you add,
-the longer your job will take to schedule, as Slurm needs to wait for those node types to be available.
+Hive currently has 4 generations of AMD EYPC processors as well as several Intel Icelake. If you would like to constrain
+your job to specific generations of CPU, you use the following CPU types: `zen`, `zen2`, `zen3`, `zen4`, or `icelake`.
+For example: `--constraint='(zen2|zen3|zen4)'`. As with all constraints, the more you add, the longer your job will take
+to schedule, as Slurm needs to wait for those node types to be available. See the official Slurm
+[constraint](https://slurm.schedmd.com/sbatch.html#OPT_constraint) documentation for all the options.
 
 MPI jobs generally need to request one task per MPI worker. If you need 128 MPI workers, you can request `--ntasks=128`.
 If you instead request CPUs with `--cpus-per-task=128` you will end up with a single MPI worker that has access to 128
@@ -131,7 +126,7 @@ Putting it all together, the MPI parts of a sbatch script could look like this:
 # Limit Slurm to running this on 1 to 4 nodes.
 #SBATCH --nodes=1-4
 
-#SBATCH --constraint='ib&zen3'
+#SBATCH --constraint='(zen2|zen3|zen4)'
 #SBATCH --distribution=block,pack
 #SBATCH --switches=1@1-00
 ```

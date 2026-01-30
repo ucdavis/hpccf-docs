@@ -12,14 +12,15 @@ ID followed by `grp`, e.g. `jrigrp`. For campus organizations, we can also creat
 
 ## Quobyte concurrent file writes from multiple nodes
 
-Due to a known pathology in the Quobyte parallel file system, multiple clients writing to the same file cause lock
-contention and eventually full blockage, preventing data from being written to that file. This prevents `slurmd` from
-being able to finalize those tasks, which causes the nodes to get kicked out of the cluster, which requires admin
-intervention to resolve.
+-8<- "docs/include/quobyte-concurrent-writes.md"
 
-!!! warning
+Unique filenames can be generated using a combination of the host name, and variables that Slurm sets.
 
-    Because this causes cluster-wide impact, jobs found doing this are subject to being killed and the user's account temporarily locked.
+For a normal job: `OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}.results"`
 
-We have an open feature request to allow an error to be returned to the client in these cases. In the meanwhile, please
-ensure you do not write to the same file from multiple nodes.
+For an array job: `OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}.results"`
+
+If you are writing software, then you need to use [file locks](https://en.wikipedia.org/wiki/File_locking).
+
+We have an open feature request to allow an error to be returned in these cases. In the meanwhile, please ensure you do
+not write to the same file from multiple nodes.
