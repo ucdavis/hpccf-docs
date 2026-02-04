@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/include/rsync-warnings/">
+        <link rel="canonical" href="http://docs.hpc.ucdavis.edu/storage/quobyte/">
       
       
+        <link rel="prev" href="../../software/rstudio/">
+      
+      
+        <link rel="next" href="../../general/troubleshooting/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Rsync warnings - HPC@UCD Documentation</title>
+        <title>Quobyte Storage - HPC@UCD Documentation</title>
       
     
     
@@ -73,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#quobyte-concurrent-file-writes-from-multiple-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rsync warnings
+              Quobyte Storage
             
           </span>
         </div>
@@ -253,8 +262,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -265,13 +276,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -292,7 +301,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -901,6 +910,8 @@
                 
   
   
+    
+  
   
   
     
@@ -910,13 +921,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" checked>
         
           
           <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
@@ -937,7 +946,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -952,10 +961,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../storage/quobyte/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quobyte
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -971,6 +1005,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quobyte-concurrent-file-writes-from-multiple-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quobyte concurrent file writes from multiple nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1964,6 +2027,25 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quobyte-concurrent-file-writes-from-multiple-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quobyte concurrent file writes from multiple nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1982,18 +2064,29 @@
   
 
 
-  <h1>Rsync warnings</h1>
+  <h1>Quobyte</h1>
 
-<p>location you are expecting.</p>
-<p>If you want to make the destination directory <strong>exactly</strong> the same as the source directory, i.e., delete files in the
-destination directory that do not exist on the source, you can add the <code>--delete-after</code> argument to rsync.</p>
-<ul>
-<li><code>--delete-during</code>: Deletes files on the destination that are not present on the source.</li>
-</ul>
-<details class="danger" open="open">
-<summary>PERMANENT DATA LOSS</summary>
-<p>If you add the <code>--delete-after</code> argument to rsync, but use the wrong source or destination directory in the rsync command, <strong>YOU MAY CAUSE PERMANENT DATA LOSS</strong> on the destination side. Please be extra cautious when having rsync delete files.</p>
-</details>
+<p><a href="https://www.quobyte.com/">Quobyte</a> is a fault-tolerant, high-performance parallel file system. There is an extensive
+<a href="https://www.quobyte.com/product/whitepaper/">whitepaper</a> for those interested in the details.</p>
+<p>Quobyte is currently available from both Farm and Hive. Farm storage can be purchase through
+<a href="https://hippo.ucdavis.edu/Farm/product/index">Hippo</a>. Hive storage can be purchased by contacting
+<a href="../../support/">support</a> with an amount to purchase and a campus chart string. Share names are normally the PI's Login
+ID followed by <code>grp</code>, e.g. <code>jrigrp</code>. For campus organizations, we can also create the share based on your lab.</p>
+<h2 id="quobyte-concurrent-file-writes-from-multiple-nodes">Quobyte concurrent file writes from multiple nodes<a class="headerlink" href="#quobyte-concurrent-file-writes-from-multiple-nodes" title="Permanent link">&para;</a></h2>
+<p>Due to a known pathology in the Quobyte parallel file system, multiple nodes writing to the same file cause lock
+contention and eventually full blockage, preventing data from being written to that file. This prevents <code>slurmd</code> from
+being able to finalize those tasks, which causes the nodes to get kicked out of the cluster, which requires admin
+intervention to resolve.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Because this causes cluster-wide impact, jobs found doing this are subject to being killed and the user's account temporarily locked.</p>
+</div>
+<p>Unique filenames can be generated using a combination of the host name, and variables that Slurm sets.</p>
+<p>For a normal job: <code>OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}.results"</code></p>
+<p>For an array job: <code>OUTPUT_FILE="$(hostname)-${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}.results"</code></p>
+<p>If you are writing software, then you need to use <a href="https://en.wikipedia.org/wiki/File_locking">file locks</a>.</p>
+<p>We have an open feature request to allow an error to be returned in these cases. In the meanwhile, please ensure you do
+not write to the same file from multiple nodes.</p>
 
 
 
@@ -2016,7 +2109,7 @@ destination directory that do not exist on the source, you can add the <code>--d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21 UTC">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 30, 2026 01:09:11 UTC">January 30, 2026</span>
   </span>
 
     
@@ -2026,7 +2119,7 @@ destination directory that do not exist on the source, you can add the <code>--d
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2025 01:12:21 UTC">March 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 28, 2026 01:03:49 UTC">January 28, 2026</span>
   </span>
 
     
