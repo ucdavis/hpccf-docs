@@ -125,6 +125,8 @@ approximately `(initial quantity * snapshots) + (churn * snapshots)`.
 | 1 TB             | 1 TB per day                   | daily=7, weekly=4, monthly=6 | 17 TB                |
 | 1 TB             | 100 GB per day                 | daily=7, weekly=4, monthly=6 | 2.7 TB               |
 
+Also see backups compared to [archives](#what-is-the-difference-between-a-backup-and-an-archive).
+
 ### What happens when my backups exceed my purchased space?
 
 An error will be sent the email addresses you designated to monitor your backups.
@@ -205,14 +207,21 @@ your order in the shuffle.
 
 ## FAQ
 
+### What is the difference between a backup and an archive?
+
+An archive is an off-system copy of the data that mirrors what exists in your `BACKED-UP/` directory. There is no
+history, so if a file is deleted in production, it will be removed from the archive overnight. A backup has history, so
+if you delete a file today, it will exist in the backup until it expires due to your snapshot keep schedule.
+
 ### Where is the backup server located?
 
-The backup server is located in the [Academic Surge](https://maps.app.goo.gl/4Xj6HUaBeVRUZyuT9) building, so it is
-outside the Campus Data Center, but still on-campus. This may be important for certain grant requirements.
+The backup server is located in the [Academic Surge](https://maps.app.goo.gl/4Xj6HUaBeVRUZyuT9) building. It is outside
+the Campus Data Center but still on campus, so we do **not** provide an off-site backup. This may be important for
+certain grant requirements.
 
 ### What happens if the backup server is also destroyed?
 
-At this point, the data would be permanently lost. HPC@UCD does **not** replicate the backup data to any off-site
+At that point, the data would be permanently lost. HPC@UCD does **not** replicate the backup data to any off-site
 location(s).
 
 ### Can the backup system back up symlinks?
