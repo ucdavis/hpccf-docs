@@ -277,3 +277,50 @@ srun: launch/slurm: _step_signal: Terminating StepId=706.0
 
 
 ### GPUs / GRES
+#### Requesting GPU Resources (GRES / GPUs)
+
+To use GPU-equipped nodes, you must request the GPU resource via Slurm’s Generic RESources (GRES) system. Below are guidelines and examples:
+
+**Basic syntax**
+
+Add the following option to your `sbatch` or `srun` command:
+
+`--gres=gpu:<count>`
+
+- `gpu` is the generic resource name.
+
+- `<count>` is the number of GPUs you need (e.g. 1, 2, etc.).
+
+Example:
+`#SBATCH --gres=gpu:1
+`
+This requests 1 GPU on whichever node your job is scheduled.
+
+You may also combine it with other resource flags, for example:
+
+```console
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
+```
+
+
+#### Partition / QOS constraints
+
+Some GPU nodes may only be available in certain partitions (e.g. `gpu-a100` on Hive, `gpul` on Farm cluster and `cnsdept-gpu` on Franklin cluster). Be sure to request the GPU-compatible partition, e.g.:
+
+`#SBATCH --partition=gpul`
+
+
+Your account or QOS may also impose limits on how many GPUs you are allowed to use concurrently. The cluster scheduler enforces those limits.
+
+You can check your associations via:
+
+
+ `/opt/hpccf/bin/slurm-show-resources.py --full`
+
+
+You can view the information about a GPU partition using the command:-
+
+`scontrol show partition <partition-name>`
+
+
