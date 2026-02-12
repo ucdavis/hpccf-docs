@@ -215,9 +215,8 @@ if you delete a file today, it will exist in the backup until it expires due to 
 
 ### Where is the backup server located?
 
-The backup server is located in the [Academic Surge](https://maps.app.goo.gl/4Xj6HUaBeVRUZyuT9) building. It is outside
-the Campus Data Center but still on campus, so we do **not** provide an off-site backup. This may be important for
-certain grant requirements.
+The backup server is outside the Campus Data Center but still on campus, so we do **not** provide an off-site backup.
+This may be important for certain grant requirements.
 
 ### What happens if the backup server is also destroyed?
 
