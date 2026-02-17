@@ -2,4 +2,4 @@ mkdocs
 mkdocs-material
 mkdocs-git-revision-date-localized-plugin
 mkdocs-macros-plugin
-git+https://github.com/camillescott/mkdocs-spellcheck@add-linenumbers#egg=mkdocs-spellcheck[all]
+mkdocs-spellcheck[all] @ git+https://github.com/camillescott/mkdocs-spellcheck@add-linenumbers
