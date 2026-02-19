@@ -206,10 +206,10 @@ information, and we can restore the files for you.
 
 Changes can be made by [contacting HPC@UCD help](../support.md).
 
-### How often are backups run?
+### What is the backup schedule?
 
 The backup system starts after midnight every night and works its way through a randomly shuffled list of PI areas it
-needs to backup. The actual start time of _your_ backup depends on how much data needs to be backed up before you, and
+needs to back up. The actual start time of _your_ backup depends on how much data needs to be backed up before you and
 your order in the shuffle.
 
 ## FAQ
