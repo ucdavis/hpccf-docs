@@ -88,13 +88,20 @@ include the following information:
 
 You can purchase backups for your storage by [emailing HPC@UCD help](../support.md) and including:
 
-1. The name of your share under `/quobyte/`.
+1.  The name of your share under `/quobyte/`.
 
-1. The amount of backup storage you would like to purchase.
+1.  The amount of backup storage you would like to purchase.
 
-1. The list of contacts (email addresses) that are responsible for monitoring your backup status.
+1.  The list of contacts (email addresses) that are responsible for monitoring your backup status.
 
-1. The [number and type of snapshots](#what-types-of-snapshots-are-available) you would like.
+1.  The [number and type of snapshots](#what-types-of-snapshots-are-available) you would like. If you do not specify,
+    then we will default to:
+
+    | Snapshot type | Keep count |
+    | ------------- | ---------- |
+    | daily         | 14         |
+    | weekly        | 5          |
+    | monthly       | 3          |
 
 Please refer to the [How much backup space do I need?](#how-much-backup-space-do-i-need) section if you have questions
 about how much backup space to purchase.
