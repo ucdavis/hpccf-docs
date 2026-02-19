@@ -86,24 +86,30 @@ click `Orders` -> `Products`. Then order `Backup Storage`. To expedite the proce
 include the following information:
 -->
 
-You can purchase backups for your storage by emailing HPC@UCD help and including:
+You can purchase backups for your storage by [emailing HPC@UCD help](../support.md) and including:
 
-1. The full path to the PI group storage you need backed up.
+1. The name of your share under `/quobyte/`.
 
-1. The amount of storage you would like to purchase.
+1. The amount of backup storage you would like to purchase.
 
-1. The list of contacts (email addresses) that are responsible for monitoring the backup status.
+1. The list of contacts (email addresses) that are responsible for monitoring your backup status.
 
 1. The [number and type of snapshots](#what-types-of-snapshots-are-available) you would like.
 
-Please see the [How much backup space do I need?](#how-much-backup-space-do-i-need) section if you have questions about
-how much backup space to purchase.
+Please refer to the [How much backup space do I need?](#how-much-backup-space-do-i-need) section if you have questions
+about how much backup space to purchase.
 
 ### What is backed up?
 
 The **only** data that is backed up is the data that resides within the `BACKED-UP/` directory at the top level of the
 PI share. **NO OTHER DATA IS BACKED UP**. If you have questions about what is being backed up, you should try a test
-restore.
+restore. See the [symlinks](#can-the-backup-system-back-up-symlinks) section for information about symlinks.
+
+```console
+/quobyte/jrigrp/
+├── BACKED-UP/ <--- ONLY DATA IN THIS DIRECTORY IS BACKED UP
+[ other files or directories, not backed up ]
+```
 
 ### Who monitors the backups?
 
@@ -151,15 +157,16 @@ At this point you have 4 options:
 1. Purchase more space by visiting [Hippo](https://hippo.ucdavis.edu/) and ordering additional backup space.
 -->
 
-1. Contacting HPC@UCD support and purchasing additional backup storage space.
+1. [Contacting HPC@UCD support](../support.md) and purchasing additional backup storage space.
 
 1. Backup less data by reducing the amount of data in your `BACKED-UP/` directory. This will require old data to age out
    before new data can be backed up.
 
 1. Ignore it. Eventually old data should age out and new data should be able to be backed up again.
 
-1. Reduce the number of snapshots you keep by contacting HPC@UCD support. For example, if you keep 6 monthly, you could
-   reduce that to 3. This will age-out (delete) the data greater than 3 months, freeing up space for new data.
+1. Reduce the number of snapshots you keep by [contacting HPC@UCD support](../support.md). For example, if you keep 6
+   monthly, you could reduce that to 3. This will age-out (delete) the data older than 3 months, freeing up space for
+   new data.
 
 ### What types of snapshots are available?
 
@@ -182,14 +189,14 @@ need to be able to retrieve old versions, or deleted, files.
 ### Are my backups encrypted?
 
 Yes, all backups are encrypted with a key that is unique to every PI group. This key is protected with normal Linux
-file-system permissions, and only users in the PI group will be able to even read it to restore data.
+file-system permissions, and only users in the PI group will be able to read it to restore data.
 
 ### Who can restore files?
 
 Anyone in the PI group can initiate a restore, however, you will only be able to restore files you had read access to at
-the time the file was backed up. This means that files/directories with permissions that prevent PI access on disk also
-prevent PI restore. If you, as a PI, run into this situation, please contact HPC@UCD support by HPC@UCD support with the
-following information, and we can restore the files for you.
+the time of the backup. This means that files/directories with permissions that prevent PI access on disk also prevent
+PI restore. If you, as a PI, run into this situation, please [contact HPC@UCD support](../support.md) with the following
+information, and we can restore the files for you.
 
 - The cluster.
 - The full path to the files/directories you need restored.
@@ -197,7 +204,7 @@ following information, and we can restore the files for you.
 
 ### How do I make changes to my quota, snapshots or monitoring designee list?
 
-Changes can be made by contacting HPC@UCD support.
+Changes can be made by [contacting HPC@UCD help](../support.md).
 
 ### How often are backups run?
 
@@ -215,8 +222,8 @@ if you delete a file today, it will exist in the backup until it expires due to 
 
 ### Where is the backup server located?
 
-The backup server is outside the Campus Data Center but still on campus, so we do **not** provide an off-site backup.
-This may be important for certain grant requirements.
+The backup server is outside the Campus Data Center but still on campus, so we do **not** provide off-site backups. This
+may be important for certain grant requirements.
 
 ### What happens if the backup server is also destroyed?
 
@@ -233,6 +240,6 @@ create symlinks that reside outside the backup area and point to files within th
 
 On Hive, the only storage you have direct access to is your Quobyte PI share. In LSSC0 terminology, this could be
 considered primary storage. Archive storage, as a separate PI share, does not exist. We provide a
-[BACKED-UP](#what-is-backed-up) folder in your regular Quobyte share, and back up data in that folder up to the amount
-of backup space you have paid for. We provide regular email logs so you can monitor your backup status and how close you
-are to your backup space limit.
+[BACKED-UP/](#what-is-backed-up) directory in your regular Quobyte share, and back up data in that directory up to the
+amount of backup space you have paid for. We provide regular email logs so you can monitor your backup status and how
+close you are to your backup space limit.
