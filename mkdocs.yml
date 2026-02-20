@@ -6,7 +6,9 @@ copyright: Copyright &copy; 2023-25 The Regents of the University of California,
 nav:
   - General:
       - Accessing Clusters: general/access.md
-      - Account Requests: general/account-requests.md
+      - Accounts:
+          - Policies: accounts/policies.md
+          - Requests: accounts/requests.md
       - Backups: backups/index.md
       - Contact Support: support.md
       - Data Transfer: data-transfer.md

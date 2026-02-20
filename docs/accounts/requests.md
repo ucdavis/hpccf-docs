@@ -2,11 +2,11 @@
 
 HPC accounts are provisioned on a per-cluster basis and granted with the permission of their principal investigator
 (PI). Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own
-separate home directory.
+separate home directory. See also [policies](policies.md) for important information.
 
 Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
-using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md) documentation
-page.
+using your campus passphrase. For information on creating SSH keys, please visit the [access](../general/access.md)
+documentation page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
 
@@ -45,7 +45,7 @@ Cluster specific information:
         - If you only need access to [Open OnDemand](../software/ondemand.md), select `OpenOnDemand`.
         - If you need command-line access to the cluster via SSH, select `SshKey`.
         - Note: Hive allows SSH with campus passphrases or a SSH key, all other clusters **require** a SSH key.
-        - For help generating a SSH key, see [How do I generate an SSH key pair?](access.md#how-do-i-generate-an-ssh-key-pair)
+        - For help generating a SSH key, see [How do I generate an SSH key pair?](../general/access.md#how-do-i-generate-an-ssh-key-pair)
 
 #### How to request access to another group on a cluster:
 

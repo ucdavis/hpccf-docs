@@ -31,8 +31,7 @@ investments for condo clusters and sell fair-share priority, primary and archive
 contact [support](support.md) with your affiliation to start the onboarding process. Resources external to UC Davis can
 also purchase resources by inquiring at the hpc-help email address.
 
-For getting started with HPC access under an existing PI, please see
-[requesting an account](general/account-requests.md).
+For getting started with HPC access under an existing PI, please see [requesting an account](accounts/requests.md).
 
 ### Our Clusters
 
