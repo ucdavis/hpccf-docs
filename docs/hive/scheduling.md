@@ -15,7 +15,7 @@ work with you to find a configuration suitable to use in Hive.
 ### College/Group Resources
 
 Some colleges have purchased group resources, which you may be able to request access to through
-[Hippo](../general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster).
+[Hippo](../accounts/requests.md#how-to-request-access-to-another-group-on-a-cluster).
 
 Once you have access to group resources, you can request to use them with
 `--account={account-name}grp --partition=high`. For a PI group, `{account-name}` will typically be the PI's UCD Login

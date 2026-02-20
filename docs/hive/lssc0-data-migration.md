@@ -12,24 +12,22 @@ happy to take care of the actual migration, but we will need to coordinate with 
 process looks like this:
 
 1. The PI
-   [requests a `sponsor` account on Hive](../general/account-requests.md#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources).
+   [requests a `sponsor` account on Hive](../accounts/requests.md#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources).
 
 1. The PI logs into Hive to verify access.
 
 1. All users that need access to the PI's resources on Hive requests access (either
-   [`new account`](..//general/account-requests.md#how-to-request-a-new-account-on-a-cluster), or
-   [`access to another group`](..//general/account-requests.md#how-to-request-access-to-another-group-on-a-cluster))
-   through Hippo.
-
-    1. The PI approves each of those requests, allowing the accounts to be created on Hive.
+   [`new account`](../accounts/requests.md#how-to-request-a-new-account-on-a-cluster), or
+   [`access to another group`](../accounts/requests.md#how-to-request-access-to-another-group-on-a-cluster)) through
+   Hippo.
+   1. The PI approves each of those requests, allowing the accounts to be created on Hive.
 
 1. The PI opens a ticket with [HPC@UCD](../support.md).
+   1. In that ticket, the PI provides the LSSC0 Login ID and the corresponding UC Davis email address.
 
-    1. In that ticket, the PI provides the LSSC0 Login ID and the corresponding UC Davis email address.
-
-    1. Any user that does not have an active UC Davis account, will be required to create on through the
-       [TAF process](https://taf.ucdavis.edu/). This TAF process happens between the PI and the user, HPC@UCD is not
-       involved in any way.
+   1. Any user that does not have an active UC Davis account, will be required to create on through the
+      [TAF process](https://taf.ucdavis.edu/). This TAF process happens between the PI and the user, HPC@UCD is not
+      involved in any way.
 
 1. HPC@UCD starts the initial pass of the data copy.
 

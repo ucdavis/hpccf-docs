@@ -6,8 +6,7 @@ Farm and Hive both provide free/sponsored access to a limited amount of resource
 
 ## Farm
 
-See [here](..//general/account-requests.md#hippo) for instructions to request access to the free/sponsored resources for
-Farm.
+See [here](../accounts/requests.md#hippo) for instructions to request access to the free/sponsored resources for Farm.
 
 #### Slurm account name `publicgrp`
 
@@ -16,9 +15,7 @@ Farm.
 #### Slurm account name `gpul-users`
 
 - Partition: `low`: provides access to currently idle GPUs.
-
   - Each job is limited to a maximum of:
-
     - 1 day (`3-00`) of runtime
     - 1 node
 
