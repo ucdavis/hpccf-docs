@@ -120,8 +120,9 @@ restore. See the [symlinks](#can-the-backup-system-back-up-symlinks) section for
 
 ### Who monitors the backups?
 
-You, the PI, or a designated list of email addresses. HPC@UCD does NOT, and we cannot emphasize this enough, **does
-NOT** monitor the individual backups. It is up to you to monitor those and open a ticket if you see any issues.
+You, the PI, or a designated list of email addresses. Although HPC@UCD monitors the backup service, we do NOT, and we
+cannot emphasize this enough, do NOT monitor the individual backups. It is up to you to monitor those and open a ticket
+if you notice any issues.
 
 ### How much backup space do I need?
 
