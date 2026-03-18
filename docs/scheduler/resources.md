@@ -296,13 +296,6 @@ Example:
 `
 This requests 1 GPU on whichever node your job is scheduled.
 
-You may also combine it with other resource flags, for example:
-
-```console
-#SBATCH --cpus-per-task=4
-#SBATCH --gres=gpu:1
-```
-
 
 #### Partition / QOS constraints
 
