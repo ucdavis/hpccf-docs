@@ -1,5 +1,5 @@
 mkdocs
-mkdocs-material
+mkdocs-materialx
 mkdocs-git-revision-date-localized-plugin
 mkdocs-macros-plugin
 mkdocs-spellcheck[all] @ git+https://github.com/camillescott/mkdocs-spellcheck@add-linenumbers
