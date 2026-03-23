@@ -27,9 +27,9 @@ Farm also has multiple file servers with over 5.3PB of storage space in total.
 
 All researchers in CA&ES are entitled to free access to:
 
-- 4 nodes with 352 CPUs and 768GB RAM each in Farm III's low, and high-priority batch queues.
-
-- The `bml` (bigmem, low priority/requeue) partition, which has 27 nodes with a combined 30 TB of RAM.
+- The `low` (low priority/requeue) partition, which has ~100 nodes with a combined ~15,000 CPUs, ~64 TB of RAM, and ~50
+  GPUs. Jobs in `low` are limited to a maximum runtime of 7 days and will be killed and requeued if the resources are
+  needed for jobs in the `high` partition.
 
 In addition to this, each new user is allocated a 20 GB home directory. If you want to use the CA&ES free tier, select
 "CA&ES free tier" from the list of sponsors [here](https://hippo.ucdavis.edu/Farm/myaccount).
@@ -51,4 +51,7 @@ Current Farm rates can be seen [here](https://hpc.ucdavis.edu/rates).
 
 ### Bring your own equipment (BYOE):
 
-Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. If you require custom equipment not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or [HPC@UCD](../support.md).
+Equipment may be purchased directly by researchers based on actual cost. Equipment quotes are available upon request. If
+you BYOE, then the racking rate of $375 per year per rack unit for five years will apply. If you require custom
+equipment not available through Hippo, you can start a discussion with [Adam Getchell](mailto:acgetchell@ucdavis.edu) or
+[HPC@UCD](../support.md).
