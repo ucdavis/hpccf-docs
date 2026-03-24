@@ -2257,7 +2257,7 @@
 <h2 id="module-system">Module System<a class="headerlink" href="#module-system" title="Permanent link">&para;</a></h2>
 <p>HPC@UCD provides apptainer as an environment module. Every time you want to use apptainer you must first run: <code>module load apptainer</code>.</p>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
-<p>For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: <code>srun -A adamgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"</code>. But, you may need to curtail some <code>srun</code> parameters for your own needs.</p>
+<p>For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: <code>srun -A publicgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"</code>. But, you may need to curtail some <code>srun</code> parameters for your own needs.</p>
 <h2 id="pulling-apptainer-images">Pulling Apptainer Images<a class="headerlink" href="#pulling-apptainer-images" title="Permanent link">&para;</a></h2>
 <p>Container images are like filesystems containing an Operating System (OS) with the relevant pre-installed software that is then booted like a Virtual Machine (VM). We recommend downloading your container image(s) locally once before your slurm job by running: <code>apptainer build tflo.sif docker://tensorflow/tensorflow</code>. After, you should find the <code>tflo.sif</code> apptainer image in your current directory. You can run this image in any number of future containers, which is why you only need to do it once and shouldn't run it in every slurm job.</p>
 <h2 id="running-apptainer-images">Running Apptainer Images<a class="headerlink" href="#running-apptainer-images" title="Permanent link">&para;</a></h2>
@@ -2331,7 +2331,7 @@ srun \
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  apptainer shell --nv tflo.sif $@ # &quot;$@&quot; adds optional support for additional parameters that can be passed when executing this wrapper script that are passed to the apptainer
 </code></pre></div>
-This wrapper starts a shell inside whatever apptainer you specify </p>
+This wrapper starts a shell inside whatever apptainer you specify</p>
 
 
 

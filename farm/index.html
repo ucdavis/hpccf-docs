@@ -2178,38 +2178,20 @@
 
 <h1 id="farm">Farm<a class="headerlink" href="#farm" title="Permanent link">&para;</a></h1>
 <p><img align="right" alt="CAES unit signature" src="../assets/UCDavis_CAES_logo_RGB_vector.svg" width="400" /></p>
-<p>Farm is a Linux-based supercomputing cluster for the
-<a href="https://caes.ucdavis.edu/">College of Agricultural and Environmental Sciences</a> (CA&amp;ES) at UC Davis. Designed for both
-research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide
-selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics
-pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS)
-software, and more.</p>
+<p>Farm is a Linux-based supercomputing cluster for the <a href="https://caes.ucdavis.edu/">College of Agricultural and Environmental Sciences</a> (CA&amp;ES) at UC Davis. Designed for both research and teaching, it is a significant campus resource primarily for CPU and RAM-based computing, with a wide selection of centrally-managed software available for research in genetics, proteomics, and related bioinformatics pipelines, weather and environmental modeling, fluid and particle simulations, geographic information system (GIS) software, and more.</p>
 <h2 id="farm-hardware">Farm Hardware<a class="headerlink" href="#farm-hardware" title="Permanent link">&para;</a></h2>
-<p>Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three
-phases, with Farm III as the most recent evolution.</p>
-<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 256GB RAM each in <code>low</code>/<code>high</code>, plus 27 "bigmem" nodes
-with up to 128 CPUs and 2 TB RAM each in the <code>bml</code>/<code>bmh</code> queue. All Farm III bigmem and newer parallel nodes and storage
-are on EDR/100Gbit interconnects.</p>
-<p>Hardware from Farm III is still in service; Farm I has been decommissioned as of 2014, and Farm II has been
-decommissioned as of 2025-12.</p>
+<p>Farm is an evolving cluster that changes and grows to meet the current needs of researchers, and has undergone three phases, with Farm III as the most recent evolution.</p>
+<p>Farm III consists of 60 parallel nodes with up to 64 CPUs and 256GB RAM each in <code>low</code>/<code>high</code>, plus 27 "bigmem" nodes with up to 128 CPUs and 2 TB RAM each in the <code>bml</code>/<code>bmh</code> queue. All Farm III bigmem and newer parallel nodes and storage are on EDR/100Gbit interconnects.</p>
+<p>Hardware from Farm III is still in service; Farm I has been decommissioned as of 2014, and Farm II has been decommissioned as of 2025-12.</p>
 <p>Farm also has multiple file servers with over 5.3PB of storage space in total.</p>
 <h2 id="access-to-farm">Access to Farm<a class="headerlink" href="#access-to-farm" title="Permanent link">&para;</a></h2>
-<p>All researchers in CA&amp;ES are entitled to free access to:</p>
+<p>All CA&amp;ES researchers are entitled to free access to the following resources via <code>publicgrp</code>, which is automatically granted to every user of Farm:</p>
 <ul>
-<li>
-<p>4 nodes with 352 CPUs and 768GB RAM each in Farm III's low, and high-priority batch queues.</p>
-</li>
-<li>
-<p>The <code>bml</code> (bigmem, low priority/requeue) partition, which has 27 nodes with a combined 30 TB of RAM.</p>
-</li>
+<li>The <code>low</code> (low priority/requeue) partition, which has ~100 nodes with a combined ~15,000 CPUs, ~64 TB of RAM, and ~50 GPUs. Jobs in <code>low</code> are limited to a maximum runtime of 7 days and will be killed and requeued if the resources are needed for jobs in the <code>high</code> partition.</li>
 </ul>
-<p>In addition to this, each new user is allocated a 20 GB home directory. If you want to use the CA&amp;ES free tier, select
-"CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>.</p>
-<p>Additional usage and access may be purchased by contributing to Farm III through the node and/or storage rates or by
-purchasing equipment and contributing through the rack fee rate.</p>
-<p>Contributors always receive priority access to the resources that they have purchased within one minute with the
-“one-minute guarantee.” Users can also request additional unused resources on a “fair share” basis in the medium or low
-partitions.</p>
+<p>In addition to this, each new user is allocated a 20 GB home directory. If you want to use the CA&amp;ES free tier, select "CA&amp;ES free tier" from the list of sponsors <a href="https://hippo.ucdavis.edu/Farm/myaccount">here</a>.</p>
+<p>Additional usage and access may be purchased by contributing to Farm III through the node and/or storage rates or by purchasing equipment and contributing through the rack fee rate.</p>
+<p>Contributors always receive priority access to the resources that they have purchased within one minute with the “one-minute guarantee.” Users can also request additional unused resources on a “fair share” basis in the medium or low partitions.</p>
 <h2 id="farm-administration">Farm Administration<a class="headerlink" href="#farm-administration" title="Permanent link">&para;</a></h2>
 <p>Farm hardware and software are administrated by the <a href="https://hpc.ucdavis.edu/people">HPC Core Facility Team</a>.</p>
 <h2 id="current-rates">Current Rates<a class="headerlink" href="#current-rates" title="Permanent link">&para;</a></h2>
