@@ -1,20 +1,14 @@
 # Requesting an Account
 
-HPC accounts are provisioned on a per-cluster basis and granted with the permission of their principal investigator
-(PI). Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own
-separate home directory.
+HPC accounts are provisioned on a per-cluster basis and granted with the permission of their principal investigator (PI). Accounts that are provisioned under each PI will have access to that PI's purchased resources and their own separate home directory.
 
-Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication
-using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md) documentation
-page.
+Access to all HPC clusters are granted through the use of SSH keys. In addition, Hive offers password authentication using your campus passphrase. For information on creating SSH keys, please visit the [access](access.md) documentation page.
 
 ![HiPPO](../img/HiPPO.png){ align="right"}
 
 ## HiPPO
 
-The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, and Hive HPC
-clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS and
-selecting their PI in the `Select a group` box.
+The High-Performance Personnel Onboarding (HiPPO) portal can provision resources for the Farm, Franklin, and Hive HPC clusters. Users can request an account on [HiPPO](https://hippo.ucdavis.edu) by logging in with UC Davis CAS and selecting their PI in the `Select a group` box.
 
 Cluster specific information:
 
@@ -22,8 +16,7 @@ Cluster specific information:
 
 - `Franklin`: No public/free-tier available.
 
-- `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the
-  `HPC@UCD Sponsored Public Access` (`publicgrp`) group.
+- `Hive`: UC Davis staff, faculty, and graduate students who do not have a PI can select the `HPC@UCD Sponsored Public Access` (`publicgrp`) group.
 
 ### How to request a new account, access to a group, or become a PI so other users can request access your resources.
 
@@ -79,25 +72,20 @@ Cluster specific information:
 
 ### How long does it take my account to be created?
 
-After accounts, or account changes, are requested, the PI (or delegated sponsor) will need to approve it. Once that
-approval happens, accounts and changes should be live on the cluster within one hour. You will receive an email with
-login email after your account is created.
+After accounts, or account changes, are requested, the PI (or delegated sponsor) will need to approve it. Once that approval happens, accounts and changes should be live on the cluster within one hour. You will receive an email with login email after your account is created.
 
 ### I cannot see the changes (PI sponsor or group membership) on HiPPO
 
-You will not be able to see any group or sponsor changes until Hippo synchronizes the data. The synchronization happens
-every 15 minutes.
+You will not be able to see any group or sponsor changes until Hippo synchronizes the data. The synchronization happens every 15 minutes.
 
 ## HPC2
 
-Users who are associated with PI's in the College of Engineering can request an account on HPC2 by filling out
-[this form](https://hpc.ucdavis.edu/form/account-request-form).
+Users who are associated with PI's in the College of Engineering can request an account on HPC2 by filling out [this form](https://hpc.ucdavis.edu/form/account-request-form).
 
 ## LSSC0 (Barbera)
 
-The LSSC0 cluster is being retired. Users who are interested in computing resources should create an account on the Hive
-HPC cluster.
+The LSSC0 cluster will be retired April 30th, 2026. Users who are interested in computing resources should [create an account](#how-to-request-a-new-account-on-a-cluster) on the Hive HPC cluster.
 
-## Atomate, Cardio, Demon, Impact
+## Atomate, Cardio, Demon, Impact, Peloton
 
 These clusters have been retired.
