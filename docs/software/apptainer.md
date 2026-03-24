@@ -8,7 +8,7 @@ HPC@UCD provides apptainer as an environment module. Every time you want to use 
 
 ## Quickstart
 
-For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: `srun -A adamgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"`. But, you may need to curtail some `srun` parameters for your own needs.
+For the absolute fastest way to get started on testing your software in an apptainer you can use something like this: `srun -A publicgrp -p high -n 1 -c 8 --mem 32G --time 30:00 --pty bash -c "module load apptainer; apptainer shell docker://tensorflow/tensorflow"`. But, you may need to curtail some `srun` parameters for your own needs.
 
 ## Pulling Apptainer Images
 
@@ -33,7 +33,7 @@ If you want to make use of GPUs within your apptainer you can use the `--nv` fla
 Here's a basic script template, suitable for submitting with `sbatch`, that executes a command inside an apptainer:
     ```
       #!/bin/bash
-   
+
       #SBATCH --account=<accountname>
       #SBATCH --partition=<partitionname>
       #SBATCH --ntasks=1
@@ -42,11 +42,11 @@ Here's a basic script template, suitable for submitting with `sbatch`, that exec
       #SBATCH --gpus=1
       #SBATCH --job-name=tflo
       #SBATCH --time=10:00
-      
+
       # load module(s)
       module purge
       module load apptainer
-      
+
       # specify what path(s) to bind inside the apptainer
       export $APPTAINER_BIND=$PWD
 
@@ -65,7 +65,7 @@ This is an `srun` script that is the same as the above `sbatch` script but inste
 
     ```
     #!/bin/bash -l
-    
+
     srun \
       --account=<accountname> \
       --partition=<partitionname> \
@@ -89,7 +89,7 @@ For ease of use we recommend writing a wrapper script like such:
     # load module(s)
     module purge
     module load apptainer
-    
+
     # specify what path(s) to bind inside the apptainer
     export $APPTAINER_BIND=$PWD
 
@@ -97,7 +97,7 @@ For ease of use we recommend writing a wrapper script like such:
     if [ ! -f tflo.sif ]; then
       apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
     fi
-    
+
     apptainer shell --nv tflo.sif $@ # "$@" adds optional support for additional parameters that can be passed when executing this wrapper script that are passed to the apptainer
   ```
-This wrapper starts a shell inside whatever apptainer you specify 
+This wrapper starts a shell inside whatever apptainer you specify
