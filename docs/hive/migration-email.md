@@ -16,7 +16,7 @@ title: Migration from LSSC0 to Hive Email
     `module avail -l | grep -i softwarename`
 
     PIs are first required to make an account on Hive by going to the High-Performance Personnel Onboarding Portal at
-    https://hippo.ucdavis.edu, selecting Hive as their cluster, and enter the `New PI Onboarding (sponsors)` group. HPC@UCD
+    https://hippo.ucdavis.edu, selecting Hive as their cluster, and enter the `New Sponsor Onboarding (sponsors)` group. HPC@UCD
     staff will approve the request, and the new PI group will be available for users to select. Documentation here:
     https://docs.hpc.ucdavis.edu/general/account-requests/#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources
 
