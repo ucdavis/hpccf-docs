@@ -70,9 +70,9 @@ Cluster specific information:
     1. Wait for a confirmation that your group was created.
         1. Note: there is a [delay](#i-cannot-see-the-changes-pi-sponsor-or-group-membership-on-hippo) between the group being approved and showing on Hippo.
 
-### How long does it take my account to be created?
+### How long does it take for my account to be created?
 
-After accounts, or account changes, are requested, the PI (or delegated sponsor) will need to approve it. Once that approval happens, accounts and changes should be live on the cluster within one hour. You will receive an email with login email after your account is created.
+After accounts, or account changes, are requested, the PI (or delegated sponsor) will need to approve it. Once that approval happens, accounts and changes should be live on the cluster within one hour. You will receive an email after your account creation is started. After you receive the email, it still takes approximately 1 hour for the account to fully create.
 
 ### I cannot see the changes (PI sponsor or group membership) on HiPPO
 
@@ -80,7 +80,7 @@ You will not be able to see any group or sponsor changes until Hippo synchronize
 
 ## HPC2
 
-Users who are associated with PI's in the College of Engineering can request an account on HPC2 by filling out [this form](https://hpc.ucdavis.edu/form/account-request-form).
+Users who are associated with PIs in the College of Engineering can request an account on HPC2 by filling out [this form](https://hpc.ucdavis.edu/form/account-request-form).
 
 ## LSSC0 (Barbera)
 
