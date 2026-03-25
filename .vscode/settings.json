@@ -1,16 +1,4 @@
 {
-  "cSpell.words": [
-    "CVMFS",
-    "Getchell",
-    "graphviz",
-    "ibnetdiscover",
-    "ipmitool",
-    "LSSC",
-    "puppetserver",
-    "slurmctld",
-    "slurmd",
-    "slurmdbd"
-  ],
   "editor.tabSize": 4,
   "editor.wordWrap": "off",
   "files.trimTrailingWhitespaceInRegexAndStrings": true,
