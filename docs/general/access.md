@@ -1,105 +1,249 @@
-In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of
-keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is
-submitted to HPC@UCD to grant you access to a cluster.
+To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH lets
+you control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
+instead of a password — the exception is Hive, which also accepts your UC Davis campus passphrase.
+
+## How do I connect to a cluster?
+
+Once your account is active, open a terminal and run:
+
+```bash
+ssh your-username@cluster.hpc.ucdavis.edu
+```
+
+Replace `cluster` with `farm`, `franklin`, or `hive` depending on which cluster you have access to. Your username
+is your UC Davis Login ID (e.g., `cheeto`).
+
+The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the
+[known fingerprints below](#ssh-key-fingerprints-for-major-clusters) before typing `yes`.
+
+## How do I open a terminal?
+
+=== "macOS"
+
+    Open **Terminal** by pressing `Command + Space` to open Spotlight, typing `Terminal`, and pressing Enter. You
+    can also find it under **Applications → Utilities → Terminal**.
+
+=== "Linux"
+
+    Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press
+    `Ctrl + Alt + T` on many desktop environments.
+
+=== "Windows"
+
+    We recommend [MobaXterm](https://mobaxterm.mobatek.net/) as the most straightforward SSH client on Windows.
+    Download the free **Home Edition (Installer Edition)** — avoid the Portable Edition, as it deletes the contents
+    of your home directory by default when it exits. Once installed, open its built-in terminal.
+
+    Alternatively, if you are comfortable with Linux, you can use
+    [Windows Subsystem for Linux 2 (WSL2)](https://learn.microsoft.com/en-us/windows/wsl/install). Once installed,
+    open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.
 
 ## How do I generate an SSH key pair?
 
-### Windows Operating System
+An SSH key pair consists of two files: a **private key** (kept securely on your computer) and a **public key**
+(shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the
+private key as the only key that opens it.
 
-We recommend MobaXterm as the most straightforward SSH client. You can download the free Home Edition (Installer
-Edition) from [MobaXterm](https://mobaxterm.mobatek.net/). Please download the Installer Edition. The Portable Edition
-deletes the contents of your home directory by default when it exits, which will remove your freshly generate SSH key.
-Once you install the stable version of MobaXterm, open its terminal and enter this command:
-
-`ssh-keygen`
-
-This command will create a private key and a public key. Do not share your private key; we recommend giving it a
-passphrase for security. To view the .ssh directory and to read the public key, enter these commands:
+To generate a key pair, open a terminal and run:
 
 ```
-ls -al ~/.ssh
-cat ~/.ssh/*.pub
+ssh-keygen -t rsa -b 4096
 ```
 
-### macOS and Linux:
+The `-t rsa` flag specifies the RSA key type, and `-b 4096` sets the key length to 4096 bits.
 
-Use a terminal to create an SSH key pair using the command:
+You will be prompted with a few questions:
 
-`ssh-keygen`
+1. **"Enter file in which to save the key"** — Press Enter to accept the default location (`~/.ssh/id_rsa`).
+   This is fine for most users.
 
-To view the .ssh directory and to read the public key, enter these commands:
+2. **"Enter passphrase"** — This is an optional password that protects your private key. We recommend setting one.
+   You will be asked to enter it when you use your key.
+
+Once complete, you will have two files in your `~/.ssh/` directory:
+
+- `id_rsa` — your **private key**. Never share this file with anyone.
+- `id_rsa.pub` — your **public key**. This is what you submit to HPC@UCD.
+
+To view your public key, run:
 
 ```
-ls -al ~/.ssh
-cat ~/.ssh/*.pub
+cat ~/.ssh/id_rsa.pub
 ```
+
+The output will be a long string starting with `ssh-rsa`. Copy the entire line — this is what you paste into
+[HiPPO](https://hippo.ucdavis.edu) when requesting an account.
+
+Once you have your public key, return to the [account request](account-requests.md) page to submit it.
+
+## SSH agent
+
+If you set a passphrase on your SSH key (which we recommend), you will be prompted for it each time you connect.
+An SSH agent caches your passphrase for the duration of your local session so you only need to enter it once:
+
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
+On macOS, the SSH agent runs automatically and your passphrase can be saved to the system Keychain. On Linux,
+you may need to start the agent manually:
+
+```bash
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_rsa
+```
+
+## SSH config file
+
+Typing the full connection command every time quickly becomes tedious. You can create an SSH config file at
+`~/.ssh/config` to set up shortcuts. For example:
+
+```
+Host farm
+    HostName farm.hpc.ucdavis.edu
+    User your-username
+    ServerAliveInterval 60
+
+Host franklin
+    HostName franklin.hpc.ucdavis.edu
+    User your-username
+    ServerAliveInterval 60
+
+Host hive
+    HostName hive.hpc.ucdavis.edu
+    User your-username
+    ServerAliveInterval 60
+```
+
+With this in place, you can connect by simply typing `ssh farm`, `ssh franklin`, or `ssh hive` instead of the
+full command.
+
+The `ServerAliveInterval 60` line sends a 'keepalive' signal every 60 seconds, which prevents idle SSH sessions
+from timing out and disconnecting.
+
+If the file does not exist yet, create it with:
+
+```bash
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+```
+
+## Keeping sessions alive with tmux
+
+If your SSH connection drops while you are running an interactive job, the process will be killed. A terminal
+multiplexer like `tmux` runs your session on the server independently of your SSH connection — if you disconnect,
+your work continues and you can reattach later.
+
+Basic `tmux` usage:
+
+| Command | Action |
+|---------|--------|
+| `tmux` | Start a new session |
+| `tmux attach` | Reattach to your last session |
+| `Ctrl+B`, then `D` | Detach from the session (leaves it running) |
+| `Ctrl+B`, then `%` | Split pane vertically |
+| `Ctrl+B`, then `"` | Split pane horizontally |
+
+`tmux` is installed on all HPC clusters. We strongly recommend using it for any interactive work.
+
+## Mosh
+
+[Mosh](https://mosh.org/) (Mobile Shell) is an alternative to SSH designed for unreliable or mobile connections.
+Unlike SSH, Mosh uses UDP and automatically reconnects if your connection drops — closing your laptop, switching
+networks, or losing signal will not interrupt your session.
+
+Mosh is particularly useful if you are:
+
+- Working off-campus on a slow or unstable connection
+- On a laptop that frequently sleeps or switches between WiFi and a hotspot
+- Running long interactive sessions where a dropped SSH connection would be disruptive
+
+To connect with Mosh:
+
+```bash
+mosh your-username@cluster.hpc.ucdavis.edu
+```
+
+Mosh must be installed on both your local machine and the cluster. Check whether it is available on the cluster
+with `which mosh` after logging in via SSH first.
 
 ## X11 Forwarding
 
 Some software has a Graphical User Interface (GUI), and so requires X11 to be enabled. X11 forwarding allows an
-application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer). How this is
-enabled depends on the operating system the computer you are using to access Franklin is running.
+application on a remote server to render its GUI on your local computer. This is only needed for specific
+graphical applications — most users will not need it.
 
-### Linux
+=== "Linux"
 
-If you are SSHing from a Linux distribution, you likely already have an X11 server running locally, and can support
-forwarding natively. If you are on campus, you can use the `-Y` flag to enable it, like:
+    You likely already have an X11 server running and can enable forwarding with the `-Y` flag:
+
+    ```bash
+    ssh -Y your-username@cluster.hpc.ucdavis.edu
+    ```
+
+    For slower connections, add `-C` to enable compression:
+
+    ```bash
+    ssh -Y -C your-username@cluster.hpc.ucdavis.edu
+    ```
+
+=== "macOS"
+
+    macOS does not include X11 by default. Install the free [XQuartz](https://www.xquartz.org/) package first,
+    then use the same `-Y` flag as described in the Linux instructions above.
+
+=== "Windows"
+
+    If you are using MobaXterm, X11 forwarding is enabled by default. You can confirm this
+    by checking that the **X11-Forwarding** box is ticked under your session settings. For off-campus access,
+    tick the **Compression** box as well.
+
+    If you are using WSL2, X11 support depends on your Windows version:
+
+    - **Windows 11**: WSL2 includes built-in X11 support via WSLg. Use the same `-Y` flag as Linux:
+
+        ```bash
+        ssh -Y your-username@cluster.hpc.ucdavis.edu
+        ```
+
+    - **Windows 10**: You will need a third-party X server such as
+      [VcXsrv](https://sourceforge.net/projects/vcxsrv/). Launch it before connecting, then set the display
+      variable and use the `-Y` flag:
+
+        ```bash
+        export DISPLAY=:0
+        ssh -Y your-username@cluster.hpc.ucdavis.edu
+        ```
+
+If you have multiple SSH key pairs and want to specify which one to use, pass the `-i` flag:
 
 ```bash
-$ ssh -Y [USER]@[CLUSTER].hpc.ucdavis.edu
+ssh -i ~/.ssh/id_hpc your-username@cluster.hpc.ucdavis.edu
 ```
-
-If you are off campus on a slower internet connection, you may get better performance by enabling compression with:
-
-```bash
-$ ssh -Y -C [USER]@[CLUSTER].hpc.ucdavis.edu
-```
-
-If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the
-option `-i` to specify path to the private key with SSH:
-
-```bash
-$ ssh -i ~/.ssh/id_hpc [USER]@[CLUSTER].hpc.ucdavis.edu
-```
-
-### macOS
-
-macOS does not come with an X11 implementation out of the box. You will first need to install the free, open-source
-[XQuartz](https://www.xquartz.org/) package, after which you can use the same `ssh` flags as described in the
-[Linux instructions](access.md#linux).
-
-### Windows
-
-If you are using our recommend windows SSH client ([MobaXterm](access.md#windows-operating-system)) X11 forwarding
-should be enabled by default. You can confirm this by checking that the `X11-Forwarding` box is ticked under your
-Franklin session settings. For off-campus access, you may want to tick the `Compression` box as well.
 
 ## SSH key fingerprint issues
 
 ### Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-SSH key fingerprint prompts like below happen the first time you connect to a server from your system(s). You should
-compare the fingerprint printed with the [fingerprints listed below](#ssh-key-fingerprints-for-major-clusters). If they
-match, you can safely enter `yes`. If you cannot find a match, you should open a ticket.
+This prompt appears the first time you connect to a server. Compare the displayed fingerprint against the
+[fingerprints listed below](#ssh-key-fingerprints-for-major-clusters). If they match, type `yes`. If you cannot
+find a match, [open a support ticket](../support.md) before proceeding.
 
-??? "Are you sure you want to continue connecting (yes/no/[fingerprint])?"
+??? "Example prompt"
 
     ```console
-    All keys already loaded
     The authenticity of host 'farm.hpc.ucdavis.edu (128.120.146.1)' can't be established.
     ED25519 key fingerprint is SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I.
-    This key is not known by any other names.
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
     ```
 
 ### WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED
 
-SSH key fingerprint errors like below are normally caused when a host is reinstalled and the newly generated SSH host
-key differs from the last time you SSH'd to the server. You should compare the `SHA256:LongRandomStringHere` part
-against the host fingerprints listed below. If they match, you can safely follow the instructions `ssh-keygen -f ...`.
-If they differ, you should open a ticket.
+This error usually means the server was reinstalled and its host key changed. Compare the `SHA256:...` string
+against the fingerprints below. If they match, it is safe to update your known hosts file by running the command
+shown in the error output (`ssh-keygen -f ...`). If they do not match, [open a support ticket](../support.md).
 
-??? "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED"
+??? "Example warning"
 
     ```console
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -111,8 +255,7 @@ If they differ, you should open a ticket.
     The fingerprint for the ECDSA key sent by the remote host is
     SHA256:LongRandomStringHere.
     Please contact your system administrator.
-    Add correct host key in /home/YourLocalLoginID/.ssh/known_hosts to get rid of this
-    message.
+    Add correct host key in /home/YourLocalLoginID/.ssh/known_hosts to get rid of this message.
     Offending ECDSA key in /home/YourLocalLoginID/.ssh/known_hosts:32
     remove with:
     ssh-keygen -f "/home/YourLocalLoginID/.ssh/known_hosts" -R "Server.You.SSH'd.To"
@@ -123,9 +266,9 @@ If they differ, you should open a ticket.
 
 #### Farm (`farm.hpc.ucdavis.edu`)
 
--   `RSA: SHA256:aPUfAVTLNju9Omu8yIr5NYXAmZVKjsCLvewfAt8BLo8 `
--   `ECDSA: SHA256:XsfxXdolugXtm5/nWuEX0UB3mkllshTHTx+yHXQTrE0 `
--   `ED25519: SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I `
+-   `RSA: SHA256:aPUfAVTLNju9Omu8yIr5NYXAmZVKjsCLvewfAt8BLo8`
+-   `ECDSA: SHA256:XsfxXdolugXtm5/nWuEX0UB3mkllshTHTx+yHXQTrE0`
+-   `ED25519: SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I`
 
 #### Franklin (`franklin.hpc.ucdavis.edu`)
 
