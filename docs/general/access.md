@@ -118,7 +118,7 @@ Host hive
 With this in place, you can connect by simply typing `ssh farm`, `ssh franklin`, or `ssh hive` instead of the
 full command.
 
-The `ServerAliveInterval 60` line sends a 'keepalive' signal every 60 seconds, which prevents idle SSH sessions
+The `ServerAliveInterval 60` line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions
 from timing out and disconnecting.
 
 If the file does not exist yet, create it with:
@@ -163,9 +163,6 @@ To connect with Mosh:
 ```bash
 mosh your-username@cluster.hpc.ucdavis.edu
 ```
-
-Mosh must be installed on both your local machine and the cluster. Check whether it is available on the cluster
-with `which mosh` after logging in via SSH first.
 
 ## X11 Forwarding
 

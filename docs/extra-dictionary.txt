@@ -1,3 +1,5 @@
+keepalive
+keychain
 icelake
 config
 cron
