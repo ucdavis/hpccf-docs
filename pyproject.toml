@@ -1,0 +1,12 @@
+[project]
+name = "hpccf-docs"
+version = "0.1.0"
+description = "Documentation for HPC@UCD"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs==1.6.1",
+    "mkdocs-materialx",
+    "mkdocs-git-revision-date-localized-plugin",
+    "mkdocs-macros-plugin",
+    "mkdocs-spellcheck[all] @ git+https://github.com/camillescott/mkdocs-spellcheck@add-linenumbers",
+]

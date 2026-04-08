@@ -30,7 +30,7 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install -r requirements.txt
+      - run: pip install .
       - name: mkdocs build
         run: mkdocs build
       - name: Deploy preview
