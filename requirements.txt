@@ -1,4 +1,4 @@
-mkdocs
+mkdocs==1.6.1
 mkdocs-materialx
 mkdocs-git-revision-date-localized-plugin
 mkdocs-macros-plugin
