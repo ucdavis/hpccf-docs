@@ -14,10 +14,6 @@ See [here](../general/account-requests.md#hippo) for instructions to request acc
 
 ## Farm and Hive
 
-### Low partition
-
--8<- "docs/include/free-access-low.md"
-
 ### GPUs
 
 All GPUs in both clusters are available for use when not otherwise used by the PIs who paid for them. The partition `low` provides access to currently idle GPUs.
@@ -27,3 +23,8 @@ All GPUs in both clusters are available for use when not otherwise used by the P
 - You can access these resources by adding `--partition=low --gpus=1` to your `srun` or `sbatch` command.
 
 - If you require a specific type of GPU, you can request it with `--gpus=TYPE:1`. You can run this command to see the types and counts of GPUs on each cluster: `sinfo -p low -o "%G|%D" | column -s'|' -t`
+
+### Low partition
+
+-8<- "docs/include/free-access-low.md"
+
