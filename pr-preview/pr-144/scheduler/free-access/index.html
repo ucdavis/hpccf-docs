@@ -673,10 +673,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#low-partition" class="md-nav__link">
+  <a href="#gpus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Low partition
+        GPUs
       
     </span>
   </a>
@@ -684,10 +684,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gpus" class="md-nav__link">
+  <a href="#low-partition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GPUs
+        Low partition
       
     </span>
   </a>
@@ -2141,10 +2141,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#low-partition" class="md-nav__link">
+  <a href="#gpus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Low partition
+        GPUs
       
     </span>
   </a>
@@ -2152,10 +2152,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gpus" class="md-nav__link">
+  <a href="#low-partition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GPUs
+        Low partition
       
     </span>
   </a>
@@ -2206,17 +2206,6 @@
 </li>
 </ul>
 <h2 id="farm-and-hive">Farm and Hive<a class="headerlink" href="#farm-and-hive" title="Permanent link">&para;</a></h2>
-<h3 id="low-partition">Low partition<a class="headerlink" href="#low-partition" title="Permanent link">&para;</a></h3>
-<p>The <code>low</code> partition allows access to all the unused resources in the cluster. The downside is that when a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your job can do automatic check-pointing and restarting, all progress is lost when the job is killed.</p>
-<ul>
-<li>
-<p>Each job is limited to a maximum of 7 days (<code>7-00</code>) of runtime.</p>
-</li>
-<li>
-<p>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your <code>srun</code> or <code>sbatch</code> command.</p>
-</li>
-</ul>
-<p>Every user is automatically a member of <code>publicgrp</code> and has access to the <code>low</code> partition.</p>
 <h3 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">&para;</a></h3>
 <p>All GPUs in both clusters are available for use when not otherwise used by the PIs who paid for them. The partition <code>low</code> provides access to currently idle GPUs.</p>
 <ul>
@@ -2230,6 +2219,17 @@
 <p>If you require a specific type of GPU, you can request it with <code>--gpus=TYPE:1</code>. You can run this command to see the types and counts of GPUs on each cluster: <code>sinfo -p low -o "%G|%D" | column -s'|' -t</code></p>
 </li>
 </ul>
+<h3 id="low-partition">Low partition<a class="headerlink" href="#low-partition" title="Permanent link">&para;</a></h3>
+<p>The <code>low</code> partition allows access to all the unused resources in the cluster. The downside is that when a job is submitted to <code>high</code> that needs these resources, your job will be killed and requeued. Unless your job can do automatic check-pointing and restarting, all progress is lost when the job is killed.</p>
+<ul>
+<li>
+<p>Each job is limited to a maximum of 7 days (<code>7-00</code>) of runtime.</p>
+</li>
+<li>
+<p>You can access these resources by adding <code>--account=publicgrp --partition=low</code> to your <code>srun</code> or <code>sbatch</code> command.</p>
+</li>
+</ul>
+<p>Every user is automatically a member of <code>publicgrp</code> and has access to the <code>low</code> partition.</p>
 
 
 
