@@ -2,7 +2,7 @@
   "editor.tabSize": 4,
   "editor.wordWrap": "off",
   "files.trimTrailingWhitespaceInRegexAndStrings": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "prettier.proseWrap": "never",
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
