@@ -1,3 +1,16 @@
+passphrase
+keepalive
+multiplexer
+reattach
+mobaXterm
+xquartz
+macos
+wifi
+wslg
+vcxsrv
+wsl2
+udp
+keychain
 icelake
 config
 cron
