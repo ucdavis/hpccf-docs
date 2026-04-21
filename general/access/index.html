@@ -18,8 +18,14 @@
         
       
       
-      <link rel="icon" href="../../assets/HPCCF-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.0">
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/HPCCF-logo.png">
+        
+      
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.3">
     
     
       
@@ -27,15 +33,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e08026d9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4dadc26f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.204eaadb.min.css">
       
-      
-
+    
+    
 
     
+
     
       
     
@@ -80,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-do-i-generate-an-ssh-key-pair" class="md-skip">
+        <a href="#how-do-i-connect-to-a-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -153,8 +160,6 @@
     
     
     
-      
-        
       
       
         <label class="md-header__button md-icon" for="__search">
@@ -379,6 +384,28 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#how-do-i-connect-to-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I connect to a cluster?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-open-a-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I open a terminal?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -387,33 +414,49 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How do I generate an SSH key pair?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-operating-system" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows Operating System
+        SSH agent
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-linux" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#ssh-config-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS and Linux:
+        SSH config file
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-sessions-alive-with-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping sessions alive with tmux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mosh
+      
+    </span>
+  </a>
   
 </li>
       
@@ -425,45 +468,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="X11 Forwarding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        macOS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2216,6 +2220,28 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#how-do-i-connect-to-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I connect to a cluster?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-open-a-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I open a terminal?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-generate-an-ssh-key-pair" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2224,33 +2250,49 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How do I generate an SSH key pair?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-operating-system" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows Operating System
+        SSH agent
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-linux" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#ssh-config-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS and Linux:
+        SSH config file
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-sessions-alive-with-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping sessions alive with tmux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mosh
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2262,45 +2304,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="X11 Forwarding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        macOS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2418,96 +2421,235 @@
               <article class="md-content__inner md-typeset">
                 
                   
-
-
   
   
 
 
   <h1>Accessing Clusters</h1>
 
-<p>In order to access your HPC account, you may need to generate an SSH key pair for authorization. You generate a pair of
-keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is
-submitted to HPC@UCD to grant you access to a cluster.</p>
-<h2 id="how-do-i-generate-an-ssh-key-pair">How do I generate an SSH key pair?<a class="headerlink" href="#how-do-i-generate-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
-<h3 id="windows-operating-system">Windows Operating System<a class="headerlink" href="#windows-operating-system" title="Permanent link">&para;</a></h3>
-<p>We recommend MobaXterm as the most straightforward SSH client. You can download the free Home Edition (Installer
-Edition) from <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>. Please download the Installer Edition. The Portable Edition
-deletes the contents of your home directory by default when it exits, which will remove your freshly generate SSH key.
-Once you install the stable version of MobaXterm, open its terminal and enter this command:</p>
-<p><code>ssh-keygen</code></p>
-<p>This command will create a private key and a public key. Do not share your private key; we recommend giving it a
-passphrase for security. To view the .ssh directory and to read the public key, enter these commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls -al ~/.ssh
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cat ~/.ssh/*.pub
+<p>To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH lets
+you control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
+instead of a password — the exception is Hive, which also accepts your UC Davis campus passphrase.</p>
+<h2 id="how-do-i-connect-to-a-cluster">How do I connect to a cluster?<a class="headerlink" href="#how-do-i-connect-to-a-cluster" title="Permanent link">&para;</a></h2>
+<p>Once your account is active, open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
-<h3 id="macos-and-linux">macOS and Linux:<a class="headerlink" href="#macos-and-linux" title="Permanent link">&para;</a></h3>
-<p>Use a terminal to create an SSH key pair using the command:</p>
-<p><code>ssh-keygen</code></p>
-<p>To view the .ssh directory and to read the public key, enter these commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls -al ~/.ssh
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat ~/.ssh/*.pub
+<p>Replace <code>cluster</code> with <code>farm</code>, <code>franklin</code>, or <code>hive</code> depending on which cluster you have access to. Your username
+is your UC Davis Login ID (e.g., <code>cheeto</code>).</p>
+<p>The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the
+<a href="#ssh-key-fingerprints-for-major-clusters">known fingerprints below</a> before typing <code>yes</code>.</p>
+<h2 id="how-do-i-open-a-terminal">How do I open a terminal?<a class="headerlink" href="#how-do-i-open-a-terminal" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Linux</label><label for="__tabbed_1_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Open <strong>Terminal</strong> by pressing <code>Command + Space</code> to open Spotlight, typing <code>Terminal</code>, and pressing Enter. You
+can also find it under <strong>Applications → Utilities → Terminal</strong>.</p>
+</div>
+<div class="tabbed-block">
+<p>Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press
+<code>Ctrl + Alt + T</code> on many desktop environments.</p>
+</div>
+<div class="tabbed-block">
+<p>We recommend <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> as the most straightforward SSH client on Windows.
+Download the free <strong>Home Edition (Installer Edition)</strong> — avoid the Portable Edition, as it deletes the contents
+of your home directory by default when it exits. Once installed, open its built-in terminal.</p>
+<p>Alternatively, if you are comfortable with Linux, you can use
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2 (WSL2)</a>. Once installed,
+open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.</p>
+</div>
+</div>
+</div>
+<h2 id="how-do-i-generate-an-ssh-key-pair">How do I generate an SSH key pair?<a class="headerlink" href="#how-do-i-generate-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
+<p>An SSH key pair consists of two files: a <strong>private key</strong> (kept securely on your computer) and a <strong>public key</strong>
+(shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the
+private key as the only key that opens it.</p>
+<p>To generate a key pair, open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen -t rsa -b 4096
+</code></pre></div>
+<p>The <code>-t rsa</code> flag specifies the RSA key type, and <code>-b 4096</code> sets the key length to 4096 bits.</p>
+<p>You will be prompted with a few questions:</p>
+<ol>
+<li>
+<p><strong>"Enter file in which to save the key"</strong> — Press Enter to accept the default location (<code>~/.ssh/id_rsa</code>).
+   This is fine for most users.</p>
+</li>
+<li>
+<p><strong>"Enter passphrase"</strong> — This is an optional password that protects your private key. We recommend setting one.
+   You will be asked to enter it when you use your key.</p>
+</li>
+</ol>
+<p>Once complete, you will have two files in your <code>~/.ssh/</code> directory:</p>
+<ul>
+<li><code>id_rsa</code> — your <strong>private key</strong>. Never share this file with anyone.</li>
+<li><code>id_rsa.pub</code> — your <strong>public key</strong>. This is what you submit to HPC@UCD.</li>
+</ul>
+<p>To view your public key, run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat ~/.ssh/id_rsa.pub
+</code></pre></div>
+<p>The output will be a long string starting with <code>ssh-rsa</code>. Copy the entire line — this is what you paste into
+<a href="https://hippo.ucdavis.edu">HiPPO</a> when requesting an account.</p>
+<p>Once you have your public key, return to the <a href="../account-requests/">account request</a> page to submit it.</p>
+<h2 id="ssh-agent">SSH agent<a class="headerlink" href="#ssh-agent" title="Permanent link">&para;</a></h2>
+<p>If you set a passphrase on your SSH key (which we recommend), you will be prompted for it each time you connect.
+An SSH agent caches your passphrase for the duration of your local session so you only need to enter it once:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
+</code></pre></div>
+<p>On macOS, the SSH agent runs automatically and your passphrase can be saved to the system Keychain. On Linux,
+you may need to start the agent manually:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>ssh-agent<span class="k">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
+</code></pre></div>
+<h2 id="ssh-config-file">SSH config file<a class="headerlink" href="#ssh-config-file" title="Permanent link">&para;</a></h2>
+<p>Typing the full connection command every time quickly becomes tedious. You can create an SSH config file at
+<code>~/.ssh/config</code> to set up shortcuts. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Host farm
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    HostName farm.hpc.ucdavis.edu
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    User your-username
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    ServerAliveInterval 60
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Host franklin
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    HostName franklin.hpc.ucdavis.edu
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    User your-username
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    ServerAliveInterval 60
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Host hive
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    HostName hive.hpc.ucdavis.edu
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    User your-username
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    ServerAliveInterval 60
+</code></pre></div>
+<p>With this in place, you can connect by simply typing <code>ssh farm</code>, <code>ssh franklin</code>, or <code>ssh hive</code> instead of the
+full command.</p>
+<p>The <code>ServerAliveInterval 60</code> line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions
+from timing out and disconnecting.</p>
+<p>If the file does not exist yet, create it with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>touch<span class="w"> </span>~/.ssh/config
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config
+</code></pre></div>
+<h2 id="keeping-sessions-alive-with-tmux">Keeping sessions alive with tmux<a class="headerlink" href="#keeping-sessions-alive-with-tmux" title="Permanent link">&para;</a></h2>
+<p>If your SSH connection drops while you are running an interactive job, the process will be killed. A terminal
+multiplexer like <code>tmux</code> runs your session on the server independently of your SSH connection — if you disconnect,
+your work continues and you can reattach later.</p>
+<p>Basic <code>tmux</code> usage:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmux</code></td>
+<td>Start a new session</td>
+</tr>
+<tr>
+<td><code>tmux attach</code></td>
+<td>Reattach to your last session</td>
+</tr>
+<tr>
+<td><code>Ctrl+B</code>, then <code>D</code></td>
+<td>Detach from the session (leaves it running)</td>
+</tr>
+<tr>
+<td><code>Ctrl+B</code>, then <code>%</code></td>
+<td>Split pane vertically</td>
+</tr>
+<tr>
+<td><code>Ctrl+B</code>, then <code>"</code></td>
+<td>Split pane horizontally</td>
+</tr>
+</tbody>
+</table>
+<p><code>tmux</code> is installed on all HPC clusters. We strongly recommend using it for any interactive work.</p>
+<h2 id="mosh">Mosh<a class="headerlink" href="#mosh" title="Permanent link">&para;</a></h2>
+<p><a href="https://mosh.org/">Mosh</a> (Mobile Shell) is an alternative to SSH designed for unreliable or mobile connections.
+Unlike SSH, Mosh uses UDP and automatically reconnects if your connection drops — closing your laptop, switching
+networks, or losing signal will not interrupt your session.</p>
+<p>Mosh is particularly useful if you are:</p>
+<ul>
+<li>Working off-campus on a slow or unstable connection</li>
+<li>On a laptop that frequently sleeps or switches between WiFi and a hotspot</li>
+<li>Running long interactive sessions where a dropped SSH connection would be disruptive</li>
+</ul>
+<p>To connect with Mosh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mosh<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
 <h2 id="x11-forwarding">X11 Forwarding<a class="headerlink" href="#x11-forwarding" title="Permanent link">&para;</a></h2>
 <p>Some software has a Graphical User Interface (GUI), and so requires X11 to be enabled. X11 forwarding allows an
-application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer). How this is
-enabled depends on the operating system the computer you are using to access Franklin is running.</p>
-<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
-<p>If you are SSHing from a Linux distribution, you likely already have an X11 server running locally, and can support
-forwarding natively. If you are on campus, you can use the <code>-Y</code> flag to enable it, like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+application on a remote server to render its GUI on your local computer. This is only needed for specific
+graphical applications — most users will not need it.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux</label><label for="__tabbed_2_2">macOS</label><label for="__tabbed_2_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>You likely already have an X11 server running and can enable forwarding with the <code>-Y</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>-Y<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
-<p>If you are off campus on a slower internet connection, you may get better performance by enabling compression with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span>-C<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+<p>For slower connections, add <code>-C</code> to enable compression:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh<span class="w"> </span>-Y<span class="w"> </span>-C<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
-<p>If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the
-option <code>-i</code> to specify path to the private key with SSH:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_hpc<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>CLUSTER<span class="o">]</span>.hpc.ucdavis.edu
+</div>
+<div class="tabbed-block">
+<p>macOS does not include X11 by default. Install the free <a href="https://www.xquartz.org/">XQuartz</a> package first,
+then use the same <code>-Y</code> flag as described in the Linux instructions above.</p>
+</div>
+<div class="tabbed-block">
+<p>If you are using MobaXterm, X11 forwarding is enabled by default. You can confirm this
+by checking that the <strong>X11-Forwarding</strong> box is ticked under your session settings. For off-campus access,
+tick the <strong>Compression</strong> box as well.</p>
+<p>If you are using WSL2, X11 support depends on your Windows version:</p>
+<ul>
+<li>
+<p><strong>Windows 11</strong>: WSL2 includes built-in X11 support via WSLg. Use the same <code>-Y</code> flag as Linux:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ssh<span class="w"> </span>-Y<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
-<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
-<p>macOS does not come with an X11 implementation out of the box. You will first need to install the free, open-source
-<a href="https://www.xquartz.org/">XQuartz</a> package, after which you can use the same <code>ssh</code> flags as described in the
-<a href="./#linux">Linux instructions</a>.</p>
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>If you are using our recommend windows SSH client (<a href="./#windows-operating-system">MobaXterm</a>) X11 forwarding
-should be enabled by default. You can confirm this by checking that the <code>X11-Forwarding</code> box is ticked under your
-Franklin session settings. For off-campus access, you may want to tick the <code>Compression</code> box as well.</p>
+</li>
+<li>
+<p><strong>Windows 10</strong>: You will need a third-party X server such as
+  <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>. Launch it before connecting, then set the display
+  variable and use the <code>-Y</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ssh<span class="w"> </span>-Y<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
+</code></pre></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<p>If you have multiple SSH key pairs and want to specify which one to use, pass the <code>-i</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_hpc<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
+</code></pre></div>
 <h2 id="ssh-key-fingerprint-issues">SSH key fingerprint issues<a class="headerlink" href="#ssh-key-fingerprint-issues" title="Permanent link">&para;</a></h2>
 <h3 id="are-you-sure-you-want-to-continue-connecting-yesnofingerprint">Are you sure you want to continue connecting (yes/no/[fingerprint])?<a class="headerlink" href="#are-you-sure-you-want-to-continue-connecting-yesnofingerprint" title="Permanent link">&para;</a></h3>
-<p>SSH key fingerprint prompts like below happen the first time you connect to a server from your system(s). You should
-compare the fingerprint printed with the <a href="#ssh-key-fingerprints-for-major-clusters">fingerprints listed below</a>. If they
-match, you can safely enter <code>yes</code>. If you cannot find a match, you should open a ticket.</p>
+<p>This prompt appears the first time you connect to a server. Compare the displayed fingerprint against the
+<a href="#ssh-key-fingerprints-for-major-clusters">fingerprints listed below</a>. If they match, type <code>yes</code>. If you cannot
+find a match, <a href="../../support/">open a support ticket</a> before proceeding.</p>
 <details>
-<summary>Are you sure you want to continue connecting (yes/no/[fingerprint])?</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">All keys already loaded</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">The authenticity of host &#39;farm.hpc.ucdavis.edu (128.120.146.1)&#39; can&#39;t be established.</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">ED25519 key fingerprint is SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I.</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="go">This key is not known by any other names.</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span>
+<summary>Example prompt</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">The authenticity of host &#39;farm.hpc.ucdavis.edu (128.120.146.1)&#39; can&#39;t be established.</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">ED25519 key fingerprint is SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I.</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span>
 </code></pre></div>
 </details>
 <h3 id="warning-remote-host-identification-has-changed">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED<a class="headerlink" href="#warning-remote-host-identification-has-changed" title="Permanent link">&para;</a></h3>
-<p>SSH key fingerprint errors like below are normally caused when a host is reinstalled and the newly generated SSH host
-key differs from the last time you SSH'd to the server. You should compare the <code>SHA256:LongRandomStringHere</code> part
-against the host fingerprints listed below. If they match, you can safely follow the instructions <code>ssh-keygen -f ...</code>.
-If they differ, you should open a ticket.</p>
+<p>This error usually means the server was reinstalled and its host key changed. Compare the <code>SHA256:...</code> string
+against the fingerprints below. If they match, it is safe to update your known hosts file by running the command
+shown in the error output (<code>ssh-keygen -f ...</code>). If they do not match, <a href="../../support/">open a support ticket</a>.</p>
 <details>
-<summary>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="go">It is also possible that a host key has just been changed.</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="go">The fingerprint for the ECDSA key sent by the remote host is</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">SHA256:LongRandomStringHere.</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="go">Please contact your system administrator.</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">Add correct host key in /home/YourLocalLoginID/.ssh/known_hosts to get rid of this</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="go">message.</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="go">Offending ECDSA key in /home/YourLocalLoginID/.ssh/known_hosts:32</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="go">remove with:</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="go">ssh-keygen -f &quot;/home/YourLocalLoginID/.ssh/known_hosts&quot; -R &quot;Server.You.SSH&#39;d.To&quot;</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="go">ECDSA host key for Server.You.SSH&#39;d.To has changed and you have requested strict checking.</span>
+<summary>Example warning</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="go">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="go">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="go">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="go">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="go">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="go">It is also possible that a host key has just been changed.</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="go">The fingerprint for the ECDSA key sent by the remote host is</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="go">SHA256:LongRandomStringHere.</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="go">Please contact your system administrator.</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="go">Add correct host key in /home/YourLocalLoginID/.ssh/known_hosts to get rid of this message.</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="go">Offending ECDSA key in /home/YourLocalLoginID/.ssh/known_hosts:32</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="go">remove with:</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="go">ssh-keygen -f &quot;/home/YourLocalLoginID/.ssh/known_hosts&quot; -R &quot;Server.You.SSH&#39;d.To&quot;</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="go">ECDSA host key for Server.You.SSH&#39;d.To has changed and you have requested strict checking.</span>
 </code></pre></div>
 </details>
 <h3 id="ssh-key-fingerprints-for-major-clusters">SSH key fingerprints for major clusters<a class="headerlink" href="#ssh-key-fingerprints-for-major-clusters" title="Permanent link">&para;</a></h3>
@@ -2534,6 +2676,8 @@ If they differ, you should open a ticket.</p>
 <li><code>ECDSA: SHA256:ymN3g0Ow4BM2Rd/zE3THZg7nv+mOs75ENCe5GcvWQoM</code></li>
 <li><code>ED25519: SHA256:Svzxx62P/NxrsISeyPZ06nW+YkDYsE1xQc1wD/61tFI</code></li>
 </ul>
+
+
 
 
 
@@ -2584,7 +2728,7 @@ If they differ, you should open a ticket.</p>
   
     Made with
     <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
-      MaterialX for MkDocs
+      MaterialX
     </a>
   
 </div>
@@ -2626,7 +2770,7 @@ If they differ, you should open a ticket.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.de0c63e3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e3ad5d0a.min.js"></script>
       
         <script src="../../javascript/mathjax.js"></script>
       
