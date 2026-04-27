@@ -21,7 +21,7 @@ If you kept the default value, your permissions should be set so that only you c
 `(-rw------- or 600)`. To ensure this is the case, you can do the following:
 
 ```bash
-chown 600 $HOME/.ssh/id_rsa
+chmod 600 $HOME/.ssh/id_rsa
 ```
 
 On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this
