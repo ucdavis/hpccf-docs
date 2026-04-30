@@ -2288,7 +2288,7 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  module load apptainer
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  # specify what path(s) to bind inside the apptainer
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  export $APPTAINER_BIND=$PWD
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  export APPTAINER_BIND=$PWD
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn&#39;t exist
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  if [ ! -f tflo.sif ]; then
@@ -2325,7 +2325,7 @@ srun \
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  module load apptainer
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  # specify what path(s) to bind inside the apptainer
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  export $APPTAINER_BIND=$PWD
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  export APPTAINER_BIND=$PWD
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn&#39;t exist
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  if [ ! -f tflo.sif ]; then
