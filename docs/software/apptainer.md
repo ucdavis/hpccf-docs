@@ -48,7 +48,7 @@ Here's a basic script template, suitable for submitting with `sbatch`, that exec
       module load apptainer
 
       # specify what path(s) to bind inside the apptainer
-      export $APPTAINER_BIND=$PWD
+      export APPTAINER_BIND=$PWD
 
       # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
       if [ ! -f tflo.sif ]; then
@@ -91,7 +91,7 @@ For ease of use we recommend writing a wrapper script like such:
     module load apptainer
 
     # specify what path(s) to bind inside the apptainer
-    export $APPTAINER_BIND=$PWD
+    export APPTAINER_BIND=$PWD
 
     # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
     if [ ! -f tflo.sif ]; then
