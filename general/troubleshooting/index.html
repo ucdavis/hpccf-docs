@@ -2200,7 +2200,7 @@ of a specific set of names. Unless you have specified something other than the d
 </code></pre></div>
 <p>If you kept the default value, your permissions should be set so that only you can read and write the key
 <code>(-rw------- or 600)</code>. To ensure this is the case, you can do the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chown<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_rsa
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_rsa
 </code></pre></div>
 <p>On HPC2, your public key is kept in <code>$HOME/.ssh/authorized_keys</code>. Please make sure to not remove your key from this
 file. Doing so will cause you will lose access.</p>
