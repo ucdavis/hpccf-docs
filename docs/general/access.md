@@ -1,5 +1,5 @@
-To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH lets
-you control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
+To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH allows
+you to control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
 instead of a password — the exception is Hive, which also accepts your UC Davis campus passphrase.
 
 ## How do I connect to a cluster?
