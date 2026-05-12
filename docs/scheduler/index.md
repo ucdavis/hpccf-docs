@@ -1,6 +1,24 @@
 ---
-title: Job Scheduling
+title: Cluster Overview
 ---
+
+## Login nodes
+
+The login node is the point where most users interact with the cluster. Most users [SSH](../general/access.md#how-do-i-connect-to-a-cluster) to the login node. Once they have an open shell on the login node, they can run small processes, and submit larger, longer-running work to the compute nodes using [Slurm](#slurm). Resources accessed through Slurm (either with `sbatch` or `srun`) are dedicated to the user for the length of that Slurm job. Login nodes are a shared resource, so technical restrictions are put into place to reduce the chance of an individual user impacting every user.
+
+On the login nodes, each user is limited to:
+
+- 2 CPUs (200%)
+- 7.5% of the total RAM
+- 500 MB of swap
+- 512 total processes
+- 16,384 open files.
+
+Users needing more resources must submit Slurm jobs. Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.
+
+Users causing performance issues on the login node are subject to having all of those processes killed, even if they are within these limitations.
+
+## Slurm
 
 HPC clusters run [job schedulers](https://en.wikipedia.org/wiki/Job_scheduler) to distribute and manage computational
 resources. Generally, schedulers:
