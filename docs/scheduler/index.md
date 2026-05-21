@@ -4,7 +4,9 @@ title: Cluster Overview
 
 ## Login nodes
 
-The login node is the point where most users interact with the cluster. Most users [SSH](../general/access.md#how-do-i-connect-to-a-cluster) to the login node. Once they have an open shell on the login node, they can run small processes, and submit larger, longer-running work to the compute nodes using [Slurm](#slurm). Resources accessed through Slurm (either with `sbatch` or `srun`) are dedicated to the user for the length of that Slurm job. Login nodes are a shared resource, so technical restrictions are put into place to reduce the chance of an individual user impacting every user.
+The login node is the point where most users directly interact with the cluster via [SSH](../general/access.md#how-do-i-connect-to-a-cluster). Once you have an open shell on the login node, you can run small processes and submit larger, longer-running work to the compute nodes using [Slurm](#slurm). Resources accessed through Slurm (either with `sbatch` or `srun`) are dedicated to the user for the length of that Slurm job. However, login nodes are a shared resource, so technical restrictions are put in place to reduce the chance of an individual user impacting every user.
+
+### Resource restrictions
 
 On the login nodes, each user is limited to:
 
