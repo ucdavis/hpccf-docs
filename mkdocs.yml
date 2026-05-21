@@ -11,7 +11,7 @@ nav:
       - Contact Support: support.md
       - Data Transfer: data-transfer.md
       - Job Scheduling:
-          - About: scheduler/index.md
+          - Cluster Overview: scheduler/index.md
           - Commands: scheduler/commands.md
           - Free Access: scheduler/free-access.md
           - Job Scripts: scheduler/jobscripts.md
