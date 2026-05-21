@@ -23,7 +23,7 @@ Or with `conda`:
 
 Then install the dependencies:
 
-    python -m pip install -r requirements.txt
+    python -m pip install --upgrade -r requirements.txt
 
 You can serve the documentation locally by running:
 
