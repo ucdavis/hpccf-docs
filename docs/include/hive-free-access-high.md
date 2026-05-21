@@ -4,5 +4,6 @@ In the `high` partition, every member of `publicgrp` has combined access to 128 
     - 8 CPUs
     - 128 GB of RAM
     - 1 GPU
+    - 30 days (30-00) of runtime
 
 - You can access these resources by adding `--account=publicgrp --partition=high` to your `srun` or `sbatch` command.
