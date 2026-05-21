@@ -32,7 +32,7 @@
     
     
       
-        <title>Job Scheduling - HPC@UCD Documentation</title>
+        <title>Cluster Overview - HPC@UCD Documentation</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__toc"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#login-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Job Scheduling
+              Cluster Overview
             
           </span>
         </div>
@@ -524,6 +529,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -531,7 +554,7 @@
   <span class="md-ellipsis">
     
   
-    About
+    Cluster Overview
   
 
     
@@ -540,6 +563,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#login-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login nodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Login nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slurm
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1988,6 +2067,53 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#login-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login nodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Login nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slurm
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2004,8 +2130,22 @@
   
 
 
-  <h1>About</h1>
+  <h1>Cluster Overview</h1>
 
+<h2 id="login-nodes">Login nodes<a class="headerlink" href="#login-nodes" title="Permanent link">&para;</a></h2>
+<p>The login node is the point where most users directly interact with the cluster via <a href="../general/access/#how-do-i-connect-to-a-cluster">SSH</a>. Once you have an open shell on the login node, you can run small processes and submit larger, longer-running work to the compute nodes using <a href="#slurm">Slurm</a>. Resources accessed through Slurm (either with <code>sbatch</code> or <code>srun</code>) are dedicated to the user for the length of that Slurm job. However, login nodes are a shared resource, so technical restrictions are put in place to reduce the chance of an individual user impacting every user.</p>
+<h3 id="resource-restrictions">Resource restrictions<a class="headerlink" href="#resource-restrictions" title="Permanent link">&para;</a></h3>
+<p>On the login nodes, each user is limited to:</p>
+<ul>
+<li>2 CPUs (200%)</li>
+<li>7.5% of the total RAM</li>
+<li>500 MB of swap</li>
+<li>512 total processes</li>
+<li>16,384 open files.</li>
+</ul>
+<p>Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.</p>
+<p>Users causing performance issues on the login node are subject to having all of those processes killed, even if they are within these limitations.</p>
+<h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
 <p>HPC clusters run <a href="https://en.wikipedia.org/wiki/Job_scheduler">job schedulers</a> to distribute and manage computational
 resources. Generally, schedulers:</p>
 <ul>
