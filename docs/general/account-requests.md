@@ -27,7 +27,7 @@ Cluster specific information:
     1. Login to [HiPPO](https://hippo.ucdavis.edu)
     1. Select the cluster you would like an account on.
     1. Under `Who is sponsoring your account?`
-        - If you are a qualifying faculty or staff member intending to request your own group, enter: `New Sponsor Onboarding`
+        - If you are a qualifying faculty or staff member intending to request your own group, enter: `New Sponsor Onboarding`. After your account is approved, you still need to follow the [Request Group Creation](#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources) steps.
         - If you have a PI, search for their name.
         - If you need access to the free-tier, see above (Cluster specific information).
     1. Under `Who is your supervising PI?`
@@ -40,7 +40,7 @@ Cluster specific information:
         - Note: Hive allows SSH with campus passphrases or a SSH key, all other clusters **require** a SSH key.
         - For help generating a SSH key, see [How do I generate an SSH key pair?](access.md#how-do-i-generate-an-ssh-key-pair)
     1. Wait for a confirmation email that your account was created.
-    1. If you are a qualifying faculty or staff member and require your own group, follow the [Request Group Creation](#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources) instructions.
+    1. If you are a qualifying faculty or staff member and require your own group, follow the [Request Group Creation](#if-you-are-a-pi-and-have-bought-or-are-planning-to-purchase-resources) steps.
 
 #### How to request access to another group on a cluster:
 
