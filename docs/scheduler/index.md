@@ -14,7 +14,7 @@ On the login nodes, each user is limited to:
 - 512 total processes
 - 16,384 open files.
 
-Users needing more resources must submit Slurm jobs. Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.
+Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.
 
 Users causing performance issues on the login node are subject to having all of those processes killed, even if they are within these limitations.
 
