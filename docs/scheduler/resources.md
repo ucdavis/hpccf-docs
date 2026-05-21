@@ -146,8 +146,8 @@ So, we got 2 instances of `nproc`, each reported `2` CPUs in their task.
 
 !!! abstract "Summary"
 
-    If you want to run multithreaded jobs, use `--cpus-per-task N_THREADS` and `-ntasks 1`.
-    If you want a multiprocess job (or an MPI job), increase `-ntasks`.
+    If you want to run multithreaded jobs, use `--cpus-per-task N_THREADS` and `--ntasks 1`.
+    If you want a multiprocess job (or an MPI job), increase `--ntasks`.
 
 ??? info "The SMT Edge Case"
 

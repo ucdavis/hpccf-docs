@@ -2,7 +2,7 @@
 
 [![pages-build-deployment](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ucdavis/hpccf-docs/actions/workflows/pages/pages-build-deployment)
 
-To get started with local development, first stop, and read our [style guide](docs.hpc.ucdavis.edu/meta/style). 
+To get started with local development, first stop, and read our [style guide](https://docs.hpc.ucdavis.edu/meta/style/). 
 Then, clone the docs and spack-ucdavis repos:
 
     git clone git@github.com:ucdavis/hpccf-docs.git
@@ -23,7 +23,7 @@ Or with `conda`:
 
 Then install the dependencies:
 
-    python -m pip install -r requirements.txt
+    python -m pip install --upgrade -r requirements.txt
 
 You can serve the documentation locally by running:
 

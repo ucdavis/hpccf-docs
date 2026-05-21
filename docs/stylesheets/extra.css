@@ -1,7 +1,8 @@
 [data-md-color-scheme="ucdavis"] {
-    --md-primary-fg-color:               hsla(212, 94%, 21%, 1);
-    --md-primary-fg-color--light:        hsla(211, 30%, 45%, 1);
-    --md-primary-fg-color--dark:         hsla(210, 100%, 16%, 1);
+    --mx-topbar-bg:                      hsla(211, 95%, 16%, 1);
+    --md-primary-fg-color:               hsla(211, 95%, 16%, 1);
+    --md-primary-fg-color--light:        hsla(211, 95%, 16%, 1);
+    --md-primary-fg-color--dark:         hsla(211, 95%, 16%, 1);
     --md-primary-bg-color:               hsla(0, 0%, 90%, 1);
     --md-primary-bg-color--light:        hsla(0, 0%, 100%, 0.7);
   
@@ -12,8 +13,8 @@
 }
 
 [data-md-color-scheme="slate"] {
-    --md-hue: 240; 
-    --md-primary-fg-color:         hsla(210, 100%, 16%, 1);
+    --md-hue: 230; 
+    --mx-topbar-bg:                      hsla(211, 95%, 16%, 1);
 }
 
 .md-grid {
