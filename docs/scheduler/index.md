@@ -14,11 +14,27 @@ On the login nodes, each user is limited to:
 - 7.5% of the total RAM
 - 500 MB of swap
 - 512 total processes
-- 16,384 open files.
+- 16,384 open files
 
 Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.
 
 Users causing performance issues on the login node are subject to having all of those processes killed, even if they are within these limitations.
+
+### Symptoms when limits are hit
+
+#### Open files
+
+When the total open files limit is hit, the behavior depends on how the program does error handling, but well-written programs tend to print an error like this: `Too many open files`.
+
+#### Out-of-memory: RAM or swap
+
+Processes that hit the RAM or swap limits are killed by the kernel's [out-of-memory (OOM)](https://en.wikipedia.org/wiki/Out_of_memory) killer. These processes tend to just vanish without any user notification. The kernel usually targets the process that was using the most RAM, so shells and screen/tmux are rarely killed.
+
+#### Total processes
+
+When the total processes limit is hit, the behavior depends on how the program does error handling, but well-written programs tend to print an error like this: `fork: retry: Resource temporarily unavailable`.
+
+You can get a count of the number of processes you currently have by running `pgrep --count --uid $USER`.
 
 ## Slurm
 
