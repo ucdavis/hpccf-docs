@@ -28,7 +28,7 @@
           <link rel="icon" href="../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.6">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.5cda52a2.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9d7f4a96.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.d7242098.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
       
     
     
@@ -597,6 +597,56 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symptoms-when-limits-are-hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptoms when limits are hit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptoms when limits are hit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-memory-ram-or-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out-of-memory: RAM or swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total processes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2096,6 +2146,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#symptoms-when-limits-are-hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptoms when limits are hit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptoms when limits are hit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-memory-ram-or-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out-of-memory: RAM or swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total processes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2141,10 +2241,18 @@
 <li>7.5% of the total RAM</li>
 <li>500 MB of swap</li>
 <li>512 total processes</li>
-<li>16,384 open files.</li>
+<li>16,384 open files</li>
 </ul>
 <p>Any long-running processes that require intense IO or computation must be run on the compute nodes using Slurm.</p>
 <p>Users causing performance issues on the login node are subject to having all of those processes killed, even if they are within these limitations.</p>
+<h3 id="symptoms-when-limits-are-hit">Symptoms when limits are hit<a class="headerlink" href="#symptoms-when-limits-are-hit" title="Permanent link">&para;</a></h3>
+<h4 id="open-files">Open files<a class="headerlink" href="#open-files" title="Permanent link">&para;</a></h4>
+<p>When the total open files limit is hit, the behavior depends on how the program does error handling, but well-written programs tend to print an error like this: <code>Too many open files</code>.</p>
+<h4 id="out-of-memory-ram-or-swap">Out-of-memory: RAM or swap<a class="headerlink" href="#out-of-memory-ram-or-swap" title="Permanent link">&para;</a></h4>
+<p>Processes that hit the RAM or swap limits are killed by the kernel's <a href="https://en.wikipedia.org/wiki/Out_of_memory">out-of-memory (OOM)</a> killer. These processes tend to just vanish without any user notification. The kernel usually targets the process that was using the most RAM, so shells and screen/tmux are rarely killed.</p>
+<h4 id="total-processes">Total processes<a class="headerlink" href="#total-processes" title="Permanent link">&para;</a></h4>
+<p>When the total processes limit is hit, the behavior depends on how the program does error handling, but well-written programs tend to print an error like this: <code>fork: retry: Resource temporarily unavailable</code>.</p>
+<p>You can get a count of the number of processes you currently have by running <code>pgrep --count --uid $USER</code>.</p>
 <h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
 <p>HPC clusters run <a href="https://en.wikipedia.org/wiki/Job_scheduler">job schedulers</a> to distribute and manage computational
 resources. Generally, schedulers:</p>
@@ -2164,6 +2272,11 @@ scheduler is to optimize a tradeoff between throughput on the cluster as a whole
 <p>The <a href="commands/"><strong>Commands</strong></a> section describes how to manage jobs and check cluster status using standard Slurm
 commands. The <a href="resources/"><strong>Resources</strong></a> section describes how to request computing resources for jobs. The
 <a href="jobscripts/"><strong>Job Scripts</strong></a> section includes examples of job scripts to be used with <code>sbatch</code>.</p>
+
+
+
+
+
 
 
 
@@ -2255,10 +2368,10 @@ commands. The <a href="resources/"><strong>Resources</strong></a> section descri
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.download": "Download", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.1a8646e9.min.js"></script>
+      <script src="../assets/javascripts/bundle.4e7371e1.min.js"></script>
       
         <script src="../javascript/mathjax.js"></script>
       
