@@ -51,6 +51,7 @@ nav:
       - Migrating from LSSC0: hive/lssc0-data-migration.md
       - Waltz temporary access: hive/waltz.md
   - Maintenance:
+      - June 2026: maintenance/june-2026.md
       - December 2025: maintenance/december-2025.md
   - Meta:
       - Style Guide: meta/style.md
