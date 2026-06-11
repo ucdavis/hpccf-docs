@@ -81,11 +81,3 @@ You will not be able to see any group or sponsor changes until Hippo synchronize
 ## HPC2
 
 Users who are associated with PIs in the College of Engineering can request an account on HPC2 by filling out [this form](https://hpc.ucdavis.edu/form/account-request-form).
-
-## LSSC0 (Barbera)
-
-The LSSC0 cluster will be retired April 30th, 2026. Users who are interested in computing resources should [create an account](#how-to-request-a-new-account-on-a-cluster) on the Hive HPC cluster.
-
-## Atomate, Cardio, Demon, Impact, Peloton
-
-These clusters have been retired.
