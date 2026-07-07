@@ -195,10 +195,9 @@ Unloading the `conda` module also deactivates all conda environments.
 
 ## Migrating from User-installed Conda
 
-If you have installed conda in your home directory already, you will get an error when you try to load the conda module.
-This is necessary because user-installed condas set environment variables that clash with the central install. In order
-to migrate, you will need to remove the initialization code that the conda installer adds to your shell configuration.
-This code will most likely be in either `~/.bashrc` or `~/.bash_profile`, and will look something like:
+If you have installed conda in your home directory already, you will get an error when you try to load the conda module. User-installed conda sets environment variables that clash with the central install. To migrate, you will need to remove the initialization code that the conda installer, or `conda init`, adds to your shell configuration. If you use [bash](https://www.gnu.org/software/bash/) this code will most likely be in either `~/.bashrc` or `~/.bash_profile`. If you use a different shell, then please consult the documentation for that shell.
+
+In `bash` or a `bash`-like shell, it will look something like:
 
 ```bash
 # >>> conda initialize >>>
