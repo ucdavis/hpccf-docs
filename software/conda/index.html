@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ad98c137.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -2385,10 +2385,8 @@ example, on farm:</p>
 </code></pre></div>
 <p>Unloading the <code>conda</code> module also deactivates all conda environments.</p>
 <h2 id="migrating-from-user-installed-conda">Migrating from User-installed Conda<a class="headerlink" href="#migrating-from-user-installed-conda" title="Permanent link">&para;</a></h2>
-<p>If you have installed conda in your home directory already, you will get an error when you try to load the conda module.
-This is necessary because user-installed condas set environment variables that clash with the central install. In order
-to migrate, you will need to remove the initialization code that the conda installer adds to your shell configuration.
-This code will most likely be in either <code>~/.bashrc</code> or <code>~/.bash_profile</code>, and will look something like:</p>
+<p>If you have installed conda in your home directory already, you will get an error when you try to load the conda module. User-installed conda sets environment variables that clash with the central install. To migrate, you will need to remove the initialization code that the conda installer, or <code>conda init</code>, adds to your shell configuration. If you use <a href="https://www.gnu.org/software/bash/">bash</a> this code will most likely be in either <code>~/.bashrc</code> or <code>~/.bash_profile</code>. If you use a different shell, then please consult the documentation for that shell.</p>
+<p>In <code>bash</code> or a <code>bash</code>-like shell, it will look something like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/home/camille/miniconda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
