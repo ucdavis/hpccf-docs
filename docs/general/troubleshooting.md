@@ -4,7 +4,7 @@ Here are some of the most common issues users face when using SSH.
 
 ### Keys
 
-The following clusters use SSH keys: Farm, Franklin, Hive, and HPC2.
+The following clusters use SSH keys: Farm, Franklin, and Hive.
 
 If you connect to one of these and are asked for a password (as distinct from a passphrase for your key), your key is
 not being recognized. This is usually because of permissions or an unexpected filename. SSH expects your key to be one
@@ -23,9 +23,6 @@ If you kept the default value, your permissions should be set so that only you c
 ```bash
 chmod 600 $HOME/.ssh/id_rsa
 ```
-
-On HPC2, your public key is kept in `$HOME/.ssh/authorized_keys`. Please make sure to not remove your key from this
-file. Doing so will cause you will lose access.
 
 ## Common Slurm Scheduler Issues
 

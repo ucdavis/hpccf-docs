@@ -52,8 +52,7 @@ cycle of support, facilitating greater access to HPC for a more significant numb
 support for college-level needs. HPC@UCD offers two tiers of support moving forward and incentives to merge existing
 hardware with the new cluster when possible.
 
-**HPC2**: Sponsored by the College of Engineering and Computer Science and is open to principal investigators associated
-with CoE.
+**HPC2**: As of July 2026, the HPC2 hardware has been [integrated](https://hpc.ucdavis.edu/hpc2-migration-hive) with Hive.
 
 ## How to request help
 
