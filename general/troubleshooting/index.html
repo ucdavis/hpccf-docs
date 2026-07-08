@@ -2219,7 +2219,7 @@
 <h2 id="common-ssh-issues">Common SSH Issues<a class="headerlink" href="#common-ssh-issues" title="Permanent link">&para;</a></h2>
 <p>Here are some of the most common issues users face when using SSH.</p>
 <h3 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h3>
-<p>The following clusters use SSH keys: Farm, Franklin, Hive, and HPC2.</p>
+<p>The following clusters use SSH keys: Farm, Franklin, and Hive.</p>
 <p>If you connect to one of these and are asked for a password (as distinct from a passphrase for your key), your key is
 not being recognized. This is usually because of permissions or an unexpected filename. SSH expects your key to be one
 of a specific set of names. Unless you have specified something other than the default, this is probably going to be
@@ -2231,8 +2231,6 @@ of a specific set of names. Unless you have specified something other than the d
 <code>(-rw------- or 600)</code>. To ensure this is the case, you can do the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_rsa
 </code></pre></div>
-<p>On HPC2, your public key is kept in <code>$HOME/.ssh/authorized_keys</code>. Please make sure to not remove your key from this
-file. Doing so will cause you will lose access.</p>
 <h2 id="common-slurm-scheduler-issues">Common Slurm Scheduler Issues<a class="headerlink" href="#common-slurm-scheduler-issues" title="Permanent link">&para;</a></h2>
 <p>These are the most common issues with job scheduling using Slurm.</p>
 <h3 id="using-a-non-default-account">Using a non-default account<a class="headerlink" href="#using-a-non-default-account" title="Permanent link">&para;</a></h3>
