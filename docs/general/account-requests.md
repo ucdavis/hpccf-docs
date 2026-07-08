@@ -80,4 +80,6 @@ You will not be able to see any group or sponsor changes until Hippo synchronize
 
 ## HPC2
 
-Users who are associated with PIs in the College of Engineering can request an account on HPC2 by filling out [this form](https://hpc.ucdavis.edu/form/account-request-form).
+As of July 2026, the HPC2 hardware has been [integrated](https://hpc.ucdavis.edu/hpc2-migration-hive) with Hive.
+
+Users can request accounts through [HiPPO](#how-to-request-a-new-account-on-a-cluster).

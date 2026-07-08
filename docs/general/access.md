@@ -277,9 +277,3 @@ shown in the error output (`ssh-keygen -f ...`). If they do not match, [open a s
 
 -   `ECDSA: SHA256:AmJ+z2miIMXlSAcm7k8YwKlIWk5+VqxyT0R4q3fvpcA`
 -   `ED25519: SHA256:b5nv86Ciaqg1yrUVai6bZ0Hk4IpzAFLWtIPDBdacbQM`
-
-#### HPC2 (`hpc2.engr.ucdavis.edu`)
-
--   `RSA: SHA256:ZC23UiJLib0sozDEClkmD5q+TgeZf/mol6xzIQY30xE`
--   `ECDSA: SHA256:ymN3g0Ow4BM2Rd/zE3THZg7nv+mOs75ENCe5GcvWQoM`
--   `ED25519: SHA256:Svzxx62P/NxrsISeyPZ06nW+YkDYsE1xQc1wD/61tFI`
