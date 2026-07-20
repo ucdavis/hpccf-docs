@@ -32,6 +32,8 @@ UC Davis staff, faculty, and graduate students are entitled to free access to:
 
 In addition to this, each new user is allocated a 20 GB home directory.
 
+Hive does not generally provide accounts to undergraduates. Undergraduate researchers may request an account as part of a PI group, and access can then be approved by that PI.
+
 To request free access, follow the [request a new account](../general/account-requests.md) documentation and request
 access to the `HPC@UCD Sponsored Public Access (publicgrp)` from the list of sponsors through
 [Hippo](https://hippo.ucdavis.edu/Hive/myaccount).
