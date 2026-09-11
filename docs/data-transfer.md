@@ -6,23 +6,21 @@ There are four general methods for getting data to/from a cluster.
 
 ## Globus
 
-Farm, Franklin, and Hive have Globus v5 installed, use the [Globus File Manager](https://app.globus.org/) to access
-exported collections.
+Farm, Franklin, and Hive have Globus v5 installed. Use the [Globus File Manager](https://app.globus.org/) to access exported collections. HPC@UCD has purchased a license for Globus use within our HPC clusters. This allows [Guest Collections](#guest-collections) which can be used to share data with users outside of UCD.
 
 ### Home directories
 
-Home directories for all three clusters are already exported. On Globus, you can find the home directory collection by
-searching for `UC Davis CLUSTER-NAME home`.
+Home directories for all three clusters are already exported. On Globus, you can find the home directory collection by searching for `UC Davis CLUSTER-NAME home`.
 
 ### PI directories
 
-Because of the way Globus v5 works, each PI directory must be exported manually by HPC@UCD staff. If you need a PI
-directory exported, please contact HPC support and CC your PI for approval.
+Because of the way Globus v5 works, each PI directory must be exported manually by HPC@UCD staff. If you need a PI directory exported, please contact [HPC support](support.md) and CC your PI for approval.
 
-Once the PI group directory is exported, you can find it by searching for a collection named
-`UC Davis CLUSTER-NAME PI-share-name`. In the Globus File Manager for that collection, you will be able to read any file
-you normally have access to, but for security reasons, you will only be able to write files to
-`/globus-write/Your-Login-ID/`. On the cluster, your newly written data will be under your PI's storage.
+Once the PI group directory is exported, you can find it by searching for a collection named `UC Davis CLUSTER-NAME PI-share-name`. In the [Globus File Manager](https://app.globus.org/file-manager) for that collection, you will be able to read any file you normally have access to, but for security reasons, you will only be able to write files to `/globus-write/Your-Login-ID/`. On the cluster, your newly written data will be under your PI's storage, e.g., `/quobyte/PIgrp/globus-write/Your-Login-ID/`.
+
+### Guest Collections
+
+Guest Collections allow you to share data from your HPC storage with non-UCD users who can access that data through the Globus system. For security reasons, this ability needs to be requested by the PI for their Globus share. Additionally, only the PI will be able to create Guest Collections. Please contact [HPC support](support.md) if you would like to enable this feature. Once the feature is enabled, the PI will be able to create Guest Collections by following the [Globus instructions](https://docs.globus.org/guides/tutorials/manage-files/share-files/).
 
 **Farm, Franklin:**
 
@@ -31,10 +29,6 @@ you normally have access to, but for security reasons, you will only be able to 
 **Hive:**
 
 : `/quobyte/Your-PI-Group-grp/globus-write/Your-Login-ID/`
-
-???+ Warning "Globus Free File Transfer limitations"
-
-    HPC@UCD does not have a paid subscription for Globus, and uses the `Free File Transfer…for users at non-profit research institutions` tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.
 
 ## Command-line tools
 
