@@ -123,7 +123,7 @@ restore. See the [symlinks](#can-the-backup-system-back-up-symlinks) section for
 You, the PI, or a designated list of email addresses. Although HPC@UCD monitors the backup service, we do NOT, and we cannot emphasize this enough, do NOT monitor the individual backups. It is up to you to monitor those and open a ticket
 if you notice any issues.
 
-If you are not receiving the daily email summary, then it is likely something is wrong and your backups are failing. Please open a [support ticket](../support.md) if you are not receiving the daily backup summary.
+If you are not receiving the daily email summary, then something is wrong and your backups are failing. Please open a [support ticket](../support.md) if you are not receiving the daily backup summary.
 
 ### How much backup space do I need?
 
