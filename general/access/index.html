@@ -26,7 +26,7 @@
           <link rel="icon" href="../../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -196,7 +196,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -2425,7 +2425,9 @@
           
             <div class="md-content" data-md-component="content">
               
-              <article class="md-content__inner md-typeset">
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
                 
                   
   
@@ -2632,7 +2634,7 @@ tick the <strong>Compression</strong> box as well.</p>
 find a match, <a href="../../support/">open a support ticket</a> before proceeding.</p>
 <details>
 <summary>Example prompt</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">The authenticity of host &#39;farm.hpc.ucdavis.edu (128.120.146.1)&#39; can&#39;t be established.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">The authenticity of host 'farm.hpc.ucdavis.edu (128.120.146.1)' can't be established.</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">ED25519 key fingerprint is SHA256:qiPI72KfRjrAeEdww3RVkrM1Bi7GE6sEoS4JRnKzC1I.</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span>
 </code></pre></div>
@@ -2655,8 +2657,8 @@ shown in the error output (<code>ssh-keygen -f ...</code>). If they do not match
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="go">Add correct host key in /home/YourLocalLoginID/.ssh/known_hosts to get rid of this message.</span>
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="go">Offending ECDSA key in /home/YourLocalLoginID/.ssh/known_hosts:32</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="go">remove with:</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="go">ssh-keygen -f &quot;/home/YourLocalLoginID/.ssh/known_hosts&quot; -R &quot;Server.You.SSH&#39;d.To&quot;</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="go">ECDSA host key for Server.You.SSH&#39;d.To has changed and you have requested strict checking.</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="go">ssh-keygen -f "/home/YourLocalLoginID/.ssh/known_hosts" -R "Server.You.SSH'd.To"</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="go">ECDSA host key for Server.You.SSH'd.To has changed and you have requested strict checking.</span>
 </code></pre></div>
 </details>
 <h3 id="ssh-key-fingerprints-for-major-clusters">SSH key fingerprints for major clusters<a class="headerlink" href="#ssh-key-fingerprints-for-major-clusters" title="Permanent link">&para;</a></h3>
@@ -2773,10 +2775,17 @@ shown in the error output (<code>ssh-keygen -f ...</code>). If they do not match
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
       
         <script src="../../javascript/mathjax.js"></script>
       

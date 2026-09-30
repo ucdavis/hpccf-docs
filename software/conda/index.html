@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -198,7 +198,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -2223,7 +2223,9 @@
           
             <div class="md-content" data-md-component="content">
               
-              <article class="md-content__inner md-typeset">
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
                 
                   
   
@@ -2292,14 +2294,14 @@ previous conda installation in your home directory -- you do not need to recreat
 environments or install packages:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>datasci2<span class="w"> </span>pandas
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">Looking for: [&#39;pandas&#39;]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">Looking for: ['pandas']</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">error    libmamba Could not open lockfile &#39;/share/apps/conda/pkgs/cache/cache.lock&#39;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">warning  libmamba Cache file &quot;/share/apps/conda/pkgs/cache/497deca9.json&quot; was modified by another program</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">warning  libmamba Cache file &quot;/home/camw/.conda/pkgs/cache/497deca9.json&quot; was modified by another program</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">error    libmamba Could not open lockfile &#39;/share/apps/conda/pkgs/cache/cache.lock&#39;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="go">warning  libmamba Cache file &quot;/share/apps/conda/pkgs/cache/09cdf8bf.json&quot; was modified by another program</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="go">warning  libmamba Cache file &quot;/home/camw/.conda/pkgs/cache/09cdf8bf.json&quot; was modified by another program</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">error    libmamba Could not open lockfile '/share/apps/conda/pkgs/cache/cache.lock'</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">warning  libmamba Cache file "/share/apps/conda/pkgs/cache/497deca9.json" was modified by another program</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">warning  libmamba Cache file "/home/camw/.conda/pkgs/cache/497deca9.json" was modified by another program</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">error    libmamba Could not open lockfile '/share/apps/conda/pkgs/cache/cache.lock'</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="go">warning  libmamba Cache file "/share/apps/conda/pkgs/cache/09cdf8bf.json" was modified by another program</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="go">warning  libmamba Cache file "/home/camw/.conda/pkgs/cache/09cdf8bf.json" was modified by another program</span>
 </code></pre></div>
 <p><strong>These can be safely ignored.</strong></p>
 </details>
@@ -2388,14 +2390,14 @@ example, on farm:</p>
 <p>If you have installed conda in your home directory already, you will get an error when you try to load the conda module. User-installed conda sets environment variables that clash with the central install. To migrate, you will need to remove the initialization code that the conda installer, or <code>conda init</code>, adds to your shell configuration. If you use <a href="https://www.gnu.org/software/bash/">bash</a>, this code will most likely be in either <code>~/.bashrc</code> or <code>~/.bash_profile</code>. If you use a different shell, then please consult the documentation for that shell. If you are unsure what shell you are using, you can run <code>echo $SHELL</code> from your HPC account.</p>
 <p>In <code>bash</code> or a <code>bash</code>-like shell, it will look something like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/home/camille/miniconda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="s1">'/home/camille/miniconda/bin/conda'</span><span class="w"> </span><span class="s1">'shell.zsh'</span><span class="w"> </span><span class="s1">'hook'</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">"</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">"</span><span class="nv">$__conda_setup</span><span class="s2">"</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">else</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/home/camille/miniconda/etc/profile.d/conda.sh&quot;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"/home/camille/miniconda/etc/profile.d/conda.sh"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span>.<span class="w"> </span><span class="s2">"/home/camille/miniconda/etc/profile.d/conda.sh"</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="k">else</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/home/camille/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/home/camille/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">fi</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">fi</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">unset</span><span class="w"> </span>__conda_setup
@@ -2500,10 +2502,17 @@ you are using and that you need help with migrating to the central Conda.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
       
         <script src="../../javascript/mathjax.js"></script>
       

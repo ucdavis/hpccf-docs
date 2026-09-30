@@ -28,7 +28,7 @@
           <link rel="icon" href="../../../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.314bbef5.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7aee198.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a45159b5.min.css">
@@ -198,7 +198,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -4715,7 +4715,9 @@
           
             <div class="md-content" data-md-component="content">
               
-              <article class="md-content__inner md-typeset">
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
                 
                   
   
@@ -4865,7 +4867,7 @@ transcriptome assembly to gene-level counts.</p>
 <h3 id="ctffind">ctffind<a class="headerlink" href="#ctffind" title="Permanent link">&para;</a></h3>
 <p>Fast and accurate defocus estimation from electron micrographs.</p>
 <p><strong>Versions</strong>: 4.1.14</p>
-<p><strong>Arches</strong>: amd, intel</p>
+<p><strong>Arches</strong>: intel, amd</p>
 <p><strong>Modules</strong>: <code>ctffind/4.1.14+intel</code>, <code>ctffind/4.1.14+amd</code></p>
 <h3 id="cuda">cuda<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h3>
 <p>CUDA is a parallel computing platform and programming model invented by
@@ -4937,7 +4939,7 @@ Data</p>
 <h3 id="gcc">gcc<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
 <p>The GNU Compiler Collection includes front ends for C, C++, Objective-C,
 Fortran, Ada, and Go, as well as libraries for these languages.</p>
-<p><strong>Versions</strong>: 7.5.0, 4.9.4, 5.5.0</p>
+<p><strong>Versions</strong>: 5.5.0, 7.5.0, 4.9.4</p>
 <p><strong>Arches</strong>: generic</p>
 <p><strong>Modules</strong>: <code>gcc/5.5.0</code>, <code>gcc/7.5.0</code>, <code>gcc/4.9.4</code></p>
 <h3 id="gctf">gctf<a class="headerlink" href="#gctf" title="Permanent link">&para;</a></h3>
@@ -5394,9 +5396,9 @@ from genomic sequences.</p>
 stand-alone computer program that employs an empirical Bayesian approach
 to refinement of (multiple) 3D reconstructions or 2D class averages in
 electron cryo-microscopy (cryo-EM).</p>
-<p><strong>Versions</strong>: 3.1.3, 4.0.0, 4.0.1</p>
-<p><strong>Variants</strong>: cpu, gpu</p>
-<p><strong>Arches</strong>: amd, intel+gpu_delay, intel</p>
+<p><strong>Versions</strong>: 4.0.1, 4.0.0, 3.1.3</p>
+<p><strong>Variants</strong>: gpu, cpu</p>
+<p><strong>Arches</strong>: intel, intel+gpu_delay, amd</p>
 <p><strong>Modules</strong>: <code>relion/cpu/3.1.3+amd</code>, <code>relion/gpu/3.1.3+amd</code>, <code>relion/gpu/3.1.3+intel</code>, <code>relion/cpu/4.0.0+amd</code>, <code>relion/gpu/4.0.0+amd</code>, <code>relion/gpu/4.0.0+intel</code>, <code>relion/3.1.3</code>, <code>relion/4.0.0</code>, <code>relion/cpu/4.0.1+amd</code>, <code>relion/gpu/4.0.1+amd</code>, <code>relion/4.0.1</code>, <code>relion/gpu/4.0.1+intel+gpu_delay</code>, <code>relion/gpu/4.0.1+intel</code></p>
 <h3 id="relion-bbr">relion-bbr<a class="headerlink" href="#relion-bbr" title="Permanent link">&para;</a></h3>
 <p>A modified version of Relion supporting block-based-reconstruction as
@@ -5407,7 +5409,7 @@ described in 10.1038/s41467-018-04051-9.</p>
 <p><strong>Modules</strong>: <code>relion-bbr/gpu/3.1.2+intel</code></p>
 <h3 id="relion-helper">relion-helper<a class="headerlink" href="#relion-helper" title="Permanent link">&para;</a></h3>
 <p>Utilities for Relion Cryo-EM data processing on clusters.</p>
-<p><strong>Versions</strong>: 0.2, 0.3, 0.1</p>
+<p><strong>Versions</strong>: 0.2, 0.1, 0.3</p>
 <p><strong>Arches</strong>: generic</p>
 <p><strong>Modules</strong>: <code>relion-helper/0.1</code>, <code>relion-helper/0.2</code>, <code>relion-helper/0.3</code></p>
 <h3 id="repeatmasker">repeatmasker<a class="headerlink" href="#repeatmasker" title="Permanent link">&para;</a></h3>
@@ -5624,10 +5626,17 @@ MPI/PGAS frameworks</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": {"options": {"baseUrl": "../../..", "bundleUrl": "../../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.44453a05.min.js"></script>
       
         <script src="../../../javascript/mathjax.js"></script>
       

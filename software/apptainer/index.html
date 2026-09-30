@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/HPCCF-logo.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -198,7 +198,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -2277,7 +2277,9 @@
           
             <div class="md-content" data-md-component="content">
               
-              <article class="md-content__inner md-typeset">
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
                 
                   
   
@@ -2319,12 +2321,12 @@
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  # specify what path(s) to bind inside the apptainer
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  export APPTAINER_BIND=$PWD
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn&#39;t exist
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  if [ ! -f tflo.sif ]; then
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  fi
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  apptainer exec --nv tflo.sif python3 -c &quot;import tensorflow as tf; print(&#39;TensorFlow version:&#39;, tf.__version__)&quot;
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  apptainer exec --nv tflo.sif python3 -c "import tensorflow as tf; print('TensorFlow version:', tf.__version__)"
 </code></pre></div>
 Feel free to modify this script for your purposes and to potentially run multiple commands and scripts within an apptainer.</p>
 <h2 id="slurm-interactive-jobs">Slurm Interactive Jobs<a class="headerlink" href="#slurm-interactive-jobs" title="Permanent link">&para;</a></h2>
@@ -2356,12 +2358,12 @@ srun \
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  # specify what path(s) to bind inside the apptainer
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  export APPTAINER_BIND=$PWD
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn&#39;t exist
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  # check for an apptainer(singularity) image (.sif) and build/pull one if it doesn't exist
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  if [ ! -f tflo.sif ]; then
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    apptainer build tflo.sif docker://tensorflow/tensorflow:latest-gpu
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  fi
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  apptainer shell --nv tflo.sif $@ # &quot;$@&quot; adds optional support for additional parameters that can be passed when executing this wrapper script that are passed to the apptainer
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  apptainer shell --nv tflo.sif $@ # "$@" adds optional support for additional parameters that can be passed when executing this wrapper script that are passed to the apptainer
 </code></pre></div>
 This wrapper starts a shell inside whatever apptainer you specify</p>
 
@@ -2460,10 +2462,17 @@ This wrapper starts a shell inside whatever apptainer you specify</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
       
         <script src="../../javascript/mathjax.js"></script>
       
