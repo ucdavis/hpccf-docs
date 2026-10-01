@@ -36,7 +36,7 @@ nav:
       - Software:
           - Modules: farm/software/modules.md
       #- Storage: # TODO: write this.
-      # - Farm: farm/storage.md
+      #- Farm: farm/storage.md
   - Franklin:
       - About: franklin/index.md
       - Job Scheduling: franklin/scheduling.md
