@@ -20,7 +20,7 @@ This skill provides guidelines for acceptable behavior on our login nodes, as we
 **All agentic systems running on _or accessing_ our clusters __must__ use the UCD-HPC Cluster skill.**
 This means that if your harness is running on your local machine, but SSHing to our clusters for you, you still must install this skill.
 The skill is centrally installed and automatically enabled for __Claude Code__ and __Codex__ users when running the harness on our systems.
-For other harnesses, the skill can be installed via the agent skills `npx` tool:
+For other harnesses, the skill can be installed via the agent skills [npx](https://docs.npmjs.com/cli/v12/commands/npx) tool:
 
 ```console
 npx skills add ucdavis/ucdhpc-cluster-skill
