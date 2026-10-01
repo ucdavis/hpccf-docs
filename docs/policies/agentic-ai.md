@@ -2,7 +2,7 @@ Agentic AI systems, such as Claude Code and Codex, have become widely used in bo
 These systems are allowed on our clusters, but users must follow our guidelines to make sure their agents do not degrade our services.
 
 __*Users are responsible for the actions of their agents.
-Users whose agents contribute to service degradation or perform actions meant to bypass our policies, such as login node abuse, are subject to having their access removed.*__
+Users whose agents contribute to service degradation or perform actions meant to bypass our policies, such as login node abuse, are subject to having their access suspended.*__
 
 ## Problem Behaviors
 
