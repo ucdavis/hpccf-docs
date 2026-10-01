@@ -27,6 +27,8 @@ nav:
       - Storage:
           - Quobyte: storage/quobyte.md
       - Troubleshooting: general/troubleshooting.md
+      - Usage Policies:
+          - Agentic AI: policies/agentic-ai.md
   - Farm:
       - About: farm/index.md
       - Job Scheduling: farm/scheduling.md
