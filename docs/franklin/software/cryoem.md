@@ -22,10 +22,21 @@ the GPU `+amd` version if you have access to a GPU node.
 If you are completely unfamiliar with Relion, you should start with the
 [tutorial](https://relion.readthedocs.io/en/release-4.0/SPA_tutorial/index.html).
 
-!!! Note Because Relion is GUI driven, you need to `ssh` to Franklin with X11 forwarding enabled. Instructions for
-enabling X11 forwarding can be found in the [Access](../../general/access.md#x11-forwarding) section.
+!!! note
+    
+    Because Relion is GUI driven, you need to `ssh` to Franklin with X11 forwarding enabled. Instructions for
+    enabling X11 forwarding can be found in the [Access](../../general/access.md#x11-forwarding) section.
 
 ### Launching Relion
+
+#### OnDemand Desktop
+
+Relion has a graphical user interface (GUI), and so must be launched in a graphical environment.
+Our recommended approach is to use an [Open Ondemand](../../software/ondemand.md) desktop session.
+You should select a "Franklin Desktop" session and request a relatively minimal instance (say, a single core and 8GB of RAM) with a long runtime to serve as the host.
+Then, open the terminal application, load a Relion module, move to your project directory, and launch.
+
+#### X-11 Forwarding
 
 Make sure you have loaded one of the Relion modules:
 
@@ -56,9 +67,9 @@ dependencies are compiled with architecture-specific flags that match their Reli
   <figcaption>Pre-filled dependent program path.</figcaption>
 </figure>
 
-!!! danger If you plan to switch between Relion modules within the same project, **you must
-[use the procedure described in the relion-helper section](cryoem.md#switching-between-relion-modules-relion-helper)**.
-Failure to do so **will** result in execution errors.
+!!! danger
+
+    If you plan to switch between Relion modules within the same project, **you must [use the procedure described in the relion-helper section](cryoem.md#switching-between-relion-modules-relion-helper)**. Failure to do so **will** result in execution errors.
 
 ### Slurm Configuration
 
