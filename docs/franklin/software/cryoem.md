@@ -1,5 +1,76 @@
 # :material-microscope: :material-dna: Cryo-EM Software Stack
 
+## CryoSPARC
+
+Franklin supports per-group CryoSPARC instances to which access can be granted by request.
+We currently host the following instances:
+
+[**jawdatgrp.cryosparc.franklin.hpc.ucdavis.edu**](https://jawdatgrp.cryosparc.franklin.hpc.ucdavis.edu)
+
+: The al-Bassam lab; instance user is `cryosparc-jawdatgrp-user`.
+
+[**cashjngrp.cryosparc.franklin.hpc.ucdavis.edu**](https://cashjngrp.cryosparc.franklin.hpc.ucdavis.edu)
+
+: The Cash Lab; instance user is `cryosparc-cashjngrp-user`.
+
+[**wdheyergrp.cryosparc.franklin.hpc.ucdavis.edu**](https://wdheyergrp.cryosparc.franklin.hpc.ucdavis.edu)
+
+: The Heyer Lab; instance user is `cryosparc-wdheyergrp-user`.
+
+[**ajfishergrp.cryosparc.franklin.hpc.ucdavis.edu**](https://ajfishergrp.cryosparc.franklin.hpc.ucdavis.edu)
+
+: The Fisher Lab; instance user is `cryosparc-ajfishergrp-user`.
+
+If you need access to one of these instances, please [file a ticket](mailto:hpc-help@ucdavis.edu?subject=CryoSPARC%20Access%20Request) with the instance or lab name and your request.
+
+### CryoSPARC Job Debugging
+
+CryoSPARC jobs fail often a variety of reasons, the most common of which by far is insufficient time or memory when submitting to Slurm.
+**Before submitting a support request, please check that your job did not fail due to resource constraints**.
+You can determine this by looking at the job's full output in the job's `Metadata -> Log` tab, as shown below. 
+
+<figure markdown>
+  ![cryosparc log output](../../img/cryosparc-job-log.png)
+  <figcaption>Complete output for a successful CryoSPARC job.</figcaption>
+</figure>
+
+Jobs that are killed due to resource constraints will usually show an error like "Job is unresponsive - no heartbeat received in 180 seconds" in the main log, but inspection of the output will show something like this:
+
+```console
+2026-10-04 20:07:34,557 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:07:44,593 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:07:54,628 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:08:04,663 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:08:14,698 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:08:24,796 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:08:34,830 core                 heartbeat        INFO   | ========= Updating heartbeat
+2026-10-04 20:08:44,864 core                 heartbeat        INFO   | ========= Updating heartbeat
+[2026-10-04T20:08:50.006] error: *** JOB 1811413 ON gpu-7-50 CANCELLED AT 2026-10-04T20:08:50 DUE TO TIME LIMIT ***
+```
+
+*This is not a problem with CryoSPARC or Franklin*.
+It means your job was not allocated enough time to complete, or in the case it says "OOM" or "out of memory," that insufficient memory was requested.
+You may sometimes see jobs of the same type succeed on some input data and failed in this way on other; this is because CryoSPARC's resource request algorithm is quite naive, and doesn't very accurately take into account things like the box size of your input images.
+
+### Requesting Additional Resources
+
+The cluster worker configuration uses a template to build the Slurm submission script based on the job directories and default CryoSPARC resource request values.
+This template already bumps the resource requests over the defaults based on our experiments, but sometimes this is insufficient.
+We have implemented additional variables that allow the user to further increase these requests; they can be configured in the job creation flow during lane selection.
+
+<figure markdown>
+  ![cryosparc resource increase](../../img/cryosparc-job-variables.png)
+  <figcaption>Time and memory multiplier variables.</figcaption>
+</figure>
+
+As the naming suggests, these simply multiply the total time or memory request by the given value, which can be any real number.
+Note that this makes it possible to form a resource request that cannot be filled by the cluster, either by requesting more RAM than any node has, or more time than the configured maximum; be careful not to choose arbitrarily high numbers here.
+You can check on your CryoSPARC instance's Slurm jobs with the `squeue` command, filtering down using the instance users listed above; for example:
+
+```console
+$ squeue -u cryosparc-jawdatgrp-user
+```
+
 ## Relion
 
 Franklin has multiple CPU and GPU optimized versions of the
@@ -22,10 +93,21 @@ the GPU `+amd` version if you have access to a GPU node.
 If you are completely unfamiliar with Relion, you should start with the
 [tutorial](https://relion.readthedocs.io/en/release-4.0/SPA_tutorial/index.html).
 
-!!! Note Because Relion is GUI driven, you need to `ssh` to Franklin with X11 forwarding enabled. Instructions for
-enabling X11 forwarding can be found in the [Access](../../general/access.md#x11-forwarding) section.
+!!! note
+    
+    Because Relion is GUI driven, you need to `ssh` to Franklin with X11 forwarding enabled. Instructions for
+    enabling X11 forwarding can be found in the [Access](../../general/access.md#x11-forwarding) section.
 
 ### Launching Relion
+
+#### OnDemand Desktop
+
+Relion has a graphical user interface (GUI), and so must be launched in a graphical environment.
+Our recommended approach is to use an [Open Ondemand](../../software/ondemand.md) desktop session.
+You should select a "Franklin Desktop" session and request a relatively minimal instance (say, a single core and 8GB of RAM) with a long runtime to serve as the host.
+Then, open the terminal application, load a Relion module, move to your project directory, and launch.
+
+#### X-11 Forwarding
 
 Make sure you have loaded one of the Relion modules:
 
@@ -56,9 +138,9 @@ dependencies are compiled with architecture-specific flags that match their Reli
   <figcaption>Pre-filled dependent program path.</figcaption>
 </figure>
 
-!!! danger If you plan to switch between Relion modules within the same project, **you must
-[use the procedure described in the relion-helper section](cryoem.md#switching-between-relion-modules-relion-helper)**.
-Failure to do so **will** result in execution errors.
+!!! danger
+
+    If you plan to switch between Relion modules within the same project, **you must [use the procedure described in the relion-helper section](cryoem.md#switching-between-relion-modules-relion-helper)**. Failure to do so **will** result in execution errors.
 
 ### Slurm Configuration
 
