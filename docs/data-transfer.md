@@ -32,10 +32,6 @@ you normally have access to, but for security reasons, you will only be able to 
 
 : `/quobyte/Your-PI-Group-grp/globus-write/Your-Login-ID/`
 
-???+ Warning "Globus Free File Transfer limitations"
-
-    HPC@UCD does not have a paid subscription for Globus, and uses the `Free File Transfer…for users at non-profit research institutions` tier. This means you either need to have a login on both ends of the transfer, or the remote end must have the paid version.
-
 ## Command-line tools
 
 ### `scp` — OpenSSH secure file copy
