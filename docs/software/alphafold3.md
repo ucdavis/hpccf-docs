@@ -13,7 +13,7 @@ run script, so you don't need to install anything.
 
 ## How it works
 
-The run script bind-mounts four cluster directories into the container:
+The run script bind-mounts 4 directories into the apptainer:
 
 | On the cluster | Inside the container | Purpose |
 |---|---|---|
@@ -22,8 +22,6 @@ The run script bind-mounts four cluster directories into the container:
 | `$HOME/.af3/models` | `/root/models` | **Your own** AlphaFold 3 model parameters |
 | `/quobyte/databases/alphafold3` | `/root/public_databases` | Genetic and structure databases |
 
-!!! important "You must provide your own model parameters"
-    HPC does **not** provide the AlphaFold 3 model parameters (weights). Google DeepMind
     grants them to individual users only, so each user has to request their own copy as the HPC Core does not have the legal authority to agree to the terms of use on behalf of UC Davis. See
     [Getting the model parameters](#getting-the-model-parameters).
 
@@ -66,11 +64,11 @@ The example script reads `$HOME/.af3/input/fold_input.json`. A minimal single-pr
   ],
   "modelSeeds": [1],
   "dialect": "alphafold3",
-  "version": 1
+  "version": 1```
 
 Read more about inputs here [AlphaFold 3 Inputs](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)
 
-### 4. Use the example script in a sbatch script
+### 4. Call the example script in a sbatch script
 
 The example script /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh:
 ```bash
@@ -103,7 +101,7 @@ apptainer exec \
 | `--db_dir` | Genetic databases inside the container |
 | `--output_dir` | Where results are written (your `$HOME/.af3/output`) |
 
-Add to an sbatch script i.e.
+Add to an sbatch script like so:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=af3
@@ -113,8 +111,8 @@ Add to an sbatch script i.e.
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=8:00:00
-#SBATCH --output=af3_%j.out
-#SBATCH --error=af3_%j.err
+#SBATCH --output=/home/%u/%x/%N.af3_%j.out
+#SBATCH --error=/home/%u/%x/%N.af3_%j.err
 
 /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh
 ```
@@ -123,8 +121,8 @@ Add to an sbatch script i.e.
 
 ```bash
 #SBATCH --array=1-100%10        # %10 = at most 10 running at once
-#SBATCH --output=af3_%A_%a.out
-#SBATCH --error=af3_%A_%a.err
+#SBATCH --output=/home/%u/%x/af3_%A_%a.out
+#SBATCH --error=/home/%u/%x/af3_%A_%a.err
 
 INPUT_JSON=input_${SLURM_ARRAY_TASK_ID}.json
 ```
@@ -132,7 +130,6 @@ INPUT_JSON=input_${SLURM_ARRAY_TASK_ID}.json
 ## Output
 
 Results go in `$HOME/.af3/output/<name>/`:
-
 ```text
 <name>_model.cif                 # top-ranked structure
 <name>_summary_confidences.json  # summary scores of the top model
