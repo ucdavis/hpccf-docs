@@ -22,7 +22,8 @@ The run script bind-mounts 4 directories into the apptainer:
 | `$HOME/.af3/models` | `/root/models` | **Your own** AlphaFold 3 model parameters |
 | `/quobyte/databases/alphafold3` | `/root/public_databases` | Genetic and structure databases |
 
-    grants them to individual users only, so each user has to request their own copy as the HPC Core does not have the legal authority to agree to the terms of use on behalf of UC Davis. See
+!!! important "You must provide your own model parameters"
+ HPC does **not** provide the AlphaFold 3 model parameters (weights). Google DeepMind grants them to individual users only, so each user has to request their own copy as the HPC Core does not have the legal authority to agree to the terms of use on behalf of UC Davis. See
     [Getting the model parameters](#getting-the-model-parameters).
 
 !!! important "You create the `~/.af3` directories"
@@ -47,7 +48,7 @@ Request and download your own copy, then put `af3.bin` in `$HOME/.af3/models`. S
 [Getting the model parameters](#getting-the-model-parameters). Approval can take a few
 days, so request access early.
 
-### 3. Write an input file
+### 3. Add JSON input file
 
 The example script reads `$HOME/.af3/input/fold_input.json`. A minimal single-protein input:
 
@@ -111,18 +112,18 @@ Add to an sbatch script like so:
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=8:00:00
-#SBATCH --output=/home/%u/%x/%N.af3_%j.out
-#SBATCH --error=/home/%u/%x/%N.af3_%j.err
+#SBATCH --output=%x/%N.af3_%j.out
+#SBATCH --error=%x/%N.af3_%j.err
 
 /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh
 ```
 
-**For multiple inputs per job.** Name inputs `input_1.json`, `input_2.json`, ... and add:
+**Tip: For multiple inputs per job.** Name inputs `input_1.json`, `input_2.json`, ... and add:
 
 ```bash
 #SBATCH --array=1-100%10        # %10 = at most 10 running at once
-#SBATCH --output=/home/%u/%x/af3_%A_%a.out
-#SBATCH --error=/home/%u/%x/af3_%A_%a.err
+#SBATCH --output=%x/af3_%A_%a.out
+#SBATCH --error=%x/af3_%A_%a.err
 
 INPUT_JSON=input_${SLURM_ARRAY_TASK_ID}.json
 ```
