@@ -26,31 +26,11 @@ The run script bind-mounts 4 directories into the apptainer:
  HPC does **not** provide the AlphaFold 3 model parameters (weights). Google DeepMind grants them to individual users only, so each user has to request their own copy as the HPC Core does not have the legal authority to agree to the terms of use on behalf of UC Davis. See
     [Getting the model parameters](#getting-the-model-parameters).
 
-!!! important "You create the `~/.af3` directories"
-    You need to create
-    `$HOME/.af3/input`, `$HOME/.af3/output`, and `$HOME/.af3/models` yourself
-    ([step 1](#1-create-your-af3-directories)) before running anything. Apptainer
-    can't bind a directory that doesn't exist.
-
-
 ## Quick start
 
-### 1. Create your `.af3` directories
+### 1. Add JSON input file
 
-```bash
-mkdir -p $HOME/.af3/input $HOME/.af3/output $HOME/.af3/models
-chmod 700 $HOME/.af3/models
-```
-
-### 2. Get the model parameters
-
-Request and download your own copy, then put `af3.bin` in `$HOME/.af3/models`. See
-[Getting the model parameters](#getting-the-model-parameters). Approval can take a few
-days, so request access early.
-
-### 3. Add JSON input file
-
-The example script reads `$HOME/.af3/input/fold_input.json`. A minimal single-protein input:
+The example script reads `$HOME/.af3/input/fold_input.json` by default. A minimal single-protein input:
 
 ```json
 {
@@ -71,40 +51,8 @@ The example script reads `$HOME/.af3/input/fold_input.json`. A minimal single-pr
 
 Read more about inputs here [AlphaFold 3 Inputs](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)
 
-### 4. Call the example script in a sbatch script
+### 2. Call the example script in a sbatch script
 
-The example script /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh:
-```bash
-#!/usr/bin/env sh
-
-module load apptainer
-export AF3_DB_DIR="${AF3_DB_DIR:-/quobyte/databases/alphafold3}"
-
-command -v apptainer >/dev/null 2>&1 || echo "apptainer not found" >&2 && exit 1
-apptainer exec \
-	--nv \
-	--bind $HOME/.af3/input:/root/af_input \
-	--bind $HOME/.af3/output:/root/af_output \
-	--bind $AF3_DB_DIR:/root/public_databases \
-	--bind $HOME/.af3/models:/root/models \
-	/cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/alphafold3.sif \
-	python alphafold3/run_alphafold.py \
-	--json_path=/root/af_input/fold_input.json \
-	--model_dir=/root/models \
-	--db_dir=/root/public_databases \
-	--output_dir=/root/af_output $@
-```
-
-| Option | Meaning |
-|---|---|
-| `--nv` | Gives the container access to the node's NVIDIA GPU in case you are using any |
-| `--bind A:B` | Makes cluster directory `A` visible inside the container at `B` |
-| `--json_path` | The input file to predict |
-| `--model_dir` | Model parameters inside the container (your `$HOME/.af3/models`) |
-| `--db_dir` | Genetic databases inside the container |
-| `--output_dir` | Where results are written (your `$HOME/.af3/output`) |
-
-Add to an sbatch script like so:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=af3
@@ -120,15 +68,46 @@ Add to an sbatch script like so:
 /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh
 ```
 
-**Tip: For multiple inputs per job.** Name inputs `input_1.json`, `input_2.json`, ... and add:
+**Tip: For multiple inputs per job.** Name inputs `fold_input1.json`, `fold_input2.json`, ... and add:
 
 ```bash
 #SBATCH --array=1-100%10        # %10 = at most 10 running at once
 #SBATCH --output=%x/af3_%A_%a.out
 #SBATCH --error=%x/af3_%A_%a.err
-
-INPUT_JSON=input_${SLURM_ARRAY_TASK_ID}.json
 ```
+
+## The example script /cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/run-alphafold.sh:
+```bash
+#!/usr/bin/env sh
+module load apptainer
+
+mkdir -p -m 700 ~/.af3/{input,output,models}
+export AF3_DB_DIR="${AF3_DB_DIR:-/quobyte/databases/alphafold3}"
+export AF3_IN_JSON="${AF3_IN_JSON:-fold_input${SLURM_ARRAY_TASK_ID}.json}"
+
+command -v apptainer >/dev/null 2>&1 || echo "apptainer not found" >&2 && exit 1
+apptainer exec \
+	--nv \
+	--bind $HOME/.af3/input:/root/af_input \
+	--bind $HOME/.af3/output:/root/af_output \
+	--bind $AF3_DB_DIR:/root/public_databases \
+	--bind $HOME/.af3/models:/root/models \
+	/cvmfs/hpc.ucdavis.edu/sw/sifs/alphafold/3/alphafold3.sif \
+	python alphafold3/run_alphafold.py \
+	--json_path=/root/af_input/$AF3_IN_JSON \
+	--model_dir=/root/models \
+	--db_dir=/root/public_databases \
+	--output_dir=/root/af_output $@
+```
+
+| Option | Meaning |
+|---|---|
+| `--nv` | Gives the container access to the node's NVIDIA GPU in case you are using any |
+| `--bind A:B` | Makes cluster directory `A` visible inside the container at `B` |
+| `--json_path` | The input file to predict |
+| `--model_dir` | Model parameters inside the container (your `$HOME/.af3/models`) |
+| `--db_dir` | Genetic databases inside the container |
+| `--output_dir` | Where results are written (your `$HOME/.af3/output`) |
 
 ## Output
 
