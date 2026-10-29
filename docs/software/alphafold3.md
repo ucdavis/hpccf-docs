@@ -65,7 +65,9 @@ The example script reads `$HOME/.af3/input/fold_input.json`. A minimal single-pr
   ],
   "modelSeeds": [1],
   "dialect": "alphafold3",
-  "version": 1```
+  "version": 1
+}
+```
 
 Read more about inputs here [AlphaFold 3 Inputs](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)
 
