@@ -86,7 +86,7 @@ click `Orders` -> `Products`. Then order `Backup Storage`. To expedite the proce
 include the following information:
 -->
 
-You can purchase backups for your storage by [emailing HPC@UCD help](../support.md) and including:
+You can purchase backups for your storage by [emailing HPC@UCD help](../support.md) and including the following information:
 
 1.  The name of your share under `/quobyte/`.
 
@@ -120,9 +120,10 @@ restore. See the [symlinks](#can-the-backup-system-back-up-symlinks) section for
 
 ### Who monitors the backups?
 
-You, the PI, or a designated list of email addresses. Although HPC@UCD monitors the backup service, we do NOT, and we
-cannot emphasize this enough, do NOT monitor the individual backups. It is up to you to monitor those and open a ticket
+You, the PI, or a designated list of email addresses. Although HPC@UCD monitors the backup service, we do NOT, and we cannot emphasize this enough, do NOT monitor the individual backups. It is up to you to monitor those and open a ticket
 if you notice any issues.
+
+If you are not receiving the daily email summary, then something is wrong and your backups are failing. Please open a [support ticket](../support.md) if you are not receiving the daily backup summary.
 
 ### How much backup space do I need?
 

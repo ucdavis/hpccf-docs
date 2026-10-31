@@ -1,3 +1,5 @@
+agentic
+behaviors
 passphrase
 keepalive
 multiplexer
