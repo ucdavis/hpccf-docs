@@ -8428,3 +8428,5 @@ zsh
 zstd
 zstr
 zziplib
+slurms
+
