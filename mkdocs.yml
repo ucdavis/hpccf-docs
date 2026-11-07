@@ -26,6 +26,7 @@ nav:
           - R and RStudio: software/rstudio.md
       - Storage:
           - Quobyte: storage/quobyte.md
+          - Temporary Storage: storage/tmp-and-scratch.md
       - Troubleshooting: general/troubleshooting.md
       - Usage Policies:
           - Agentic AI: policies/agentic-ai.md
