@@ -1071,6 +1071,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shared-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared scratch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-scratch-auto-delete-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shared-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared scratch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-scratch-auto-delete-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2287,14 +2309,20 @@
 <p>Local storage on each node: <code>/tmp</code> and <code>/scratch</code>. Both point to the same storage and are automatically cleaned as your job exits.</p>
 </li>
 <li>
-<p>Shared scratch: <code>/nfs/hive/scratch</code>: <a href="#shared-scratch-auto-delete-policy">auto-deleted</a> on a schedule.</p>
+<p><a href="#shared-scratch">Shared scratch</a>: <code>/nfs/hive/scratch</code>: <a href="#shared-scratch-auto-delete-policy">auto-deleted</a> on a schedule.</p>
 </li>
 <li>
-<p>Shared MPI-IO scratch: <code>/nfs/hive/scratch-mpi-io</code>: mounted with options to work with MPI-IO. <a href="#shared-scratch-auto-delete-policy">auto-deleted</a> on a schedule.</p>
+<p><a href="#shared-scratch">Shared MPI-IO scratch</a>: <code>/nfs/hive/scratch-mpi-io</code>: mounted with options to work with MPI-IO. <a href="#shared-scratch-auto-delete-policy">auto-deleted</a> on a schedule.</p>
 </li>
 </ul>
+<h2 id="shared-scratch">Shared scratch<a class="headerlink" href="#shared-scratch" title="Permanent link">&para;</a></h2>
+<p>Hive's shared NFS scratch space is a shared file system for temporary data, such as intermediate files from Slurm jobs. This space is volatile: the files there do not persist. An automatic cleanup process deletes files from the scratch space, so you must not store critical data there. The correct location for critical data is your PI storage. When a job completes, we encourage you to delete your scratch files so that the automatic cleanup is not necessary.</p>
 <h2 id="shared-scratch-auto-delete-policy">Shared scratch auto-delete policy<a class="headerlink" href="#shared-scratch-auto-delete-policy" title="Permanent link">&para;</a></h2>
-<p>Data on Hive's shared scratch (and MPI-IO scratch) can be automatically deleted if the storage is more than 75% full. The algorithm is to sort the files by access time and start deleting until the usage falls below 75%. If the cleanup process gets to files that were last accessed less than 35 days ago, it will sort the files by creation time and delete the oldest until usage falls below 75%.</p>
+<details class="danger" open="open">
+<summary>Danger</summary>
+<p>Do not store critical data in the shared scratch space, because an automatic cleanup process deletes old files.</p>
+</details>
+<p>Data on Hive's shared scratch (and MPI-IO scratch) will be automatically deleted by a nightly job if the storage is more than 75% full. The algorithm is to sort the files by access time and start deleting until the usage falls below 75%. If the cleanup process gets to files that were last accessed less than 35 days ago, it will sort the files by creation time and delete the oldest until usage falls below 75%.</p>
 <p>NOTE: Both of these options can delete files that are still in use, so it is to everyone's benefit if every user cleans their temporary files so this auto-delete never needs to run.</p>
 
 
