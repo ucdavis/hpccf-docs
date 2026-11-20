@@ -418,6 +418,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#can-i-use-multiple-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I use multiple SSH keys?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2414,6 +2425,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#can-i-use-multiple-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I use multiple SSH keys?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2579,42 +2601,32 @@
 
   <h1>Accessing Clusters</h1>
 
-<p>To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH allows
-you to control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
-instead of a password — the exception is Hive, which also accepts your UC Davis campus passphrase.</p>
+<p>To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH allows you to control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication instead of a password. The exception is Hive, which also accepts your UC Davis campus passphrase.</p>
 <h2 id="how-do-i-connect-to-a-cluster">How do I connect to a cluster?<a class="headerlink" href="#how-do-i-connect-to-a-cluster" title="Permanent link">&para;</a></h2>
 <p>Once your account is active, open a terminal and run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>your-username@cluster.hpc.ucdavis.edu
 </code></pre></div>
-<p>Replace <code>cluster</code> with <code>farm</code>, <code>franklin</code>, or <code>hive</code> depending on which cluster you have access to. Your username
-is your UC Davis Login ID (e.g., <code>cheeto</code>).</p>
-<p>The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the
-<a href="#ssh-key-fingerprints-for-major-clusters">known fingerprints below</a> before typing <code>yes</code>.</p>
+<p>Replace <code>cluster</code> with <code>farm</code>, <code>franklin</code>, or <code>hive</code> depending on which cluster you have access to. Your username is your UC Davis Login ID (e.g., <code>cheeto</code>).</p>
+<p>The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the <a href="#ssh-key-fingerprints-for-major-clusters">known fingerprints below</a> before typing <code>yes</code>.</p>
 <h2 id="how-do-i-open-a-terminal">How do I open a terminal?<a class="headerlink" href="#how-do-i-open-a-terminal" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Linux</label><label for="__tabbed_1_3">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Open <strong>Terminal</strong> by pressing <code>Command + Space</code> to open Spotlight, typing <code>Terminal</code>, and pressing Enter. You
-can also find it under <strong>Applications → Utilities → Terminal</strong>.</p>
+<p>Open <strong>Terminal</strong> by pressing <code>Command + Space</code> to open Spotlight, typing <code>Terminal</code>, and pressing Enter. You can also find it under <strong>Applications → Utilities → Terminal</strong>.</p>
 </div>
 <div class="tabbed-block">
-<p>Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press
-<code>Ctrl + Alt + T</code> on many desktop environments.</p>
+<p>Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press <code>Ctrl + Alt + T</code> on many desktop environments.</p>
 </div>
 <div class="tabbed-block">
-<p>We recommend <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> as the most straightforward SSH client on Windows.
-Download the free <strong>Home Edition (Installer Edition)</strong> — avoid the Portable Edition, as it deletes the contents
+<p>We recommend <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> as the most straightforward SSH client on Windows. Download the free <strong>Home Edition (Installer Edition)</strong> — avoid the Portable Edition, as it deletes the contents
 of your home directory by default when it exits. Once installed, open its built-in terminal.</p>
 <p>Alternatively, if you are comfortable with Linux, you can use
-<a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2 (WSL2)</a>. Once installed,
-open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.</p>
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2 (WSL2)</a>. Once installed, open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.</p>
 </div>
 </div>
 </div>
 <h2 id="how-do-i-generate-an-ssh-key-pair">How do I generate an SSH key pair?<a class="headerlink" href="#how-do-i-generate-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
-<p>An SSH key pair consists of two files: a <strong>private key</strong> (kept securely on your computer) and a <strong>public key</strong>
-(shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the
-private key as the only key that opens it.</p>
+<p>An SSH key pair consists of two files: a <strong>private key</strong> (kept securely on your computer) and a <strong>public key</strong> (shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the private key as the only key that opens it.</p>
 <p>To generate a key pair, open a terminal and run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen -t rsa -b 4096
 </code></pre></div>
@@ -2626,8 +2638,7 @@ private key as the only key that opens it.</p>
    This is fine for most users.</p>
 </li>
 <li>
-<p><strong>"Enter passphrase"</strong> — This is an optional password that protects your private key. We recommend setting one.
-   You will be asked to enter it when you use your key.</p>
+<p><strong>"Enter passphrase"</strong> — This is an optional password that protects your private key. We recommend setting one. You will be asked to enter it when you use your key.</p>
 </li>
 </ol>
 <p>Once complete, you will have two files in your <code>~/.ssh/</code> directory:</p>
@@ -2641,6 +2652,8 @@ private key as the only key that opens it.</p>
 <p>The output will be a long string starting with <code>ssh-rsa</code>. Copy the entire line — this is what you paste into
 <a href="https://hippo.ucdavis.edu">HiPPO</a> when requesting an account.</p>
 <p>Once you have your public key, return to the <a href="../account-requests/">account request</a> page to submit it.</p>
+<h2 id="can-i-use-multiple-ssh-keys">Can I use multiple SSH keys?<a class="headerlink" href="#can-i-use-multiple-ssh-keys" title="Permanent link">&para;</a></h2>
+<p>No. For security reasons, HPC@UCD does not allow a user to use multiple SSH keys. If you need to access your HPC account from multiple computers, you can securely transfer your SSH private key. The exact location and format depends on your OS and SSH program. Consult your local IT support if you need further assistance.</p>
 <h2 id="ssh-agent">SSH agent<a class="headerlink" href="#ssh-agent" title="Permanent link">&para;</a></h2>
 <p>If you set a passphrase on your SSH key (which we recommend), you will be prompted for it each time you connect.
 An SSH agent caches your passphrase for the duration of your local session so you only need to enter it once:</p>
@@ -2669,10 +2682,8 @@ you may need to start the agent manually:</p>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    User your-username
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    ServerAliveInterval 60
 </code></pre></div>
-<p>With this in place, you can connect by simply typing <code>ssh farm</code>, <code>ssh franklin</code>, or <code>ssh hive</code> instead of the
-full command.</p>
-<p>The <code>ServerAliveInterval 60</code> line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions
-from timing out and disconnecting.</p>
+<p>With this in place, you can connect by simply typing <code>ssh farm</code>, <code>ssh franklin</code>, or <code>ssh hive</code> instead of the full command.</p>
+<p>The <code>ServerAliveInterval 60</code> line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions from timing out and disconnecting.</p>
 <p>If the file does not exist yet, create it with:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>touch<span class="w"> </span>~/.ssh/config
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config
