@@ -1,6 +1,4 @@
-To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH allows
-you to control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication
-instead of a password — the exception is Hive, which also accepts your UC Davis campus passphrase.
+To access an HPC cluster, you connect to it over the internet using a protocol called SSH (Secure Shell). SSH allows you to control a remote computer from your local terminal. Most HPC clusters require an SSH key pair for authentication instead of a password. The exception is Hive, which also accepts your UC Davis campus passphrase.
 
 ## How do I connect to a cluster?
 
@@ -10,39 +8,31 @@ Once your account is active, open a terminal and run:
 ssh your-username@cluster.hpc.ucdavis.edu
 ```
 
-Replace `cluster` with `farm`, `franklin`, or `hive` depending on which cluster you have access to. Your username
-is your UC Davis Login ID (e.g., `cheeto`).
+Replace `cluster` with `farm`, `franklin`, or `hive` depending on which cluster you have access to. Your username is your UC Davis Login ID (e.g., `cheeto`).
 
-The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the
-[known fingerprints below](#ssh-key-fingerprints-for-major-clusters) before typing `yes`.
+The first time you connect, SSH will display a fingerprint and ask you to confirm. Compare it against the [known fingerprints below](#ssh-key-fingerprints-for-major-clusters) before typing `yes`.
 
 ## How do I open a terminal?
 
 === "macOS"
 
-    Open **Terminal** by pressing `Command + Space` to open Spotlight, typing `Terminal`, and pressing Enter. You
-    can also find it under **Applications → Utilities → Terminal**.
+    Open **Terminal** by pressing `Command + Space` to open Spotlight, typing `Terminal`, and pressing Enter. You can also find it under **Applications → Utilities → Terminal**.
 
 === "Linux"
 
-    Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press
-    `Ctrl + Alt + T` on many desktop environments.
+    Open your distribution's terminal emulator. This is usually found in your applications menu, or you can press `Ctrl + Alt + T` on many desktop environments.
 
 === "Windows"
 
-    We recommend [MobaXterm](https://mobaxterm.mobatek.net/) as the most straightforward SSH client on Windows.
-    Download the free **Home Edition (Installer Edition)** — avoid the Portable Edition, as it deletes the contents
+    We recommend [MobaXterm](https://mobaxterm.mobatek.net/) as the most straightforward SSH client on Windows. Download the free **Home Edition (Installer Edition)** — avoid the Portable Edition, as it deletes the contents
     of your home directory by default when it exits. Once installed, open its built-in terminal.
 
     Alternatively, if you are comfortable with Linux, you can use
-    [Windows Subsystem for Linux 2 (WSL2)](https://learn.microsoft.com/en-us/windows/wsl/install). Once installed,
-    open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.
+    [Windows Subsystem for Linux 2 (WSL2)](https://learn.microsoft.com/en-us/windows/wsl/install). Once installed, open your WSL2 distribution's terminal and follow the macOS/Linux instructions throughout this page.
 
 ## How do I generate an SSH key pair?
 
-An SSH key pair consists of two files: a **private key** (kept securely on your computer) and a **public key**
-(shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the
-private key as the only key that opens it.
+An SSH key pair consists of two files: a **private key** (kept securely on your computer) and a **public key** (shared with HPC@UCD to grant you access). Think of the public key as a lock you give to the cluster, and the private key as the only key that opens it.
 
 To generate a key pair, open a terminal and run:
 
@@ -57,8 +47,7 @@ You will be prompted with a few questions:
 1. **"Enter file in which to save the key"** — Press Enter to accept the default location (`~/.ssh/id_rsa`).
    This is fine for most users.
 
-2. **"Enter passphrase"** — This is an optional password that protects your private key. We recommend setting one.
-   You will be asked to enter it when you use your key.
+2. **"Enter passphrase"** — This is an optional password that protects your private key. We recommend setting one. You will be asked to enter it when you use your key.
 
 Once complete, you will have two files in your `~/.ssh/` directory:
 
@@ -75,6 +64,10 @@ The output will be a long string starting with `ssh-rsa`. Copy the entire line �
 [HiPPO](https://hippo.ucdavis.edu) when requesting an account.
 
 Once you have your public key, return to the [account request](account-requests.md) page to submit it.
+
+## Can I use multiple SSH keys?
+
+No. For security reasons, HPC@UCD does not allow a user to use multiple SSH keys. If you need to access your HPC account from multiple computers, you can securely transfer your SSH private key. The exact location and format depends on your OS and SSH program. Consult your local IT support if you need further assistance.
 
 ## SSH agent
 
@@ -115,11 +108,9 @@ Host hive
     ServerAliveInterval 60
 ```
 
-With this in place, you can connect by simply typing `ssh farm`, `ssh franklin`, or `ssh hive` instead of the
-full command.
+With this in place, you can connect by simply typing `ssh farm`, `ssh franklin`, or `ssh hive` instead of the full command.
 
-The `ServerAliveInterval 60` line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions
-from timing out and disconnecting.
+The `ServerAliveInterval 60` line sends a keepalive signal every 60 seconds, which prevents idle SSH sessions from timing out and disconnecting.
 
 If the file does not exist yet, create it with:
 
